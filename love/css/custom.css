@@ -1,1 +1,30 @@
-#ctimer span,.footer-widget-section,.main-navigation,.main-navigation ul ul,ol.comment-list li .reply{background:#008f7f}h2.section-title{color:#008f7f}a{color:#fff}a:visited{color:#fff}a:active,a:focus,a:hover{color:#1abc9c;text-decoration:none}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/* Custom Styles */
+/*-------------------------------------------------------------------------------------------*/
+
+
+
+.main-navigation,.main-navigation ul ul,
+#ctimer span, .footer-widget-section, ol.comment-list li .reply {
+	background: #008f7f;
+}
+
+ h2.section-title {
+	color: #008f7f;
+}
+
+/* Links */
+a {
+	color: #fff;
+}
+a:visited {
+	color: #fff;
+}
+a:hover,
+a:focus,
+a:active {
+	color:#1ABC9C;
+	text-decoration: none;
+}
