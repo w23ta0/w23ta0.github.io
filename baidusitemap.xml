@@ -1,50 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://w23ta0.github.io/posts/a5f7ab26.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
-    <loc>http://w23ta0.github.io/posts/3123c592.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
-    <loc>http://w23ta0.github.io/posts/e3f5fe56.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
-    <loc>http://w23ta0.github.io/posts/4119ba0a.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
-    <loc>http://w23ta0.github.io/posts/e916aedd.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
-    <loc>http://w23ta0.github.io/posts/5cd91fbc.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
-    <loc>http://w23ta0.github.io/posts/77a6d209.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
-    <loc>http://w23ta0.github.io/posts/d3fa1f95.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
-    <loc>http://w23ta0.github.io/posts/7ebc6f83.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
-    <loc>http://w23ta0.github.io/posts/d4af459a.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
-    <loc>http://w23ta0.github.io/posts/d388be37.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
     <loc>http://w23ta0.github.io/posts/5dbca548.html</loc>
     <lastmod>2021-12-08</lastmod>
   </url>
@@ -62,6 +18,10 @@
   </url>
   <url>
     <loc>http://w23ta0.github.io/posts/1d31b1f3.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/8c6e7157.html</loc>
     <lastmod>2021-12-08</lastmod>
   </url>
   <url>
@@ -137,18 +97,6 @@
     <lastmod>2021-12-08</lastmod>
   </url>
   <url>
-    <loc>http://w23ta0.github.io/posts/8c6e7157.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
-    <loc>http://w23ta0.github.io/posts/735e3e61.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
-    <loc>http://w23ta0.github.io/posts/50158b3.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
     <loc>http://w23ta0.github.io/posts/961db27e.html</loc>
     <lastmod>2021-12-08</lastmod>
   </url>
@@ -173,10 +121,6 @@
     <lastmod>2021-12-08</lastmod>
   </url>
   <url>
-    <loc>http://w23ta0.github.io/posts/7b524d8e.html</loc>
-    <lastmod>2021-12-08</lastmod>
-  </url>
-  <url>
     <loc>http://w23ta0.github.io/posts/d8443074.html</loc>
     <lastmod>2021-12-08</lastmod>
   </url>
@@ -185,11 +129,11 @@
     <lastmod>2021-12-08</lastmod>
   </url>
   <url>
-    <loc>http://w23ta0.github.io/posts/19719f8d.html</loc>
+    <loc>http://w23ta0.github.io/posts/6e8d2cb0.html</loc>
     <lastmod>2021-12-08</lastmod>
   </url>
   <url>
-    <loc>http://w23ta0.github.io/posts/6e8d2cb0.html</loc>
+    <loc>http://w23ta0.github.io/posts/19719f8d.html</loc>
     <lastmod>2021-12-08</lastmod>
   </url>
   <url>
@@ -246,6 +190,62 @@
   </url>
   <url>
     <loc>http://w23ta0.github.io/posts/ef3dfd58.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/a5f7ab26.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/3123c592.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/e3f5fe56.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/4119ba0a.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/e916aedd.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/5cd91fbc.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/77a6d209.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/d3fa1f95.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/7ebc6f83.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/d4af459a.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/d388be37.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/735e3e61.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/50158b3.html</loc>
+    <lastmod>2021-12-08</lastmod>
+  </url>
+  <url>
+    <loc>http://w23ta0.github.io/posts/7b524d8e.html</loc>
     <lastmod>2021-12-08</lastmod>
   </url>
 </urlset> 
