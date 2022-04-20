@@ -140,7 +140,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/1524464007289y8iyr1c1.png?imageslim">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/1524464294703ojgn0p8f.png?imageslim">
-<meta property="og:updated_time" content="2021-12-09T05:40:35.730Z">
+<meta property="og:updated_time" content="2022-04-20T19:49:22.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello World">
 <meta name="twitter:description" content="for testing something new only">
@@ -507,9 +507,9 @@
 
       
         <h2 id="music"><a href="#music" class="headerlink" title="music"></a>music</h2>
-    <div id="aplayer-JclIaDsN" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="446935665" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+    <div id="aplayer-IGMcAIsf" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="446935665" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
 <h2 id="playlist"><a href="#playlist" class="headerlink" title="playlist"></a>playlist</h2>
-    <div id="aplayer-FrYHeAkn" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"></div>
+    <div id="aplayer-wemKAjgt" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"></div>
 <figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!-- 简单示例 (id, server, type)  --&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">meting</span> "60198" "netease" "playlist" %&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- 进阶示例 --&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">meting</span> "60198" "netease" "playlist" "autoplay" "mutex:false" "listmaxheight:340px" "preload:none" "theme:#ad7a86"%&#125;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -992,7 +992,7 @@ show_date_time();
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2012 &mdash; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2012 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love" id="heart">
     <i class="fa fa-heart"></i>
   </span>
@@ -1511,112 +1511,71 @@ show_date_time();
 
 
   
-
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz", "9WRYEmJ7PeAzvXhXU6BddHR7");</script>
   <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
+    
     function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
+      var $visitors = $('.leancloud_visitors');
       var url = $visitors.attr('id').trim();
       var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
 
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
           if (results.length > 0) {
             var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .done(function() {
                 var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
+                $element.find('.leancloud-visitors-count').text(counter.time + 1);
+              })
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
           } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
+            
           }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
     }
+    
 
     $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz',
+                'X-LC-Key': '9WRYEmJ7PeAzvXhXU6BddHR7',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+            if (localhost.test(document.URL)) return;
+            addCount(Counter);
+          
+        });
     });
   </script>
-
 
 
   
