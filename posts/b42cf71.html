@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="在管理服务器时，我通常选择使用 SSH 方式。以下是一则 SSH 使用技巧，希望对你有用。 创建快捷方式当你在执行 ssh 命令登录服务器时，有没有被需要输入命令后面的一长串参数感到厌烦呢？比如，名为 serveradmin@domain.com 的用户要登录到 example.com 主机上，需执行： ssh serveradmin@domain.com@example.com 你当然可以使用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-10T19:30:38.383Z">
+<meta property="og:updated_time" content="2022-05-10T19:50:18.404Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH 使用技巧一则:创建快捷方式">
 <meta name="twitter:description" content="在管理服务器时，我通常选择使用 SSH 方式。以下是一则 SSH 使用技巧，希望对你有用。 创建快捷方式当你在执行 ssh 命令登录服务器时，有没有被需要输入命令后面的一长串参数感到厌烦呢？比如，名为 serveradmin@domain.com 的用户要登录到 example.com 主机上，需执行： ssh serveradmin@domain.com@example.com 你当然可以使用">
@@ -1066,13 +1066,17 @@ show_date_time();
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
+  <script src="/js/src/Valine.min.js"></script>  //调用刚下载的本地文件以加速加载速度
+
+    //这里改为从本地加载
+  
+  <script src="/js/src/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
+    guest = guest.split(',').filter(function (item) {
       return GUEST.indexOf(item)>-1;
     });
     new Valine({
@@ -1083,9 +1087,16 @@ show_date_time();
         appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
-        guest_info:guest,
+        guest_info:['nick'] ,  //评论者只需要提供评论的昵称即可
         pageSize:'10' || 10,
     });
+    //增加以下六行代码去除 power by valine
+    var infoEle = document.querySelector('#comments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
   </script>
 
 

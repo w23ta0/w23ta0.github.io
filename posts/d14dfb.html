@@ -139,7 +139,7 @@
 <meta property="og:description" content="先卸载原有office，再安装office2010.还不行使用下面方法是一下：  使用组合键 Win+R 打开“运行”对话框，输入 regedit 并回车（可能需要管理员权限） 找到这个键值 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData  右击“UserData” 选择“权限(P)…">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog19779461_0800.png">
-<meta property="og:updated_time" content="2022-05-10T19:30:38.383Z">
+<meta property="og:updated_time" content="2022-05-10T19:50:18.404Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决Office 2010安装错误:1402">
 <meta name="twitter:description" content="先卸载原有office，再安装office2010.还不行使用下面方法是一下：  使用组合键 Win+R 打开“运行”对话框，输入 regedit 并回车（可能需要管理员权限） 找到这个键值 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData  右击“UserData” 选择“权限(P)…">
@@ -1053,13 +1053,17 @@ show_date_time();
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
+  <script src="/js/src/Valine.min.js"></script>  //调用刚下载的本地文件以加速加载速度
+
+    //这里改为从本地加载
+  
+  <script src="/js/src/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
+    guest = guest.split(',').filter(function (item) {
       return GUEST.indexOf(item)>-1;
     });
     new Valine({
@@ -1070,9 +1074,16 @@ show_date_time();
         appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
-        guest_info:guest,
+        guest_info:['nick'] ,  //评论者只需要提供评论的昵称即可
         pageSize:'10' || 10,
     });
+    //增加以下六行代码去除 power by valine
+    var infoEle = document.querySelector('#comments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
   </script>
 
 

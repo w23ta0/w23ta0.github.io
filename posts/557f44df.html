@@ -142,7 +142,7 @@
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/virtualization.png">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/docker.png">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/image-20201113161150684.png">
-<meta property="og:updated_time" content="2022-05-10T19:30:38.383Z">
+<meta property="og:updated_time" content="2022-05-10T19:50:18.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker简介概述">
 <meta name="twitter:description" content="Docker 简介Docker 最初是 dotCloud 公司创始人 Solomon Hykes 在法国期间发起的一个公司内部项目，它是基于 dotCloud 公司多年云服务技术的一次革新，并于 2013 年 3 月以 Apache 2.0 授权协议开源，主要项目代码在 GitHub 上进行维护。Docker 项目后来还加入了 Linux 基金会，并成立推动 开放容器联盟（OCI）。 Docker">
@@ -1143,13 +1143,17 @@ show_date_time();
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
+  <script src="/js/src/Valine.min.js"></script>  //调用刚下载的本地文件以加速加载速度
+
+    //这里改为从本地加载
+  
+  <script src="/js/src/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
+    guest = guest.split(',').filter(function (item) {
       return GUEST.indexOf(item)>-1;
     });
     new Valine({
@@ -1160,9 +1164,16 @@ show_date_time();
         appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
-        guest_info:guest,
+        guest_info:['nick'] ,  //评论者只需要提供评论的昵称即可
         pageSize:'10' || 10,
     });
+    //增加以下六行代码去除 power by valine
+    var infoEle = document.querySelector('#comments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
   </script>
 
 
