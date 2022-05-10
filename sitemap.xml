@@ -38,42 +38,6 @@
   </url>
   
   <url>
-    <loc>http://w23ta0.github.io/posts/4a17b156.html</loc>
-    
-    <lastmod>2022-05-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://w23ta0.github.io/categories/index.html</loc>
-    
-    <lastmod>2022-05-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://w23ta0.github.io/tags/index.html</loc>
-    
-    <lastmod>2022-05-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://w23ta0.github.io/top/index.html</loc>
-    
-    <lastmod>2022-05-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://w23ta0.github.io/posts/e481e229.html</loc>
     
     <lastmod>2022-05-10</lastmod>
@@ -219,6 +183,42 @@
   
   <url>
     <loc>http://w23ta0.github.io/posts/557f44df.html</loc>
+    
+    <lastmod>2022-05-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://w23ta0.github.io/posts/4a17b156.html</loc>
+    
+    <lastmod>2022-05-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://w23ta0.github.io/categories/index.html</loc>
+    
+    <lastmod>2022-05-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://w23ta0.github.io/tags/index.html</loc>
+    
+    <lastmod>2022-05-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://w23ta0.github.io/top/index.html</loc>
     
     <lastmod>2022-05-10</lastmod>
     
@@ -1430,14 +1430,14 @@
   </url>
   
   <url>
-    <loc>http://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/Docker/</loc>
+    <loc>http://w23ta0.github.io/categories/android/</loc>
     <lastmod>2022-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://w23ta0.github.io/categories/android/</loc>
+    <loc>http://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/Docker/</loc>
     <lastmod>2022-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
