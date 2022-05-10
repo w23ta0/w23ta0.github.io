@@ -148,7 +148,7 @@
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/180425/G1K0F4f0b5.png?imageslim,">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/180425/dHaFDe39gh.png?imageslim,">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/180425/hcKJh9Ggah.png?imageslim,">
-<meta property="og:updated_time" content="2022-05-10T12:07:50.618Z">
+<meta property="og:updated_time" content="2022-05-10T17:26:26.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用命令行工具 speedtest-cli 来测试你的网速">
 <meta name="twitter:description" content="我们经常需要到检查家里与办公室之间的网络是否连通，那么我们要怎么做呢？打开网站Speedtest.net然后开始测试。网站是通过加载浏览器中的JavaScript脚本然后选择最佳的服务器测速然后用Flash产生图形化的结果。 那么远程服务器呢？要知道大多数远程服务器是没有浏览器可以打开web页面的。用浏览器打开网页测速的瓶颈就在此，你不能按计划的对服务器进行定期的常规测试。这时需要到一个名为Spe">
@@ -1132,7 +1132,7 @@ show_date_time();
 
 
 
-  <script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+  <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
   <script type="text/javascript">
@@ -1145,8 +1145,8 @@ show_date_time();
         el: '#comments' ,
         verify: false,
         notify: false,
-        appId: 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz',
-        appKey: '9WRYEmJ7PeAzvXhXU6BddHR7',
+        appId: 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI',
+        appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
         guest_info:guest,
@@ -1523,15 +1523,15 @@ show_date_time();
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz')
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI')
         .done(function({ api_server }) {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
               url: 'https://' + api_server + '/1.1' + url,
               headers: {
-                'X-LC-Id': 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz',
-                'X-LC-Key': '9WRYEmJ7PeAzvXhXU6BddHR7',
+                'X-LC-Id': 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI',
+                'X-LC-Key': '7kgfognspTtLa2IuJih1EH8y',
                 'Content-Type': 'application/json',
               },
               data: data

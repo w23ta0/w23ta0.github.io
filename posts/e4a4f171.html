@@ -139,7 +139,7 @@
 <meta property="og:description" content="前置条件 准备一台主机。用于运行KVM虚拟机和制作镜像  准备一张系统镜像ISO文件  确保您的系统具有硬件虚拟化扩展 #基于Intel的主机，请使用以下命令验证CPU虚拟化扩展[vmx]是否可用。[user@host]# grep -e &apos;vmx&apos; /proc/cpuinfo#基于AMD的主机，请验证CPU虚拟化扩展[svm]是否可用。[user@host]# grep -e &apos;svm&apos; /pr">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20201109182452.png">
-<meta property="og:updated_time" content="2022-05-10T12:07:50.622Z">
+<meta property="og:updated_time" content="2022-05-10T17:26:26.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建OpenStack兼容的qcow2格式镜像">
 <meta name="twitter:description" content="前置条件 准备一台主机。用于运行KVM虚拟机和制作镜像  准备一张系统镜像ISO文件  确保您的系统具有硬件虚拟化扩展 #基于Intel的主机，请使用以下命令验证CPU虚拟化扩展[vmx]是否可用。[user@host]# grep -e &apos;vmx&apos; /proc/cpuinfo#基于AMD的主机，请验证CPU虚拟化扩展[svm]是否可用。[user@host]# grep -e &apos;svm&apos; /pr">
@@ -1195,7 +1195,7 @@ show_date_time();
 
 
 
-  <script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+  <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
   <script type="text/javascript">
@@ -1208,8 +1208,8 @@ show_date_time();
         el: '#comments' ,
         verify: false,
         notify: false,
-        appId: 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz',
-        appKey: '9WRYEmJ7PeAzvXhXU6BddHR7',
+        appId: 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI',
+        appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
         guest_info:guest,
@@ -1586,15 +1586,15 @@ show_date_time();
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz')
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI')
         .done(function({ api_server }) {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
               url: 'https://' + api_server + '/1.1' + url,
               headers: {
-                'X-LC-Id': 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz',
-                'X-LC-Key': '9WRYEmJ7PeAzvXhXU6BddHR7',
+                'X-LC-Id': 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI',
+                'X-LC-Key': '7kgfognspTtLa2IuJih1EH8y',
                 'Content-Type': 'application/json',
               },
               data: data

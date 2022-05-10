@@ -139,7 +139,7 @@
 <meta property="og:description" content="进程是操作系统上非常重要的概念，所有系统上面跑的数据都会以进程的类型存在。在 Linux 系统当中：触发任何一个事件时，系统都会将它定义成为一个进程，并且给予这个进程一个 ID，称为 PID，同时根据触发这个进程的用户，给予这个 PID 一组有效的权限设置。 进程是什么样的程序运行起来后，我们看不到也摸不着。因此 Linux 为我们提供了一系列方便的命名来查看正在运行的进程。首先是 ps 命令，比">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog81b78497jw1einn18zdbaj20k50bign9.jpg">
-<meta property="og:updated_time" content="2022-05-10T12:07:50.618Z">
+<meta property="og:updated_time" content="2022-05-10T17:26:26.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础：进程管理">
 <meta name="twitter:description" content="进程是操作系统上非常重要的概念，所有系统上面跑的数据都会以进程的类型存在。在 Linux 系统当中：触发任何一个事件时，系统都会将它定义成为一个进程，并且给予这个进程一个 ID，称为 PID，同时根据触发这个进程的用户，给予这个 PID 一组有效的权限设置。 进程是什么样的程序运行起来后，我们看不到也摸不着。因此 Linux 为我们提供了一系列方便的命名来查看正在运行的进程。首先是 ps 命令，比">
@@ -1114,7 +1114,7 @@ show_date_time();
 
 
 
-  <script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+  <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
   <script type="text/javascript">
@@ -1127,8 +1127,8 @@ show_date_time();
         el: '#comments' ,
         verify: false,
         notify: false,
-        appId: 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz',
-        appKey: '9WRYEmJ7PeAzvXhXU6BddHR7',
+        appId: 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI',
+        appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
         guest_info:guest,
@@ -1505,15 +1505,15 @@ show_date_time();
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz')
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI')
         .done(function({ api_server }) {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
               url: 'https://' + api_server + '/1.1' + url,
               headers: {
-                'X-LC-Id': 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz',
-                'X-LC-Key': '9WRYEmJ7PeAzvXhXU6BddHR7',
+                'X-LC-Id': 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI',
+                'X-LC-Key': '7kgfognspTtLa2IuJih1EH8y',
                 'Content-Type': 'application/json',
               },
               data: data

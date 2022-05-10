@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="环境说明客户端与Kafka服务端不在同一个网络区域，无法直接访问。需要通过NAT进行地址映射，将Kafka服务端10.0.0.182地址映射为172.25.0.190，从而客户端与服务端可以正常通信。    Kafka客户端 NAT映射地址 Kafka服务端     172.16.0.233 172.25.0.190 10.0.0.182    问题现象防火墙策略已经开通，客户端可以ping通服务">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-10T12:07:50.622Z">
+<meta property="og:updated_time" content="2022-05-10T17:26:26.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决Kafka跨网络NAT传输问题">
 <meta name="twitter:description" content="环境说明客户端与Kafka服务端不在同一个网络区域，无法直接访问。需要通过NAT进行地址映射，将Kafka服务端10.0.0.182地址映射为172.25.0.190，从而客户端与服务端可以正常通信。    Kafka客户端 NAT映射地址 Kafka服务端     172.16.0.233 172.25.0.190 10.0.0.182    问题现象防火墙策略已经开通，客户端可以ping通服务">
@@ -1093,7 +1093,7 @@ show_date_time();
 
 
 
-  <script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+  <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
   <script type="text/javascript">
@@ -1106,8 +1106,8 @@ show_date_time();
         el: '#comments' ,
         verify: false,
         notify: false,
-        appId: 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz',
-        appKey: '9WRYEmJ7PeAzvXhXU6BddHR7',
+        appId: 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI',
+        appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
         guest_info:guest,
@@ -1484,15 +1484,15 @@ show_date_time();
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz')
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI')
         .done(function({ api_server }) {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
               url: 'https://' + api_server + '/1.1' + url,
               headers: {
-                'X-LC-Id': 'iu2W9YOrkxvoXWEGPBFKOP3G-gzGzoHsz',
-                'X-LC-Key': '9WRYEmJ7PeAzvXhXU6BddHR7',
+                'X-LC-Id': 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI',
+                'X-LC-Key': '7kgfognspTtLa2IuJih1EH8y',
                 'Content-Type': 'application/json',
               },
               data: data
