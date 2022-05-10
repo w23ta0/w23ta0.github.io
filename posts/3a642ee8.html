@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="环境说明客户端与Kafka服务端不在同一个网络区域，无法直接访问。需要通过NAT进行地址映射，将Kafka服务端10.0.0.182地址映射为172.25.0.190，从而客户端与服务端可以正常通信。    Kafka客户端 NAT映射地址 Kafka服务端     172.16.0.233 172.25.0.190 10.0.0.182    问题现象防火墙策略已经开通，客户端可以ping通服务">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-10T11:10:03.143Z">
+<meta property="og:updated_time" content="2022-05-10T12:07:50.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决Kafka跨网络NAT传输问题">
 <meta name="twitter:description" content="环境说明客户端与Kafka服务端不在同一个网络区域，无法直接访问。需要通过NAT进行地址映射，将Kafka服务端10.0.0.182地址映射为172.25.0.190，从而客户端与服务端可以正常通信。    Kafka客户端 NAT映射地址 Kafka服务端     172.16.0.233 172.25.0.190 10.0.0.182    问题现象防火墙策略已经开通，客户端可以ping通服务">
@@ -151,7 +151,7 @@
     root: '/',
     scheme: 'Muse',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -192,16 +192,6 @@
   ga('send', 'pageview');
 </script>
 
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?0ebe624548e74b737e4667f8f8471b05";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
@@ -939,6 +929,14 @@ show_date_time();
 
 </div>
 
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人</span>
+</div>
+
+
   
 </div>
 
@@ -956,17 +954,6 @@ show_date_time();
 
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
-  <span class="site-uv" title="footer.total_visitors">
-    我的第<span id="busuanzi_value_site_uv"></span>位朋友, 
-  </span>
-
-  <span class="site-pv" title="footer.total_views">
-    经过<span id="busuanzi_value_site_pv"></span>次回眸与你相遇
-  </span>
-</div>
 
 
 
@@ -1524,21 +1511,6 @@ show_date_time();
   
 
   
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
 
   
   
