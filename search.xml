@@ -1,6 +1,312 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>在KVM虚拟机中安装安卓X86模拟器</title>
+    <url>/posts/6dccc734.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h1 id="准备Android-x86的iso镜像"><a href="#准备Android-x86的iso镜像" class="headerlink" title="准备Android-x86的iso镜像"></a>准备Android-x86的iso镜像</h1><p>可以在<a href="http://www.android-x86.org/download" target="_blank" rel="noopener">http://www.android-x86.org/download</a> 处下载</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># cd /opt</span></span><br><span class="line">[root@localhost ~]<span class="comment"># wget https://nchc.dl.sourceforge.net/project/android-x86/Release%209.0/android-x86_64-9.0-r2.iso  --no-check-certificate</span></span><br></pre></td></tr></table></figure>
+<h1 id="准备kvm虚拟化环境"><a href="#准备kvm虚拟化环境" class="headerlink" title="准备kvm虚拟化环境"></a>准备kvm虚拟化环境</h1><h2 id="检测是否支持KVM"><a href="#检测是否支持KVM" class="headerlink" title="检测是否支持KVM"></a>检测是否支持KVM</h2><p>KVM 是基于 x86 虚拟化扩展(Intel VT 或者 AMD-V) 技术的虚拟机软件，所以查看 CPU 是否支持 VT 技术，就可以判断是否支持KVM。有返回结果，如果结果中有vmx（Intel）或svm(AMD)字样，就说明CPU的支持的。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># cat /proc/cpuinfo | egrep 'vmx|svm'</span></span><br><span class="line"></span><br><span class="line">flags   : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm arat epb pln pts dtherm tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm xsaveopt cqm_llc cqm_occup_llc</span><br></pre></td></tr></table></figure>
+<p>关闭SELinux，将 /etc/sysconfig/selinux 中的 <code>SELinux=enforcing</code> 修改为 <code>SELinux=disabled</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># vi /etc/sysconfig/selinux</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装-KVM-环境"><a href="#安装-KVM-环境" class="headerlink" title="安装 KVM 环境"></a>安装 KVM 环境</h2><p>通过 <a href="https://jaywcjlove.github.io/linux-command/c/yum.html" target="_blank" rel="noopener">yum</a> 安装 kvm 基础包和管理工具</p>
+<p>kvm相关安装包及其作用:</p>
+<ul>
+<li><code>qemu-kvm</code> 主要的KVM程序包</li>
+<li><code>python-virtinst</code> 创建虚拟机所需要的命令行工具和程序库</li>
+<li><code>virt-manager</code> GUI虚拟机管理工具</li>
+<li><code>virt-top</code> 虚拟机统计命令</li>
+<li><code>virt-viewer</code> GUI连接程序，连接到已配置好的虚拟机</li>
+<li><code>libvirt</code> C语言工具包，提供libvirt服务</li>
+<li><code>libvirt-client</code> 为虚拟客户机提供的C语言工具包</li>
+<li><code>virt-install</code> 基于libvirt服务的虚拟机创建命令</li>
+<li><code>bridge-utils</code> 创建和管理桥接设备的工具</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 kvm </span></span><br><span class="line"><span class="comment"># ------------------------</span></span><br><span class="line"><span class="comment"># yum -y install qemu-kvm python-virtinst libvirt libvirt-python virt-manager libguestfs-tools bridge-utils virt-install</span></span><br><span class="line"></span><br><span class="line">[root@localhost ~]<span class="comment"># yum -y install qemu-kvm libvirt virt-install bridge-utils </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启宿主机，以便加载 kvm 模块</span></span><br><span class="line"><span class="comment"># ------------------------</span></span><br><span class="line">[root@localhost ~]<span class="comment"># reboot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看KVM模块是否被正确加载</span></span><br><span class="line"><span class="comment"># ------------------------</span></span><br><span class="line">[root@localhost ~]<span class="comment"># lsmod | grep kvm</span></span><br><span class="line"></span><br><span class="line">kvm_intel             162153  0</span><br><span class="line">kvm                   525259  1 kvm_intel</span><br></pre></td></tr></table></figure>
+<p>开启kvm服务，并且设置其开机自动启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># systemctl start libvirtd</span></span><br><span class="line">[root@localhost ~]<span class="comment"># systemctl enable libvirtd</span></span><br></pre></td></tr></table></figure>
+<p>查看状态操作结果，如<code>Active: active (running)</code>，说明运行情况良好</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># systemctl status libvirtd</span></span><br><span class="line">[root@localhost ~]<span class="comment"># systemctl is-enabled libvirtd</span></span><br><span class="line"></span><br><span class="line">● libvirtd.service - Virtualization daemon</span><br><span class="line">   Loaded: loaded (/usr/lib/systemd/system/libvirtd.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since 二 2001-01-02 11:29:53 CST; 1h 41min ago</span><br><span class="line">     Docs: man:libvirtd(8)</span><br><span class="line">           http://libvirt.org</span><br></pre></td></tr></table></figure>
+<h2 id="虚拟化嵌套（VM-in-VM）"><a href="#虚拟化嵌套（VM-in-VM）" class="headerlink" title="虚拟化嵌套（VM-in-VM）"></a>虚拟化嵌套（VM-in-VM）</h2><p>安装X86模拟器需要CPU开启虚拟化功能，而KVM虚拟机已经是虚拟机了，虚拟机中的CPU默认情况下不带有虚拟化功能，这就需要nested kvm功能，即可以在虚拟机中再次进行虚拟化（VM-in-VM）。</p>
+<p>使用嵌套虚拟化，我们首先要看下当前的系统中有没有配置支持嵌套，查看当前系统是否支持 nested</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># systool -m kvm_intel -v   | grep -i nested</span></span><br><span class="line">nested              = <span class="string">"N"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#或者这样查看</span></span><br><span class="line">[root@localhost ~]<span class="comment"># cat /sys/module/kvm_intel/parameters/nested </span></span><br><span class="line">N</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Y</code> : 结果为 <code>Y</code> 表示当前的操作系统已经支持了嵌套虚拟化</li>
+<li><code>N</code> : 表示当前操作系统未配置嵌套虚拟化</li>
+</ul>
+<p>如果结果为 N，可以通过以下方式开启</p>
+<h2 id="开启-nested-方法"><a href="#开启-nested-方法" class="headerlink" title="开启 nested 方法"></a>开启 nested 方法</h2><p>编辑或创建文件 <code>/etc/modprobe.d/kvm-nested.conf</code>，文件包含以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">options kvm_intel nested=1</span><br><span class="line">options kvm-intel enable_shadow_vmcs=1   </span><br><span class="line">options kvm-intel enable_apicv=1         </span><br><span class="line">options kvm-intel ept=1</span><br></pre></td></tr></table></figure>
+<p>重新加载内核模块</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># modprobe -r kvm_intel   #协助掉内核中的 kvm_intel 模块，注意要在所有虚拟机都关闭的情况下执行</span></span><br><span class="line">[root@localhost ~]<span class="comment"># modprobe -a kvm_intel   #重新加载该模块</span></span><br></pre></td></tr></table></figure>
+<h1 id="创建kvm虚拟机"><a href="#创建kvm虚拟机" class="headerlink" title="创建kvm虚拟机"></a>创建kvm虚拟机</h1><h2 id="创建虚拟机磁盘"><a href="#创建虚拟机磁盘" class="headerlink" title="创建虚拟机磁盘"></a>创建虚拟机磁盘</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># qemu-img create -f raw /opt/android.img 8G</span></span><br></pre></td></tr></table></figure>
+<h2 id="创建虚拟机"><a href="#创建虚拟机" class="headerlink" title="创建虚拟机"></a>创建虚拟机</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># virt-install  \</span></span><br><span class="line">--virt-type=kvm \</span><br><span class="line">--name android \</span><br><span class="line">--cpu host-passthrough \</span><br><span class="line">--vcpus=2 \</span><br><span class="line">--memory=4096 \</span><br><span class="line">--disk /opt/android-x86_64-9.0-r2.iso,device=cdrom,bus=ide \</span><br><span class="line">--disk /opt/android.img,device=disk,bus=virtio \</span><br><span class="line">--network network=default,model=virtio \</span><br><span class="line">--video=qxl \</span><br><span class="line">--graphics vnc,listen=0.0.0.0,port=5902 \</span><br><span class="line">--noautoconsole \</span><br><span class="line">--import \</span><br><span class="line">--force</span><br></pre></td></tr></table></figure>
+<p>通过vnc连接宿主机5902端口</p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510152936964.png" alt="image-20220510152936964"></p>
+<p>看到如下如，表示android x86的镜像已经读取成功，接下来按照虚拟机创建流程来安装系统。</p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510151814723.png" alt="image-20220510151814723"></p>
+<p>选择Auto_Installation自动安装操作系统到空白磁盘</p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510151835261.png" alt="image-20220510151835261"></p>
+<p>扫描到磁盘/dev/vda，选择yes继续</p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510151901738.png" alt="image-20220510151901738"></p>
+<p>看到下图表示安装完毕，选择Run即可进去系统。</p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510151941391.png" alt="image-20220510151941391"></p>
+<p>可以看到系统已经正常启动，界面如下：</p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510152007438.png" alt="image-20220510152007438"></p>
+<p>开始初始化，选择START</p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510152035577.png" alt="image-20220510152035577"></p>
+<p>连接网络，KVM默认会给android生成名称为<code>VritWifi</code>的WI-FI</p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510152208268.png" alt="image-20220510152208268"></p>
+<p>配置日期时间</p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510152246425.png" alt="image-20220510152246425"></p>
+<p>配置google服务</p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510152319199.png" alt="image-20220510152319199"></p>
+<p>设置密码，这里选择<code>Not now</code></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510152354717.png" alt="image-20220510152354717"></p>
+<p>选择跳过</p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510152440028.png" alt="image-20220510152440028"></p>
+<p>选择桌面，我这里选择的是<code>Taskbar</code> 点击<code>ALWAYS</code>，进入桌面后会有个导航栏。</p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510152513651.png" alt="image-20220510152513651"></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510152750282.png" alt="image-20220510152750282"></p>
+<h1 id="Android-调试桥-adb"><a href="#Android-调试桥-adb" class="headerlink" title="Android 调试桥 (adb)"></a>Android 调试桥 (adb)</h1><p>下载Android SDK Platform-Tools是安卓SDK的一个组件，包括安卓的平台界面工具（如adb、fastboot、systrace）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip</span></span><br><span class="line">[root@localhost ~]<span class="comment"># unzip platform-tools-latest-linux.zip -C /opt</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/opt/platform-tools/</span><br></pre></td></tr></table></figure>
+<p>查看虚拟机IP</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># virsh domifaddr  android</span></span><br><span class="line"> Name       MAC address          Protocol     Address</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line"> vnet1      52:54:00:c7:a5:27    ipv4         192.168.122.9/24</span><br></pre></td></tr></table></figure>
+<p>连接设备</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># adb connect 192.168.122.9:5555</span></span><br></pre></td></tr></table></figure>
+<p>查看设备</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># adb devices</span></span><br><span class="line">List of devices attached</span><br><span class="line">192.168.122.9:5555      device</span><br></pre></td></tr></table></figure>
+<p>安装apk</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># adb install v2rayNG_1.1.14.apk</span></span><br><span class="line">Performing Streamed Install</span><br><span class="line">Success</span><br></pre></td></tr></table></figure>
+<p>启动应用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># adb shell am start -n com.v2ray.ang/com.v2ray.ang.ui.MainActivity</span></span><br><span class="line">Starting: Intent &#123; cmp=com.v2ray.ang/.ui.MainActivity &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510155036730.png" alt="image-20220510155036730"></p>
+]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>kvm</tag>
+        <tag>android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu下全命令行部署Android模拟器</title>
+    <url>/posts/a864c7bd.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="平台代号、版本、API-级别和-NDK-版本"><a href="#平台代号、版本、API-级别和-NDK-版本" class="headerlink" title="平台代号、版本、API 级别和 NDK 版本"></a>平台代号、版本、API 级别和 NDK 版本</h2><p>下表列出了代号、对应的版本号以及关联的 API 级别。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">代号</th>
+<th style="text-align:left">版本</th>
+<th style="text-align:left">API 级别/NDK 版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Android12L</td>
+<td style="text-align:left">12.1</td>
+<td style="text-align:left">API 级别 32</td>
+</tr>
+<tr>
+<td style="text-align:left">Android12</td>
+<td style="text-align:left">12</td>
+<td style="text-align:left">API 级别 31</td>
+</tr>
+<tr>
+<td style="text-align:left">Android11</td>
+<td style="text-align:left">11</td>
+<td style="text-align:left">API 级别 30</td>
+</tr>
+<tr>
+<td style="text-align:left">Android10</td>
+<td style="text-align:left">10</td>
+<td style="text-align:left">API 级别 29</td>
+</tr>
+<tr>
+<td style="text-align:left">Pie</td>
+<td style="text-align:left">9</td>
+<td style="text-align:left">API 级别 28</td>
+</tr>
+<tr>
+<td style="text-align:left">Oreo</td>
+<td style="text-align:left">8.1.0</td>
+<td style="text-align:left">API 级别 27</td>
+</tr>
+<tr>
+<td style="text-align:left">Oreo</td>
+<td style="text-align:left">8.0.0</td>
+<td style="text-align:left">API 级别 26</td>
+</tr>
+<tr>
+<td style="text-align:left">Nougat</td>
+<td style="text-align:left">7.1</td>
+<td style="text-align:left">API 级别 25</td>
+</tr>
+<tr>
+<td style="text-align:left">Nougat</td>
+<td style="text-align:left">7.0</td>
+<td style="text-align:left">API 级别 24</td>
+</tr>
+<tr>
+<td style="text-align:left">Marshmallow</td>
+<td style="text-align:left">6.0</td>
+<td style="text-align:left">API 级别 23</td>
+</tr>
+<tr>
+<td style="text-align:left">Lollipop</td>
+<td style="text-align:left">5.1</td>
+<td style="text-align:left">API 级别 22</td>
+</tr>
+<tr>
+<td style="text-align:left">Lollipop</td>
+<td style="text-align:left">5.0</td>
+<td style="text-align:left">API 级别 21</td>
+</tr>
+<tr>
+<td style="text-align:left">KitKat</td>
+<td style="text-align:left">4.4 - 4.4.4</td>
+<td style="text-align:left">API 级别 19</td>
+</tr>
+<tr>
+<td style="text-align:left">Jelly Bean</td>
+<td style="text-align:left">4.3.x</td>
+<td style="text-align:left">API 级别 18</td>
+</tr>
+<tr>
+<td style="text-align:left">Jelly Bean</td>
+<td style="text-align:left">4.2.x</td>
+<td style="text-align:left">API 级别 17</td>
+</tr>
+<tr>
+<td style="text-align:left">Jelly Bean</td>
+<td style="text-align:left">4.1.x</td>
+<td style="text-align:left">API 级别 16</td>
+</tr>
+<tr>
+<td style="text-align:left">Ice Cream Sandwich</td>
+<td style="text-align:left">4.0.3 - 4.0.4</td>
+<td style="text-align:left">API 级别 15，NDK 8</td>
+</tr>
+<tr>
+<td style="text-align:left">Ice Cream Sandwich</td>
+<td style="text-align:left">4.0.1 - 4.0.2</td>
+<td style="text-align:left">API 级别 14，NDK 7</td>
+</tr>
+<tr>
+<td style="text-align:left">Honeycomb</td>
+<td style="text-align:left">3.2.x</td>
+<td style="text-align:left">API 级别 13</td>
+</tr>
+<tr>
+<td style="text-align:left">Honeycomb</td>
+<td style="text-align:left">3.1</td>
+<td style="text-align:left">API 级别 12，NDK 6</td>
+</tr>
+<tr>
+<td style="text-align:left">Honeycomb</td>
+<td style="text-align:left">3.0</td>
+<td style="text-align:left">API 级别 11</td>
+</tr>
+<tr>
+<td style="text-align:left">Gingerbread</td>
+<td style="text-align:left">2.3.3 - 2.3.7</td>
+<td style="text-align:left">API 级别 10</td>
+</tr>
+<tr>
+<td style="text-align:left">Gingerbread</td>
+<td style="text-align:left">2.3 - 2.3.2</td>
+<td style="text-align:left">API 级别 9，NDK 5</td>
+</tr>
+<tr>
+<td style="text-align:left">Froyo</td>
+<td style="text-align:left">2.2.x</td>
+<td style="text-align:left">API 级别 8，NDK 4</td>
+</tr>
+<tr>
+<td style="text-align:left">Eclair</td>
+<td style="text-align:left">2.1</td>
+<td style="text-align:left">API 级别 7，NDK 3</td>
+</tr>
+<tr>
+<td style="text-align:left">Eclair</td>
+<td style="text-align:left">2.0.1</td>
+<td style="text-align:left">API 级别 6</td>
+</tr>
+<tr>
+<td style="text-align:left">Eclair</td>
+<td style="text-align:left">2.0</td>
+<td style="text-align:left">API 级别 5</td>
+</tr>
+<tr>
+<td style="text-align:left">Donut</td>
+<td style="text-align:left">1.6</td>
+<td style="text-align:left">API 级别 4，NDK 2</td>
+</tr>
+<tr>
+<td style="text-align:left">Cupcake</td>
+<td style="text-align:left">1.5</td>
+<td style="text-align:left">API 级别 3，NDK 1</td>
+</tr>
+<tr>
+<td style="text-align:left">（无代号）</td>
+<td style="text-align:left">1.1</td>
+<td style="text-align:left">API 级别 2</td>
+</tr>
+<tr>
+<td style="text-align:left">（无代号）</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">API 级别 1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="安装JDK环境"><a href="#安装JDK环境" class="headerlink" title="安装JDK环境"></a>安装JDK环境</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># wget https://mirrors.huaweicloud.com/java/jdk/8u202-b08/jdk-8u202-linux-x64.tar.gz</span></span><br><span class="line">root@w23ta0-virtual-machine<span class="comment"># tar zxvf jdk-8u202-linux-x64.tar.gz -C /opt</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="string">"/opt/jdk1.8.0_202"</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin"</span></span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</span><br></pre></td></tr></table></figure>
+<h2 id="安装-Android-模拟器"><a href="#安装-Android-模拟器" class="headerlink" title="安装 Android 模拟器"></a>安装 Android 模拟器</h2><h3 id="Command-line-tools"><a href="#Command-line-tools" class="headerlink" title="Command line tools"></a>Command line tools</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># wget https://dl.google.com/android/repository/commandlinetools-linux-8092744_latest.zip</span></span><br><span class="line"></span><br><span class="line">root@w23ta0-virtual-machine<span class="comment"># unzip commandlinetools-linux-8092744_latest.zip -d /opt/</span></span><br><span class="line"></span><br><span class="line">root@w23ta0-virtual-machine<span class="comment"># cd /opt/cmdline-tools/bin</span></span><br></pre></td></tr></table></figure>
+<h3 id="sdkmanager"><a href="#sdkmanager" class="headerlink" title="sdkmanager"></a>sdkmanager</h3><p><code>sdkmanager</code> 是一个命令行工具，您可以用它来查看、安装、更新和卸载 Android SDK 的软件包。</p>
+<p>初始化目录</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># ./sdkmanager --sdk_root=opt/android-sdk --install</span></span><br></pre></td></tr></table></figure>
+<p>接受所有许可证</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># ./sdkmanager --sdk_root=opt/android-sdk --licenses</span></span><br></pre></td></tr></table></figure>
+<p>安装的基本工具</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># ./sdkmanager --sdk_root=opt/android-sdk --install  "platforms;android-29" "build-tools;29.0.0" "platform-tools"  "emulator" "cmdline-tools;latest" "system-images;android-29;default;x86"</span></span><br></pre></td></tr></table></figure>
+<h3 id="avdmanager"><a href="#avdmanager" class="headerlink" title="avdmanager"></a>avdmanager</h3><p><code>avdmanager</code>是一个命令行工具，可以用于从命令行创建和管理 Android 虚拟设备 (AVD)。借助 AVD，您可以定义要在 Android 模拟器中模拟的 Android 手机、Wear OS 手表或 Android TV 设备的特性。</p>
+<p>添加Android SDK环境变量</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> ANDROID_SDK_ROOT=/opt/android-sdk</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$ANDROID_SDK_ROOT</span>/emulator</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$ANDROID_SDK_ROOT</span>/platform-tools/</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$ANDROID_SDK_ROOT</span>/cmdline-tools/latest/bin/</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$ANDROID_SDK_ROOT</span>/build-tools/29.0.0/</span><br></pre></td></tr></table></figure>
+<p>创建新的 AVD</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># echo "no" | avdmanager --verbose create avd --force --name "android-29" --package "system-images;android-29;default;x86"</span></span><br></pre></td></tr></table></figure>
+<p>列出现有的 Android 虚拟设备</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># avdmanager list avd</span></span><br><span class="line">Available Android Virtual Devices:</span><br><span class="line">    Name: android-29</span><br><span class="line">    Path: /root/.android/avd/android-29.avd</span><br><span class="line">  Target: Default Android System Image</span><br><span class="line">          Based on: Android 10.0 (Q) Tag/ABI: default/x86</span><br><span class="line">  Sdcard: 512 MB</span><br></pre></td></tr></table></figure>
+<h2 id="从命令行启动模拟器"><a href="#从命令行启动模拟器" class="headerlink" title="从命令行启动模拟器"></a>从命令行启动模拟器</h2><p>查看 AVD 名称的列表</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># emulator -list-avds</span></span><br><span class="line">android-29</span><br></pre></td></tr></table></figure>
+<p>启动模拟器</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># emulator @android-29 -no-boot-anim -netdelay none -accel on -no-snapshot -wipe-data &amp;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220506154829841.png" alt="image-20220506154829841"></p>
+<h2 id="Android-调试桥-adb"><a href="#Android-调试桥-adb" class="headerlink" title="Android 调试桥 (adb)"></a>Android 调试桥 (adb)</h2><p>Android 调试桥 (adb) 是一种功能多样的命令行工具，可让您与设备进行通信。adb 命令可用于执行各种设备操作（例如安装和调试应用），并提供对 Unix shell（可用来在设备上运行各种命令）的访问权限。</p>
+<p>使用 <code>devices</code> 命令获取目标设备的序列号</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># adb devices</span></span><br><span class="line">List of devices attached</span><br><span class="line">emulator-5554   device</span><br></pre></td></tr></table></figure>
+<p>使用 adb 的 <code>install</code> 命令在模拟器或连接的设备上安装 APK</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># adb install v2rayNG_1.1.14.apk</span></span><br><span class="line">Performing Streamed Install</span><br><span class="line">Success</span><br></pre></td></tr></table></figure>
+<p>获取应用的软件包名称</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># adb shell pm list packages |grep v2ray</span></span><br><span class="line">package:com.v2ray.ang</span><br></pre></td></tr></table></figure>
+<p>获取到APP的详细信息</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># adb shell dumpsys package com.v2ray.ang </span></span><br><span class="line">Activity Resolver Table:</span><br><span class="line">  Full MIME Types:</span><br><span class="line">      text/plain:</span><br><span class="line">        9317857 com.v2ray.ang/.ui.MainActivity filter eb50f9f</span><br><span class="line">          Action: <span class="string">"android.intent.action.SEND"</span></span><br><span class="line">          Category: <span class="string">"android.intent.category.DEFAULT"</span></span><br><span class="line">          Type: <span class="string">"text/plain"</span></span><br></pre></td></tr></table></figure>
+<p>启动应用程序</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># adb shell am start -n com.v2ray.ang/com.v2ray.ang.ui.MainActivity</span></span><br><span class="line">Starting: Intent &#123; cmp=com.v2ray.ang/.ui.MainActivity &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220506155807586.png" alt="image-20220506155807586"></p>
+<p>关闭指定包名的应用程序</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@w23ta0-virtual-machine<span class="comment"># adb shell am  force-stop  com.v2ray.ang</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>kvm</tag>
+        <tag>android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>解决Kafka跨网络NAT传输问题</title>
     <url>/posts/3a642ee8.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><p>客户端与Kafka服务端不在同一个网络区域，无法直接访问。需要通过NAT进行地址映射，将Kafka服务端10.0.0.182地址映射为172.25.0.190，从而客户端与服务端可以正常通信。</p>
@@ -3227,9 +3533,9 @@ Make成功后再src目录下应该有个bnx2.ko模块。</p>
     <title>Hello World</title>
     <url>/posts/4a17b156.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="music"><a href="#music" class="headerlink" title="music"></a>music</h2>
-    <div id="aplayer-IGMcAIsf" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="446935665" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+    <div id="aplayer-aoiiutgj" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="446935665" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
 <h2 id="playlist"><a href="#playlist" class="headerlink" title="playlist"></a>playlist</h2>
-    <div id="aplayer-wemKAjgt" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"></div>
+    <div id="aplayer-guhpoGCr" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"></div>
 <figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!-- 简单示例 (id, server, type)  --&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">meting</span> "60198" "netease" "playlist" %&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- 进阶示例 --&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">meting</span> "60198" "netease" "playlist" "autoplay" "mutex:false" "listmaxheight:340px" "preload:none" "theme:#ad7a86"%&#125;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
