@@ -150,7 +150,7 @@
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/1524701735492412e3jm0.png?imageslim">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/1524701743580w7npzq3n.png?imageslim">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/1524702415304mclenzo9.png?imageslim">
-<meta property="og:updated_time" content="2022-05-10T19:53:57.648Z">
+<meta property="og:updated_time" content="2022-05-10T20:08:50.496Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LoadRunner 11 安装及破解">
 <meta name="twitter:description" content="前提条件内存：2G，硬盘空闲空间10G，安装完成后实际只占不到2G 支持winXP  SP3;32位与64位win7浏览器支持IE6-8,IE9,firefox3 若以前安装过LoadRunner,则将其卸载。 下载介质在HP的官方网站上下载LoadRunner11 的安装程序[T7177-15013.iso]，我的LoadRunner 11下载地址是： http://pan.baidu.com/">
@@ -1146,11 +1146,8 @@ show_date_time();
 
 
   <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
-  <script src="/js/src/Valine.min.js"></script>  //调用刚下载的本地文件以加速加载速度
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
-    //这里改为从本地加载
-  
-  <script src="/js/src/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
@@ -1166,16 +1163,10 @@ show_date_time();
         appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
-        guest_info:['nick'] ,  //评论者只需要提供评论的昵称即可
+        guest_info:['guest'] , 
         pageSize:'10' || 10,
     });
-    //增加以下六行代码去除 power by valine
-    var infoEle = document.querySelector('#comments .info');
-    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
-      infoEle.childNodes.forEach(function(item) {
-        item.parentNode.removeChild(item);
-      });
-    }
+    
   </script>
 
 

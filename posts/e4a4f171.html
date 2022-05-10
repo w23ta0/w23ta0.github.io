@@ -139,7 +139,7 @@
 <meta property="og:description" content="前置条件 准备一台主机。用于运行KVM虚拟机和制作镜像  准备一张系统镜像ISO文件  确保您的系统具有硬件虚拟化扩展 #基于Intel的主机，请使用以下命令验证CPU虚拟化扩展[vmx]是否可用。[user@host]# grep -e &apos;vmx&apos; /proc/cpuinfo#基于AMD的主机，请验证CPU虚拟化扩展[svm]是否可用。[user@host]# grep -e &apos;svm&apos; /pr">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20201109182452.png">
-<meta property="og:updated_time" content="2022-05-10T19:53:57.652Z">
+<meta property="og:updated_time" content="2022-05-10T20:08:50.496Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建OpenStack兼容的qcow2格式镜像">
 <meta name="twitter:description" content="前置条件 准备一台主机。用于运行KVM虚拟机和制作镜像  准备一张系统镜像ISO文件  确保您的系统具有硬件虚拟化扩展 #基于Intel的主机，请使用以下命令验证CPU虚拟化扩展[vmx]是否可用。[user@host]# grep -e &apos;vmx&apos; /proc/cpuinfo#基于AMD的主机，请验证CPU虚拟化扩展[svm]是否可用。[user@host]# grep -e &apos;svm&apos; /pr">
@@ -1196,11 +1196,8 @@ show_date_time();
 
 
   <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
-  <script src="/js/src/Valine.min.js"></script>  //调用刚下载的本地文件以加速加载速度
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
-    //这里改为从本地加载
-  
-  <script src="/js/src/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
@@ -1216,16 +1213,10 @@ show_date_time();
         appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
-        guest_info:['nick'] ,  //评论者只需要提供评论的昵称即可
+        guest_info:['guest'] , 
         pageSize:'10' || 10,
     });
-    //增加以下六行代码去除 power by valine
-    var infoEle = document.querySelector('#comments .info');
-    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
-      infoEle.childNodes.forEach(function(item) {
-        item.parentNode.removeChild(item);
-      });
-    }
+    
   </script>
 
 

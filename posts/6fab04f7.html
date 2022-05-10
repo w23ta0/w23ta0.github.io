@@ -140,7 +140,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20181229141953.png">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20181229145721.png">
-<meta property="og:updated_time" content="2022-05-10T19:53:57.652Z">
+<meta property="og:updated_time" content="2022-05-10T20:08:50.496Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS6 安装配置OpenLDAP Server">
 <meta name="twitter:description" content="安装及配置首先使用如下命令查看是否已经安装 openldap：  # rpm -qa | grep openldap openldap-2.4.40-16.el6.x86_64openldap-servers-sql-2.4.40-16.el6.x86_64openldap-clients-2.4.40-16.el6.x86_64openldap-servers-2.4.40-16.el6.x86">
@@ -1100,11 +1100,8 @@ show_date_time();
 
 
   <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
-  <script src="/js/src/Valine.min.js"></script>  //调用刚下载的本地文件以加速加载速度
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
-    //这里改为从本地加载
-  
-  <script src="/js/src/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
@@ -1120,16 +1117,10 @@ show_date_time();
         appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
-        guest_info:['nick'] ,  //评论者只需要提供评论的昵称即可
+        guest_info:['guest'] , 
         pageSize:'10' || 10,
     });
-    //增加以下六行代码去除 power by valine
-    var infoEle = document.querySelector('#comments .info');
-    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
-      infoEle.childNodes.forEach(function(item) {
-        item.parentNode.removeChild(item);
-      });
-    }
+    
   </script>
 
 

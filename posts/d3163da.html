@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="我最近在玩Docker，一种应用程序容器和Linux的虚拟技术。它太酷了，创建Docker镜像和容器只需要几分钟。所有的工作都是开箱即用的。 在结束我一天的工作之前，我希望能保存下我的工作。但我在Docker的save和export命令之间，我凌乱了。我不知道它们之间有什么区别。所以，我上StackOverflow问了一个问题，接着得到mbarthelemy很棒的回复。 以下是我发掘到的内容：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-10T19:53:57.648Z">
+<meta property="og:updated_time" content="2022-05-10T20:08:50.496Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker的save和export命令的区别">
 <meta name="twitter:description" content="我最近在玩Docker，一种应用程序容器和Linux的虚拟技术。它太酷了，创建Docker镜像和容器只需要几分钟。所有的工作都是开箱即用的。 在结束我一天的工作之前，我希望能保存下我的工作。但我在Docker的save和export命令之间，我凌乱了。我不知道它们之间有什么区别。所以，我上StackOverflow问了一个问题，接着得到mbarthelemy很棒的回复。 以下是我发掘到的内容：">
@@ -1097,11 +1097,8 @@ show_date_time();
 
 
   <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
-  <script src="/js/src/Valine.min.js"></script>  //调用刚下载的本地文件以加速加载速度
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
-    //这里改为从本地加载
-  
-  <script src="/js/src/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
@@ -1117,16 +1114,10 @@ show_date_time();
         appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
-        guest_info:['nick'] ,  //评论者只需要提供评论的昵称即可
+        guest_info:['guest'] , 
         pageSize:'10' || 10,
     });
-    //增加以下六行代码去除 power by valine
-    var infoEle = document.querySelector('#comments .info');
-    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
-      infoEle.childNodes.forEach(function(item) {
-        item.parentNode.removeChild(item);
-      });
-    }
+    
   </script>
 
 

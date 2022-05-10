@@ -141,7 +141,7 @@
 <meta property="og:image" content="http://storage.live.com/items/9A8B8BF501A38A36!1489?filename=%e6%89%80%e6%9c%89%e7%9a%84%e6%8d%a2%e8%a1%8c%e9%83%bd%e6%98%afwindows%e7%9a%84CRLF.jpg">
 <meta property="og:image" content="http://storage.live.com/items/9A8B8BF501A38A36!1490?filename=cpp%20%e8%bd%ac%e6%8d%a2%e4%b8%baUnix%e6%a0%bc%e5%bc%8f.jpg">
 <meta property="og:image" content="http://storage.live.com/items/9A8B8BF501A38A36!1491?filename=%e6%89%80%e6%9c%89%e7%9a%84%e9%83%bd%e6%98%aflinux%e7%9a%84LF%e4%ba%86.jpg">
-<meta property="og:updated_time" content="2022-05-10T19:53:57.648Z">
+<meta property="og:updated_time" content="2022-05-10T20:08:50.492Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="syntax error near unexpected token 的问题">
 <meta name="twitter:description" content="如果你在windows里写的shell脚本放到linux系统里运行就可以会提示如下错误syntax error near unexpected token 这是因为两个平台下面的换行符不一样导致的。所以需要转换下格式，Notepad++就有这个功能。  首先打开Notepad++,让脚本显示所有符号，发现是CR LF  我们需要将windows的格式转为linux格式，做如下操作即可。 编辑-&amp;g">
@@ -1051,11 +1051,8 @@ show_date_time();
 
 
   <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
-  <script src="/js/src/Valine.min.js"></script>  //调用刚下载的本地文件以加速加载速度
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
-    //这里改为从本地加载
-  
-  <script src="/js/src/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
@@ -1071,16 +1068,10 @@ show_date_time();
         appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
-        guest_info:['nick'] ,  //评论者只需要提供评论的昵称即可
+        guest_info:['guest'] , 
         pageSize:'10' || 10,
     });
-    //增加以下六行代码去除 power by valine
-    var infoEle = document.querySelector('#comments .info');
-    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
-      infoEle.childNodes.forEach(function(item) {
-        item.parentNode.removeChild(item);
-      });
-    }
+    
   </script>
 
 
