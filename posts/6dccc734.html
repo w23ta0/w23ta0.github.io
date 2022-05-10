@@ -153,7 +153,7 @@
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510152513651.png">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510152750282.png">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20220510155036730.png">
-<meta property="og:updated_time" content="2022-05-10T20:08:50.496Z">
+<meta property="og:updated_time" content="2022-05-10T20:56:37.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在KVM虚拟机中安装Android-x86模拟器">
 <meta name="twitter:description" content="准备Android-x86的iso镜像可以在http://www.android-x86.org/download 处下载 [root@localhost ~]# cd /opt[root@localhost ~]# wget https://nchc.dl.sourceforge.net/project/android-x86/Release%209.0/android-x86_64-9.0-r">
@@ -1144,14 +1144,12 @@ show_date_time();
 
 
 
-  <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(function (item) {
+    guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
     new Valine({
@@ -1162,10 +1160,10 @@ show_date_time();
         appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
-        guest_info:['guest'] , 
+        guest_info:guest,
         pageSize:'10' || 10,
+		serverURLs: 'https://zsd5a2jt.api.lncldglobal.com' 
     });
-    
   </script>
 
 

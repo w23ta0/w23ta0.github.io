@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="Nginx中upstream有以下几种方式：  轮询(weight=1)  默认选项，当weight不指定时，各服务器weight相同， 每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。 upstream bakend &amp;#123;    server 192.168.1.10;    server 192.168.1.11;&amp;#125;  weight  指定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-10T20:08:50.492Z">
+<meta property="og:updated_time" content="2022-05-10T20:56:37.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx中的upstream轮询机制介绍">
 <meta name="twitter:description" content="Nginx中upstream有以下几种方式：  轮询(weight=1)  默认选项，当weight不指定时，各服务器weight相同， 每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。 upstream bakend &amp;#123;    server 192.168.1.10;    server 192.168.1.11;&amp;#125;  weight  指定">
@@ -1075,14 +1075,12 @@ show_date_time();
 
 
 
-  <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(function (item) {
+    guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
     new Valine({
@@ -1093,10 +1091,10 @@ show_date_time();
         appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
-        guest_info:['guest'] , 
+        guest_info:guest,
         pageSize:'10' || 10,
+		serverURLs: 'https://zsd5a2jt.api.lncldglobal.com' 
     });
-    
   </script>
 
 

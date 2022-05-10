@@ -140,7 +140,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20181229141953.png">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20181229145721.png">
-<meta property="og:updated_time" content="2022-05-10T20:08:50.496Z">
+<meta property="og:updated_time" content="2022-05-10T20:56:37.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS6 安装配置OpenLDAP Server">
 <meta name="twitter:description" content="安装及配置首先使用如下命令查看是否已经安装 openldap：  # rpm -qa | grep openldap openldap-2.4.40-16.el6.x86_64openldap-servers-sql-2.4.40-16.el6.x86_64openldap-clients-2.4.40-16.el6.x86_64openldap-servers-2.4.40-16.el6.x86">
@@ -1099,14 +1099,12 @@ show_date_time();
 
 
 
-  <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(function (item) {
+    guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
     new Valine({
@@ -1117,10 +1115,10 @@ show_date_time();
         appKey: '7kgfognspTtLa2IuJih1EH8y',
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'mm',
-        guest_info:['guest'] , 
+        guest_info:guest,
         pageSize:'10' || 10,
+		serverURLs: 'https://zsd5a2jt.api.lncldglobal.com' 
     });
-    
   </script>
 
 
