@@ -141,7 +141,7 @@
 <meta property="og:image" content="http://storage.live.com/items/9A8B8BF501A38A36!1489?filename=%e6%89%80%e6%9c%89%e7%9a%84%e6%8d%a2%e8%a1%8c%e9%83%bd%e6%98%afwindows%e7%9a%84CRLF.jpg">
 <meta property="og:image" content="http://storage.live.com/items/9A8B8BF501A38A36!1490?filename=cpp%20%e8%bd%ac%e6%8d%a2%e4%b8%baUnix%e6%a0%bc%e5%bc%8f.jpg">
 <meta property="og:image" content="http://storage.live.com/items/9A8B8BF501A38A36!1491?filename=%e6%89%80%e6%9c%89%e7%9a%84%e9%83%bd%e6%98%aflinux%e7%9a%84LF%e4%ba%86.jpg">
-<meta property="og:updated_time" content="2022-05-10T18:45:59.253Z">
+<meta property="og:updated_time" content="2022-05-10T19:25:24.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="syntax error near unexpected token 的问题">
 <meta name="twitter:description" content="如果你在windows里写的shell脚本放到linux系统里运行就可以会提示如下错误syntax error near unexpected token 这是因为两个平台下面的换行符不一样导致的。所以需要转换下格式，Notepad++就有这个功能。  首先打开Notepad++,让脚本显示所有符号，发现是CR LF  我们需要将windows的格式转为linux格式，做如下操作即可。 编辑-&amp;g">
@@ -447,17 +447,6 @@
           
 
           
-          
-             <span id="/posts/a5f7ab26.html" class="leancloud_visitors" data-flag-title="syntax error near unexpected token 的问题">
-               <span class="post-meta-divider">•</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -1050,9 +1039,9 @@ show_date_time();
 
 
 
-  <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
+  
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
@@ -1071,7 +1060,6 @@ show_date_time();
         pageSize:'10' || 10,
     });
   </script>
-
 
 
   
@@ -1398,73 +1386,6 @@ show_date_time();
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .done(function() {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.time + 1);
-              })
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
-                .done(function() {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(1);
-                })
-                .fail(function() {
-                  console.log('Failed to create');
-                });
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI',
-                'X-LC-Key': '7kgfognspTtLa2IuJih1EH8y',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
-            if (localhost.test(document.URL)) return;
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
   
 
   

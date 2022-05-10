@@ -139,7 +139,7 @@
 <meta property="og:description" content="推荐的更新源在安装完Kali后，需要对软件及系统进行更新，选择更新源是是十分重要的，虽然网上存在各种更新源，但是如果是一个新手的话，建议只选择官方的更新源，可以避免学习过程中遇到一些不必要的麻烦，而且目前官方源更新下载的速度也是很快的。 官方源： deb http://http.kali.org/kali kali-rolling main non-free contrib 中科大源： deb h">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/180424/76H7c2ecim.png?imageslim">
-<meta property="og:updated_time" content="2022-05-10T18:45:59.253Z">
+<meta property="og:updated_time" content="2022-05-10T19:25:24.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kali Linux的更新及清理">
 <meta name="twitter:description" content="推荐的更新源在安装完Kali后，需要对软件及系统进行更新，选择更新源是是十分重要的，虽然网上存在各种更新源，但是如果是一个新手的话，建议只选择官方的更新源，可以避免学习过程中遇到一些不必要的麻烦，而且目前官方源更新下载的速度也是很快的。 官方源： deb http://http.kali.org/kali kali-rolling main non-free contrib 中科大源： deb h">
@@ -445,17 +445,6 @@
           
 
           
-          
-             <span id="/posts/5dbca548.html" class="leancloud_visitors" data-flag-title="Kali Linux的更新及清理">
-               <span class="post-meta-divider">•</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -1085,9 +1074,9 @@ show_date_time();
 
 
 
-  <script src="//unpkg.com/leancloud-storage@4.12.2/dist/av-live-query-min.js"></script>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
+  
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
@@ -1106,7 +1095,6 @@ show_date_time();
         pageSize:'10' || 10,
     });
   </script>
-
 
 
   
@@ -1433,73 +1421,6 @@ show_date_time();
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .done(function() {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.time + 1);
-              })
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
-                .done(function() {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(1);
-                })
-                .fail(function() {
-                  console.log('Failed to create');
-                });
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'zsD5a2JtAD95dPxa8BpK56XA-MdYXbMMI',
-                'X-LC-Key': '7kgfognspTtLa2IuJih1EH8y',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
-            if (localhost.test(document.URL)) return;
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
   
 
   
