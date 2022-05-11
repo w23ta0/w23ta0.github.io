@@ -2,24 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://w23ta0.github.io/tags/index.html</loc>
-    
-    <lastmod>2022-05-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://w23ta0.github.io/top/index.html</loc>
-    
-    <lastmod>2022-05-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://w23ta0.github.io/posts/6dccc734.html</loc>
     
     <lastmod>2022-05-11</lastmod>
@@ -281,6 +263,42 @@
   </url>
   
   <url>
+    <loc>http://w23ta0.github.io/posts/4a17b156.html</loc>
+    
+    <lastmod>2022-05-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://w23ta0.github.io/categories/index.html</loc>
+    
+    <lastmod>2022-05-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://w23ta0.github.io/tags/index.html</loc>
+    
+    <lastmod>2022-05-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://w23ta0.github.io/top/index.html</loc>
+    
+    <lastmod>2022-05-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://w23ta0.github.io/posts/a1022384.html</loc>
     
     <lastmod>2022-05-11</lastmod>
@@ -291,6 +309,15 @@
   
   <url>
     <loc>http://w23ta0.github.io/posts/5dbca548.html</loc>
+    
+    <lastmod>2022-05-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://w23ta0.github.io/posts/a5f7ab26.html</loc>
     
     <lastmod>2022-05-11</lastmod>
     
@@ -335,7 +362,25 @@
   </url>
   
   <url>
+    <loc>http://w23ta0.github.io/posts/d14dfb.html</loc>
+    
+    <lastmod>2022-05-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://w23ta0.github.io/posts/7b524d8e.html</loc>
+    
+    <lastmod>2022-05-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://w23ta0.github.io/posts/3123c592.html</loc>
     
     <lastmod>2022-05-11</lastmod>
     
@@ -399,60 +444,6 @@
   
   <url>
     <loc>http://w23ta0.github.io/posts/e3f5fe56.html</loc>
-    
-    <lastmod>2022-05-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://w23ta0.github.io/posts/4a17b156.html</loc>
-    
-    <lastmod>2022-05-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://w23ta0.github.io/baidu_verify_AAcA7CyDGt.html</loc>
-    
-    <lastmod>2022-05-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://w23ta0.github.io/categories/index.html</loc>
-    
-    <lastmod>2022-05-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://w23ta0.github.io/posts/a5f7ab26.html</loc>
-    
-    <lastmod>2022-05-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://w23ta0.github.io/posts/d14dfb.html</loc>
-    
-    <lastmod>2022-05-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://w23ta0.github.io/posts/3123c592.html</loc>
     
     <lastmod>2022-05-11</lastmod>
     
@@ -667,6 +658,13 @@
   </url>
   
   <url>
+    <loc>http://w23ta0.github.io/tags/mysql/</loc>
+    <lastmod>2022-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://w23ta0.github.io/tags/windows/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -794,13 +792,6 @@
   
   <url>
     <loc>http://w23ta0.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
-    <lastmod>2022-05-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://w23ta0.github.io/tags/mysql/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1278,6 +1269,13 @@
   </url>
   
   <url>
+    <loc>http://w23ta0.github.io/categories/database/</loc>
+    <lastmod>2022-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://w23ta0.github.io/categories/Windows/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -1292,7 +1290,21 @@
   </url>
   
   <url>
-    <loc>http://w23ta0.github.io/categories/database/</loc>
+    <loc>http://w23ta0.github.io/categories/database/Mysql/</loc>
+    <lastmod>2022-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://w23ta0.github.io/categories/database/JDBC/</loc>
+    <lastmod>2022-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://w23ta0.github.io/categories/database/SQLServer/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1327,20 +1339,6 @@
   </url>
   
   <url>
-    <loc>http://w23ta0.github.io/categories/database/JDBC/</loc>
-    <lastmod>2022-05-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://w23ta0.github.io/categories/database/Mysql/</loc>
-    <lastmod>2022-05-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://w23ta0.github.io/categories/Linux-Unix/Shell/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -1348,14 +1346,14 @@
   </url>
   
   <url>
-    <loc>http://w23ta0.github.io/categories/database/SQLServer/</loc>
+    <loc>http://w23ta0.github.io/categories/virtualization/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://w23ta0.github.io/categories/virtualization/</loc>
+    <loc>http://w23ta0.github.io/categories/penetration-test/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1376,7 +1374,7 @@
   </url>
   
   <url>
-    <loc>http://w23ta0.github.io/categories/penetration-test/</loc>
+    <loc>http://w23ta0.github.io/categories/virtualization/VMWare/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1390,7 +1388,7 @@
   </url>
   
   <url>
-    <loc>http://w23ta0.github.io/categories/virtualization/VMWare/</loc>
+    <loc>http://w23ta0.github.io/categories/penetration-test/Kali-Linux/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1404,21 +1402,14 @@
   </url>
   
   <url>
-    <loc>http://w23ta0.github.io/categories/authentication/</loc>
-    <lastmod>2022-05-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://w23ta0.github.io/categories/penetration-test/Kali-Linux/</loc>
-    <lastmod>2022-05-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://w23ta0.github.io/categories/virtualization/OpenStack/</loc>
+    <lastmod>2022-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://w23ta0.github.io/categories/authentication/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
