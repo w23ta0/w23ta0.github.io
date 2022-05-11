@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="在许多编程语言中都包含有格式化字符串的功能，比如C和Fortran语言中的格式化输入输出。Python中内置有对字符串进行格式化的操作%。 模板格式化字符串时，Python使用一个字符串作为模板 。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。Python用一个tuple将多个值传递给模板，每个值对应一个格式符。 比如下面的例子： print(&quot;I&apos;m %s. I&apos;m">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-11T11:17:56.561Z">
+<meta property="og:updated_time" content="2022-05-11T11:41:58.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 格式化字符串 (%操作符)">
 <meta name="twitter:description" content="在许多编程语言中都包含有格式化字符串的功能，比如C和Fortran语言中的格式化输入输出。Python中内置有对字符串进行格式化的操作%。 模板格式化字符串时，Python使用一个字符串作为模板 。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。Python用一个tuple将多个值传递给模板，每个值对应一个格式符。 比如下面的例子： print(&quot;I&apos;m %s. I&apos;m">
@@ -1575,29 +1575,18 @@ show_date_time();
 
   
 <script>
-    (function(){
-        var canonicalURL, curProtocol;
-        //Get the <link> tag
-        var x=document.getElementsByTagName("link");
-        //Find the last canonical URL
-        if(x.length > 0){
-            for (i=0;i<x.length;i++){
-                if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
-                    canonicalURL=x[i].href;
-                }
-            }
-        }
-        //Get protocol
-        if (!canonicalURL){
-            curProtocol = window.location.protocol.split(':')[0];
-        }
-        else{
-            curProtocol = canonicalURL.split(':')[0];
-        }
-        //Get current URL if the canonical URL does not exist
-        if (!canonicalURL) canonicalURL = window.location.href;
-        //Assign script content. Replace current URL with the canonical URL
-        !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
 </script>
 
 

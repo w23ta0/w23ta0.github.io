@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="近几天在学习 HTML5 与 CSS3 时，偶然看到了 CSS 中自动为标题添加编号的特性。仔细阅读过 W3Schools 上提供的文档之后，试验了一下，确实非常好用。从此不需再花费精力校对标题编号，可以将时间集中到真正需要做的事情，也避免了手动编号出错的窘态。 这篇博文整理了我搜集的相关知识点，方便希望详细了解的人查看。 涉及内容首先介绍一下本文涉及到的相关 CSS 知识点。其中用到的 CSS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-11T11:17:56.561Z">
+<meta property="og:updated_time" content="2022-05-11T11:41:58.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 CSS 实现标题自动编号">
 <meta name="twitter:description" content="近几天在学习 HTML5 与 CSS3 时，偶然看到了 CSS 中自动为标题添加编号的特性。仔细阅读过 W3Schools 上提供的文档之后，试验了一下，确实非常好用。从此不需再花费精力校对标题编号，可以将时间集中到真正需要做的事情，也避免了手动编号出错的窘态。 这篇博文整理了我搜集的相关知识点，方便希望详细了解的人查看。 涉及内容首先介绍一下本文涉及到的相关 CSS 知识点。其中用到的 CSS">
@@ -1501,29 +1501,18 @@ show_date_time();
 
   
 <script>
-    (function(){
-        var canonicalURL, curProtocol;
-        //Get the <link> tag
-        var x=document.getElementsByTagName("link");
-        //Find the last canonical URL
-        if(x.length > 0){
-            for (i=0;i<x.length;i++){
-                if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
-                    canonicalURL=x[i].href;
-                }
-            }
-        }
-        //Get protocol
-        if (!canonicalURL){
-            curProtocol = window.location.protocol.split(':')[0];
-        }
-        else{
-            curProtocol = canonicalURL.split(':')[0];
-        }
-        //Get current URL if the canonical URL does not exist
-        if (!canonicalURL) canonicalURL = window.location.href;
-        //Assign script content. Replace current URL with the canonical URL
-        !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
 </script>
 
 

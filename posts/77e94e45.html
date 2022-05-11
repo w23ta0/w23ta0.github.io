@@ -143,7 +143,7 @@
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog5c21c103127f6.png">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20181225133349.png">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20181225133548.png">
-<meta property="og:updated_time" content="2022-05-11T11:17:56.561Z">
+<meta property="og:updated_time" content="2022-05-11T11:41:58.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LDAP服务器的概念和原理简单介绍">
 <meta name="twitter:description" content="目录服务目录是一个为查询、浏览和搜索而优化的专业分布式数据库，它呈树状结构组织数据，就好象Linux/Unix系统中的文件目录一样。目录数据库和关系数据库不同，它有优异的读性能，但写性能差，并且没有事务处理、回滚等复杂功能，不适于存储修改频繁的数据。所以目录天生是用来查询的，就好象它的名字一样。 目录服务是由目录数据库和一套访问协议组成的系统。类似以下的信息适合储存在目录中：  企业员工信息，如姓">
@@ -1592,29 +1592,18 @@ show_date_time();
 
   
 <script>
-    (function(){
-        var canonicalURL, curProtocol;
-        //Get the <link> tag
-        var x=document.getElementsByTagName("link");
-        //Find the last canonical URL
-        if(x.length > 0){
-            for (i=0;i<x.length;i++){
-                if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
-                    canonicalURL=x[i].href;
-                }
-            }
-        }
-        //Get protocol
-        if (!canonicalURL){
-            curProtocol = window.location.protocol.split(':')[0];
-        }
-        else{
-            curProtocol = canonicalURL.split(':')[0];
-        }
-        //Get current URL if the canonical URL does not exist
-        if (!canonicalURL) canonicalURL = window.location.href;
-        //Assign script content. Replace current URL with the canonical URL
-        !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
 </script>
 
 

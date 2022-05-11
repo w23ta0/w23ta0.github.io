@@ -152,7 +152,7 @@
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427124935.png">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427125037.png">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427125343.png">
-<meta property="og:updated_time" content="2022-05-11T11:17:56.561Z">
+<meta property="og:updated_time" content="2022-05-11T11:41:58.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在CentOS7上安装SonaeQube7.9">
 <meta name="twitter:description" content="环境准备 SonarQube：sonarqube-7.9.3 数据库：PostgreSQL 10.10 操作系统：CentOS 7.6 JDK版本：java-11-openjdk    sonarqube从7.8起，不再支持mysql sonarqube从7.9起，不再支持jdk11以下版本   安装JDKyum install java-11-openjdk -y 安装PostgreSQL安装R">
@@ -1544,29 +1544,18 @@ show_date_time();
 
   
 <script>
-    (function(){
-        var canonicalURL, curProtocol;
-        //Get the <link> tag
-        var x=document.getElementsByTagName("link");
-        //Find the last canonical URL
-        if(x.length > 0){
-            for (i=0;i<x.length;i++){
-                if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
-                    canonicalURL=x[i].href;
-                }
-            }
-        }
-        //Get protocol
-        if (!canonicalURL){
-            curProtocol = window.location.protocol.split(':')[0];
-        }
-        else{
-            curProtocol = canonicalURL.split(':')[0];
-        }
-        //Get current URL if the canonical URL does not exist
-        if (!canonicalURL) canonicalURL = window.location.href;
-        //Assign script content. Replace current URL with the canonical URL
-        !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
 </script>
 
 

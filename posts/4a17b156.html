@@ -142,7 +142,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/1524464007289y8iyr1c1.png?imageslim">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/1524464294703ojgn0p8f.png?imageslim">
-<meta property="og:updated_time" content="2022-05-11T11:17:56.561Z">
+<meta property="og:updated_time" content="2022-05-11T11:41:58.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello World">
 <meta name="twitter:description" content="for testing something new only">
@@ -499,9 +499,9 @@
 
       
         <h2 id="music"><a href="#music" class="headerlink" title="music"></a>music</h2>
-    <div id="aplayer-rPyARpkc" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="446935665" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+    <div id="aplayer-egrytwbx" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="446935665" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
 <h2 id="playlist"><a href="#playlist" class="headerlink" title="playlist"></a>playlist</h2>
-    <div id="aplayer-ZBFpoyDB" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"></div>
+    <div id="aplayer-pBaNrNmY" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"></div>
 <figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!-- 简单示例 (id, server, type)  --&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">meting</span> "60198" "netease" "playlist" %&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- 进阶示例 --&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">meting</span> "60198" "netease" "playlist" "autoplay" "mutex:false" "listmaxheight:340px" "preload:none" "theme:#ad7a86"%&#125;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -1574,29 +1574,18 @@ show_date_time();
 
   
 <script>
-    (function(){
-        var canonicalURL, curProtocol;
-        //Get the <link> tag
-        var x=document.getElementsByTagName("link");
-        //Find the last canonical URL
-        if(x.length > 0){
-            for (i=0;i<x.length;i++){
-                if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
-                    canonicalURL=x[i].href;
-                }
-            }
-        }
-        //Get protocol
-        if (!canonicalURL){
-            curProtocol = window.location.protocol.split(':')[0];
-        }
-        else{
-            curProtocol = canonicalURL.split(':')[0];
-        }
-        //Get current URL if the canonical URL does not exist
-        if (!canonicalURL) canonicalURL = window.location.href;
-        //Assign script content. Replace current URL with the canonical URL
-        !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
 </script>
 
 

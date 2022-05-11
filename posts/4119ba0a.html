@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="用户与用户组Linux 是一个多用户、多任务的系统，常常有多人同时使用一台机工作，为了保护每个人的隐私权，“文件所有者”的角色就显得相当重要了。 当Linux用户登录系统之后，就会携带一个用户身份（User ID，UID）和一个用户组身份（Group ID，GID），相当于自己的名片。当需要访问文件或程序时，刷一下名片就能知道是否能读、写、执行了。 一般来说，Linux的用户信息保存在/etc/p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-11T11:17:56.561Z">
+<meta property="og:updated_time" content="2022-05-11T11:41:58.412Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础：权限与文件">
 <meta name="twitter:description" content="用户与用户组Linux 是一个多用户、多任务的系统，常常有多人同时使用一台机工作，为了保护每个人的隐私权，“文件所有者”的角色就显得相当重要了。 当Linux用户登录系统之后，就会携带一个用户身份（User ID，UID）和一个用户组身份（Group ID，GID），相当于自己的名片。当需要访问文件或程序时，刷一下名片就能知道是否能读、写、执行了。 一般来说，Linux的用户信息保存在/etc/p">
@@ -1506,29 +1506,18 @@ show_date_time();
 
   
 <script>
-    (function(){
-        var canonicalURL, curProtocol;
-        //Get the <link> tag
-        var x=document.getElementsByTagName("link");
-        //Find the last canonical URL
-        if(x.length > 0){
-            for (i=0;i<x.length;i++){
-                if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
-                    canonicalURL=x[i].href;
-                }
-            }
-        }
-        //Get protocol
-        if (!canonicalURL){
-            curProtocol = window.location.protocol.split(':')[0];
-        }
-        else{
-            curProtocol = canonicalURL.split(':')[0];
-        }
-        //Get current URL if the canonical URL does not exist
-        if (!canonicalURL) canonicalURL = window.location.href;
-        //Assign script content. Replace current URL with the canonical URL
-        !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
 </script>
 
 
