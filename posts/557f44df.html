@@ -144,7 +144,7 @@
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/virtualization.png">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/docker.png">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/image-20201113161150684.png">
-<meta property="og:updated_time" content="2022-05-11T09:46:12.087Z">
+<meta property="og:updated_time" content="2022-05-11T11:17:56.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker简介概述">
 <meta name="twitter:description" content="Docker 简介Docker 最初是 dotCloud 公司创始人 Solomon Hykes 在法国期间发起的一个公司内部项目，它是基于 dotCloud 公司多年云服务技术的一次革新，并于 2013 年 3 月以 Apache 2.0 授权协议开源，主要项目代码在 GitHub 上进行维护。Docker 项目后来还加入了 Linux 基金会，并成立推动 开放容器联盟（OCI）。 Docker">
@@ -1563,18 +1563,29 @@ show_date_time();
 
   
 <script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+    (function(){
+        var canonicalURL, curProtocol;
+        //Get the <link> tag
+        var x=document.getElementsByTagName("link");
+        //Find the last canonical URL
+        if(x.length > 0){
+            for (i=0;i<x.length;i++){
+                if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+                    canonicalURL=x[i].href;
+                }
+            }
+        }
+        //Get protocol
+        if (!canonicalURL){
+            curProtocol = window.location.protocol.split(':')[0];
+        }
+        else{
+            curProtocol = canonicalURL.split(':')[0];
+        }
+        //Get current URL if the canonical URL does not exist
+        if (!canonicalURL) canonicalURL = window.location.href;
+        //Assign script content. Replace current URL with the canonical URL
+        !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
 </script>
 
 

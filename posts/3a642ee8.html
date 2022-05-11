@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="环境说明客户端与Kafka服务端不在同一个网络区域，无法直接访问。需要通过NAT进行地址映射，将Kafka服务端10.0.0.182地址映射为172.25.0.190，从而客户端与服务端可以正常通信。    Kafka客户端 NAT映射地址 Kafka服务端     172.16.0.233 172.25.0.190 10.0.0.182    问题现象防火墙策略已经开通，客户端可以ping通服务">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-11T09:46:12.087Z">
+<meta property="og:updated_time" content="2022-05-11T11:17:56.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决Kafka跨网络NAT传输问题">
 <meta name="twitter:description" content="环境说明客户端与Kafka服务端不在同一个网络区域，无法直接访问。需要通过NAT进行地址映射，将Kafka服务端10.0.0.182地址映射为172.25.0.190，从而客户端与服务端可以正常通信。    Kafka客户端 NAT映射地址 Kafka服务端     172.16.0.233 172.25.0.190 10.0.0.182    问题现象防火墙策略已经开通，客户端可以ping通服务">
@@ -1513,18 +1513,29 @@ show_date_time();
 
   
 <script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+    (function(){
+        var canonicalURL, curProtocol;
+        //Get the <link> tag
+        var x=document.getElementsByTagName("link");
+        //Find the last canonical URL
+        if(x.length > 0){
+            for (i=0;i<x.length;i++){
+                if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+                    canonicalURL=x[i].href;
+                }
+            }
+        }
+        //Get protocol
+        if (!canonicalURL){
+            curProtocol = window.location.protocol.split(':')[0];
+        }
+        else{
+            curProtocol = canonicalURL.split(':')[0];
+        }
+        //Get current URL if the canonical URL does not exist
+        if (!canonicalURL) canonicalURL = window.location.href;
+        //Assign script content. Replace current URL with the canonical URL
+        !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
 </script>
 
 

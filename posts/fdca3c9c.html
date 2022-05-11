@@ -145,7 +145,7 @@
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/1524445621122qgtwxxuu.png?imageslim">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/1524445552719wqji9ayl.png?imageslim">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/1524445576787h0baw8an.png?imageslim">
-<meta property="og:updated_time" content="2022-05-11T09:46:12.087Z">
+<meta property="og:updated_time" content="2022-05-11T11:17:56.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何成为一个通晓多种编程语言的程序员">
 <meta name="twitter:description" content="学习一门新的语言是一种冒险。我总是热衷于尝试新的东西——学习新的语法，了解不同的模式，乃至彻底改变思维方式。不幸的是，许多开发人员对此不以为然，甚至可能是深恶痛绝的——学习新语言，就得走出舒适区，花时间花精力来学习新的理念和方法。 这段日子，我每天都要用大约5种不同的语言来写不同的项目！  我应该先学哪种语言？有关这方面的讨论真可谓数不胜数。很多刚进入编程社区的初学者，都会问这个问题，简直就是前赴">
@@ -1567,18 +1567,29 @@ show_date_time();
 
   
 <script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+    (function(){
+        var canonicalURL, curProtocol;
+        //Get the <link> tag
+        var x=document.getElementsByTagName("link");
+        //Find the last canonical URL
+        if(x.length > 0){
+            for (i=0;i<x.length;i++){
+                if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+                    canonicalURL=x[i].href;
+                }
+            }
+        }
+        //Get protocol
+        if (!canonicalURL){
+            curProtocol = window.location.protocol.split(':')[0];
+        }
+        else{
+            curProtocol = canonicalURL.split(':')[0];
+        }
+        //Get current URL if the canonical URL does not exist
+        if (!canonicalURL) canonicalURL = window.location.href;
+        //Assign script content. Replace current URL with the canonical URL
+        !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
 </script>
 
 

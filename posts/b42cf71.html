@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="在管理服务器时，我通常选择使用 SSH 方式。以下是一则 SSH 使用技巧，希望对你有用。 创建快捷方式当你在执行 ssh 命令登录服务器时，有没有被需要输入命令后面的一长串参数感到厌烦呢？比如，名为 serveradmin@domain.com 的用户要登录到 example.com 主机上，需执行： ssh serveradmin@domain.com@example.com 你当然可以使用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-11T09:46:12.083Z">
+<meta property="og:updated_time" content="2022-05-11T11:17:56.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH 使用技巧一则:创建快捷方式">
 <meta name="twitter:description" content="在管理服务器时，我通常选择使用 SSH 方式。以下是一则 SSH 使用技巧，希望对你有用。 创建快捷方式当你在执行 ssh 命令登录服务器时，有没有被需要输入命令后面的一长串参数感到厌烦呢？比如，名为 serveradmin@domain.com 的用户要登录到 example.com 主机上，需执行： ssh serveradmin@domain.com@example.com 你当然可以使用">
@@ -1486,18 +1486,29 @@ show_date_time();
 
   
 <script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+    (function(){
+        var canonicalURL, curProtocol;
+        //Get the <link> tag
+        var x=document.getElementsByTagName("link");
+        //Find the last canonical URL
+        if(x.length > 0){
+            for (i=0;i<x.length;i++){
+                if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+                    canonicalURL=x[i].href;
+                }
+            }
+        }
+        //Get protocol
+        if (!canonicalURL){
+            curProtocol = window.location.protocol.split(':')[0];
+        }
+        else{
+            curProtocol = canonicalURL.split(':')[0];
+        }
+        //Get current URL if the canonical URL does not exist
+        if (!canonicalURL) canonicalURL = window.location.href;
+        //Assign script content. Replace current URL with the canonical URL
+        !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
 </script>
 
 

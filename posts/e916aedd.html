@@ -143,7 +143,7 @@
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog81b78497jw1eic3rqwb6mj20qj0dzwfu.jpg">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog81b78497jw1eic3rr7syaj20nv0azwf8.jpg">
 <meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog81b78497jw1eic3rpycyxj20l60b1myh.jpg">
-<meta property="og:updated_time" content="2022-05-11T09:46:12.083Z">
+<meta property="og:updated_time" content="2022-05-11T11:17:56.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础：文件系统">
 <meta name="twitter:description" content="我们知道不同的操作系统所使用的文件系统是不一样的。举例来说，Windows 98 以前所使用的是文件系统是 FAT，Windows 2000 以后的版本有所谓的 NTFS 文件系统。至于 Linux 的正规文件系统则为 Ext2（Linux second extended file system，Ext2fs）。之后又出现了改进版的 Ext3 和 Ext4 ，总体上变化不大。 文件系统的对比我们经">
@@ -1501,18 +1501,29 @@ show_date_time();
 
   
 <script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+    (function(){
+        var canonicalURL, curProtocol;
+        //Get the <link> tag
+        var x=document.getElementsByTagName("link");
+        //Find the last canonical URL
+        if(x.length > 0){
+            for (i=0;i<x.length;i++){
+                if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+                    canonicalURL=x[i].href;
+                }
+            }
+        }
+        //Get protocol
+        if (!canonicalURL){
+            curProtocol = window.location.protocol.split(':')[0];
+        }
+        else{
+            curProtocol = canonicalURL.split(':')[0];
+        }
+        //Get current URL if the canonical URL does not exist
+        if (!canonicalURL) canonicalURL = window.location.href;
+        //Assign script content. Replace current URL with the canonical URL
+        !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
 </script>
 
 
