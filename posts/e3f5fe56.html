@@ -140,12 +140,12 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="计算机的启动是一个非常复杂的过程，从打开电源到桌面的显示，需要经过一系列不可或缺的过程，了解这些过程有助于我们更好地理解操作系统，也有助于我们修复系统可能出现的问题。 启动流程一览我们先给出 Linux 启动流程的总览图，然后再每一个模块展开说明。  BIOS当我们按下电源按键后，计算机硬件会自动读取主板上的BIOS（Basic Input/Output System）来加载硬件信息以及硬件系统的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog81b78497jw1eic3rqn72tj20hf06774l.jpg">
-<meta property="og:updated_time" content="2022-05-11T14:11:59.848Z">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/81b78497jw1eic3rqn72tj20hf06774l.jpg">
+<meta property="og:updated_time" content="2022-05-13T05:59:16.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础：启动流程">
 <meta name="twitter:description" content="计算机的启动是一个非常复杂的过程，从打开电源到桌面的显示，需要经过一系列不可或缺的过程，了解这些过程有助于我们更好地理解操作系统，也有助于我们修复系统可能出现的问题。 启动流程一览我们先给出 Linux 启动流程的总览图，然后再每一个模块展开说明。  BIOS当我们按下电源按键后，计算机硬件会自动读取主板上的BIOS（Basic Input/Output System）来加载硬件信息以及硬件系统的">
-<meta name="twitter:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog81b78497jw1eic3rqn72tj20hf06774l.jpg">
+<meta name="twitter:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/81b78497jw1eic3rqn72tj20hf06774l.jpg">
 
 
 
@@ -374,7 +374,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="w23ta0">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -502,7 +502,7 @@
       
         <p>计算机的启动是一个非常复杂的过程，从打开电源到桌面的显示，需要经过一系列不可或缺的过程，了解这些过程有助于我们更好地理解操作系统，也有助于我们修复系统可能出现的问题。</p>
 <h2 id="启动流程一览"><a href="#启动流程一览" class="headerlink" title="启动流程一览"></a>启动流程一览</h2><p>我们先给出 Linux 启动流程的总览图，然后再每一个模块展开说明。
-<img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog81b78497jw1eic3rqn72tj20hf06774l.jpg" alt="图片描述"></p>
+<img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/81b78497jw1eic3rqn72tj20hf06774l.jpg" alt="图片描述"></p>
 <h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><p>当我们按下电源按键后，计算机硬件会自动读取主板上的BIOS（Basic Input/Output System）来加载硬件信息以及硬件系统的自我测试。BIOS也是一套程序，它知道如何与硬件进行交互。BIOS首先会对硬件进行检查，判断计算机硬件是否能满足运行的基本条件，这叫做“硬件自检”（Power-On Self-Test，简称 POST）。</p>
 <p>硬件自检后，BIOS 会将控制权交给下一段启动程序。这时，BIOS需要知道，”下一阶段的启动程序”具体存放在哪一个设备。也就是说，BIOS需要有一个外部存储设备的排序，排在前面的设备就是优先转交控制权的设备。这种排序叫做”启动顺序”（Boot Sequence）。</p>
 <p>因此，BIOS按照”启动顺序”，把控制权转交给排在第一位的存储设备。</p>
@@ -734,7 +734,7 @@ init 启动 run-level 的各个服务；
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <a href="/" class="site-author-image" rel="start" style="border:none">
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="w23ta0" title>
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="w23ta0" title>
               </a>
             
               <p class="site-author-name" itemprop="name">w23ta0</p>

@@ -140,18 +140,18 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="环境准备   IP地址 系统 主机名     172.16.0.245 CentOS7.6 k8s-master   172.16.0.246 CentOS7.6 k8s-node1   172.16.0.247 CentOS7.6 k8s-node2    在主节点上执行以下步骤停用SELinux和防火墙服务使用以下命令登录到您的kubernetes主节点并设置主机名并禁用selinux ~]#">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530000416.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530002239.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530131147.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530132409.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530143826.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530144144.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530144516.png">
-<meta property="og:updated_time" content="2022-05-11T14:11:59.848Z">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530000416.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530002239.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530131147.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530132409.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530143826.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530144144.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530144516.png">
+<meta property="og:updated_time" content="2022-05-13T05:59:16.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在CentOS7上安装Kubernetes (k8s) 1.8">
 <meta name="twitter:description" content="环境准备   IP地址 系统 主机名     172.16.0.245 CentOS7.6 k8s-master   172.16.0.246 CentOS7.6 k8s-node1   172.16.0.247 CentOS7.6 k8s-node2    在主节点上执行以下步骤停用SELinux和防火墙服务使用以下命令登录到您的kubernetes主节点并设置主机名并禁用selinux ~]#">
-<meta name="twitter:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530000416.png">
+<meta name="twitter:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530000416.png">
 
 
 
@@ -380,7 +380,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="w23ta0">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -566,11 +566,11 @@
 <p>参数说明</p>
 <figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">--apiserver-advertise-address：表示apiserver对外的地址是什么，默认是<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line">--apiserver-bind-port：表示apiserver的端口是什么，默认是<span class="number">6443</span></span><br><span class="line">--cert-dir：加载证书的目录，默认在/etc/kubernetes/pki</span><br><span class="line">--config：配置文件</span><br><span class="line">--ignore-preflight-errors：在预检中如果有错误可以忽略掉，比如忽略 IsPrivilegedUser,Swap.等</span><br><span class="line">--kubernetes-version：指定要初始化k8s的版本信息是什么 </span><br><span class="line">--pod-network-cidr ：指定pod使用哪个网段，默认使用<span class="number">10.244</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">16</span></span><br><span class="line">--service-cidr：指定service组件使用哪个网段，默认<span class="number">10.96</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">12</span></span><br></pre></td></tr></table></figure>
 <p>上面命令的输出如下所示</p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530000416.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530000416.png" alt></p>
 <p>正如我们在输出中看到的那样，kubernetes master已成功初始化。 执行以下命令以将群集用作root用户。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@k8s-master ~]<span class="comment"># mkdir -p $HOME/.kube</span></span><br><span class="line">[root@k8s-master ~]<span class="comment"># cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</span></span><br><span class="line">[root@k8s-master ~]<span class="comment"># chown $(id -u):$(id -g) $HOME/.kube/config</span></span><br></pre></td></tr></table></figure>
 <h3 id="将pod网络部署到集群"><a href="#将pod网络部署到集群" class="headerlink" title="将pod网络部署到集群"></a>将pod网络部署到集群</h3><p>尝试运行以下命令以获取集群和Pod的状态。</p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530002239.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530002239.png" alt></p>
 <p>要准备好群集状态并运行kube-dns状态，请部署Pod网络，以使不同主机的容器相互通信。 POD网络是工作节点之间的覆盖网络。</p>
 <p>运行下面的命令来部署网络</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@k8s-master ~]<span class="comment"># export kubever=$(kubectl version | base64 | tr -d '\n')</span></span><br><span class="line">[root@k8s-master ~]<span class="comment"># kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"</span></span><br><span class="line">serviceaccount <span class="string">"weave-net"</span> created</span><br><span class="line">clusterrole <span class="string">"weave-net"</span> created</span><br><span class="line">clusterrolebinding <span class="string">"weave-net"</span> created</span><br><span class="line">daemonset <span class="string">"weave-net"</span> created</span><br><span class="line">[root@k8s-master ~]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
@@ -588,10 +588,10 @@
 <h3 id="现在将工作程序节点加入主节点"><a href="#现在将工作程序节点加入主节点" class="headerlink" title="现在将工作程序节点加入主节点"></a>现在将工作程序节点加入主节点</h3><p>要将工作程序节点连接到主节点，需要令牌。 只要kubernetes master初始化了，那么在输出中我们就会得到命令和令牌。 复制该命令并在两个节点上运行。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@k8s-node1 ~]<span class="comment"># kubeadm  join 172.16.0.245:6443 --token m9fx3v.6hmjql19cxsonz6q \</span></span><br><span class="line">&gt; --discovery-token-ca-cert-hash sha256:e2039d59f36f8d444e03beb91d82b7be4868d4abfdf0bf28f655fa2eac1607fd</span><br></pre></td></tr></table></figure>
 <p>上面命令的输出如下所示</p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530131147.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530131147.png" alt></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@k8s-node2 ~]<span class="comment"># kubeadm  join 172.16.0.245:6443 --token m9fx3v.6hmjql19cxsonz6q \</span></span><br><span class="line">&gt; --discovery-token-ca-cert-hash sha256:e2039d59f36f8d444e03beb91d82b7be4868d4abfdf0bf28f655fa2eac1607fd</span><br></pre></td></tr></table></figure>
 <p>输出如下所示</p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530132409.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530132409.png" alt></p>
 <p>现在使用kubectl命令从主节点验证节点状态</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@k8s-master ~]<span class="comment"># kubectl  get node</span></span><br><span class="line">NAME         STATUS   ROLES    AGE     VERSION</span><br><span class="line">k8s-master   Ready    master   12h     v1.18.3</span><br><span class="line">k8s-node1    Ready    &lt;none&gt;   2m9s    v1.18.3</span><br><span class="line">k8s-node2    Ready    &lt;none&gt;   2m12s   v1.18.3</span><br><span class="line">[root@k8s-master ~]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
 <p>我们可以看到，主节点和工作节点都处于就绪状态。这表明kubernetes 1.8已经成功安装，并且我们已经成功连接了两个工作节点。现在我们可以创建pods和服务。</p>
@@ -608,7 +608,7 @@
 <p>由于 dashboard 默认是自建的 https 证书，该证书是不受浏览器信任的，所以我们需要强制跳转就可以了。</p>
 </blockquote>
 <p>默认 dashboard 会跳转到登录页面，我们可以看到 dashboard 提供了<code>Kubeconfig</code>和<code>token</code>两种登录方式</p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530143826.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530143826.png" alt></p>
 <h3 id="身份认证"><a href="#身份认证" class="headerlink" title="身份认证"></a>身份认证</h3><p>登录 dashboard 的时候支持 Kubeconfig 和token 两种认证方式，Kubeconfig 中也依赖token 字段，所以生成token 这一步是必不可少的。</p>
 <h4 id="生成token"><a href="#生成token" class="headerlink" title="生成token"></a>生成token</h4><p>使用下面的yaml文件创建<code>admin-user</code>用户并赋予<code>cluster-admin</code>角色权限，然后就可以通过token 登陆dashbaord，这种认证方式本质实际上是通过Service Account 的身份认证加上Bearer token请求 API server 的方式实现，参考<a href="https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md" target="_blank" rel="noopener">创建示例用户</a>和<a href="https://kubernetes.io/docs/admin/authentication/" target="_blank" rel="noopener">Kubernetes 中的认证</a>。</p>
 <blockquote>
@@ -628,9 +628,9 @@
 <p>它应该打印如下内容</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Name:         admin-user-token-44nrl</span><br><span class="line">Namespace:    kubernetes-dashboard</span><br><span class="line">Labels:       &lt;none&gt;</span><br><span class="line">Annotations:  kubernetes.io/service-account.name: admin-user</span><br><span class="line">              kubernetes.io/service-account.uid: dbe369d8-c1fa-4ce7-ac34-37f052952f66</span><br><span class="line"></span><br><span class="line">Type:  kubernetes.io/service-account-token</span><br><span class="line"></span><br><span class="line">Data</span><br><span class="line">====</span><br><span class="line">ca.crt:     1025 bytes</span><br><span class="line">namespace:  20 bytes</span><br><span class="line">token:      eyJhbGciOiJSUzI1NiIsImtpZCI6InZSVzNRYXN4bGoyVHdkNlVqOFk5LUxhWGRTRGwwaFZiaDkxUzFNZGRka2MifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLTQ0bnJsIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJkYmUzNjlkOC1jMWZhLTRjZTctYWMzNC0zN2YwNTI5NTJmNjYiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.VpEI6783d2ObE-7rR8virma7z_lZ9z8RCTVCTD7oVATKAjHk74yo_-UOicOKK1p9ARekJw_nMxC4fAJOzQeNUQ2LsZsQXFVZ_oJjOjnOpgUi0TjBz6QHKtManLXp0TO3MQjXc6IOErA9enhhN04q58Cc0vJG3OlH96EQjYpqH3hOOK7OguZkzsTvFYSH8agFdBgRL6LZjusdZ1GQozmX2oNNLwAz6o_Ddht-tpHzmnEKJQKO24H_tHVqvGxTw7ljqSfBWscsigLlO0J_U4IC4vL1ALVp8DLN7LhSOLgUiDMzCYtcjqbHMQBsQN7ozk5pIvAGS1kcdlQia3ZFJ8pOTA</span><br></pre></td></tr></table></figure>
 <h4 id="登录Dashboard"><a href="#登录Dashboard" class="headerlink" title="登录Dashboard"></a>登录Dashboard</h4><p>现在复制token并将其粘贴到登录屏幕上的Enter token字段中。</p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530144144.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530144144.png" alt></p>
 <p>点击登录按钮，正如你所见，您现在以管理员身份登录。</p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200530144516.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200530144516.png" alt></p>
 
       
     </div>
@@ -833,7 +833,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <a href="/" class="site-author-image" rel="start" style="border:none">
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="w23ta0" title>
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="w23ta0" title>
               </a>
             
               <p class="site-author-name" itemprop="name">w23ta0</p>

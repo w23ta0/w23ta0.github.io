@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="查了半天系统环境变量HISTTIMEFORMAT丝毫不见踪迹 原来在bash man中才有收录 #man bash HISTTIMEFORMAT If this variable is set and not null, its value is used as a format string for strftime(3) to print the time stamp associated w">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-11T14:11:59.848Z">
+<meta property="og:updated_time" content="2022-05-13T05:59:16.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="history命令显示时间记录">
 <meta name="twitter:description" content="查了半天系统环境变量HISTTIMEFORMAT丝毫不见踪迹 原来在bash man中才有收录 #man bash HISTTIMEFORMAT If this variable is set and not null, its value is used as a format string for strftime(3) to print the time stamp associated w">
@@ -372,7 +372,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="w23ta0">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -472,7 +472,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  283
+                  282
                 </span>
               
 
@@ -499,9 +499,11 @@
 
       
         <p>查了半天系统环境变量<code>HISTTIMEFORMAT</code>丝毫不见踪迹 原来在<code>bash man</code>中才有收录
-<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line"><span class="comment">#man bash</span></span><br><span class="line"> HISTTIMEFORMAT</span><br><span class="line"> If this <span class="built_in">variable</span> is <span class="built_in">set</span> <span class="keyword">and</span> <span class="keyword">not</span> <span class="literal">null</span>, its <span class="built_in">value</span> is used <span class="keyword">as</span> <span class="keyword">a</span> <span class="built_in">format</span> <span class="keyword">string</span> <span class="keyword">for</span> strftime(<span class="number">3</span>) <span class="built_in">to</span> print <span class="keyword">the</span> <span class="built_in">time</span> stamp associated <span class="keyword">with</span> <span class="keyword">each</span> history entry displayed <span class="keyword">by</span> <span class="keyword">the</span> history builtin. If this <span class="built_in">variable</span> is <span class="built_in">set</span>, <span class="built_in">time</span> stamps are written <span class="built_in">to</span> <span class="keyword">the</span> history <span class="built_in">file</span> so they may be preserved across <span class="built_in">shell</span> sessions.</span><br><span class="line"></span><br><span class="line">如果这个变量被设置，且不为空,使用它的值作为格式字符串strftime（<span class="number">3</span>）打印时间戳与历史命令内建显示的每个条目相关联的历史.如果这个变量被设置，时间戳会被写入历史文件，这样的话他们可能会保留在<span class="built_in">shell</span>会话。</span><br><span class="line">``</span><br><span class="line"></span><br><span class="line">查看HISTTIMEFORMAT具体参数</span><br><span class="line">​```bash</span><br><span class="line"><span class="comment">#man strftime</span></span><br></pre></td></tr></table></figure></p>
-<p>取了两条记录
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">%F Equivalent to %Y-%m-%d (the ISO 8601 date format). (C99)</span><br><span class="line">%T The time <span class="keyword">in</span> 24-hour notation (%H:%M:%S). (SU)</span><br><span class="line"></span><br><span class="line">[root@jerome-1 conf]<span class="comment"># HISTTIMEFORMAT="%F %T"</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#man bash</span></span><br><span class="line"> HISTTIMEFORMAT</span><br><span class="line"> If this variable is <span class="built_in">set</span> and not null, its value is used as a format string <span class="keyword">for</span> strftime(3) to <span class="built_in">print</span> the time stamp associated with each <span class="built_in">history</span> entry displayed by the <span class="built_in">history</span> <span class="built_in">builtin</span>. If this variable is <span class="built_in">set</span>, time stamps are written to the <span class="built_in">history</span> file so they may be preserved across shell sessions.</span><br><span class="line"></span><br><span class="line">如果这个变量被设置，且不为空,使用它的值作为格式字符串strftime（3）打印时间戳与历史命令内建显示的每个条目相关联的历史.如果这个变量被设置，时间戳会被写入历史文件，这样的话他们可能会保留在shell会话。</span><br></pre></td></tr></table></figure></p>
+<p>查看HISTTIMEFORMAT具体参数</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#man strftime</span></span><br></pre></td></tr></table></figure>
+<p>取了两条记录</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">%F Equivalent to %Y-%m-%d (the ISO 8601 date format). (C99)</span><br><span class="line">%T The time <span class="keyword">in</span> 24-hour notation (%H:%M:%S). (SU)</span><br><span class="line"></span><br><span class="line">[root@jerome-1 conf]<span class="comment"># HISTTIMEFORMAT="%F %T"</span></span><br></pre></td></tr></table></figure>
 <p>常用到的一些显示方式</p>
 <p>下面这条相当于上面的方式
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@jerome-1 conf]<span class="comment"># HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S"</span></span><br><span class="line">[root@jerome-1 conf]<span class="comment"># history | tail</span></span><br><span class="line">1091 2011-03-17 12:57:57 <span class="built_in">history</span></span><br></pre></td></tr></table></figure></p>
@@ -696,7 +698,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <a href="/" class="site-author-image" rel="start" style="border:none">
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="w23ta0" title>
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="w23ta0" title>
               </a>
             
               <p class="site-author-name" itemprop="name">w23ta0</p>

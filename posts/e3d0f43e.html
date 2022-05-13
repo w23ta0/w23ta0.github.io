@@ -132,18 +132,18 @@
 
 
 
-<meta name="description" content="当前WEB服务器中联接次数最多的ip地址 #netstat -ntu |awk &amp;apos;{print $5}&amp;apos; |sort | uniq -c| sort -nr 查看日志中访问次数最多的前10个IP #cat access.log |cut -d &amp;apos; &amp;apos; -f 1 |sort |uniq -c | sort -nr | awk &amp;apos;{print $0 }">
+<meta name="description" content="当前WEB服务器中联接次数最多的ip地址 $ netstat -ntu |awk &apos;&amp;#123;print $5&amp;#125;&apos; |sort | uniq -c| sort -nr 查看日志中访问次数最多的前10个IP $ cat access.log |cut -d &apos; &apos; -f 1 |sort |uniq -c | sort -nr | awk &apos;&amp;#123;print $0 &amp;#125;&apos; |">
 <meta name="keywords" content="apache,log">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Apache访问日志分析">
 <meta property="og:url" content="https://w23ta0.github.io/posts/e3d0f43e.html">
 <meta property="og:site_name" content="w23ta0&#39;s blog">
-<meta property="og:description" content="当前WEB服务器中联接次数最多的ip地址 #netstat -ntu |awk &amp;apos;{print $5}&amp;apos; |sort | uniq -c| sort -nr 查看日志中访问次数最多的前10个IP #cat access.log |cut -d &amp;apos; &amp;apos; -f 1 |sort |uniq -c | sort -nr | awk &amp;apos;{print $0 }">
+<meta property="og:description" content="当前WEB服务器中联接次数最多的ip地址 $ netstat -ntu |awk &apos;&amp;#123;print $5&amp;#125;&apos; |sort | uniq -c| sort -nr 查看日志中访问次数最多的前10个IP $ cat access.log |cut -d &apos; &apos; -f 1 |sort |uniq -c | sort -nr | awk &apos;&amp;#123;print $0 &amp;#125;&apos; |">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-11T14:11:59.848Z">
+<meta property="og:updated_time" content="2022-05-13T05:59:16.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Apache访问日志分析">
-<meta name="twitter:description" content="当前WEB服务器中联接次数最多的ip地址 #netstat -ntu |awk &amp;apos;{print $5}&amp;apos; |sort | uniq -c| sort -nr 查看日志中访问次数最多的前10个IP #cat access.log |cut -d &amp;apos; &amp;apos; -f 1 |sort |uniq -c | sort -nr | awk &amp;apos;{print $0 }">
+<meta name="twitter:description" content="当前WEB服务器中联接次数最多的ip地址 $ netstat -ntu |awk &apos;&amp;#123;print $5&amp;#125;&apos; |sort | uniq -c| sort -nr 查看日志中访问次数最多的前10个IP $ cat access.log |cut -d &apos; &apos; -f 1 |sort |uniq -c | sort -nr | awk &apos;&amp;#123;print $0 &amp;#125;&apos; |">
 
 
 
@@ -372,7 +372,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="w23ta0">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -510,26 +510,26 @@
 
       
         <p>当前WEB服务器中联接次数最多的ip地址</p>
-<pre><code>#netstat -ntu |awk &apos;{print $5}&apos; |sort | uniq -c| sort -nr
-</code></pre><p>查看日志中访问次数最多的前10个IP</p>
-<pre><code>#cat access.log |cut -d &apos; &apos; -f 1 |sort |uniq -c | sort -nr | awk &apos;{print $0 }&apos; | head -n 10 |less
-</code></pre><p>查看日志中出现100次以上的IP</p>
-<pre><code>#cat access.log |cut -d &apos; &apos; -f 1 |sort |uniq -c | awk &apos;{if ($1 &gt; 100) print $0}&apos;｜sort -nr |less
-</code></pre><p>查看最近访问量最高的文件</p>
-<pre><code>#cat access.log |tail -10000|awk &apos;{print $7}&apos;|sort|uniq -c|sort -nr|less
-</code></pre><p>查看日志中访问超过100次的页面</p>
-<pre><code>#cat access.log | cut -d &apos; &apos; -f 7 | sort |uniq -c | awk &apos;{if ($1 &gt; 100) print $0}&apos; | less
-</code></pre><p>统计某url，一天的访问次数</p>
-<pre><code>#cat access.log|grep &apos;12/Aug/2009&apos;|grep &apos;/images/index/e1.gif&apos;|wc|awk &apos;{print $1}&apos;
-</code></pre><p>前五天的访问次数最多的网页</p>
-<pre><code>#cat access.log|awk &apos;{print $7}&apos;|uniq -c |sort -n -r|head -20
-</code></pre><p>从日志里查看该ip在干嘛</p>
-<pre><code>#cat access.log | grep 218.66.36.119| awk &apos;{print $1″\t”$7}&apos; | sort | uniq -c | sort -nr | less
-</code></pre><p>列出传输时间超过 30 秒的文件</p>
-<pre><code>#cat access.log|awk &apos;($NF &gt; 30){print $7}&apos; |sort -n|uniq -c|sort -nr|head -20
-</code></pre><p>列出最最耗时的页面(超过60秒的)</p>
-<pre><code>#cat access.log |awk &apos;($NF &gt; 60 &amp;&amp; $7~/\.php/){print $7}&apos; |sort -n|uniq -c|sort -nr|head -100
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ netstat -ntu |awk <span class="string">'&#123;print $5&#125;'</span> |sort | uniq -c| sort -nr</span><br></pre></td></tr></table></figure>
+<p>查看日志中访问次数最多的前10个IP</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat access.log |cut -d <span class="string">' '</span> -f 1 |sort |uniq -c | sort -nr | awk <span class="string">'&#123;print $0 &#125;'</span> | head -n 10 |less</span><br></pre></td></tr></table></figure>
+<p>查看日志中出现100次以上的IP</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat access.log |cut -d <span class="string">' '</span> -f 1 |sort |uniq -c | awk <span class="string">'&#123;if ($1 &gt; 100) print $0&#125;'</span>｜sort -nr |less</span><br></pre></td></tr></table></figure>
+<p>查看最近访问量最高的文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat access.log |tail -10000|awk <span class="string">'&#123;print $7&#125;'</span>|sort|uniq -c|sort -nr|less</span><br></pre></td></tr></table></figure>
+<p>查看日志中访问超过100次的页面</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat access.log | cut -d <span class="string">' '</span> -f 7 | sort |uniq -c | awk <span class="string">'&#123;if ($1 &gt; 100) print $0&#125;'</span> | less</span><br></pre></td></tr></table></figure>
+<p>统计某url，一天的访问次数</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat access.log|grep <span class="string">'12/Aug/2009'</span>|grep <span class="string">'/images/index/e1.gif'</span>|wc|awk <span class="string">'&#123;print $1&#125;'</span></span><br></pre></td></tr></table></figure>
+<p>前五天的访问次数最多的网页</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat access.log|awk <span class="string">'&#123;print $7&#125;'</span>|uniq -c |sort -n -r|head -20</span><br></pre></td></tr></table></figure>
+<p>从日志里查看该ip在干嘛</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat access.log | grep 218.66.36.119| awk <span class="string">'&#123;print $1″\t”$7&#125;'</span> | sort | uniq -c | sort -nr | less</span><br></pre></td></tr></table></figure>
+<p>列出传输时间超过 30 秒的文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat access.log|awk <span class="string">'($NF &gt; 30)&#123;print $7&#125;'</span> |sort -n|uniq -c|sort -nr|head -20</span><br></pre></td></tr></table></figure>
+<p>列出最最耗时的页面(超过60秒的)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat access.log |awk <span class="string">'($NF &gt; 60 &amp;&amp; $7~/\.php/)&#123;print $7&#125;'</span> |sort -n|uniq -c|sort -nr|head -100</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -720,7 +720,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <a href="/" class="site-author-image" rel="start" style="border:none">
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="w23ta0" title>
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="w23ta0" title>
               </a>
             
               <p class="site-author-name" itemprop="name">w23ta0</p>

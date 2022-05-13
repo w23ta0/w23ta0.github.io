@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="在许多编程语言中都包含有格式化字符串的功能，比如C和Fortran语言中的格式化输入输出。Python中内置有对字符串进行格式化的操作%。 模板格式化字符串时，Python使用一个字符串作为模板 。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。Python用一个tuple将多个值传递给模板，每个值对应一个格式符。 比如下面的例子： print(&quot;I&apos;m %s. I&apos;m">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-11T14:11:59.848Z">
+<meta property="og:updated_time" content="2022-05-13T05:59:16.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 格式化字符串 (%操作符)">
 <meta name="twitter:description" content="在许多编程语言中都包含有格式化字符串的功能，比如C和Fortran语言中的格式化输入输出。Python中内置有对字符串进行格式化的操作%。 模板格式化字符串时，Python使用一个字符串作为模板 。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。Python用一个tuple将多个值传递给模板，每个值对应一个格式符。 比如下面的例子： print(&quot;I&apos;m %s. I&apos;m">
@@ -372,7 +372,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="w23ta0">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -513,7 +513,7 @@
 <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>格式化字符串时，Python使用一个字符串作为模板
 。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。Python用一个tuple将多个值传递给模板，每个值对应一个格式符。</p>
 <p>比如下面的例子：
-<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">print</span>(<span class="string">"I'm %s. I'm %d year old"</span> % (<span class="string">'Vamei'</span>, <span class="number">99</span>))</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"I'm %s. I'm %d year old"</span> % (<span class="string">'Vamei'</span>, <span class="number">99</span>))</span><br></pre></td></tr></table></figure></p>
 <p>上面的例子中，“I’m %s. I’m %d year old” 为我们的模板。</p>
 <ul>
 <li>%s为第一个格式符，表示一个字符串。</li>
@@ -522,9 +522,9 @@
 </ul>
 <p>在模板和tuple之间，有一个%号分隔，它代表了格式化操作。
 整个”I’m %s. I’m %d year old” % (‘Vamei’, 99) 实际上构成一个字符串表达式。我们可以像一个正常的字符串那样，将它赋值给某个变量。比如:
-<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line">a = <span class="string">"I'm %s. I'm %d year old"</span> % (<span class="string">'Vamei'</span>, <span class="number">99</span>)</span><br><span class="line"><span class="keyword">print</span>(a)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="string">"I'm %s. I'm %d year old"</span> % (<span class="string">'Vamei'</span>, <span class="number">99</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure></p>
 <p>我们还可以用词典来传递真实值。如下：
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"I'm %(name)s. I'm %(age)d year old"</span> % &#123;<span class="string">'name'</span>:<span class="string">'Vamei'</span>, <span class="string">'age'</span>:<span class="number">99</span>&#125;)</span></span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"I'm %(name)s. I'm %(age)d year old"</span> % &#123;<span class="string">'name'</span>:<span class="string">'Vamei'</span>, <span class="string">'age'</span>:<span class="number">99</span>&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>可以看到，我们对两个格式符进行了命名。命名使用()括起来。每个命名对应词典的一个key。</p>
 <h2 id="格式符"><a href="#格式符" class="headerlink" title="格式符"></a>格式符</h2><p>格式符为真实值预留位置，并控制显示的格式。格式符可以包含有一个类型码，用以控制显示的类型，如下:</p>
 <table>
@@ -598,9 +598,9 @@
 </tbody>
 </table>
 <p>可以用如下的方式，对格式进行进一步的控制： %[(name)][flags][width].[precision]typecode (name)为命名 flags可以有+,-,’ ‘或0。+表示右对齐。-表示左对齐。’ ‘为一个空格，表示在正数的左侧填充一个空格，从而与负数对齐。0表示使用0填充。 width表示显示宽度 precision表示小数点后精度 比如：
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"%+10x"</span> % <span class="number">10</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"%04d"</span> % <span class="number">5</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"%6.3f"</span> % <span class="number">2.3</span>)</span></span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"%+10x"</span> % <span class="number">10</span>)</span><br><span class="line">print(<span class="string">"%04d"</span> % <span class="number">5</span>)</span><br><span class="line">print(<span class="string">"%6.3f"</span> % <span class="number">2.3</span>)</span><br></pre></td></tr></table></figure></p>
 <p>上面的width, precision为两个整数。我们可以利用*，来动态代入这两个量。比如：
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"%.*f"</span> % (<span class="number">4</span>, <span class="number">1.2</span>)</span></span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"%.*f"</span> % (<span class="number">4</span>, <span class="number">1.2</span>))</span><br></pre></td></tr></table></figure></p>
 <p>Python实际上用4来替换*。所以实际的模板为”%.4f”。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Python中内置的%操作符可用于格式化字符串操作，控制字符串的呈现格式。Python中还有其他的格式化字符串的方式，但%操作符的使用是最方便的。</p>
 
@@ -801,7 +801,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <a href="/" class="site-author-image" rel="start" style="border:none">
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="w23ta0" title>
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="w23ta0" title>
               </a>
             
               <p class="site-author-name" itemprop="name">w23ta0</p>

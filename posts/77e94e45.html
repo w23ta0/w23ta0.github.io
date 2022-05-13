@@ -140,14 +140,14 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="目录服务目录是一个为查询、浏览和搜索而优化的专业分布式数据库，它呈树状结构组织数据，就好象Linux/Unix系统中的文件目录一样。目录数据库和关系数据库不同，它有优异的读性能，但写性能差，并且没有事务处理、回滚等复杂功能，不适于存储修改频繁的数据。所以目录天生是用来查询的，就好象它的名字一样。 目录服务是由目录数据库和一套访问协议组成的系统。类似以下的信息适合储存在目录中：  企业员工信息，如姓">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog5c21c103127f6.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20181225133349.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20181225133548.png">
-<meta property="og:updated_time" content="2022-05-11T14:11:59.848Z">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/5c21c103127f6.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20181225133349.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20181225133548.png">
+<meta property="og:updated_time" content="2022-05-13T05:59:16.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LDAP服务器的概念和原理简单介绍">
 <meta name="twitter:description" content="目录服务目录是一个为查询、浏览和搜索而优化的专业分布式数据库，它呈树状结构组织数据，就好象Linux/Unix系统中的文件目录一样。目录数据库和关系数据库不同，它有优异的读性能，但写性能差，并且没有事务处理、回滚等复杂功能，不适于存储修改频繁的数据。所以目录天生是用来查询的，就好象它的名字一样。 目录服务是由目录数据库和一套访问协议组成的系统。类似以下的信息适合储存在目录中：  企业员工信息，如姓">
-<meta name="twitter:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog5c21c103127f6.png">
+<meta name="twitter:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/5c21c103127f6.png">
 
 
 
@@ -376,7 +376,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="w23ta0">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -529,7 +529,7 @@
 <li>这些工具可以将数据库的内容以文本格式（LDAP 数据交换格式，LDIF）呈现在您的面前</li>
 <li>LDAP是一种开放Internet标准，LDAP协议是跨平台的Interent协议</li>
 </ul>
-<h2 id="LDAP组织数据的方式"><a href="#LDAP组织数据的方式" class="headerlink" title="LDAP组织数据的方式"></a>LDAP组织数据的方式</h2><p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog5c21c103127f6.png" alt></p>
+<h2 id="LDAP组织数据的方式"><a href="#LDAP组织数据的方式" class="headerlink" title="LDAP组织数据的方式"></a>LDAP组织数据的方式</h2><p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/5c21c103127f6.png" alt></p>
 <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>在浏览LDAP相关文档时经常会遇见一些概念，下面是常见概念的简单解释。</p>
 <h3 id="Entry"><a href="#Entry" class="headerlink" title="Entry"></a>Entry</h3><p>条目，也叫记录项，是LDAP中最基本的颗粒，就像字典中的词条，或者是数据库中的记录。通常对LDAP的添加、删除、更改、检索都是以条目为基本对象的。</p>
 <p><code>dn</code>：每一个条目都有一个唯一的标识名（distinguished Name ，DN），如上图中一个 dn：”cn=baby,ou=marketing,ou=people,dc=mydomain,dc=org” 。通过DN的层次型语法结构，可以方便地表示出条目在LDAP树中的位置，通常用于检索。</p>
@@ -597,11 +597,11 @@
 <p>通过对象类可以方便的定义条目类型。每个条目可以直接继承多个对象类，这样就继承了各种属性。如果2个对象类中有相同的属性，则条目继承后只会保留1个属性。对象类同时也规定了哪些属性是基本信息，必须含有(Must 活Required，必要属性)：哪些属性是扩展信息，可以含有（May或Optional，可选属性）。</p>
 <p>对象类有三种类型：结构类型（Structural）、抽象类型(Abstract)和辅助类型（Auxiliary）。结构类型是最基本的类型，它规定了对象实体的基本属性，每个条目属于且仅属于一个结构型对象类。抽象类型可以是结构类型或其他抽象类型父类，它将对象属性中共性的部分组织在一起，称为其他类的模板，条目不能直接集成抽象型对象类。辅助类型规定了对象实体的扩展属性。每个条目至少有一个结构性对象类。</p>
 <p>对象类本身是可以相互继承的，所以对象类的根类是top抽象型对象类。以常用的人员类型为例，他们的继承关系：</p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20181225133349.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20181225133349.png" alt></p>
 <p>下面是inetOrgPerson对象类的在schema中的定义，可以清楚的看到它的父类SUB和可选属性MAY、必要属性MUST(继承自organizationalPerson)，关于各属性的语法则在schema中的attributetype定义。</p>
 <figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="comment"># inetOrgPerson</span></span><br><span class="line"><span class="comment"># The inetOrgPerson represents people who are associated with an</span></span><br><span class="line"><span class="comment"># organization in some way.  It is a structural class and is derived</span></span><br><span class="line"><span class="comment"># from the organizationalPerson which is defined in X.521 [X521].</span></span><br><span class="line">objectclass     ( <span class="number">2.16</span>.<span class="number">840.1</span>.<span class="number">113730.3</span>.<span class="number">2.2</span></span><br><span class="line">    NAME <span class="string">'inetOrgPerson'</span></span><br><span class="line">        DESC <span class="string">'RFC2798: Internet Organizational Person'</span></span><br><span class="line">    SUP organizationalPerson</span><br><span class="line">    STRUCTURAL</span><br><span class="line">        MAY (</span><br><span class="line">                audio <span class="variable">$ </span>businessCategory <span class="variable">$ </span>carLicense <span class="variable">$ </span>departmentNumber $</span><br><span class="line">                displayName <span class="variable">$ </span>employeeNumber <span class="variable">$ </span>employeeType <span class="variable">$ </span>givenName $</span><br><span class="line">                homePhone <span class="variable">$ </span>homePostalAddress <span class="variable">$ </span>initials <span class="variable">$ </span>jpegPhoto $</span><br><span class="line">                labeledURI <span class="variable">$ </span>mail <span class="variable">$ </span>manager <span class="variable">$ </span>mobile <span class="variable">$ </span>o <span class="variable">$ </span>pager $</span><br><span class="line">                photo <span class="variable">$ </span>roomNumber <span class="variable">$ </span>secretary <span class="variable">$ </span>uid <span class="variable">$ </span>userCertificate $</span><br><span class="line">                x500uniqueIdentifier <span class="variable">$ </span>preferredLanguage $</span><br><span class="line">                userSMIMECertificate <span class="variable">$ </span>userPKCS12 )</span><br><span class="line">        )</span><br></pre></td></tr></table></figure>
 <h3 id="Schema"><a href="#Schema" class="headerlink" title="Schema"></a>Schema</h3><p>对象类（ObjectClass）、属性类型（AttributeType）、语法（Syntax）分别约定了条目、属性、值，他们之间的关系如下图所示。所以这些构成了模式(Schema)——对象类的集合。条目数据在导入时通常需要接受模式检查，它确保了目录中所有的条目数据结构都是一致的。</p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20181225133548.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20181225133548.png" alt></p>
 <p>schema（一般在<code>/etc/ldap/schema/</code>目录）在导入时要注意前后顺序。</p>
 <h3 id="backend-amp-database"><a href="#backend-amp-database" class="headerlink" title="backend &amp; database"></a>backend &amp; database</h3><p>ldap的后台进程slapd接收、响应请求，但实际存储数据、获取数据的操作是由Backends做的，而数据是存放在database中，所以你可以看到往往你可以看到<code>backend</code>和<code>database</code>指令是一样的值如 bdb 。一个 backend 可以有多个 database instance，但每个 database 的 suffix 和 rootdn 不一样。openldap 2.4版本的模块是动态加载的，所以在使用backend时需要<code>moduleload back_bdb</code>指令。</p>
 <p><code>bdb</code>是一个高性能的支持事务和故障恢复的数据库后端，可以满足绝大部分需求。许多旧文档里（包括官方）说建议将<code>bdb</code>作为首选后端服务（primary backend），但<a href="http://www.openldap.org/doc/admin24/backends.html" target="_blank" rel="noopener">2.4版文档</a>明确说<code>hdb</code>才是被首先推荐使用的，这从 2.4.40 版默认安装后的配置文件里也可以看出。hdb是基于bdb的，但是它通过扩展的索引和缓存技术可以加快数据访问，修改entries会更有效率，有兴趣可以访问上的链接或<a href="http://linux.die.net/man/5/slapd.backends" target="_blank" rel="noopener">slapd.backends</a>。</p>
@@ -703,7 +703,7 @@
         
             <li class="popular-posts-item"><a href="https://w23ta0.github.io/posts/6fab04f7.html">CentOS6 安装配置OpenLDAP Server</a></li>
         
-            <li class="popular-posts-item"><a href="https://w23ta0.github.io/posts/73cebd2e.html">Centos6下安装MySQLdb时出现“error: command 'gcc' failed with exit status 1”</a></li>
+            <li class="popular-posts-item"><a href="https://w23ta0.github.io/posts/73cebd2e.html">Centos6下安装MySQL-python时出现“error: command 'gcc' failed with exit status 1”</a></li>
         
             <li class="popular-posts-item"><a href="https://w23ta0.github.io/posts/283c0c55.html">使用 CSS 实现标题自动编号</a></li>
         
@@ -734,8 +734,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/73cebd2e.html" rel="next" title="Centos6下安装MySQLdb时出现“error: command 'gcc' failed with exit status 1”">
-                <i class="fa fa-chevron-left"></i> Centos6下安装MySQLdb时出现“error: command 'gcc' failed with exit status 1”
+              <a href="/posts/73cebd2e.html" rel="next" title="Centos6下安装MySQL-python时出现“error: command 'gcc' failed with exit status 1”">
+                <i class="fa fa-chevron-left"></i> Centos6下安装MySQL-python时出现“error: command 'gcc' failed with exit status 1”
               </a>
             
           </div>
@@ -818,7 +818,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <a href="/" class="site-author-image" rel="start" style="border:none">
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="w23ta0" title>
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="w23ta0" title>
               </a>
             
               <p class="site-author-name" itemprop="name">w23ta0</p>

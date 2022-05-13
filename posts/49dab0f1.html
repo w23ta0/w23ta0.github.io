@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="通常情况下我们可以使用Docker Hub作为docker image的仓库，但是有些场景下，我们希望能够有本地的仓库。比如：   代码中含有保密的信息，比如环境的账号，密码等等；  代码本身作为公司的资产，不能对外公开，否则有法律风险。    在创建本地仓库之前，请确保已经在目的机器上安装了Docker。这里我们使用docker容器运行registry镜像的方式，来创建registry。 一般情">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-11T14:11:59.848Z">
+<meta property="og:updated_time" content="2022-05-13T05:59:16.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何搭建Docker Registry本地私有仓库">
 <meta name="twitter:description" content="通常情况下我们可以使用Docker Hub作为docker image的仓库，但是有些场景下，我们希望能够有本地的仓库。比如：   代码中含有保密的信息，比如环境的账号，密码等等；  代码本身作为公司的资产，不能对外公开，否则有法律风险。    在创建本地仓库之前，请确保已经在目的机器上安装了Docker。这里我们使用docker容器运行registry镜像的方式，来创建registry。 一般情">
@@ -372,7 +372,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="w23ta0">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -540,7 +540,7 @@
 <p>然后通过<code>docker images</code>查看，确认是否存在这个标签，输出如下： </p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">REPOSITORY                                        TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">127.0.0.1:5000/nginx                              alpine              0ae090dba3ab        3 months ago        54.3 MB</span><br><span class="line">nginx                                             alpine              0ae090dba3ab        3 months ago        54.3 MB</span><br></pre></td></tr></table></figure>
 <p>现在可以上传这个镜像： </p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">docker</span> <span class="string">push</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:5000/nginx:alpine</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker push 127.0.0.1:5000/nginx:alpine</span><br></pre></td></tr></table></figure>
 <p>输出如下 ：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">The push refers to a repository [127.0.0.1:5000/nginx]</span><br><span class="line">4a8d9a67e458: Pushed </span><br><span class="line">c0ab80890b7f: Pushed </span><br><span class="line">d4930e247b49: Pushed </span><br><span class="line">9f8566ee5135: Pushed </span><br><span class="line">alpine: digest: sha256:bf63c02f35f7f8d0a95af4904d38ea17ef3f0c86e6b95d716200bdd9963f5ec5 size: 1154</span><br></pre></td></tr></table></figure>
 <p>现在来浏览 <code>http://127.0.0.1:5000/v2/_catalog</code> ， 将会看到这样的结果： </p>
@@ -752,7 +752,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <a href="/" class="site-author-image" rel="start" style="border:none">
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="w23ta0" title>
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="w23ta0" title>
               </a>
             
               <p class="site-author-name" itemprop="name">w23ta0</p>

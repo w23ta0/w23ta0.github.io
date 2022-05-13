@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="在linux shell编程中，经常用到日期的加减运算，以前都是自己通过expr函数计算，很麻烦。 其实date命令本身提供了日期的加减运算，非常方便。 例如：得到昨天的时间 date +%Y%m%d –date=”-1 day” date的用法: date [OPTION]… [+FORMAT]date [-u|–utc|–universal] [MMDDhhmm[[CC]YY][.ss]] d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-11T14:11:59.848Z">
+<meta property="og:updated_time" content="2022-05-13T05:59:16.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Shell date命令的用法">
 <meta name="twitter:description" content="在linux shell编程中，经常用到日期的加减运算，以前都是自己通过expr函数计算，很麻烦。 其实date命令本身提供了日期的加减运算，非常方便。 例如：得到昨天的时间 date +%Y%m%d –date=”-1 day” date的用法: date [OPTION]… [+FORMAT]date [-u|–utc|–universal] [MMDDhhmm[[CC]YY][.ss]] d">
@@ -372,7 +372,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="w23ta0">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -512,13 +512,13 @@
         <p>在linux shell编程中，经常用到日期的加减运算，以前都是自己通过expr函数计算，很麻烦。
 其实date命令本身提供了日期的加减运算，非常方便。</p>
 <p>例如：得到昨天的时间</p>
-<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line"><span class="keyword">date</span> +%Y%m%d –<span class="keyword">date</span>=”<span class="number">-1</span> day”</span><br></pre></td></tr></table></figure>
-<p><strong>date的用法:</strong>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">date [OPTION]… [+FORMAT]</span><br><span class="line">date [<span class="string">-u|–utc|–universal</span>] [<span class="string">MMDDhhmm[[CC</span>]YY][.ss]]</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">date +%Y%m%d –date=”-1 day”</span><br></pre></td></tr></table></figure>
+<p><strong>date的用法:</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">date [OPTION]… [+FORMAT]</span><br><span class="line">date [-u|–utc|–universal] [MMDDhhmm[[CC]YY][.ss]]</span><br></pre></td></tr></table></figure>
 <p><strong>date 可以用来显示或设定系统的日期与时间。</strong></p>
 <ol>
 <li><p>在显示方面，使用者可以设定欲显示的格式，格式设定为一个加号后接数个标记，其中可用的标记列表如下:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">%% : 显示一个 %（百分号）字符。</span><br><span class="line">%n : 下一行</span><br><span class="line">%t : 跳格</span><br><span class="line">%H : 小时(00..23)</span><br><span class="line">%I : 小时(01..12)</span><br><span class="line">%k : 小时(0..23)</span><br><span class="line">%l : 小时(1..12)</span><br><span class="line">%M : 分钟(00..59)</span><br><span class="line">%p : 显示本地 AM 或 PM</span><br><span class="line">%r : 直接显示时间 (12 小时制，格式为 hh:mm:ss [AP]M)</span><br><span class="line">%s : 从 1970 年 1 月 1 日 00:00:00 UTC 到目前为止的秒数</span><br><span class="line">%S : 秒(00..61)</span><br><span class="line">%T : 直接显示时间 (24 小时制)</span><br><span class="line">%X : 相当于 %H:%M:%S</span><br><span class="line">%Z : 显示时区 %a : 星期几 (Sun..Sat)</span><br><span class="line">%A : 星期几 (Sunday..Saturday)</span><br><span class="line">%b : 月份 (Jan..Dec)</span><br><span class="line">%B : 月份 (January..December)</span><br><span class="line">%c : 直接显示日期与时间</span><br><span class="line">%d : 日 (01..31)</span><br><span class="line">%D : 直接显示日期 (mm/dd/yy)</span><br><span class="line">%h : 同 %b</span><br><span class="line">%j : 一年中的第几天 (001..366)</span><br><span class="line">%m : 月份 (01..12)</span><br><span class="line">%U : 一年中的第几周 (00..53) (以 Sunday 为一周的第一天的情形)</span><br><span class="line">%w : 一周中的第几天 (0..6)</span><br><span class="line">%W : 一年中的第几周 (00..53) (以 Monday 为一周的第一天的情形)</span><br><span class="line">%x : 直接显示日期 (mm/dd/yy)</span><br><span class="line">%y : 年份的最后两位数字 (00.99)</span><br><span class="line">%Y : 完整年份 (0000..9999)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">%</span><span class="bash">% : 显示一个 %（百分号）字符。</span></span><br><span class="line"><span class="meta">%</span><span class="bash">n : 下一行</span></span><br><span class="line"><span class="meta">%</span><span class="bash">t : 跳格</span></span><br><span class="line"><span class="meta">%</span><span class="bash">H : 小时(00..23)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">I : 小时(01..12)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">k : 小时(0..23)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">l : 小时(1..12)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">M : 分钟(00..59)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">p : 显示本地 AM 或 PM</span></span><br><span class="line"><span class="meta">%</span><span class="bash">r : 直接显示时间 (12 小时制，格式为 hh:mm:ss [AP]M)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">s : 从 1970 年 1 月 1 日 00:00:00 UTC 到目前为止的秒数</span></span><br><span class="line"><span class="meta">%</span><span class="bash">S : 秒(00..61)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">T : 直接显示时间 (24 小时制)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">X : 相当于 %H:%M:%S</span></span><br><span class="line"><span class="meta">%</span><span class="bash">Z : 显示时区 %a : 星期几 (Sun..Sat)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">A : 星期几 (Sunday..Saturday)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">b : 月份 (Jan..Dec)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">B : 月份 (January..December)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">c : 直接显示日期与时间</span></span><br><span class="line"><span class="meta">%</span><span class="bash">d : 日 (01..31)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">D : 直接显示日期 (mm/dd/yy)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">h : 同 %b</span></span><br><span class="line"><span class="meta">%</span><span class="bash">j : 一年中的第几天 (001..366)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">m : 月份 (01..12)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">U : 一年中的第几周 (00..53) (以 Sunday 为一周的第一天的情形)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">w : 一周中的第几天 (0..6)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">W : 一年中的第几周 (00..53) (以 Monday 为一周的第一天的情形)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">x : 直接显示日期 (mm/dd/yy)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">y : 年份的最后两位数字 (00.99)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">Y : 完整年份 (0000..9999)</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在设定时间方面</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">date -s //设置当前时间，只有root权限才能设置，其他只能查看。</span><br><span class="line">date -s 20080523 //设置成20080523，这样会把具体时间设置成空00:00:00</span><br><span class="line">date -s 01:01:01 //设置具体时间，不会对日期做更改</span><br><span class="line">date -s “01:01:01 2008-05-23″ //这样可以设置全部时间</span><br><span class="line">date -s “01:01:01 20080523″ //这样可以设置全部时间</span><br><span class="line">date -s “2008-05-23 01:01:01″ //这样可以设置全部时间</span><br><span class="line">date -s “20080523 01:01:01″ //这样可以设置全部时间</span><br></pre></td></tr></table></figure>
@@ -720,7 +720,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <a href="/" class="site-author-image" rel="start" style="border:none">
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="w23ta0" title>
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="w23ta0" title>
               </a>
             
               <p class="site-author-name" itemprop="name">w23ta0</p>

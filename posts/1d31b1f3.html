@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="Nginx中upstream有以下几种方式：  轮询(weight=1)  默认选项，当weight不指定时，各服务器weight相同， 每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。 upstream bakend &amp;#123;    server 192.168.1.10;    server 192.168.1.11;&amp;#125;  weight  指定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-11T14:11:59.848Z">
+<meta property="og:updated_time" content="2022-05-13T05:59:16.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx中的upstream轮询机制介绍">
 <meta name="twitter:description" content="Nginx中upstream有以下几种方式：  轮询(weight=1)  默认选项，当weight不指定时，各服务器weight相同， 每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。 upstream bakend &amp;#123;    server 192.168.1.10;    server 192.168.1.11;&amp;#125;  weight  指定">
@@ -372,7 +372,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="w23ta0">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -515,31 +515,31 @@
 </ol>
 <p>默认选项，当weight不指定时，各服务器weight相同，
 每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">upstream bakend &#123;</span><br><span class="line">   <span class="built_in"> server </span>192.168.1.10;</span><br><span class="line">   <span class="built_in"> server </span>192.168.1.11;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> bakend &#123;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.10</span>;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.11</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>weight</li>
 </ol>
 <p>指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。
 如果后端服务器down掉，能自动剔除。
-比如下面配置，则1.11服务器的访问量为1.10服务器的两倍。
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">upstream bakend &#123;</span><br><span class="line">   <span class="built_in"> server </span>192.168.1.10 <span class="attribute">weight</span>=1;</span><br><span class="line">   <span class="built_in"> server </span>192.168.1.11 <span class="attribute">weight</span>=2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+比如下面配置，则1.11服务器的访问量为1.10服务器的两倍。</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> bakend &#123;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.10</span> weight=<span class="number">1</span>;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.11</span> weight=<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="3">
 <li>ip_hash</li>
 </ol>
 <p>每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session不能跨服务器的问题。
 如果后端服务器down掉，要手工down掉。</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">upstream resinserver&#123;</span><br><span class="line">    ip_hash;</span><br><span class="line">   <span class="built_in"> server </span>192.168.1.10:8080;</span><br><span class="line">   <span class="built_in"> server </span>192.168.1.11:8080;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> resinserver&#123;</span><br><span class="line">    ip_hash;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.10:8080</span>;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.11:8080</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="4">
 <li>fair（第三方插件）</li>
 </ol>
 <p>按后端服务器的响应时间来分配请求，响应时间短的优先分配。</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">upstream resinserver&#123;</span><br><span class="line">   <span class="built_in"> server </span>192.168.1.10:8080;</span><br><span class="line">   <span class="built_in"> server </span>192.168.1.11:8080;</span><br><span class="line">    fair;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> resinserver&#123;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.10:8080</span>;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.11:8080</span>;</span><br><span class="line">    fair;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="5">
 <li>url_hash（第三方插件）</li>
 </ol>
 <p>按访问url的hash结果来分配请求，使每个url定向到同一个后端服务器，后端服务器为缓存服务器时比较有效。
 在upstream中加入hash语句，hash_method是使用的hash算法</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">upstream resinserver&#123;</span><br><span class="line">   <span class="built_in"> server </span>192.168.1.10:8080;</span><br><span class="line">   <span class="built_in"> server </span>192.168.1.11:8080;</span><br><span class="line">    hash <span class="variable">$request_uri</span>;</span><br><span class="line">    hash_method crc32;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> resinserver&#123;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.10:8080</span>;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.11:8080</span>;</span><br><span class="line">    <span class="attribute">hash</span> <span class="variable">$request_uri</span>;</span><br><span class="line">    <span class="attribute">hash_method</span> crc32;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>设备的状态有:</p>
 <ul>
 <li>down 表示单前的server暂时不参与负载</li>
@@ -737,7 +737,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <a href="/" class="site-author-image" rel="start" style="border:none">
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="w23ta0" title>
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="w23ta0" title>
               </a>
             
               <p class="site-author-name" itemprop="name">w23ta0</p>

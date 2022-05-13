@@ -140,23 +140,23 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="环境准备 SonarQube：sonarqube-7.9.3 数据库：PostgreSQL 10.10 操作系统：CentOS 7.6 JDK版本：java-11-openjdk    sonarqube从7.8起，不再支持mysql sonarqube从7.9起，不再支持jdk11以下版本   安装JDKyum install java-11-openjdk -y 安装PostgreSQL安装R">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427123802.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427123810.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427123653.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427123542.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427114505.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427124045.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427124055.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427124100.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427124828.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427124935.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427125037.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427125343.png">
-<meta property="og:updated_time" content="2022-05-11T14:11:59.848Z">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427123802.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427123810.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427123653.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427123542.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427114505.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427124045.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427124055.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427124100.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427124828.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427124935.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427125037.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427125343.png">
+<meta property="og:updated_time" content="2022-05-13T05:59:16.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在CentOS7上安装SonaeQube7.9">
 <meta name="twitter:description" content="环境准备 SonarQube：sonarqube-7.9.3 数据库：PostgreSQL 10.10 操作系统：CentOS 7.6 JDK版本：java-11-openjdk    sonarqube从7.8起，不再支持mysql sonarqube从7.9起，不再支持jdk11以下版本   安装JDKyum install java-11-openjdk -y 安装PostgreSQL安装R">
-<meta name="twitter:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427123802.png">
+<meta name="twitter:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427123802.png">
 
 
 
@@ -385,7 +385,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="w23ta0">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -541,9 +541,9 @@
 <h3 id="创建sonarqube用户"><a href="#创建sonarqube用户" class="headerlink" title="创建sonarqube用户"></a>创建sonarqube用户</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> sonarqube <span class="keyword">with</span> <span class="keyword">password</span> <span class="string">'sonarqube'</span>;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> sonarqube owner sonarqube;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span>  <span class="keyword">on</span> <span class="keyword">database</span> sonarqube <span class="keyword">to</span> sonarqube;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">schema</span> my_schema;</span><br></pre></td></tr></table></figure>
 <h3 id="退出psql（输入-q-再按回车键即可）"><a href="#退出psql（输入-q-再按回车键即可）" class="headerlink" title="退出psql（输入 \q 再按回车键即可）"></a>退出psql（输入 \q 再按回车键即可）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">\q</span><br></pre></td></tr></table></figure>
 <h3 id="开启远程访问"><a href="#开启远程访问" class="headerlink" title="开启远程访问"></a>开启远程访问</h3><p>修改/var/lib/pgsql/10/data/postgresql.conf文件，取消 listen_addresses 的注释，将参数值改为“*” 
-<img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427123802.png" alt> </p>
+<img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427123802.png" alt> </p>
 <p>修改/var/lib/pgsql/10/data/pg_hba.conf文件，增加下图红框部分内容 
-<img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427123810.png" alt> </p>
+<img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427123810.png" alt> </p>
 <h3 id="切换到root用户，重启postgresql服务"><a href="#切换到root用户，重启postgresql服务" class="headerlink" title="切换到root用户，重启postgresql服务"></a>切换到root用户，重启postgresql服务</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl restart postgresql-10.service</span><br></pre></td></tr></table></figure>
 <h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start postgresql-10.service     // 启动服务</span><br><span class="line">systemctl stop postgresql-10.service      // 关闭服务</span><br><span class="line">systemctl restart postgresql-10.service   // 重启服务</span><br><span class="line">systemctl status postgresql-10.service    // 查看状态</span><br></pre></td></tr></table></figure>
 <h2 id="安装SonarQube"><a href="#安装SonarQube" class="headerlink" title="安装SonarQube"></a>安装SonarQube</h2><h3 id="添加系统用户"><a href="#添加系统用户" class="headerlink" title="添加系统用户"></a>添加系统用户</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">useradd sonarqube</span><br><span class="line">passwd sonarqube</span><br></pre></td></tr></table></figure>
@@ -555,21 +555,21 @@
 <h3 id="登陆启动用户，启动程序"><a href="#登陆启动用户，启动程序" class="headerlink" title="登陆启动用户，启动程序"></a>登陆启动用户，启动程序</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su - sonarqube </span><br><span class="line">service sonar start</span><br></pre></td></tr></table></figure>
 <h3 id="登录访问"><a href="#登录访问" class="headerlink" title="登录访问"></a>登录访问</h3><p>访问url：<a href="http://172.16.0.92:9000" target="_blank" rel="noopener">http://172.16.0.92:9000</a></p>
 <p>默认用户名/密码：admin/admin</p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427123653.png" alt></p>
-<h3 id="中文语言包"><a href="#中文语言包" class="headerlink" title="中文语言包"></a>中文语言包</h3><p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427123542.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427123653.png" alt></p>
+<h3 id="中文语言包"><a href="#中文语言包" class="headerlink" title="中文语言包"></a>中文语言包</h3><p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427123542.png" alt></p>
 <h3 id="常用命令-1"><a href="#常用命令-1" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">service sonar start     // 启动服务</span><br><span class="line">service sonar stop      // 关闭服务</span><br><span class="line">service sonar restart   // 重启服务</span><br><span class="line"></span><br><span class="line">chkconfig sonar on      // 设置开机启动</span><br><span class="line">chkconfig sonar off     // 关闭开机启动</span><br></pre></td></tr></table></figure>
 <h2 id="安装SonarScanner"><a href="#安装SonarScanner" class="headerlink" title="安装SonarScanner"></a>安装SonarScanner</h2><p>下载地址：<a href="https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/" target="_blank" rel="noopener">https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/</a>
-<img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427114505.png" alt></p>
+<img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427114505.png" alt></p>
 <h3 id="下载并解压安装包-1"><a href="#下载并解压安装包-1" class="headerlink" title="下载并解压安装包"></a>下载并解压安装包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line">wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip</span><br><span class="line">unzip sonar-scanner-cli-4.2.0.1873-linux.zip</span><br></pre></td></tr></table></figure>
 <h3 id="创建软连接-1"><a href="#创建软连接-1" class="headerlink" title="创建软连接"></a>创建软连接</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ln -s sonar-scanner-cli-4.2.0.1873-linux   sonar-scanner</span><br></pre></td></tr></table></figure>
 <h3 id="配置PATH"><a href="#配置PATH" class="headerlink" title="配置PATH"></a>配置PATH</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat &gt; /etc/profile.d/sonar-scanner.sh &lt;&lt;EOF</span><br><span class="line"><span class="built_in">export</span> SONAR_RUNNER_HOME=/opt/sonar-scanner</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/opt/sonar-scanner/bin</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /etc/profile.d/sonar-scanner.sh</span><br></pre></td></tr></table></figure>
-<h2 id="开始扫描"><a href="#开始扫描" class="headerlink" title="开始扫描"></a>开始扫描</h2><p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427124045.png" alt></p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427124055.png" alt></p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427124100.png" alt></p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427124828.png" alt></p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427124935.png" alt></p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427125037.png" alt></p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog20200427125343.png" alt></p>
+<h2 id="开始扫描"><a href="#开始扫描" class="headerlink" title="开始扫描"></a>开始扫描</h2><p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427124045.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427124055.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427124100.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427124828.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427124935.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427125037.png" alt></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427125343.png" alt></p>
 
       
     </div>
@@ -770,7 +770,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <a href="/" class="site-author-image" rel="start" style="border:none">
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="w23ta0" title>
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="w23ta0" title>
               </a>
             
               <p class="site-author-name" itemprop="name">w23ta0</p>

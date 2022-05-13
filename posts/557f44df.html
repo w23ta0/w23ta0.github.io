@@ -140,15 +140,15 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="Docker 简介Docker 最初是 dotCloud 公司创始人 Solomon Hykes 在法国期间发起的一个公司内部项目，它是基于 dotCloud 公司多年云服务技术的一次革新，并于 2013 年 3 月以 Apache 2.0 授权协议开源，主要项目代码在 GitHub 上进行维护。Docker 项目后来还加入了 Linux 基金会，并成立推动 开放容器联盟（OCI）。 Docker">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/docker-on-linux.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/virtualization.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/docker.png">
-<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/image-20201113161150684.png">
-<meta property="og:updated_time" content="2022-05-11T14:11:59.848Z">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/docker-on-linux.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/virtualization.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/docker.png">
+<meta property="og:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20201113161150684.png">
+<meta property="og:updated_time" content="2022-05-13T05:59:16.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker简介概述">
 <meta name="twitter:description" content="Docker 简介Docker 最初是 dotCloud 公司创始人 Solomon Hykes 在法国期间发起的一个公司内部项目，它是基于 dotCloud 公司多年云服务技术的一次革新，并于 2013 年 3 月以 Apache 2.0 授权协议开源，主要项目代码在 GitHub 上进行维护。Docker 项目后来还加入了 Linux 基金会，并成立推动 开放容器联盟（OCI）。 Docker">
-<meta name="twitter:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/docker-on-linux.png">
+<meta name="twitter:image" content="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/docker-on-linux.png">
 
 
 
@@ -377,7 +377,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="w23ta0">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -517,7 +517,7 @@
         <h2 id="Docker-简介"><a href="#Docker-简介" class="headerlink" title="Docker 简介"></a>Docker 简介</h2><p><strong>Docker</strong> 最初是 <code>dotCloud</code> 公司创始人 <a href="https://github.com/shykes" target="_blank" rel="noopener">Solomon Hykes</a> 在法国期间发起的一个公司内部项目，它是基于 <code>dotCloud</code> 公司多年云服务技术的一次革新，并于 <a href="https://en.wikipedia.org/wiki/Docker_" target="_blank" rel="noopener">2013 年 3 月以 Apache 2.0 授权协议开源</a>，主要项目代码在 <a href="https://github.com/moby/moby" target="_blank" rel="noopener">GitHub</a> 上进行维护。<code>Docker</code> 项目后来还加入了 Linux 基金会，并成立推动 <a href="https://opencontainers.org/" target="_blank" rel="noopener">开放容器联盟（OCI）</a>。</p>
 <p><strong>Docker</strong> 自开源后受到广泛的关注和讨论，至今其 <a href="https://github.com/moby/moby" target="_blank" rel="noopener">GitHub 项目</a> 已经超过 5 万 7 千个星标和一万多个 <code>fork</code>。甚至由于 <code>Docker</code> 项目的火爆，在 <code>2013</code> 年底，<a href="https://www.docker.com/blog/dotcloud-is-becoming-docker-inc/" target="_blank" rel="noopener">dotCloud 公司决定改名为 Docker</a>。<code>Docker</code> 最初是在 <code>Ubuntu 12.04</code> 上开发实现的；<code>Red Hat</code> 则从 <code>RHEL 6.5</code> 开始对 <code>Docker</code> 进行支持；<code>Google</code> 也在其 <code>PaaS</code> 产品中广泛应用 <code>Docker</code>。</p>
 <p><strong>Docker</strong> 使用 <code>Google</code> 公司推出的 <a href="https://golang.org/" target="_blank" rel="noopener">Go 语言</a> 进行开发实现，基于 <code>Linux</code> 内核的 <a href="https://zh.wikipedia.org/wiki/Cgroups" target="_blank" rel="noopener">cgroup</a>，<a href="https://en.wikipedia.org/wiki/Linux_namespaces" target="_blank" rel="noopener">namespace</a>，以及 <a href="https://docs.docker.com/storage/storagedriver/overlayfs-driver/" target="_blank" rel="noopener">OverlayFS</a> 类的 <a href="https://en.wikipedia.org/wiki/Union_mount" target="_blank" rel="noopener">Union FS</a> 等技术，对进程进行封装隔离，属于 <a href="https://en.wikipedia.org/wiki/Operating-system-level_virtualization" target="_blank" rel="noopener">操作系统层面的虚拟化技术</a>。由于隔离的进程独立于宿主和其它的隔离的进程，因此也称其为容器。最初实现是基于 <a href="https://linuxcontainers.org/lxc/introduction/" target="_blank" rel="noopener">LXC</a>，从 0.7 版本以后开始去除 <code>LXC</code>，转而使用自行开发的 <a href="https://github.com/docker/libcontainer" target="_blank" rel="noopener">libcontainer</a>，从 1.11 开始，则进一步演进为使用 <a href="https://github.com/opencontainers/runc" target="_blank" rel="noopener">runC</a> 和 <a href="https://github.com/containerd/containerd" target="_blank" rel="noopener">containerd</a>。</p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/docker-on-linux.png" alt="Docker 架构"></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/docker-on-linux.png" alt="Docker 架构"></p>
 <h2 id="Docker-特性"><a href="#Docker-特性" class="headerlink" title="Docker 特性"></a>Docker 特性</h2><p>作为一种新兴的虚拟化方式，<code>Docker</code> 跟传统的虚拟化方式相比具有众多的优势。</p>
 <h3 id="更高效的利用系统资源"><a href="#更高效的利用系统资源" class="headerlink" title="更高效的利用系统资源"></a>更高效的利用系统资源</h3><p>由于容器不需要进行硬件虚拟以及运行完整操作系统等额外开销，<code>Docker</code> 对系统资源的利用率更高。无论是应用执行速度、内存损耗或者文件存储速度，都要比传统虚拟机技术更高效。因此，相比虚拟机技术，一个相同配置的主机，往往可以运行更多数量的应用。</p>
 <h3 id="更快速的启动时间"><a href="#更快速的启动时间" class="headerlink" title="更快速的启动时间"></a>更快速的启动时间</h3><p>传统的虚拟机技术启动应用服务往往需要数分钟，而 <code>Docker</code> 容器应用，由于直接运行于宿主内核，无需启动完整的操作系统，因此可以做到秒级、甚至毫秒级的启动时间。大大的节约了开发、测试、部署的时间。</p>
@@ -570,8 +570,8 @@
 </table>
 <p>下面的图片比较了 <strong>Docker</strong> 和传统虚拟化方式的不同之处。</p>
 <p>传统虚拟化技术是虚拟一套硬件后，然后安装运行一个完整操作系统，在该系统上再运行所需应用进程，而容器内的应用进程直接运行于宿主的内核，容器内没有自己的内核，而且也没有进行硬件虚拟。因此容器要比传统虚拟机更为轻便。</p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/virtualization.png" alt="virtualization"></p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/docker.png" alt="docker"></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/virtualization.png" alt="virtualization"></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/docker.png" alt="docker"></p>
 <h2 id="Docker-基本概念"><a href="#Docker-基本概念" class="headerlink" title="Docker 基本概念"></a>Docker 基本概念</h2><p>Docker 包括三个基本概念</p>
 <ul>
 <li>镜像（<code>Image</code>）</li>
@@ -579,7 +579,7 @@
 <li>仓库（<code>Repository</code>）</li>
 </ul>
 <p>理解了这三个概念，就理解了 Docker 的整个生命周期。</p>
-<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/image-20201113161150684.png" alt="image-20201113161150684"></p>
+<p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20201113161150684.png" alt="image-20201113161150684"></p>
 <h3 id="镜像（Image）"><a href="#镜像（Image）" class="headerlink" title="镜像（Image）"></a>镜像（Image）</h3><p>我们都知道，操作系统分为内核和用户空间。对于 Linux 而言，内核启动后，会挂载 <code>root</code> 文件系统为其提供用户空间支持。而 Docker 镜像（Image），就相当于是一个 <code>root</code> 文件系统。比如官方镜像 <code>ubuntu:18.04</code> 就包含了完整的一套 Ubuntu 18.04 最小系统的 <code>root</code> 文件系统。</p>
 <p>Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。</p>
 <h3 id="容器（Container）"><a href="#容器（Container）" class="headerlink" title="容器（Container）"></a>容器（Container）</h3><p>镜像（<code>Image</code>）和容器（<code>Container</code>）的关系，就像是面向对象程序设计中的 <code>类</code> 和 <code>实例</code> 一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。</p>
@@ -789,7 +789,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <a href="/" class="site-author-image" rel="start" style="border:none">
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="w23ta0" title>
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="w23ta0" title>
               </a>
             
               <p class="site-author-name" itemprop="name">w23ta0</p>

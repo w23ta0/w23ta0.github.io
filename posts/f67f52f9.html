@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="源服务器名称可能不太准确，意思是创建内网自己的私服，这样只要有Ubuntu通过该私服下载安装过软件，私服都会缓存，下一个Ubuntu的请求就直接从缓存中获取。 最近Ubuntu源服务器太慢了，北京的网络也够烂的。逼不得已！ 首先安装apt-cacher apt-get install apt-cacher 装的过程中选择Daemon方式。 装完后，/etc/default/apt-cacher 文">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-11T14:11:59.848Z">
+<meta property="og:updated_time" content="2022-05-13T05:59:16.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="架设Ubuntu apt-cacher服务">
 <meta name="twitter:description" content="源服务器名称可能不太准确，意思是创建内网自己的私服，这样只要有Ubuntu通过该私服下载安装过软件，私服都会缓存，下一个Ubuntu的请求就直接从缓存中获取。 最近Ubuntu源服务器太慢了，北京的网络也够烂的。逼不得已！ 首先安装apt-cacher apt-get install apt-cacher 装的过程中选择Daemon方式。 装完后，/etc/default/apt-cacher 文">
@@ -372,7 +372,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="w23ta0">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -501,20 +501,20 @@
         <p>源服务器名称可能不太准确，意思是创建内网自己的私服，这样只要有Ubuntu通过该私服下载安装过软件，私服都会缓存，下一个Ubuntu的请求就直接从缓存中获取。
 最近Ubuntu源服务器太慢了，北京的网络也够烂的。逼不得已！</p>
 <p>首先安装apt-cacher</p>
-<pre><code>apt-get install apt-cacher
-</code></pre><p>装的过程中选择Daemon方式。 装完后，/etc/default/apt-cacher 文件内容应该如下：</p>
-<pre><code>AUTOSTART=1
-</code></pre><p>所以服务应该已经启动了。 到/etc/apt-cacher/apt-cacher.conf文件中修改一行配置，允许任何客户端访问：</p>
-<pre><code>allowed_hosts = *
-</code></pre><p>重启服务 <code>service apt-cacher restart</code>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt-get install apt-cacher</span><br></pre></td></tr></table></figure>
+<p>装的过程中选择Daemon方式。 装完后，/etc/default/apt-cacher 文件内容应该如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">AUTOSTART=1</span><br></pre></td></tr></table></figure>
+<p>所以服务应该已经启动了。 到/etc/apt-cacher/apt-cacher.conf文件中修改一行配置，允许任何客户端访问：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">allowed_hosts = *</span><br></pre></td></tr></table></figure>
+<p>重启服务 <code>service apt-cacher restart</code>
 然后打开网页：<a href="http://your_ip:3142/apt-cacher" target="_blank" rel="noopener">http://your_ip:3142/apt-cacher</a>
 看到页面就说明服务器正常启动了。
 在/etc/hosts文件中添加一行，可以帮助找到chrome依赖的dl.google.com</p>
-<pre><code>203.208.45.206 dl.google.com
-</code></pre><p>在客户端的ubuntu机器上，创建文件 <code>/etc/apt/apt.conf</code>文件或者<code>/etc/apt/apt.conf.d/01proxy</code>文件
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">203.208.45.206 dl.google.com</span><br></pre></td></tr></table></figure>
+<p>在客户端的ubuntu机器上，创建文件 <code>/etc/apt/apt.conf</code>文件或者<code>/etc/apt/apt.conf.d/01proxy</code>文件
 内容如下：</p>
-<pre><code>Acquire::http::Proxy &quot;http://your_server:3142&quot;;
-</code></pre><p>然后运行<code>apt-get update</code>, 为了确认真的起作用。可以查看<code>apt-cacher</code>的日志，到服务器上查看目录下的日志文件 /var/log/apt-cache,缓存存放地址 /var/cahe/apt-cacher/</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Acquire::http::Proxy <span class="string">"http://your_server:3142"</span>;</span><br></pre></td></tr></table></figure>
+<p>然后运行<code>apt-get update</code>, 为了确认真的起作用。可以查看<code>apt-cacher</code>的日志，到服务器上查看目录下的日志文件 /var/log/apt-cache,缓存存放地址 /var/cahe/apt-cacher/</p>
 
       
     </div>
@@ -706,7 +706,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <a href="/" class="site-author-image" rel="start" style="border:none">
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="w23ta0" title>
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="w23ta0" title>
               </a>
             
               <p class="site-author-name" itemprop="name">w23ta0</p>

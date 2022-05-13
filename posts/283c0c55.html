@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="近几天在学习 HTML5 与 CSS3 时，偶然看到了 CSS 中自动为标题添加编号的特性。仔细阅读过 W3Schools 上提供的文档之后，试验了一下，确实非常好用。从此不需再花费精力校对标题编号，可以将时间集中到真正需要做的事情，也避免了手动编号出错的窘态。 这篇博文整理了我搜集的相关知识点，方便希望详细了解的人查看。 涉及内容首先介绍一下本文涉及到的相关 CSS 知识点。其中用到的 CSS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-11T14:11:59.848Z">
+<meta property="og:updated_time" content="2022-05-13T05:59:16.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 CSS 实现标题自动编号">
 <meta name="twitter:description" content="近几天在学习 HTML5 与 CSS3 时，偶然看到了 CSS 中自动为标题添加编号的特性。仔细阅读过 W3Schools 上提供的文档之后，试验了一下，确实非常好用。从此不需再花费精力校对标题编号，可以将时间集中到真正需要做的事情，也避免了手动编号出错的窘态。 这篇博文整理了我搜集的相关知识点，方便希望详细了解的人查看。 涉及内容首先介绍一下本文涉及到的相关 CSS 知识点。其中用到的 CSS">
@@ -372,7 +372,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="w23ta0">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -514,7 +514,7 @@
 <li><code>inherit</code>：从父元素继承。</li>
 </ul>
 <h3 id="counter-reset-属性"><a href="#counter-reset-属性" class="headerlink" title="counter-reset 属性"></a>counter-reset 属性</h3><p><code>counter-reset</code>属性用于重置计数器，比如在每篇文章开始前将计数器重置为 0。该属性可接受的输入有：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">counter-<span class="keyword">reset</span>: <span class="keyword">none</span>|<span class="keyword">name</span>-<span class="built_in">number</span>|<span class="keyword">initial</span>|inherit;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">counter-reset: none|name-number|initial|inherit;</span><br></pre></td></tr></table></figure>
 <p>其中值的意义为：</p>
 <ul>
 <li><code>none</code>：不重置计数器；</li>
@@ -523,7 +523,7 @@
 <li><code>inherit</code>：从父元素继承。</li>
 </ul>
 <h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><p>以下面的网页作为示例：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>自动编号演示<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"counter.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>文章大标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>前言<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>数据准备<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>观测数据准备<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>表文件准备<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>参数设置<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>高度角<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>模型设置<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>开始解算<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>成果查看<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>自动编号演示<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"counter.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>文章大标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>前言<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>数据准备<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>观测数据准备<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>表文件准备<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>参数设置<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>高度角<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>模型设置<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>开始解算<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>成果查看<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>其中引入的 counter.css 中的代码为：
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* reset h2 counter to -1 when meet a h1 element */</span></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">counter-reset</span>: h2Counter -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* insert number before h2 element */</span></span><br><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="built_in">counter</span>(h2Counter)<span class="string">'. '</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* increase h2 counter and reset h3 counter when meet a h2 element */</span></span><br><span class="line"><span class="selector-tag">h2</span> &#123;</span><br><span class="line">    <span class="attribute">counter-increment</span>: h2Counter;</span><br><span class="line">    <span class="attribute">counter-reset</span>: h3Counter;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h3</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="built_in">counter</span>(h2Counter) <span class="string">'.'</span> <span class="built_in">counter</span>(h3Counter) <span class="string">' '</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h3</span> &#123;</span><br><span class="line">    <span class="attribute">counter-increment</span>: h3Counter;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>将以上两块代码分别保存为 counter.html 和 counter.css，确保这两个文件位于同一目录内，然后使用浏览器打开其中的 counter.html 文件即可预览效果。</p>
@@ -610,7 +610,7 @@
         
             <li class="popular-posts-item"><a href="https://w23ta0.github.io/posts/77e94e45.html">LDAP服务器的概念和原理简单介绍</a></li>
         
-            <li class="popular-posts-item"><a href="https://w23ta0.github.io/posts/73cebd2e.html">Centos6下安装MySQLdb时出现“error: command 'gcc' failed with exit status 1”</a></li>
+            <li class="popular-posts-item"><a href="https://w23ta0.github.io/posts/73cebd2e.html">Centos6下安装MySQL-python时出现“error: command 'gcc' failed with exit status 1”</a></li>
         
             <li class="popular-posts-item"><a href="https://w23ta0.github.io/posts/eb62b0d0.html">如何删除docker images/containers</a></li>
         
@@ -653,8 +653,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/73cebd2e.html" rel="prev" title="Centos6下安装MySQLdb时出现“error: command 'gcc' failed with exit status 1”">
-                Centos6下安装MySQLdb时出现“error: command 'gcc' failed with exit status 1” <i class="fa fa-chevron-right"></i>
+              <a href="/posts/73cebd2e.html" rel="prev" title="Centos6下安装MySQL-python时出现“error: command 'gcc' failed with exit status 1”">
+                Centos6下安装MySQL-python时出现“error: command 'gcc' failed with exit status 1” <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -727,7 +727,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <a href="/" class="site-author-image" rel="start" style="border:none">
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="w23ta0" title>
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="w23ta0" title>
               </a>
             
               <p class="site-author-name" itemprop="name">w23ta0</p>
