@@ -6,45 +6,47 @@ I hereby claim:
 
   * I am an admin of https://w23ta0.github.io
   * I am w23ta0 (https://keybase.io/w23ta0) on keybase.
-  * I have a public key ASAeb6e8ae3hLTq0neqXMB7mALnzZse-q9P29AXQaUv2fAo
+  * I have a public key ASBpqe6Yqdx1-NkrIA81F9N9-lucRRMjqflABXnkGIeSMgo
 
 To do so, I am signing this object:
 
 {
-    "body": {
-        "key": {
-            "eldest_kid": "01201e6fa7bc69ede12d3ab49dea97301ee600b9f366c7beabd3f6f405d0694bf67c0a",
-            "host": "keybase.io",
-            "kid": "01201e6fa7bc69ede12d3ab49dea97301ee600b9f366c7beabd3f6f405d0694bf67c0a",
-            "uid": "d6f537592859e50b031052e9d308f419",
-            "username": "w23ta0"
-        },
-        "service": {
-            "hostname": "w23ta0.github.io",
-            "protocol": "https:"
-        },
-        "type": "web_service_binding",
-        "version": 1
+  "body": {
+    "key": {
+      "eldest_kid": "012069a9ee98a9dc75f8d92b200f3517d37dfa5b9c451323a9f9400579e4188792320a",
+      "host": "keybase.io",
+      "kid": "012069a9ee98a9dc75f8d92b200f3517d37dfa5b9c451323a9f9400579e4188792320a",
+      "uid": "d6f537592859e50b031052e9d308f419",
+      "username": "w23ta0"
     },
-    "client": {
-        "name": "keybase.io go client",
-        "version": "1.0.23"
-    },
-    "ctime": 1497549866,
-    "expire_in": 504576000,
     "merkle_root": {
-        "ctime": 1497549804,
-        "hash": "584b3e1c14c4123baacc97a5c7cd63a49be3d1b1e3da9251dd05bf727fd7bbab9ca9b35a5b1e3d787d2b0bc85a547e3b54b0effa611a483e0221e693ec8105e0",
-        "seqno": 1173396
+      "ctime": 1652707005,
+      "hash": "1f3ec701e2312a848b9b89fe537fd9f6e0ec0e1c0f2ca7686f878a05bdf4e246a59c65aba581c12e550dc04ddd4dd8ab499f0b253f9b1463d6605ae06a848807",
+      "hash_meta": "db6af6031fd26fe41753d47e44dfcf928a68e4f8fff610ffde697c5f927d83a9",
+      "seqno": 22495624
     },
-    "prev": "1728e0c680cf94f829986cdd22c4d88a5ac32bd0b005f7b49f6068b2f5e85aa1",
-    "seqno": 32,
-    "tag": "signature"
+    "service": {
+      "entropy": "S1kRf/p4s29qO85BIQE3UBVZ",
+      "hostname": "w23ta0.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.9.0"
+  },
+  "ctime": 1652707020,
+  "expire_in": 504576000,
+  "prev": "14757d3c6b9d2696846b3824441bd63fb025350b81c36164373359f02eb34e64",
+  "seqno": 43,
+  "tag": "signature"
 }
 
 which yields the signature:
 
-hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgHm+nvGnt4S06tJ3qlzAe5gC582bHvqvT9vQF0GlL9nwKp3BheWxvYWTFAvh7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMWU2ZmE3YmM2OWVkZTEyZDNhYjQ5ZGVhOTczMDFlZTYwMGI5ZjM2NmM3YmVhYmQzZjZmNDA1ZDA2OTRiZjY3YzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMWU2ZmE3YmM2OWVkZTEyZDNhYjQ5ZGVhOTczMDFlZTYwMGI5ZjM2NmM3YmVhYmQzZjZmNDA1ZDA2OTRiZjY3YzBhIiwidWlkIjoiZDZmNTM3NTkyODU5ZTUwYjAzMTA1MmU5ZDMwOGY0MTkiLCJ1c2VybmFtZSI6IncyM3RhMCJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoidzIzdGEwLmdpdGh1Yi5pbyIsInByb3RvY29sIjoiaHR0cHM6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjIzIn0sImN0aW1lIjoxNDk3NTQ5ODY2LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0OTc1NDk4MDQsImhhc2giOiI1ODRiM2UxYzE0YzQxMjNiYWFjYzk3YTVjN2NkNjNhNDliZTNkMWIxZTNkYTkyNTFkZDA1YmY3MjdmZDdiYmFiOWNhOWIzNWE1YjFlM2Q3ODdkMmIwYmM4NWE1NDdlM2I1NGIwZWZmYTYxMWE0ODNlMDIyMWU2OTNlYzgxMDVlMCIsInNlcW5vIjoxMTczMzk2fSwicHJldiI6IjE3MjhlMGM2ODBjZjk0ZjgyOTk4NmNkZDIyYzRkODhhNWFjMzJiZDBiMDA1ZjdiNDlmNjA2OGIyZjVlODVhYTEiLCJzZXFubyI6MzIsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAaR6K+BmRM87p597ssVrgPTHo2Jwin3mDYnE4c8o0q4zSimNPOTW2/QPZZHR9KhmEDmnR6MbewZziwETBOJR+DahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIHGDxKUI6nBHiPLhAWvxWmzGoUTVvBymaYhWDA24kK59o3RhZ80CAqd2ZXJzaW9uAQ==
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgaanumKncdfjZKyAPNRfTffpbnEUTI6n5QAV55BiHkjIKp3BheWxvYWTESpcCK8QgFHV9PGudJpaEazgkRBvWP7AlNQuBw2FkNzNZ8C6zTmTEIAECxTGas+nk95D8HrtYMr2opmRt24mRuJvR4iVN7buWAgHCo3NpZ8RANDsNzmwTxhYTOITMmZuTcAFkGafXOXslw7IDmQaoM0w1u79nfEnYu3P6PIc25excoNuAqQ6Ko2CBlIaqmdXvAahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIA90OemmGiUBSg/vTM4m7F/oVJgH6xXNNrXjbgHyMnC8o3RhZ80CAqd2ZXJzaW9uAQ==
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
