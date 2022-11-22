@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="initrd.img是一个小的映象，包含一个最小的linux系统。通常的步骤是先启动内核，然后内核挂载initrd.img，并执行里面的脚本来进一步挂载各种各样的模块，然后发现真正的root分区，挂载并执行/sbin/init… initrd.img当然是可选的了，如果没有initrd.img,内核就试图直接挂载root分区。 说initrd.img文件还会提到另外一个名角—vmlinuz。vml">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-16T13:25:39.173Z">
+<meta property="og:updated_time" content="2022-11-22T17:49:00.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="核心文件initrd.img、vmlinux 和vmlinuz">
 <meta name="twitter:description" content="initrd.img是一个小的映象，包含一个最小的linux系统。通常的步骤是先启动内核，然后内核挂载initrd.img，并执行里面的脚本来进一步挂载各种各样的模块，然后发现真正的root分区，挂载并执行/sbin/init… initrd.img当然是可选的了，如果没有initrd.img,内核就试图直接挂载root分区。 说initrd.img文件还会提到另外一个名角—vmlinuz。vml">
@@ -185,13 +185,14 @@
 
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JDH7E3QDDG"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-40175682-4', 'auto');
-  ga('send', 'pageview');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JDH7E3QDDG');
 </script>
 
 

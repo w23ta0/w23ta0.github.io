@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="vmlinuz 是一个为内核映像， vmlinuz里面有gzip的一段代码。 initrd.img 是作为避免在vmlinuz里编译所有的驱动模块，所以使用了一个中间层的技术 initrd有两种格式，一种是较早的2.4.x中的image-initrd格式，里面以/linuxrc为主导。另一种是cpio-initrd 看了网上的资料，想学着看看 initrd里是什么个样子 cp /boot/init">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-16T13:25:39.173Z">
+<meta property="og:updated_time" content="2022-11-22T17:49:00.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux initrd.img 解压分析">
 <meta name="twitter:description" content="vmlinuz 是一个为内核映像， vmlinuz里面有gzip的一段代码。 initrd.img 是作为避免在vmlinuz里编译所有的驱动模块，所以使用了一个中间层的技术 initrd有两种格式，一种是较早的2.4.x中的image-initrd格式，里面以/linuxrc为主导。另一种是cpio-initrd 看了网上的资料，想学着看看 initrd里是什么个样子 cp /boot/init">
@@ -185,13 +185,14 @@
 
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JDH7E3QDDG"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-40175682-4', 'auto');
-  ga('send', 'pageview');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JDH7E3QDDG');
 </script>
 
 

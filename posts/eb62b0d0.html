@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="w23ta0&#39;s blog">
 <meta property="og:description" content="docker images往往不知不觉就占满了硬盘空间，为了清理冗余的image，可采用以下方法：  进入root权限 sudo su  停止所有的container，这样才能够删除其中的images： docker stop $(docker ps -a -q) 如果想要删除所有container的话再加一个指令： docker rm $(docker ps -a -q)  查看当前有些什么im">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-05-16T13:25:39.173Z">
+<meta property="og:updated_time" content="2022-11-22T17:49:00.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何删除docker images&#x2F;containers">
 <meta name="twitter:description" content="docker images往往不知不觉就占满了硬盘空间，为了清理冗余的image，可采用以下方法：  进入root权限 sudo su  停止所有的container，这样才能够删除其中的images： docker stop $(docker ps -a -q) 如果想要删除所有container的话再加一个指令： docker rm $(docker ps -a -q)  查看当前有些什么im">
@@ -185,13 +185,14 @@
 
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JDH7E3QDDG"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-40175682-4', 'auto');
-  ga('send', 'pageview');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JDH7E3QDDG');
 </script>
 
 
