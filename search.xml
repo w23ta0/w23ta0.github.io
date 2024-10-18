@@ -87,8 +87,8 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>kvm</tag>
         <tag>android</tag>
+        <tag>kvm</tag>
       </tags>
   </entry>
   <entry>
@@ -302,8 +302,8 @@
       </categories>
       <tags>
         <tag>ubuntu</tag>
-        <tag>kvm</tag>
         <tag>android</tag>
+        <tag>kvm</tag>
       </tags>
   </entry>
   <entry>
@@ -488,8 +488,8 @@
       </categories>
       <tags>
         <tag>openstack</tag>
-        <tag>qcow2</tag>
         <tag>kvm</tag>
+        <tag>qcow2</tag>
       </tags>
   </entry>
   <entry>
@@ -2462,7 +2462,7 @@ OK， Enjoy it!!!</p>
 <p>BSD：Berkeley Software Distribution伯克利软件套件</p>
 <p>GNU：GNU’s Not Unix! GNU操作系统起源于GNU计划，由理查·斯托曼在MIT人工智能实验室发起，希望发展出一套完整的开放源代码操作系统来取代Unix，计划中的操作系统，名为GNU。</p>
 <p>ASF：Apache Software Foundation  Apache软件基金会</p>
-<h2 id="Linux发行版"><a href="#Linux发行版" class="headerlink" title="Linux发行版"></a>Linux发行版</h2><p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/180502/1JefHh8IEm.png?imageslim" alt="mark"></p>
+<h2 id="Linux发行版"><a href="#Linux发行版" class="headerlink" title="Linux发行版"></a>Linux发行版</h2><p><img src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/image-20241016165254377.png" alt="image-20241016165254377"></p>
 <h3 id="基于Dpkg-Debian系"><a href="#基于Dpkg-Debian系" class="headerlink" title="基于Dpkg (Debian系)"></a>基于Dpkg (Debian系)</h3><p>Debian GNU / Linux是一种强调使用自由软件的发行版。它支持多种硬件平台。Debian及其派生发行版使用<a href="https://zh.wikipedia.org/wiki/Deb" target="_blank" rel="noopener">deb</a>软件包格式，并使用dpkg及其前端作为包管理器。</p>
 <p>商业发行版</p>
 <ul>
@@ -3538,9 +3538,9 @@ Make成功后再src目录下应该有个bnx2.ko模块。</p>
     <title>Hello World</title>
     <url>/posts/4a17b156.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="music"><a href="#music" class="headerlink" title="music"></a>music</h2>
-    <div id="aplayer-lHVWUFBX" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="446935665" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+    <div id="aplayer-NOkpzkhc" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="446935665" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
 <h2 id="playlist"><a href="#playlist" class="headerlink" title="playlist"></a>playlist</h2>
-    <div id="aplayer-WpIRyIwq" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"></div>
+    <div id="aplayer-fWWmZExt" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"></div>
 <figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!-- 简单示例 (id, server, type)  --&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">meting</span> "60198" "netease" "playlist" %&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- 进阶示例 --&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">meting</span> "60198" "netease" "playlist" "autoplay" "mutex:false" "listmaxheight:340px" "preload:none" "theme:#ad7a86"%&#125;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
