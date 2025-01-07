@@ -110,27 +110,6 @@ var msg, offsetX = $("#loveHeart").width() / 2,
     // 每500毫秒更新一次
     setInterval(updateTime, 500);
 
-    // 兼容性检查（仅在不影响时间计算的情况下运行）
-    if (document.createElement("canvas").getContext) {
-        setTimeout(function() {
-            adjustWordsPosition();
-            startHeartAnimation();
-        }, 5000); // 延迟执行，以免影响时间计算
-        setInterval(function() {
-            timeElapse(together, displayMode);
-        }, 500);
-        adjustCodePosition();
-        $("#code").typewriter();
-    } else {
-        msg = document.createElement("div");
-        msg.id = "errorMsg";
-        msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
-        document.body.appendChild(msg);
-        $("#code").css("display", "none");
-        $("#copyright").css("position", "absolute");
-        $("#copyright").css("bottom", "10px");
-        document.execCommand("stop");
-    }
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
