@@ -6,7 +6,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" id="theme-css" href="css/theme.css" type="text/css" media="all">
     <link rel="stylesheet" id="custom-css" href="css/custom.css" type="text/css" media="all">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -62,7 +62,7 @@ var msg, offsetX = $("#loveHeart").width() / 2,
     offsetY = $("#loveHeart").height() / 2 - 55,
     displayMode = 1,
     together = new Date;
-together.setFullYear(2013, 0, 12), together.setHours(0), together.setMinutes(0), together.setSeconds(0), together.setMilliseconds(0), $("#loveHeart").click(function() { displayMode *= -1, timeElapse(together, displayMode) }), document.createElement("canvas").getContext ? (setTimeout(function() { adjustWordsPosition(), startHeartAnimation() }, 5e3), timeElapse(together, displayMode), setInterval(function() { timeElapse(together, displayMode) }, 500), adjustCodePosition(), $("#code").typewriter()) : ((msg = document.createElement("div")).id = "errorMsg", msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+", document.body.appendChild(msg), $("#code").css("display", "none"), $("#copyright").css("position", "absolute"), $("#copyright").css("bottom", "10px"), document.execCommand("stop"))
+    together.setFullYear(2013, 0, 12), together.setHours(0), together.setMinutes(0), together.setSeconds(0), together.setMilliseconds(0), $("#loveHeart").click(function() { displayMode *= -1, timeElapse(together, displayMode) }), document.createElement("canvas").getContext ? (setTimeout(function() { adjustWordsPosition(), startHeartAnimation() }, 5e3), timeElapse(together, displayMode), setInterval(function() { timeElapse(together, displayMode) }, 500), adjustCodePosition(), $("#code").typewriter()) : ((msg = document.createElement("div")).id = "errorMsg", msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+", document.body.appendChild(msg), $("#code").css("display", "none"), $("#copyright").css("position", "absolute"), $("#copyright").css("bottom", "10px"), document.execCommand("stop"))
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
 <script>

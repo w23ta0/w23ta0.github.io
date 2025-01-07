@@ -1,5 +1,5 @@
 
-@import url(https://fonts.proxy.ustclug.org/css?family=Cherry+Swash);
+@import url(https://fonts.cdnfonts.com/css/cherry-swash);
 
 /* =Reset
 -------------------------------------------------------------- */
@@ -95,7 +95,7 @@ img.subheadbg{
 	margin: 0px auto;
 }
 
-subinner{
+.subinner{
 	position: absolute;
 	width: 100%;
 	top:50px;
