@@ -61,45 +61,72 @@
 var msg, offsetX = $("#loveHeart").width() / 2,
     offsetY = $("#loveHeart").height() / 2 - 55,
     displayMode = 1,
-    together = new Date(2013, 0, 12), // 直接初始化日期
+    together = new Date(2013, 0, 12), // 初始化起始日期
     updateTime = function() {
-        var now = new Date(); // 当前时间
-        var timeDifference = now - together; // 计算毫秒差
+        var now = new Date(); // 获取当前时间
 
-        // 计算各个单位的时间
-        var seconds = Math.floor(timeDifference / 1000);
-        var minutes = Math.floor(seconds / 60);
-        var hours = Math.floor(minutes / 60);
-        var days = Math.floor(hours / 24);
-        var months = Math.floor(days / 30.4375); // 平均天数每月（考虑到闰年）
-        var years = Math.floor(months / 12); // 计算年份
+        // 计算年份差（注意要考虑月份和天数）
+        var years = now.getFullYear() - together.getFullYear();
+        if (now.getMonth() < together.getMonth() ||
+            (now.getMonth() === together.getMonth() && now.getDate() < together.getDate())) {
+            years--; // 如果当前日期未到达起始日期的周年，则年份差减1
+        }
 
-        // 计算剩余的时间单位
-        var remainingMonths = months % 12;
-        var remainingDays = days % 30;
-        var remainingHours = hours % 24;
-        var remainingMinutes = minutes % 60;
-        var remainingSeconds = seconds % 60;
+        // 计算月份差
+        var months = now.getMonth() - together.getMonth();
+        if (now.getDate() < together.getDate()) { // 如果当前日期还没到达目标日期
+            months--;
+        }
 
-        // 更新显示
+        if (months < 0) {
+            months += 12; // 如果月份差小于0，表示跨年，需要加12
+        }
+
+        // 计算天数差
+        var days = now.getDate() - together.getDate();
+        if (days < 0) {
+            var prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += prevMonth.getDate(); // 获取上一个月的天数
+        }
+
+        // 计算小时、分钟、秒数差
+        var hours = now.getHours() - together.getHours();
+        var minutes = now.getMinutes() - together.getMinutes();
+        var seconds = now.getSeconds() - together.getSeconds();
+
+        // 处理时间差，避免出现负值
+        if (seconds < 0) {
+            minutes--;
+            seconds += 60;
+        }
+        if (minutes < 0) {
+            hours--;
+            minutes += 60;
+        }
+        if (hours < 0) {
+            days--;
+            hours += 24;
+        }
+
+        // 格式化输出
         document.getElementById('elapseClock').innerHTML = `
             <span class="digit">
                 <h3>${years}</h3> years
             </span>
             <span class="digit">
-                <h3>${remainingMonths}</h3> months
+                <h3>${months}</h3> months
             </span>
             <span class="digit">
-                <h3>${remainingDays}</h3> days
+                <h3>${days}</h3> days
             </span>
             <span class="digit">
-                <h3>${remainingHours.toString().padStart(2, '0')}</h3> hours
+                <h3>${hours.toString().padStart(2, '0')}</h3> hours
             </span>
             <span class="digit">
-                <h3>${remainingMinutes.toString().padStart(2, '0')}</h3> minutes
+                <h3>${minutes.toString().padStart(2, '0')}</h3> minutes
             </span>
             <span class="digit">
-                <h3>${remainingSeconds.toString().padStart(2, '0')}</h3> seconds
+                <h3>${seconds.toString().padStart(2, '0')}</h3> seconds
             </span>
         `;
     };
@@ -110,7 +137,11 @@ var msg, offsetX = $("#loveHeart").width() / 2,
     // 每500毫秒更新一次
     setInterval(updateTime, 500);
 
+
 </script>
+
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
 <script>
