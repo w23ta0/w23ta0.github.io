@@ -61,9 +61,78 @@
 var msg, offsetX = $("#loveHeart").width() / 2,
     offsetY = $("#loveHeart").height() / 2 - 55,
     displayMode = 1,
-    together = new Date;
-    together.setFullYear(2013, 0, 12), together.setHours(0), together.setMinutes(0), together.setSeconds(0), together.setMilliseconds(0), $("#loveHeart").click(function() { displayMode *= -1, timeElapse(together, displayMode) }), document.createElement("canvas").getContext ? (setTimeout(function() { adjustWordsPosition(), startHeartAnimation() }, 5e3), timeElapse(together, displayMode), setInterval(function() { timeElapse(together, displayMode) }, 500), adjustCodePosition(), $("#code").typewriter()) : ((msg = document.createElement("div")).id = "errorMsg", msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+", document.body.appendChild(msg), $("#code").css("display", "none"), $("#copyright").css("position", "absolute"), $("#copyright").css("bottom", "10px"), document.execCommand("stop"))
+    together = new Date(2013, 0, 12), // 直接初始化日期
+    updateTime = function() {
+        var now = new Date(); // 当前时间
+        var timeDifference = now - together; // 计算毫秒差
+
+        // 计算各个单位的时间
+        var seconds = Math.floor(timeDifference / 1000);
+        var minutes = Math.floor(seconds / 60);
+        var hours = Math.floor(minutes / 60);
+        var days = Math.floor(hours / 24);
+        var months = Math.floor(days / 30.4375); // 平均天数每月（考虑到闰年）
+        var years = Math.floor(months / 12); // 计算年份
+
+        // 计算剩余的时间单位
+        var remainingMonths = months % 12;
+        var remainingDays = days % 30;
+        var remainingHours = hours % 24;
+        var remainingMinutes = minutes % 60;
+        var remainingSeconds = seconds % 60;
+
+        // 更新显示
+        document.getElementById('elapseClock').innerHTML = `
+            <span class="digit">
+                <h3>${years}</h3> years
+            </span>
+            <span class="digit">
+                <h3>${remainingMonths}</h3> months
+            </span>
+            <span class="digit">
+                <h3>${remainingDays}</h3> days
+            </span>
+            <span class="digit">
+                <h3>${remainingHours.toString().padStart(2, '0')}</h3> hours
+            </span>
+            <span class="digit">
+                <h3>${remainingMinutes.toString().padStart(2, '0')}</h3> minutes
+            </span>
+            <span class="digit">
+                <h3>${remainingSeconds.toString().padStart(2, '0')}</h3> seconds
+            </span>
+        `;
+    };
+
+    // 页面加载时执行一次时间差计算
+    updateTime();
+
+    // 每500毫秒更新一次
+    setInterval(updateTime, 500);
+
+    // 兼容性检查（仅在不影响时间计算的情况下运行）
+    if (document.createElement("canvas").getContext) {
+        setTimeout(function() {
+            adjustWordsPosition();
+            startHeartAnimation();
+        }, 5000); // 延迟执行，以免影响时间计算
+        setInterval(function() {
+            timeElapse(together, displayMode);
+        }, 500);
+        adjustCodePosition();
+        $("#code").typewriter();
+    } else {
+        msg = document.createElement("div");
+        msg.id = "errorMsg";
+        msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+        document.body.appendChild(msg);
+        $("#code").css("display", "none");
+        $("#copyright").css("position", "absolute");
+        $("#copyright").css("bottom", "10px");
+        document.execCommand("stop");
+    }
 </script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
 <script>
 $("body").backstretch("https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/love/background.png")
