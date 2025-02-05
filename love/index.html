@@ -11,8 +11,35 @@
     <link rel="stylesheet" id="custom-css" href="css/custom.css" type="text/css" media="all">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/functions_dev.js"></script>
-    <script type="text/javascript" src="js/garden_dev.js"></script><audio autoplay>
-        <source src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/Jason%20Derulo%20-%20Marry%20Me%20%5BUMD%5D.mp3" type="audio/mp3"></audio>
+    <script type="text/javascript" src="js/garden_dev.js"></script>
+    <audio id="bgMusic" loop>
+        <source src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/Jason%20Derulo%20-%20Marry%20Me%20%5BUMD%5D.mp3" type="audio/mp3">
+    </audio>
+    <button id="musicToggle" class="music-toggle">
+        <i class="glyphicon glyphicon-music"></i>
+    </button>
+    <!-- 添加canvas背景 -->
+    <canvas id="canvas"></canvas>
+    <style>
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.8);
+            }
+        }
+
+        .love-text {
+            position: fixed;
+            font-size: 1.2em;
+            user-select: none;
+            z-index: 9999;
+            pointer-events: none;
+        }
+    </style>
 </head>
 
 <body class="home page page-id-19 page-template page-template-homepage page-template-homepage-php group-blog">
@@ -131,19 +158,212 @@ var msg, offsetX = $("#loveHeart").width() / 2,
         `;
     };
 
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', function() {
+        const music = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        
+        // 监听各种用户交互事件来启动音乐
+        function initAutoPlay() {
+            music.play().then(() => {
+                musicToggle.classList.add('playing');
+                // 播放成功后移除所有事件监听
+                removeEvents();
+            }).catch(() => {
+                // 如果自动播放失败，不显示旋转动画
+                musicToggle.classList.remove('playing');
+            });
+        }
+
+        // 移除事件监听器
+        function removeEvents() {
+            ['click', 'touchstart', 'scroll', 'mousemove'].forEach(event => {
+                document.removeEventListener(event, initAutoPlay);
+            });
+        }
+
+        // 添加事件监听
+        ['click', 'touchstart', 'scroll', 'mousemove'].forEach(event => {
+            document.addEventListener(event, initAutoPlay, { once: true });
+        });
+        
+        // 音乐控制按钮点击事件
+        musicToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // 阻止事件冒泡
+            if (music.paused) {
+                music.play().then(() => {
+                    musicToggle.classList.add('playing');
+                });
+            } else {
+                music.pause();
+                musicToggle.classList.remove('playing');
+            }
+        });
+
+        // 尝试自动播放
+        initAutoPlay();
+
+        // 背景动画
+        var canvas = document.getElementById('canvas'),
+            ctx = canvas.getContext('2d'),
+            width = window.innerWidth,
+            height = window.innerHeight,
+            particles = [];
+
+        canvas.width = width;
+        canvas.height = height;
+
+        function Particle(x, y) {
+            this.x = x;
+            this.y = y;
+            this.size = Math.random() * 3 + 1;
+            this.speedX = Math.random() * 2 - 1;
+            this.speedY = Math.random() * 2 - 1;
+            this.opacity = Math.random() * 0.5 + 0.2;
+        }
+
+        Particle.prototype.move = function() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            
+            if (this.x > width) this.x = 0;
+            if (this.x < 0) this.x = width;
+            if (this.y > height) this.y = 0;
+            if (this.y < 0) this.y = height;
+        }
+
+        Particle.prototype.draw = function() {
+            ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // 创建粒子
+        function createParticles() {
+            for (var i = 0; i < 100; i++) {
+                particles.push(new Particle(
+                    Math.random() * width,
+                    Math.random() * height
+                ));
+            }
+        }
+
+        // 动画循环
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            particles.forEach(function(particle) {
+                particle.move();
+                particle.draw();
+            });
+            
+            requestAnimationFrame(animate);
+        }
+
+        // 窗口大小改变时重置画布
+        window.addEventListener('resize', function() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        });
+
+        // 初始化背景动画
+        createParticles();
+        animate();
+    });
+
     // 页面加载时执行一次时间差计算
     updateTime();
 
     // 每500毫秒更新一次
     setInterval(updateTime, 500);
 
+    // 定义暧昧文字数组
+    const loveTexts = [
+        "心动", 
+        "想你",
+        "好喜欢",
+        "温柔",
+        "甜甜的",
+        "暖暖的",
+        "心跳",
+        "星星",
+        "月光",
+        "晚风",
+        "微笑",
+        "遇见你",
+        "喜欢你",
+        "在一起",
+        "偷看你",
+        "小确幸",
+        "心动了",
+        "有感觉",
+        "默契",
+        "缘分",
+        "一眼万年",
+        "悸动",
+        "心念",
+        "情愫",
+        "暧昧",
+        "心事",
+        "情话",
+        "浪漫",
+        "心动瞬间",
+        "小幸福",
+        "心花怒放",
+        "心动信号",
+        "爱意",
+        "温度",
+        "心动加速",
+        "心动预警",
+        "心动讯号",
+        "心动时刻",
+        "心动感应"
+    ];
 
-</script>
+    // 生成随机颜色
+    function getRandomColor() {
+        const colors = [
+            '#FF69B4', // 粉红
+            '#FF1493', // 深粉红
+            '#FF69B4', // 热粉红
+            '#FFC0CB', // 浅粉红
+            '#FFB6C1', // 亮粉红
+            '#FF0000', // 红色
+            '#FF4500', // 橙红色
+            '#FFA500', // 橙色
+            '#FFD700', // 金色
+            '#FF8C00'  // 深橙色
+        ];
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
 
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-<script>
-$("body").backstretch("https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/love/background.png")
+    // 点击效果
+    document.addEventListener('click', function(e) {
+        // 创建文字元素
+        const text = document.createElement('div');
+        text.className = 'love-text';
+        text.textContent = loveTexts[Math.floor(Math.random() * loveTexts.length)];
+        text.style.left = e.pageX + 'px';
+        text.style.top = e.pageY + 'px';
+        text.style.color = getRandomColor();
+        text.style.position = 'fixed';
+        text.style.pointerEvents = 'none';
+        
+        // 添加内联样式确保动画效果
+        text.style.animation = 'fadeOut 1.5s forwards';
+        text.style.opacity = '1';
+        text.style.transition = 'all 1.5s';
+        
+        document.body.appendChild(text);
+        
+        // 确保元素被移除
+        setTimeout(() => {
+            if (text && text.parentNode) {
+                text.parentNode.removeChild(text);
+            }
+        }, 1500);
+    });
 </script>
