@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell - 分类 - w23ta0's blog</title><link>https://w23ta0.github.io/categories/shell/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>zh-cn</language><managingEditor>tom920wt@hotmail.com (w23ta0)</managingEditor><webMaster>tom920wt@hotmail.com (w23ta0)</webMaster><lastBuildDate>Fri, 07 Mar 2025 11:36:22 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/categories/shell/index.xml" rel="self" type="application/rss+xml"/><item><title>syntax error near unexpected token 的问题</title><link>https://w23ta0.github.io/posts/20130414-syntax-error-near-unexpected-token-%E7%9A%84%E9%97%AE%E9%A2%98/</link><pubDate>Tue, 14 Apr 2015 15:08:54 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20130414-syntax-error-near-unexpected-token-%E7%9A%84%E9%97%AE%E9%A2%98/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><category domain="https://w23ta0.github.io/categories/shell/">Shell</category><description>&lt;p>如果你在windows里写的shell脚本放到linux系统里运行就可以会提示如下错误&lt;code>syntax error near unexpected token &lt;/code> 这是因为两个平台下面的换行符不一样导致的。所以需要转换下格式，&lt;code>Notepad++&lt;/code>就有这个功能。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell - 分类 - w23ta0's blog</title><link>https://w23ta0.github.io/categories/shell/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>zh-cn</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Fri, 07 Mar 2025 13:21:25 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/categories/shell/index.xml" rel="self" type="application/rss+xml"/><item><title>syntax error near unexpected token 的问题</title><link>https://w23ta0.github.io/posts/20130414-syntax-error-near-unexpected-token-%E7%9A%84%E9%97%AE%E9%A2%98/</link><pubDate>Tue, 14 Apr 2015 15:08:54 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20130414-syntax-error-near-unexpected-token-%E7%9A%84%E9%97%AE%E9%A2%98/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><category domain="https://w23ta0.github.io/categories/shell/">Shell</category><description>&lt;p>如果你在windows里写的shell脚本放到linux系统里运行就可以会提示如下错误&lt;code>syntax error near unexpected token &lt;/code> 这是因为两个平台下面的换行符不一样导致的。所以需要转换下格式，&lt;code>Notepad++&lt;/code>就有这个功能。&lt;/p>
 &lt;ol>
 &lt;li>首先打开Notepad++,让脚本显示所有符号，发现是CR LF
 &lt;img loading="lazy" src="http://storage.live.com/items/9A8B8BF501A38A36!1489?filename=%e6%89%80%e6%9c%89%e7%9a%84%e6%8d%a2%e8%a1%8c%e9%83%bd%e6%98%afwindows%e7%9a%84CRLF.jpg" alt="图片描述" srcset="http://storage.live.com/items/9A8B8BF501A38A36!1489?filename=%e6%89%80%e6%9c%89%e7%9a%84%e6%8d%a2%e8%a1%8c%e9%83%bd%e6%98%afwindows%e7%9a%84CRLF.jpg&amp;amp;size=small, http://storage.live.com/items/9A8B8BF501A38A36!1489?filename=%e6%89%80%e6%9c%89%e7%9a%84%e6%8d%a2%e8%a1%8c%e9%83%bd%e6%98%afwindows%e7%9a%84CRLF.jpg&amp;amp;size=medium 1.5x, http://storage.live.com/items/9A8B8BF501A38A36!1489?filename=%e6%89%80%e6%9c%89%e7%9a%84%e6%8d%a2%e8%a1%8c%e9%83%bd%e6%98%afwindows%e7%9a%84CRLF.jpg&amp;amp;size=large 2x" data-title="图片描述" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/li>
@@ -7,7 +7,7 @@
 &lt;img loading="lazy" src="http://storage.live.com/items/9A8B8BF501A38A36!1490?filename=cpp%20%e8%bd%ac%e6%8d%a2%e4%b8%baUnix%e6%a0%bc%e5%bc%8f.jpg" alt="图片描述" srcset="http://storage.live.com/items/9A8B8BF501A38A36!1490?filename=cpp%20%e8%bd%ac%e6%8d%a2%e4%b8%baUnix%e6%a0%bc%e5%bc%8f.jpg&amp;amp;size=small, http://storage.live.com/items/9A8B8BF501A38A36!1490?filename=cpp%20%e8%bd%ac%e6%8d%a2%e4%b8%baUnix%e6%a0%bc%e5%bc%8f.jpg&amp;amp;size=medium 1.5x, http://storage.live.com/items/9A8B8BF501A38A36!1490?filename=cpp%20%e8%bd%ac%e6%8d%a2%e4%b8%baUnix%e6%a0%bc%e5%bc%8f.jpg&amp;amp;size=large 2x" data-title="图片描述" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/li>
 &lt;li>转换之后，发现回车换行符就变了。再放入linux就不会报错了。
 &lt;img loading="lazy" src="http://storage.live.com/items/9A8B8BF501A38A36!1491?filename=%e6%89%80%e6%9c%89%e7%9a%84%e9%83%bd%e6%98%aflinux%e7%9a%84LF%e4%ba%86.jpg" alt="图片描述" srcset="http://storage.live.com/items/9A8B8BF501A38A36!1491?filename=%e6%89%80%e6%9c%89%e7%9a%84%e9%83%bd%e6%98%aflinux%e7%9a%84LF%e4%ba%86.jpg&amp;amp;size=small, http://storage.live.com/items/9A8B8BF501A38A36!1491?filename=%e6%89%80%e6%9c%89%e7%9a%84%e9%83%bd%e6%98%aflinux%e7%9a%84LF%e4%ba%86.jpg&amp;amp;size=medium 1.5x, http://storage.live.com/items/9A8B8BF501A38A36!1491?filename=%e6%89%80%e6%9c%89%e7%9a%84%e9%83%bd%e6%98%aflinux%e7%9a%84LF%e4%ba%86.jpg&amp;amp;size=large 2x" data-title="图片描述" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/li>
-&lt;/ol></description></item><item><title>Linux Shell date命令的用法</title><link>https://w23ta0.github.io/posts/20130311-linux-shell-date%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/</link><pubDate>Mon, 11 Mar 2013 18:13:00 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20130311-linux-shell-date%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><category domain="https://w23ta0.github.io/categories/shell/">Shell</category><description>&lt;p>在linux shell编程中，经常用到日期的加减运算，以前都是自己通过expr函数计算，很麻烦。
+&lt;/ol></description></item><item><title>Linux Shell date命令的用法</title><link>https://w23ta0.github.io/posts/20130311-linux-shell-date%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/</link><pubDate>Mon, 11 Mar 2013 18:13:00 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20130311-linux-shell-date%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><category domain="https://w23ta0.github.io/categories/shell/">Shell</category><description>&lt;p>在linux shell编程中，经常用到日期的加减运算，以前都是自己通过expr函数计算，很麻烦。
 其实date命令本身提供了日期的加减运算，非常方便。&lt;/p>
 &lt;p>例如：得到昨天的时间&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -17,127 +17,4 @@
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”-1 day”&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;strong>date的用法:&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">date &lt;span class="o">[&lt;/span>OPTION&lt;span class="o">]&lt;/span>… &lt;span class="o">[&lt;/span>+FORMAT&lt;span class="o">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date &lt;span class="o">[&lt;/span>-u&lt;span class="p">|&lt;/span>–utc&lt;span class="p">|&lt;/span>–universal&lt;span class="o">]&lt;/span> &lt;span class="o">[&lt;/span>MMDDhhmm&lt;span class="o">[[&lt;/span>CC&lt;span class="o">]&lt;/span>YY&lt;span class="o">][&lt;/span>.ss&lt;span class="o">]]&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>&lt;strong>date 可以用来显示或设定系统的日期与时间。&lt;/strong>&lt;/p>
-&lt;ol>
-&lt;li>在显示方面，使用者可以设定欲显示的格式，格式设定为一个加号后接数个标记，其中可用的标记列表如下:&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
-&lt;/span>&lt;span class="lnt">19
-&lt;/span>&lt;span class="lnt">20
-&lt;/span>&lt;span class="lnt">21
-&lt;/span>&lt;span class="lnt">22
-&lt;/span>&lt;span class="lnt">23
-&lt;/span>&lt;span class="lnt">24
-&lt;/span>&lt;span class="lnt">25
-&lt;/span>&lt;span class="lnt">26
-&lt;/span>&lt;span class="lnt">27
-&lt;/span>&lt;span class="lnt">28
-&lt;/span>&lt;span class="lnt">29
-&lt;/span>&lt;span class="lnt">30
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">%% : 显示一个 %（百分号）字符。
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%n : 下一行
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%t : 跳格
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%H : 小时&lt;span class="o">(&lt;/span>00..23&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%I : 小时&lt;span class="o">(&lt;/span>01..12&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%k : 小时&lt;span class="o">(&lt;/span>0..23&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%l : 小时&lt;span class="o">(&lt;/span>1..12&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%M : 分钟&lt;span class="o">(&lt;/span>00..59&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%p : 显示本地 AM 或 PM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%r : 直接显示时间 &lt;span class="o">(&lt;/span>&lt;span class="m">12&lt;/span> 小时制，格式为 hh:mm:ss &lt;span class="o">[&lt;/span>AP&lt;span class="o">]&lt;/span>M&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%s : 从 &lt;span class="m">1970&lt;/span> 年 &lt;span class="m">1&lt;/span> 月 &lt;span class="m">1&lt;/span> 日 00:00:00 UTC 到目前为止的秒数
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%S : 秒&lt;span class="o">(&lt;/span>00..61&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%T : 直接显示时间 &lt;span class="o">(&lt;/span>&lt;span class="m">24&lt;/span> 小时制&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%X : 相当于 %H:%M:%S
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%Z : 显示时区 %a : 星期几 &lt;span class="o">(&lt;/span>Sun..Sat&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%A : 星期几 &lt;span class="o">(&lt;/span>Sunday..Saturday&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%b : 月份 &lt;span class="o">(&lt;/span>Jan..Dec&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%B : 月份 &lt;span class="o">(&lt;/span>January..December&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%c : 直接显示日期与时间
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%d : 日 &lt;span class="o">(&lt;/span>01..31&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%D : 直接显示日期 &lt;span class="o">(&lt;/span>mm/dd/yy&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%h : 同 %b
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%j : 一年中的第几天 &lt;span class="o">(&lt;/span>001..366&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%m : 月份 &lt;span class="o">(&lt;/span>01..12&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%U : 一年中的第几周 &lt;span class="o">(&lt;/span>00..53&lt;span class="o">)&lt;/span> &lt;span class="o">(&lt;/span>以 Sunday 为一周的第一天的情形&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%w : 一周中的第几天 &lt;span class="o">(&lt;/span>0..6&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%W : 一年中的第几周 &lt;span class="o">(&lt;/span>00..53&lt;span class="o">)&lt;/span> &lt;span class="o">(&lt;/span>以 Monday 为一周的第一天的情形&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%x : 直接显示日期 &lt;span class="o">(&lt;/span>mm/dd/yy&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%y : 年份的最后两位数字 &lt;span class="o">(&lt;/span>00.99&lt;span class="o">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%Y : 完整年份 &lt;span class="o">(&lt;/span>0000..9999&lt;span class="o">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ol start="2">
-&lt;li>在设定时间方面&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">date -s //设置当前时间，只有root权限才能设置，其他只能查看。
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date -s &lt;span class="m">20080523&lt;/span> //设置成20080523，这样会把具体时间设置成空00:00:00
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date -s 01:01:01 //设置具体时间，不会对日期做更改
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date -s “01:01:01 2008-05-23″ //这样可以设置全部时间
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date -s “01:01:01 20080523″ //这样可以设置全部时间
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date -s “2008-05-23 01:01:01″ //这样可以设置全部时间
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date -s “20080523 01:01:01″ //这样可以设置全部时间&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ol start="3">
-&lt;li>加减&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">date +%Y%m%d //显示前天年月日
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”+1 day” //显示前一天的日期
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”-1 day” //显示后一天的日期
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”-1 month” //显示上一月的日期
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”+1 month” //显示下一月的日期
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”-1 year” //显示前一年的日期
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”+1 year” //显示下一年的日期&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item></channel></rss>
+&lt;/div>&lt;p>&lt;strong>date的用法:&lt;/strong>&lt;/p></description></item></channel></rss>
