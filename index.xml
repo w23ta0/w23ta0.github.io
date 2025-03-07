@@ -1,16 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>w23ta0's blog</title><link>https://w23ta0.github.io/</link><description>You got a dream, you gotta protect it.</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>zh-cn</language><managingEditor>tom920wt@hotmail.com (w23ta0)</managingEditor><webMaster>tom920wt@hotmail.com (w23ta0)</webMaster><lastBuildDate>Fri, 07 Mar 2025 11:23:13 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://w23ta0.github.io/posts/hello-world/</link><pubDate>Thu, 29 Sep 2022 17:06:11 +0800</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/hello-world/</guid><category domain="https://w23ta0.github.io/categories/hello/">Hello</category><description>&lt;p>Welcome to Hugo FixIt! This is your very first post.&lt;/p>
-&lt;h2 id="documentation" class="heading-element">&lt;span>Documentation&lt;/span>
- &lt;a href="#documentation" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>Head to the documentation page linked below for a complete guidence to get started with the &lt;a href="https://github.com/hugo-fixit/FixIt"target="_blank" rel="external nofollow noopener noreferrer">FixIt&lt;/a> theme.&lt;/p>
-&lt;div class="fixit-docs-navigation">&lt;ul class="fixit-docs-outline">&lt;li>&lt;a href="https://fixit.lruihao.cn/zh-cn/documentation/installation/" title="只需几个步骤即可为你的 Hugo 站点安装 FixIt 主题。">安装篇&lt;/a>&lt;/li>&lt;li>&lt;a href="https://fixit.lruihao.cn/zh-cn/documentation/getting-started/" title="安装和使用 FixIt 主题的快速入门和指南。">入门篇&lt;/a>&lt;/li>&lt;li>&lt;a href="https://fixit.lruihao.cn/zh-cn/documentation/content-management/" title="了解如何在 FixIt 主题中快速，直观地创建和组织内容。">内容管理&lt;/a>&lt;/li>&lt;li>&lt;a href="https://fixit.lruihao.cn/zh-cn/documentation/advanced/" title="探索 Hugo - FixIt 主题的的进阶使用。">进阶篇&lt;/a>&lt;/li>&lt;/ul>&lt;div class="fixit-docs-preview">&lt;/div>&lt;/div>
-&lt;h2 id="feedback" class="heading-element">&lt;span>Feedback&lt;/span>
- &lt;a href="#feedback" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>Whether it&amp;rsquo;s questions, ideas, bugs or pull requests, all feedback is welcome!&lt;/p>
-&lt;p>Head over to the &lt;a href="https://github.com/hugo-fixit/FixIt/issues"target="_blank" rel="external nofollow noopener noreferrer">issues&lt;/a> or &lt;a href="https://github.com/hugo-fixit/FixIt/discussions"target="_blank" rel="external nofollow noopener noreferrer">discussions&lt;/a> tracker.&lt;/p></description></item><item><title>在KVM虚拟机中安装Android-x86模拟器</title><link>https://w23ta0.github.io/posts/20220510-%E5%9C%A8kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93x86%E6%A8%A1%E6%8B%9F%E5%99%A8/</link><pubDate>Tue, 10 May 2022 16:02:55 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20220510-%E5%9C%A8kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93x86%E6%A8%A1%E6%8B%9F%E5%99%A8/</guid><category domain="https://w23ta0.github.io/categories/android/">Android</category><description>&lt;h2 id="准备android-x86的iso镜像" class="heading-element">&lt;span>准备Android-x86的iso镜像&lt;/span>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>w23ta0's blog</title><link>https://w23ta0.github.io/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>zh-cn</language><managingEditor>tom920wt@hotmail.com (w23ta0)</managingEditor><webMaster>tom920wt@hotmail.com (w23ta0)</webMaster><lastBuildDate>Fri, 07 Mar 2025 11:36:22 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>在KVM虚拟机中安装Android-x86模拟器</title><link>https://w23ta0.github.io/posts/20220510-%E5%9C%A8kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93x86%E6%A8%A1%E6%8B%9F%E5%99%A8/</link><pubDate>Tue, 10 May 2022 16:02:55 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20220510-%E5%9C%A8kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93x86%E6%A8%A1%E6%8B%9F%E5%99%A8/</guid><category domain="https://w23ta0.github.io/categories/android/">Android</category><description>&lt;h2 id="准备android-x86的iso镜像" class="heading-element">&lt;span>准备Android-x86的iso镜像&lt;/span>
  &lt;a href="#%e5%87%86%e5%a4%87android-x86%e7%9a%84iso%e9%95%9c%e5%83%8f" class="heading-mark">
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
  &lt;/a>
@@ -2723,4 +2711,54 @@ DNS1=192.168.1.221
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#注销凭证&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">kdestory&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item></channel></rss>
+&lt;/div></description></item><item><title>解决LDAP出现ldap_bind: Invalid credentials (49)错误</title><link>https://w23ta0.github.io/posts/20170314-%E8%A7%A3%E5%86%B3ldap%E5%87%BA%E7%8E%B0ldap-bind-invalid-credentials-49-%E9%94%99%E8%AF%AF/</link><pubDate>Tue, 14 Mar 2017 14:43:23 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20170314-%E8%A7%A3%E5%86%B3ldap%E5%87%BA%E7%8E%B0ldap-bind-invalid-credentials-49-%E9%94%99%E8%AF%AF/</guid><category domain="https://w23ta0.github.io/categories/%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/">身份认证</category><category domain="https://w23ta0.github.io/categories/ldap/">LDAP</category><description>&lt;p>LDAP最经常遇到的就是ldap_bind: Invalid credentials (49)错误，本文阐述了错误原因及解决办法：
+比如在某LDAP客户端，使用rootdn(管理员)权限为某用户修改密码时&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ ldappasswd -H ldap://172.16.0.21 -x -D &lt;span class="s2">&amp;#34;cn=admin,ou=People,dc=expmale,dc=com&amp;#34;&lt;/span> -W -S &lt;span class="s2">&amp;#34;uid=zhang3,ou=People,dc=expmale,dc=com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">New password: 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Re-enter new password: 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Enter LDAP Password: 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ldap_bind: Invalid credentials &lt;span class="o">(&lt;/span>49&lt;span class="o">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>错误原因1：管理员DN或者用户DN错误&lt;/strong>&lt;/p>
+&lt;p>管理员DN是在&lt;code>/etc/openldap/slapd.conf&lt;/code>中指定的rootdn，其格式
+应该是”cn=admin,dc=expmale,dc=com”
+而不是”cn=admin,ou=People,dc=expmale,dc=com”
+而普通用户的DN才应该是”uid=zhang3,ou=People,dc=expmale,dc=com”。
+也可以执行如下命令查看该用户的DN是否存在&lt;/p>
+&lt;p>查询用户列表,不需要密码&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ ldapsearch -H ldap://172.16.0.21 -x -b &lt;span class="s2">&amp;#34;ou=People,dc=expmale,dc=com&amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> grep dn&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>错误原因2：管理员密码错误&lt;/strong>&lt;/p>
+&lt;p>这个需要自行判断，如需要修改rootdn的密码，在&lt;code>/etc/openldap/slapd.conf&lt;/code>中改掉roodn的rootpw项，然后执行如下操作&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ rm -fr /etc/openldap/slapd.d/*
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ slaptest -f /etc/openldap/slapd.conf -F /etc/openldap/slapd.d
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#测试配置文件语法是否有错误，如果提示testing succeeded则可以进入下一步&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ chown -R ldap:ldap /etc/openldap/slapd.d/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ /etc/init.d/slapd restart&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>提示：删除&lt;code>/etc/openldap/slapd.d/&lt;/code>目录下的内容，并不会导致ldap数据库的丢失，实际上，ldap数据库存储位置（通常位于&lt;code>/var/lib/ldap&lt;/code>目录下）由主配置文件里的directory项指定。&lt;/p></description></item></channel></rss>
