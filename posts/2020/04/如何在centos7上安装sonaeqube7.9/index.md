@@ -58,9 +58,11 @@ create schema my_schema;
 
 ### 开启远程访问
 修改/var/lib/pgsql/10/data/postgresql.conf文件，取消 listen_addresses 的注释，将参数值改为“*” 
+
 ![](https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427123802.png) 
 
 修改/var/lib/pgsql/10/data/pg_hba.conf文件，增加下图红框部分内容 
+
 ![](https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200427123810.png) 
 
 ### 切换到root用户，重启postgresql服务
