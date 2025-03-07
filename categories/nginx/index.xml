@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nginx - 分类 - w23ta0's blog</title><link>https://w23ta0.github.io/categories/nginx/</link><description>You got a dream, you gotta protect it.</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>zh-cn</language><managingEditor>tom920wt@hotmail.com (w23ta0)</managingEditor><webMaster>tom920wt@hotmail.com (w23ta0)</webMaster><lastBuildDate>Fri, 07 Mar 2025 11:23:13 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/categories/nginx/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx重定向&amp;静动资源分离</title><link>https://w23ta0.github.io/posts/20150624-nginx%E9%87%8D%E5%AE%9A%E5%90%91%E9%9D%99%E5%8A%A8%E8%B5%84%E6%BA%90%E5%88%86%E7%A6%BB/</link><pubDate>Wed, 24 Jun 2015 13:05:51 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150624-nginx%E9%87%8D%E5%AE%9A%E5%90%91%E9%9D%99%E5%8A%A8%E8%B5%84%E6%BA%90%E5%88%86%E7%A6%BB/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><category domain="https://w23ta0.github.io/categories/nginx/">Nginx</category><description>&lt;h2 id="域名重写" class="heading-element">&lt;span>域名重写&lt;/span>
+ &lt;a href="#%e5%9f%9f%e5%90%8d%e9%87%8d%e5%86%99" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>我们可以在同一个server中绑定域名www.example.com和example.com两个域名：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="line">&lt;span class="cl">&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">example.com&lt;/span> &lt;span class="s">www.example.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>但是这样对我们的SEO非常不利，我们需要使用301（rewrite）将一个域名重定向到另一个，比如将example重定向到www.example.com。这里要依赖于正则表达式的分组（使用$1来引用分组）。&lt;/p></description></item><item><title>Nginx中的upstream轮询机制介绍</title><link>https://w23ta0.github.io/posts/20150614-nginx%E4%B8%AD%E7%9A%84upstream%E8%BD%AE%E8%AF%A2%E6%9C%BA%E5%88%B6%E4%BB%8B%E7%BB%8D/</link><pubDate>Sun, 14 Jun 2015 13:03:23 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150614-nginx%E4%B8%AD%E7%9A%84upstream%E8%BD%AE%E8%AF%A2%E6%9C%BA%E5%88%B6%E4%BB%8B%E7%BB%8D/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><category domain="https://w23ta0.github.io/categories/nginx/">Nginx</category><description>&lt;p>Nginx中upstream有以下几种方式：&lt;/p>
+&lt;ol>
+&lt;li>轮询(weight=1)&lt;/li>
+&lt;/ol>
+&lt;p>默认选项，当weight不指定时，各服务器weight相同，
+每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="line">&lt;span class="cl">&lt;span class="k">upstream&lt;/span> &lt;span class="s">bakend&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server&lt;/span> &lt;span class="mi">192&lt;/span>&lt;span class="s">.168.1.10&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server&lt;/span> &lt;span class="mi">192&lt;/span>&lt;span class="s">.168.1.11&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>weight&lt;/li>
+&lt;/ol>
+&lt;p>指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。
+如果后端服务器down掉，能自动剔除。
+比如下面配置，则1.11服务器的访问量为1.10服务器的两倍。&lt;/p></description></item><item><title>.htaccess实现网页Gzip压缩</title><link>https://w23ta0.github.io/posts/20120824-.htaccess%E5%AE%9E%E7%8E%B0%E7%BD%91%E9%A1%B5gzip%E5%8E%8B%E7%BC%A9/</link><pubDate>Fri, 24 Aug 2012 09:41:47 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20120824-.htaccess%E5%AE%9E%E7%8E%B0%E7%BD%91%E9%A1%B5gzip%E5%8E%8B%E7%BC%A9/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><category domain="https://w23ta0.github.io/categories/nginx/">Nginx</category><description>&lt;p>最近抽出了一点时间，研究了使用.htaccess 开启网页gzip压缩的问题。
+大家都知道网页打开速度与dns，服务器，页面代码，网站结构，统统都相关。
+网页压缩的问题。因为本人的大部分网站都是PHP的，所以，基本需要.htaccess来解决。&lt;/p>
+&lt;p>在.htaccess文件中请加入以下代码即可：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="nx">IfModule&lt;/span> &lt;span class="nx">mod_deflate&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="nx">c&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresActive&lt;/span> &lt;span class="nx">On&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresDefault&lt;/span> &lt;span class="nx">A600&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">image&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">icon&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">javascript&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">css&lt;/span> &lt;span class="nx">A604800&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">image&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">gif&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">image&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">png&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">image&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">jpeg&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">plain&lt;/span> &lt;span class="nx">A86400&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">shockwave&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">flash&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">video&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">flv&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">pdf&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">html&lt;/span> &lt;span class="nx">A600&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Insert filters
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nx">AddOutputFilter&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">html&lt;/span> &lt;span class="nx">xml&lt;/span> &lt;span class="nx">php&lt;/span> &lt;span class="nx">js&lt;/span> &lt;span class="nx">css&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">plain&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">html&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">xml&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">css&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">xml&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">xhtml&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="nx">xml&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">rss&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="nx">xml&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">javascript&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">javascript&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">httpd&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">httpd&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">fastphp&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">image&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">svg&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="nx">xml&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Drop problematic browsers
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nx">BrowserMatch&lt;/span> &lt;span class="o">^&lt;/span>&lt;span class="nx">Mozilla&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">4&lt;/span> &lt;span class="nx">gzip&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">only&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">html&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">BrowserMatch&lt;/span> &lt;span class="o">^&lt;/span>&lt;span class="nx">Mozilla&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mf">4.0&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">678&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="nx">no&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">gzip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">BrowserMatch&lt;/span> &lt;span class="o">!&lt;/span>&lt;span class="nx">no&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">gzip&lt;/span> &lt;span class="o">!&lt;/span>&lt;span class="nx">gzip&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">only&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">html&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Make sure proxies don&amp;#39;t deliver the wrong conten
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nx">Header&lt;/span> &lt;span class="nx">append&lt;/span> &lt;span class="nx">Vary&lt;/span> &lt;span class="nx">User&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">Agent&lt;/span> &lt;span class="nx">env&lt;/span>&lt;span class="o">=!&lt;/span>&lt;span class="nx">dont&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">vary&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;/&lt;/span>&lt;span class="nx">IfModule&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如果没有这个文件，可以自己新建。然后上传到空间就可以了。
+这时候，你可以使用站长工具测试一下。
+推荐chinaz.com站长工具。&lt;/p></description></item></channel></rss>

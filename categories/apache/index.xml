@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache - 分类 - w23ta0's blog</title><link>https://w23ta0.github.io/categories/apache/</link><description>You got a dream, you gotta protect it.</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>zh-cn</language><managingEditor>tom920wt@hotmail.com (w23ta0)</managingEditor><webMaster>tom920wt@hotmail.com (w23ta0)</webMaster><lastBuildDate>Fri, 07 Mar 2025 11:23:13 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/categories/apache/index.xml" rel="self" type="application/rss+xml"/><item><title>Apache访问日志分析</title><link>https://w23ta0.github.io/posts/20150812-apache%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</link><pubDate>Wed, 12 Aug 2015 17:03:37 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150812-apache%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><category domain="https://w23ta0.github.io/categories/apache/">Apache</category><description>&lt;p>当前WEB服务器中联接次数最多的ip地址&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ netstat -ntu &lt;span class="p">|&lt;/span>awk &lt;span class="s1">&amp;#39;{print $5}&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span>sort &lt;span class="p">|&lt;/span> uniq -c&lt;span class="p">|&lt;/span> sort -nr&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看日志中访问次数最多的前10个IP&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ cat access.log &lt;span class="p">|&lt;/span>cut -d &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span> -f &lt;span class="m">1&lt;/span> &lt;span class="p">|&lt;/span>sort &lt;span class="p">|&lt;/span>uniq -c &lt;span class="p">|&lt;/span> sort -nr &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $0 }&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> head -n &lt;span class="m">10&lt;/span> &lt;span class="p">|&lt;/span>less&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看日志中出现100次以上的IP&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ cat access.log &lt;span class="p">|&lt;/span>cut -d &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span> -f &lt;span class="m">1&lt;/span> &lt;span class="p">|&lt;/span>sort &lt;span class="p">|&lt;/span>uniq -c &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{if ($1 &amp;gt; 100) print $0}&amp;#39;&lt;/span>｜sort -nr &lt;span class="p">|&lt;/span>less&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看最近访问量最高的文件&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ cat access.log &lt;span class="p">|&lt;/span>tail -10000&lt;span class="p">|&lt;/span>awk &lt;span class="s1">&amp;#39;{print $7}&amp;#39;&lt;/span>&lt;span class="p">|&lt;/span>sort&lt;span class="p">|&lt;/span>uniq -c&lt;span class="p">|&lt;/span>sort -nr&lt;span class="p">|&lt;/span>less&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看日志中访问超过100次的页面&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ cat access.log &lt;span class="p">|&lt;/span> cut -d &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span> -f &lt;span class="m">7&lt;/span> &lt;span class="p">|&lt;/span> sort &lt;span class="p">|&lt;/span>uniq -c &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{if ($1 &amp;gt; 100) print $0}&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> less&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>统计某url，一天的访问次数&lt;/p></description></item><item><title>让Linux主机开启.htaccess支持</title><link>https://w23ta0.github.io/posts/20120820-%E8%AE%A9linux%E4%B8%BB%E6%9C%BA%E5%BC%80%E5%90%AF.htaccess%E6%94%AF%E6%8C%81/</link><pubDate>Mon, 20 Aug 2012 09:41:47 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20120820-%E8%AE%A9linux%E4%B8%BB%E6%9C%BA%E5%BC%80%E5%90%AF.htaccess%E6%94%AF%E6%8C%81/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><category domain="https://w23ta0.github.io/categories/apache/">Apache</category><description>&lt;p>国内的很多Linux型主机默认是不开启.htaccess的，从而导致不支持伪静态。而国外的虚拟主机基本上都是支持此服务的，我曾经问过国内的主机提供商为何不开启.htaccess服务，他们的回答很可笑，说是减轻服务器的负担，呵，这真是符合了中国的国情，真让你不知以何种语言反击之。&lt;/p>
+&lt;p>这里给一些菜鸟扫扫盲，很多站长都单纯的以为.htaccess就是伪静态，把.htaccess当成伪静态的代名词，以为.htaccess就起到.htaccess的作用，其实它的作用比你想象的大得多，除了伪静态，还有我们熟知的404啊、301跳转啊等，都可以通过.htaccess来实现，下面来给大家介绍一下如何在Linux型主机下开启.htaccess的支持，前提你有这个权限，一般这个针对的是服务器或者VPS，虚拟主机基本上是没门，除非你要求提供商帮你开启。另一种情况是有些童鞋在本地搭建PHP+MySQL+Apache的时候用得着此方法，本地的一键安装包有xampp 和phpnow等，我个人推荐使用phpnow，简单易用，完全傻瓜式。如果你使用phpnow搭建的话你就不用往下看了，因为默认是开启的。&lt;/p></description></item></channel></rss>

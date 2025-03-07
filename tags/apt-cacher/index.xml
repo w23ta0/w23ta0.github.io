@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apt-Cacher - 标签 - w23ta0's blog</title><link>https://w23ta0.github.io/tags/apt-cacher/</link><description>You got a dream, you gotta protect it.</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>zh-cn</language><managingEditor>tom920wt@hotmail.com (w23ta0)</managingEditor><webMaster>tom920wt@hotmail.com (w23ta0)</webMaster><lastBuildDate>Fri, 07 Mar 2025 11:23:13 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/tags/apt-cacher/index.xml" rel="self" type="application/rss+xml"/><item><title>架设Ubuntu apt-cacher服务</title><link>https://w23ta0.github.io/posts/20150518-%E6%9E%B6%E8%AE%BEubuntu-apt-cacher%E6%9C%8D%E5%8A%A1/</link><pubDate>Mon, 18 May 2015 16:47:33 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150518-%E6%9E%B6%E8%AE%BEubuntu-apt-cacher%E6%9C%8D%E5%8A%A1/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>源服务器名称可能不太准确，意思是创建内网自己的私服，这样只要有Ubuntu通过该私服下载安装过软件，私服都会缓存，下一个Ubuntu的请求就直接从缓存中获取。
+最近Ubuntu源服务器太慢了，北京的网络也够烂的。逼不得已！&lt;/p>
+&lt;p>首先安装apt-cacher&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">apt-get install apt-cacher&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>装的过程中选择Daemon方式。 装完后，/etc/default/apt-cacher 文件内容应该如下：&lt;/p></description></item></channel></rss>

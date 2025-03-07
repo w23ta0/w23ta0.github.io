@@ -1,1 +1,1447 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>所有文章 - w23ta0's blog</title><link>https://w23ta0.github.io/posts/</link><description>You got a dream, you gotta protect it.</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>zh-cn</language><managingEditor>tom920wt@hotmail.com (w23ta0)</managingEditor><webMaster>tom920wt@hotmail.com (w23ta0)</webMaster><lastBuildDate>Fri, 07 Mar 2025 19:21:02 +0800</lastBuildDate><atom:link href="https://w23ta0.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://w23ta0.github.io/posts/hello-world/</link><pubDate>Thu, 29 Sep 2022 17:06:11 +0800</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/hello-world/</guid><category domain="https://w23ta0.github.io/categories/hello/">Hello</category><description>&lt;p>Welcome to Hugo FixIt! This is your very first post.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>所有文章 - w23ta0's blog</title><link>https://w23ta0.github.io/posts/</link><description>You got a dream, you gotta protect it.</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>zh-cn</language><managingEditor>tom920wt@hotmail.com (w23ta0)</managingEditor><webMaster>tom920wt@hotmail.com (w23ta0)</webMaster><lastBuildDate>Fri, 07 Mar 2025 11:23:13 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://w23ta0.github.io/posts/hello-world/</link><pubDate>Thu, 29 Sep 2022 17:06:11 +0800</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/hello-world/</guid><category domain="https://w23ta0.github.io/categories/hello/">Hello</category><description>&lt;p>Welcome to Hugo FixIt! This is your very first post.&lt;/p></description></item><item><title>在KVM虚拟机中安装Android-x86模拟器</title><link>https://w23ta0.github.io/posts/20220510-%E5%9C%A8kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93x86%E6%A8%A1%E6%8B%9F%E5%99%A8/</link><pubDate>Tue, 10 May 2022 16:02:55 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20220510-%E5%9C%A8kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93x86%E6%A8%A1%E6%8B%9F%E5%99%A8/</guid><category domain="https://w23ta0.github.io/categories/android/">Android</category><description>&lt;h2 id="准备android-x86的iso镜像" class="heading-element">&lt;span>准备Android-x86的iso镜像&lt;/span>
+ &lt;a href="#%e5%87%86%e5%a4%87android-x86%e7%9a%84iso%e9%95%9c%e5%83%8f" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>可以在http://www.android-x86.org/download 处下载&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>root@localhost ~&lt;span class="o">]&lt;/span>&lt;span class="c1"># cd /opt&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>root@localhost ~&lt;span class="o">]&lt;/span>&lt;span class="c1"># wget https://nchc.dl.sourceforge.net/project/android-x86/Release%209.0/android-x86_64-9.0-r2.iso --no-check-certificate&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="准备kvm虚拟化环境" class="heading-element">&lt;span>准备kvm虚拟化环境&lt;/span>
+ &lt;a href="#%e5%87%86%e5%a4%87kvm%e8%99%9a%e6%8b%9f%e5%8c%96%e7%8e%af%e5%a2%83" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;h3 id="检测是否支持kvm" class="heading-element">&lt;span>检测是否支持KVM&lt;/span>
+ &lt;a href="#%e6%a3%80%e6%b5%8b%e6%98%af%e5%90%a6%e6%94%af%e6%8c%81kvm" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>KVM 是基于 x86 虚拟化扩展(Intel VT 或者 AMD-V) 技术的虚拟机软件，所以查看 CPU 是否支持 VT 技术，就可以判断是否支持KVM。有返回结果，如果结果中有vmx（Intel）或svm(AMD)字样，就说明CPU的支持的。&lt;/p></description></item><item><title>Ubuntu下全命令行部署Android模拟器</title><link>https://w23ta0.github.io/posts/20220506-ubuntu%E4%B8%8B%E5%85%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%83%A8%E7%BD%B2android%E6%A8%A1%E6%8B%9F%E5%99%A8/</link><pubDate>Fri, 06 May 2022 15:23:55 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20220506-ubuntu%E4%B8%8B%E5%85%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%83%A8%E7%BD%B2android%E6%A8%A1%E6%8B%9F%E5%99%A8/</guid><category domain="https://w23ta0.github.io/categories/android/">Android</category><description>&lt;h2 id="平台代号版本api-级别和-ndk-版本" class="heading-element">&lt;span>平台代号、版本、API 级别和 NDK 版本&lt;/span>
+ &lt;a href="#%e5%b9%b3%e5%8f%b0%e4%bb%a3%e5%8f%b7%e7%89%88%e6%9c%acapi-%e7%ba%a7%e5%88%ab%e5%92%8c-ndk-%e7%89%88%e6%9c%ac" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>下表列出了代号、对应的版本号以及关联的 API 级别。&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">代号&lt;/th>
+ &lt;th style="text-align: left">版本&lt;/th>
+ &lt;th style="text-align: left">API 级别/NDK 版本&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">Android12L&lt;/td>
+ &lt;td style="text-align: left">12.1&lt;/td>
+ &lt;td style="text-align: left">API 级别 32&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Android12&lt;/td>
+ &lt;td style="text-align: left">12&lt;/td>
+ &lt;td style="text-align: left">API 级别 31&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Android11&lt;/td>
+ &lt;td style="text-align: left">11&lt;/td>
+ &lt;td style="text-align: left">API 级别 30&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Android10&lt;/td>
+ &lt;td style="text-align: left">10&lt;/td>
+ &lt;td style="text-align: left">API 级别 29&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Pie&lt;/td>
+ &lt;td style="text-align: left">9&lt;/td>
+ &lt;td style="text-align: left">API 级别 28&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Oreo&lt;/td>
+ &lt;td style="text-align: left">8.1.0&lt;/td>
+ &lt;td style="text-align: left">API 级别 27&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Oreo&lt;/td>
+ &lt;td style="text-align: left">8.0.0&lt;/td>
+ &lt;td style="text-align: left">API 级别 26&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Nougat&lt;/td>
+ &lt;td style="text-align: left">7.1&lt;/td>
+ &lt;td style="text-align: left">API 级别 25&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Nougat&lt;/td>
+ &lt;td style="text-align: left">7.0&lt;/td>
+ &lt;td style="text-align: left">API 级别 24&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Marshmallow&lt;/td>
+ &lt;td style="text-align: left">6.0&lt;/td>
+ &lt;td style="text-align: left">API 级别 23&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Lollipop&lt;/td>
+ &lt;td style="text-align: left">5.1&lt;/td>
+ &lt;td style="text-align: left">API 级别 22&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Lollipop&lt;/td>
+ &lt;td style="text-align: left">5.0&lt;/td>
+ &lt;td style="text-align: left">API 级别 21&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">KitKat&lt;/td>
+ &lt;td style="text-align: left">4.4 - 4.4.4&lt;/td>
+ &lt;td style="text-align: left">API 级别 19&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Jelly Bean&lt;/td>
+ &lt;td style="text-align: left">4.3.x&lt;/td>
+ &lt;td style="text-align: left">API 级别 18&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Jelly Bean&lt;/td>
+ &lt;td style="text-align: left">4.2.x&lt;/td>
+ &lt;td style="text-align: left">API 级别 17&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Jelly Bean&lt;/td>
+ &lt;td style="text-align: left">4.1.x&lt;/td>
+ &lt;td style="text-align: left">API 级别 16&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Ice Cream Sandwich&lt;/td>
+ &lt;td style="text-align: left">4.0.3 - 4.0.4&lt;/td>
+ &lt;td style="text-align: left">API 级别 15，NDK 8&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Ice Cream Sandwich&lt;/td>
+ &lt;td style="text-align: left">4.0.1 - 4.0.2&lt;/td>
+ &lt;td style="text-align: left">API 级别 14，NDK 7&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Honeycomb&lt;/td>
+ &lt;td style="text-align: left">3.2.x&lt;/td>
+ &lt;td style="text-align: left">API 级别 13&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Honeycomb&lt;/td>
+ &lt;td style="text-align: left">3.1&lt;/td>
+ &lt;td style="text-align: left">API 级别 12，NDK 6&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Honeycomb&lt;/td>
+ &lt;td style="text-align: left">3.0&lt;/td>
+ &lt;td style="text-align: left">API 级别 11&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Gingerbread&lt;/td>
+ &lt;td style="text-align: left">2.3.3 - 2.3.7&lt;/td>
+ &lt;td style="text-align: left">API 级别 10&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Gingerbread&lt;/td>
+ &lt;td style="text-align: left">2.3 - 2.3.2&lt;/td>
+ &lt;td style="text-align: left">API 级别 9，NDK 5&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Froyo&lt;/td>
+ &lt;td style="text-align: left">2.2.x&lt;/td>
+ &lt;td style="text-align: left">API 级别 8，NDK 4&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Eclair&lt;/td>
+ &lt;td style="text-align: left">2.1&lt;/td>
+ &lt;td style="text-align: left">API 级别 7，NDK 3&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Eclair&lt;/td>
+ &lt;td style="text-align: left">2.0.1&lt;/td>
+ &lt;td style="text-align: left">API 级别 6&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Eclair&lt;/td>
+ &lt;td style="text-align: left">2.0&lt;/td>
+ &lt;td style="text-align: left">API 级别 5&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Donut&lt;/td>
+ &lt;td style="text-align: left">1.6&lt;/td>
+ &lt;td style="text-align: left">API 级别 4，NDK 2&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Cupcake&lt;/td>
+ &lt;td style="text-align: left">1.5&lt;/td>
+ &lt;td style="text-align: left">API 级别 3，NDK 1&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">（无代号）&lt;/td>
+ &lt;td style="text-align: left">1.1&lt;/td>
+ &lt;td style="text-align: left">API 级别 2&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">（无代号）&lt;/td>
+ &lt;td style="text-align: left">1.0&lt;/td>
+ &lt;td style="text-align: left">API 级别 1&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="安装jdk环境" class="heading-element">&lt;span>安装JDK环境&lt;/span>
+ &lt;a href="#%e5%ae%89%e8%a3%85jdk%e7%8e%af%e5%a2%83" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">root@w23ta0-virtual-machine# wget https://mirrors.huaweicloud.com/java/jdk/8u202-b08/jdk-8u202-linux-x64.tar.gz
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">root@w23ta0-virtual-machine# tar zxvf jdk-8u202-linux-x64.tar.gz -C /opt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">JAVA_HOME&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;/opt/jdk1.8.0_202&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">PATH&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$PATH&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="nv">$JAVA_HOME&lt;/span>&lt;span class="s2">/bin&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">CLASSPATH&lt;/span>&lt;span class="o">=&lt;/span>.:&lt;span class="nv">$JAVA_HOME&lt;/span>/lib/dt.jar:&lt;span class="nv">$JAVA_HOME&lt;/span>/lib/tools.jar&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="安装-android-模拟器" class="heading-element">&lt;span>安装 Android 模拟器&lt;/span>
+ &lt;a href="#%e5%ae%89%e8%a3%85-android-%e6%a8%a1%e6%8b%9f%e5%99%a8" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;h3 id="command-line-tools" class="heading-element">&lt;span>Command line tools&lt;/span>
+ &lt;a href="#command-line-tools" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">root@w23ta0-virtual-machine# wget https://dl.google.com/android/repository/commandlinetools-linux-8092744_latest.zip
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">root@w23ta0-virtual-machine# unzip commandlinetools-linux-8092744_latest.zip -d /opt/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">root@w23ta0-virtual-machine# &lt;span class="nb">cd&lt;/span> /opt/cmdline-tools/bin&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="sdkmanager" class="heading-element">&lt;span>sdkmanager&lt;/span>
+ &lt;a href="#sdkmanager" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>&lt;code>sdkmanager&lt;/code> 是一个命令行工具，您可以用它来查看、安装、更新和卸载 Android SDK 的软件包。&lt;/p></description></item><item><title>解决Kafka跨网络NAT传输问题</title><link>https://w23ta0.github.io/posts/20201030-%E8%A7%A3%E5%86%B3kafka%E8%B7%A8%E7%BD%91%E7%BB%9Cnat%E4%BC%A0%E8%BE%93%E9%97%AE%E9%A2%98/</link><pubDate>Fri, 30 Oct 2020 16:02:55 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20201030-%E8%A7%A3%E5%86%B3kafka%E8%B7%A8%E7%BD%91%E7%BB%9Cnat%E4%BC%A0%E8%BE%93%E9%97%AE%E9%A2%98/</guid><category domain="https://w23ta0.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据</category><category domain="https://w23ta0.github.io/categories/kafka/">Kafka</category><description>&lt;h2 id="环境说明" class="heading-element">&lt;span>环境说明&lt;/span>
+ &lt;a href="#%e7%8e%af%e5%a2%83%e8%af%b4%e6%98%8e" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>客户端与Kafka服务端不在同一个网络区域，无法直接访问。需要通过NAT进行地址映射，将Kafka服务端10.0.0.182地址映射为172.25.0.190，从而客户端与服务端可以正常通信。&lt;/p></description></item><item><title>创建OpenStack兼容的qcow2格式镜像</title><link>https://w23ta0.github.io/posts/20201026-%E5%88%9B%E5%BB%BAopenstack%E5%85%BC%E5%AE%B9%E7%9A%84qcow2%E6%A0%BC%E5%BC%8F%E9%95%9C%E5%83%8F/</link><pubDate>Mon, 26 Oct 2020 16:19:01 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20201026-%E5%88%9B%E5%BB%BAopenstack%E5%85%BC%E5%AE%B9%E7%9A%84qcow2%E6%A0%BC%E5%BC%8F%E9%95%9C%E5%83%8F/</guid><category domain="https://w23ta0.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化</category><category domain="https://w23ta0.github.io/categories/openstack/">OpenStack</category><description>&lt;h2 id="前置条件" class="heading-element">&lt;span>前置条件&lt;/span>
+ &lt;a href="#%e5%89%8d%e7%bd%ae%e6%9d%a1%e4%bb%b6" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>准备一台主机。用于运行KVM虚拟机和制作镜像&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>准备一张系统镜像ISO文件&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>确保您的系统具有硬件虚拟化扩展&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#基于Intel的主机，请使用以下命令验证CPU虚拟化扩展[vmx]是否可用。&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>user@host&lt;span class="o">]&lt;/span>&lt;span class="c1"># grep -e &amp;#39;vmx&amp;#39; /proc/cpuinfo&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#基于AMD的主机，请验证CPU虚拟化扩展[svm]是否可用。&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>user@host&lt;span class="o">]&lt;/span>&lt;span class="c1"># grep -e &amp;#39;svm&amp;#39; /proc/cpuinfo&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#验证内核是否加载kvm模块&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>user@host&lt;span class="o">]&lt;/span>&lt;span class="c1"># lsmod | grep kvm&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">kvm_intel &lt;span class="m">170086&lt;/span> &lt;span class="m">0&lt;/span> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">kvm &lt;span class="m">566340&lt;/span> &lt;span class="m">1&lt;/span> kvm_intel
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">irqbypass &lt;span class="m">13503&lt;/span> &lt;span class="m">1&lt;/span> kvm&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>关闭SELinux，将 &lt;code>/etc/sysconfig/selinux&lt;/code> 中的 &lt;code>SELinux=enforcing&lt;/code> 修改为 &lt;code>SELinux=disabled&lt;/code>&lt;/p></description></item><item><title>如何在CentOS7上安装Kubernetes (k8s) 1.8</title><link>https://w23ta0.github.io/posts/20200530-%E5%A6%82%E4%BD%95%E5%9C%A8centos7%E4%B8%8A%E5%AE%89%E8%A3%85kubernetes-k8s-1.8/</link><pubDate>Sat, 30 May 2020 16:19:01 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20200530-%E5%A6%82%E4%BD%95%E5%9C%A8centos7%E4%B8%8A%E5%AE%89%E8%A3%85kubernetes-k8s-1.8/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/kubernetes/">Kubernetes</category><description>&lt;h2 id="环境准备" class="heading-element">&lt;span>环境准备&lt;/span>
+ &lt;a href="#%e7%8e%af%e5%a2%83%e5%87%86%e5%a4%87" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>IP地址&lt;/th>
+ &lt;th>系统&lt;/th>
+ &lt;th>主机名&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>172.16.0.245&lt;/td>
+ &lt;td>CentOS7.6&lt;/td>
+ &lt;td>k8s-master&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>172.16.0.246&lt;/td>
+ &lt;td>CentOS7.6&lt;/td>
+ &lt;td>k8s-node1&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>172.16.0.247&lt;/td>
+ &lt;td>CentOS7.6&lt;/td>
+ &lt;td>k8s-node2&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="在主节点上执行以下步骤" class="heading-element">&lt;span>在主节点上执行以下步骤&lt;/span>
+ &lt;a href="#%e5%9c%a8%e4%b8%bb%e8%8a%82%e7%82%b9%e4%b8%8a%e6%89%a7%e8%a1%8c%e4%bb%a5%e4%b8%8b%e6%ad%a5%e9%aa%a4" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;h3 id="停用selinux和防火墙服务" class="heading-element">&lt;span>停用SELinux和防火墙服务&lt;/span>
+ &lt;a href="#%e5%81%9c%e7%94%a8selinux%e5%92%8c%e9%98%b2%e7%81%ab%e5%a2%99%e6%9c%8d%e5%8a%a1" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>使用以下命令登录到您的kubernetes主节点并设置主机名并禁用selinux&lt;/p></description></item><item><title>如何在CentOS7上安装SonaeQube7.9</title><link>https://w23ta0.github.io/posts/20200427-%E5%A6%82%E4%BD%95%E5%9C%A8centos7%E4%B8%8A%E5%AE%89%E8%A3%85sonarqube-7.9/</link><pubDate>Mon, 27 Apr 2020 16:19:01 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20200427-%E5%A6%82%E4%BD%95%E5%9C%A8centos7%E4%B8%8A%E5%AE%89%E8%A3%85sonarqube-7.9/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><category domain="https://w23ta0.github.io/categories/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/">代码质量</category><description>&lt;h2 id="环境准备" class="heading-element">&lt;span>环境准备&lt;/span>
+ &lt;a href="#%e7%8e%af%e5%a2%83%e5%87%86%e5%a4%87" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>SonarQube：sonarqube-7.9.3&lt;/li>
+&lt;li>数据库：PostgreSQL 10.10&lt;/li>
+&lt;li>操作系统：CentOS 7.6&lt;/li>
+&lt;li>JDK版本：java-11-openjdk&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>sonarqube从7.8起，不再支持mysql&lt;/p></description></item><item><title>openstackclient命令执行报错</title><link>https://w23ta0.github.io/posts/20181214-openstackclient%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%8A%A5%E9%94%99/</link><pubDate>Fri, 14 Dec 2018 16:19:01 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20181214-openstackclient%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%8A%A5%E9%94%99/</guid><category domain="https://w23ta0.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化</category><category domain="https://w23ta0.github.io/categories/openstack/">OpenStack</category><description>&lt;p>在执行时init-runonce 时，报错误如下:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">Traceback &lt;span class="o">(&lt;/span>most recent call last&lt;span class="o">)&lt;/span>:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/bin/openstack&amp;#34;&lt;/span>, line 7, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from openstackclient.shell import main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/openstackclient/shell.py&amp;#34;&lt;/span>, line 23, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from osc_lib import shell
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/osc_lib/shell.py&amp;#34;&lt;/span>, line 33, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from osc_lib.cli import client_config as cloud_config
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/osc_lib/cli/client_config.py&amp;#34;&lt;/span>, line 18, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from openstack.config import exceptions as sdk_exceptions
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/openstack/__init__.py&amp;#34;&lt;/span>, line 17, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> import openstack.connection
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/openstack/connection.py&amp;#34;&lt;/span>, line 166, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from openstack.cloud import openstackcloud as _cloud
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/openstack/cloud/openstackcloud.py&amp;#34;&lt;/span>, line 35, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> import dogpile.cache
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/dogpile/cache/__init__.py&amp;#34;&lt;/span>, line 1, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from .region import CacheRegion, register_backend, make_region &lt;span class="c1"># noqa&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/dogpile/cache/region.py&amp;#34;&lt;/span>, line 15, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from decorator import decorate
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ImportError: cannot import name decorate&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>按照官方教程操作，openstack已经是搭建成功。&lt;/p></description></item><item><title>Docker私有仓库pull镜像报错：server gave HTTP response to HTTPS client</title><link>https://w23ta0.github.io/posts/20171229-docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93pull%E9%95%9C%E5%83%8F%E6%8A%A5%E9%94%99server-gave-http-response-to-https-client/</link><pubDate>Fri, 29 Dec 2017 15:14:52 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20171229-docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93pull%E9%95%9C%E5%83%8F%E6%8A%A5%E9%94%99server-gave-http-response-to-https-client/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/docker/">Docker</category><description>&lt;p>执行docker pull过程中报错：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">Error response from daemon: 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Get https://xxx.xxx.xxx.xxx:5000/v2/ : 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http: server gave HTTP response to HTTPS client&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote class="question">这是由于Registry为了安全性考虑，默认是需要https证书支持的。&lt;/blockquote>
+解决方法：
+&lt;p>在/etc/docker/daemon.json文件中新增一行&amp;quot;insecure-registries&amp;quot;:[&amp;ldquo;xxx.xxx.xxx:5000&amp;rdquo;]，没有则新建此文件。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">vi /etc/docker/daemon.json
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">{&lt;/span> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="s2">&amp;#34;insecure-registries&amp;#34;&lt;/span>:&lt;span class="o">[&lt;/span>&lt;span class="s2">&amp;#34;xxx.xxx.xxx.xxx:5000&amp;#34;&lt;/span>&lt;span class="o">]&lt;/span> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#重启docker&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo /etc/init.d/docker restart&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="note warning">&lt;p>需要访问私有registry的节点都需要执行此操作。&lt;/p></description></item><item><title>Kerberos安装和管理</title><link>https://w23ta0.github.io/posts/20170925-kerberos%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%A1%E7%90%86/</link><pubDate>Mon, 25 Sep 2017 17:31:54 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20170925-kerberos%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%A1%E7%90%86/</guid><category domain="https://w23ta0.github.io/categories/%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/">身份认证</category><category domain="https://w23ta0.github.io/categories/kerberos/">Kerberos</category><description>&lt;p>Kerberos 服务(&lt;a href="http://web.mit.edu/kerberos/"target="_blank" rel="external nofollow noopener noreferrer">kerberos官网&lt;/a>)是一种通过网络提供安全验证处理的客户机/服务器体系结构。通过验证，可保证网络事务的发送者和接收者的身份真实。该服务还可以检验来回传递的数据的有效性（完整性），并在传输过程中对数据进行加密（保密性）。使用 Kerberos 服务，可以安全登录到其他计算机、执行命令、交换数据以及传输文件。此外，该服务还提供授权服务，这样，管理员便可限制对服务和计算机的访问。而且，作为 Kerberos 用户，您还可以控制其他用户对您帐户的访问。&lt;/p></description></item><item><title>解决LDAP出现ldap_bind: Invalid credentials (49)错误</title><link>https://w23ta0.github.io/posts/20170314-%E8%A7%A3%E5%86%B3ldap%E5%87%BA%E7%8E%B0ldap-bind-invalid-credentials-49-%E9%94%99%E8%AF%AF/</link><pubDate>Tue, 14 Mar 2017 14:43:23 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20170314-%E8%A7%A3%E5%86%B3ldap%E5%87%BA%E7%8E%B0ldap-bind-invalid-credentials-49-%E9%94%99%E8%AF%AF/</guid><category domain="https://w23ta0.github.io/categories/%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/">身份认证</category><category domain="https://w23ta0.github.io/categories/ldap/">LDAP</category><description>&lt;p>LDAP最经常遇到的就是ldap_bind: Invalid credentials (49)错误，本文阐述了错误原因及解决办法：
+比如在某LDAP客户端，使用rootdn(管理员)权限为某用户修改密码时&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ ldappasswd -H ldap://172.16.0.21 -x -D &lt;span class="s2">&amp;#34;cn=admin,ou=People,dc=expmale,dc=com&amp;#34;&lt;/span> -W -S &lt;span class="s2">&amp;#34;uid=zhang3,ou=People,dc=expmale,dc=com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">New password: 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Re-enter new password: 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Enter LDAP Password: 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ldap_bind: Invalid credentials &lt;span class="o">(&lt;/span>49&lt;span class="o">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>错误原因1：管理员DN或者用户DN错误&lt;/strong>&lt;/p>
+&lt;p>管理员DN是在&lt;code>/etc/openldap/slapd.conf&lt;/code>中指定的rootdn，其格式
+应该是”cn=admin,dc=expmale,dc=com”
+而不是”cn=admin,ou=People,dc=expmale,dc=com”
+而普通用户的DN才应该是”uid=zhang3,ou=People,dc=expmale,dc=com”。
+也可以执行如下命令查看该用户的DN是否存在&lt;/p></description></item><item><title>CentOS6 安装配置OpenLDAP Server</title><link>https://w23ta0.github.io/posts/20170314-centos6-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEldap-server/</link><pubDate>Tue, 14 Mar 2017 12:13:46 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20170314-centos6-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEldap-server/</guid><category domain="https://w23ta0.github.io/categories/%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/">身份认证</category><category domain="https://w23ta0.github.io/categories/ldap/">LDAP</category><description>&lt;h2 id="安装及配置" class="heading-element">&lt;span>安装及配置&lt;/span>
+ &lt;a href="#%e5%ae%89%e8%a3%85%e5%8f%8a%e9%85%8d%e7%bd%ae" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>首先使用如下命令查看是否已经安装 openldap：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># rpm -qa | grep openldap &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">openldap-2.4.40-16.el6.x86_64
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">openldap-servers-sql-2.4.40-16.el6.x86_64
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">openldap-clients-2.4.40-16.el6.x86_64
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">openldap-servers-2.4.40-16.el6.x86_64
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">openldap-devel-2.4.40-16.el6.x86_64&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>若已经安装过，可以忽略此步骤&lt;/p>
+&lt;h3 id="导入epel源" class="heading-element">&lt;span>导入epel源&lt;/span>
+ &lt;a href="#%e5%af%bc%e5%85%a5epel%e6%ba%90" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rpm –ivh epel-release-6-8.noarch.rpm&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="安装openldap" class="heading-element">&lt;span>安装openldap&lt;/span>
+ &lt;a href="#%e5%ae%89%e8%a3%85openldap" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">yum -y install openldap openldap-*&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="配置openldap包括准备db_config和slapdconf" class="heading-element">&lt;span>配置openldap，包括准备DB_CONFIG和slapd.conf&lt;/span>
+ &lt;a href="#%e9%85%8d%e7%bd%aeopenldap%e5%8c%85%e6%8b%ac%e5%87%86%e5%a4%87db_config%e5%92%8cslapdconf" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> /etc/openldap/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp /usr/share/openldap-servers/slapd.conf.obsolete slapd.conf
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="设置-openldap的管理员密码" class="heading-element">&lt;span>设置 openldap的管理员密码&lt;/span>
+ &lt;a href="#%e8%ae%be%e7%bd%ae-openldap%e7%9a%84%e7%ae%a1%e7%90%86%e5%91%98%e5%af%86%e7%a0%81" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>首先要生成经处理后的明文密码：&lt;/p></description></item><item><title>LDAP服务器的概念和原理简单介绍</title><link>https://w23ta0.github.io/posts/20170312-ldap%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E5%8E%9F%E7%90%86%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/</link><pubDate>Sun, 12 Mar 2017 11:33:45 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20170312-ldap%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E5%8E%9F%E7%90%86%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/</guid><category domain="https://w23ta0.github.io/categories/%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/">身份认证</category><category domain="https://w23ta0.github.io/categories/ldap/">LDAP</category><description>&lt;h2 id="目录服务" class="heading-element">&lt;span>目录服务&lt;/span>
+ &lt;a href="#%e7%9b%ae%e5%bd%95%e6%9c%8d%e5%8a%a1" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>目录是一个为查询、浏览和搜索而优化的专业分布式数据库，它呈树状结构组织数据，就好象Linux/Unix系统中的文件目录一样。目录数据库和关系数据库不同，它有优异的读性能，但写性能差，并且没有事务处理、回滚等复杂功能，不适于存储修改频繁的数据。所以目录天生是用来查询的，就好象它的名字一样。&lt;/p></description></item><item><title>Centos6下安装MySQL-python时出现“error: command 'gcc' failed with exit status 1”</title><link>https://w23ta0.github.io/posts/20151118-centos6%E4%B8%8B%E5%AE%89%E8%A3%85mysql-python%E6%97%B6%E5%87%BA%E7%8E%B0error-command-gcc-failed-with-exit-status-1/</link><pubDate>Wed, 18 Nov 2015 15:45:22 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20151118-centos6%E4%B8%8B%E5%AE%89%E8%A3%85mysql-python%E6%97%B6%E5%87%BA%E7%8E%B0error-command-gcc-failed-with-exit-status-1/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><category domain="https://w23ta0.github.io/categories/python/">Python</category><description>&lt;h2 id="问题描述" class="heading-element">&lt;span>问题描述&lt;/span>
+ &lt;a href="#%e9%97%ae%e9%a2%98%e6%8f%8f%e8%bf%b0" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>在MySQL-python-1.2.5源码包根目录下执行安装命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># python setup.py install&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>出现以下信息：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">error: command ‘gcc’ failed with exit status 1&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="解决方法" class="heading-element">&lt;span>解决方法&lt;/span>
+ &lt;a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>在安装MySQLdb前安装以下依赖库：&lt;/p></description></item><item><title>使用 CSS 实现标题自动编号</title><link>https://w23ta0.github.io/posts/20151023-%E4%BD%BF%E7%94%A8-css-%E5%AE%9E%E7%8E%B0%E6%A0%87%E9%A2%98%E8%87%AA%E5%8A%A8%E7%BC%96%E5%8F%B7/</link><pubDate>Fri, 23 Oct 2015 18:27:00 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20151023-%E4%BD%BF%E7%94%A8-css-%E5%AE%9E%E7%8E%B0%E6%A0%87%E9%A2%98%E8%87%AA%E5%8A%A8%E7%BC%96%E5%8F%B7/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><description>&lt;p>近几天在学习 HTML5 与 CSS3 时，偶然看到了 CSS 中自动为标题添加编号的特性。仔细阅读过 W3Schools 上提供的文档之后，试验了一下，确实非常好用。从此不需再花费精力校对标题编号，可以将时间集中到真正需要做的事情，也避免了手动编号出错的窘态。&lt;/p>
+&lt;p>这篇博文整理了我搜集的相关知识点，方便希望详细了解的人查看。&lt;/p>
+&lt;h2 id="涉及内容" class="heading-element">&lt;span>涉及内容&lt;/span>
+ &lt;a href="#%e6%b6%89%e5%8f%8a%e5%86%85%e5%ae%b9" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>首先介绍一下本文涉及到的相关 CSS 知识点。其中用到的 CSS 伪元素和属性皆基于 CSS2.1 标准，所以基本不需要担心浏览器的兼容性问题。如果你对此还不够放心，可以在不同浏览器中打开文末给出的样例进行测试。&lt;/p></description></item><item><title>如何删除docker images/containers</title><link>https://w23ta0.github.io/posts/20150908-%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4docker-imagescontainers/</link><pubDate>Tue, 08 Sep 2015 18:36:00 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150908-%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4docker-imagescontainers/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/docker/">Docker</category><description>&lt;p>docker images往往不知不觉就占满了硬盘空间，为了清理冗余的image，可采用以下方法：&lt;/p>
+&lt;ol>
+&lt;li>进入root权限&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo su&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>停止所有的container，这样才能够删除其中的images：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker stop &lt;span class="k">$(&lt;/span>docker ps -a -q&lt;span class="k">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如果想要删除所有container的话再加一个指令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker rm &lt;span class="k">$(&lt;/span>docker ps -a -q&lt;span class="k">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>查看当前有些什么images&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker images&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="4">
+&lt;li>删除images，通过image的id来指定删除谁&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker rmi &amp;lt;image id&amp;gt;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>想要删除untagged images，也就是那些id为&lt;None>的image的话可以用&lt;/p></description></item><item><title>Oracle中INSTR、SUBSTR和NVL的用法</title><link>https://w23ta0.github.io/posts/20150907-oracle%E4%B8%ADinstrsubstr%E5%92%8Cnvl%E7%9A%84%E7%94%A8%E6%B3%95/</link><pubDate>Mon, 07 Sep 2015 16:57:07 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150907-oracle%E4%B8%ADinstrsubstr%E5%92%8Cnvl%E7%9A%84%E7%94%A8%E6%B3%95/</guid><category domain="https://w23ta0.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</category><category domain="https://w23ta0.github.io/categories/oracle/">Oracle</category><description>&lt;p>**INSTR用法：**INSTR(源字符串, 要查找的字符串, 从第几个字符开始, 要找到第几个匹配的序号)&lt;/p>
+&lt;p>返回找到的位置，如果找不到则返回0. 默认查找顺序为从左到右。当起始位置为负数的时候，从右边开始查找。若起始位置为0，返回值为0。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="k">SELECT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">INSTR&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;CORPORATE FLOOR&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;OR&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">FROM&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">DUAL&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">返回值为&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">SELECT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">INSTR&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;CORPORATE FLOOR&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;OR&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">FROM&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">DUAL&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">返回值为&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">SELECT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">INSTR&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;CORPORATE FLOOR&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;OR&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">FROM&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">DUAL&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">返回值为&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">SELECT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">INSTR&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;CORPORATE FLOOR&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;OR&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">FROM&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">DUAL&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">返回值为&lt;/span>&lt;span class="mi">14&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">SELECT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">INSTR&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;CORPORATE FLOOR&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;OR&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">FROM&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">DUAL&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">返回值为&lt;/span>&lt;span class="mi">5&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>**SUBSTR用法：**SUBSTR( 源字符串, 查找起始位置, [ 长度 ] )&lt;/p></description></item><item><title>Docker Compose简化复杂应用的利器</title><link>https://w23ta0.github.io/posts/20150830-docker-compose%E7%AE%80%E5%8C%96%E5%A4%8D%E6%9D%82%E5%BA%94%E7%94%A8%E7%9A%84%E5%88%A9%E5%99%A8/</link><pubDate>Sun, 30 Aug 2015 15:59:00 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150830-docker-compose%E7%AE%80%E5%8C%96%E5%A4%8D%E6%9D%82%E5%BA%94%E7%94%A8%E7%9A%84%E5%88%A9%E5%99%A8/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/docker-compose/">Docker-Compose</category><description>&lt;p>Docker Compose是用于定义和运行复杂Docker应用的工具。你可以在一个文件中定义一个多容器的应用，然后使用一条命令来启动你的应用，然后所有相关的操作都会被自动完成。&lt;/p>
+&lt;p>Docker Compose具有管理应用程序整个生命周期的命令：&lt;/p>
+&lt;ul>
+&lt;li>启动，停止和重建服务&lt;/li>
+&lt;li>查看正在运行的服务的状态&lt;/li>
+&lt;li>流式传输运行服务的日志输出&lt;/li>
+&lt;li>在服务上运行一次性命令&lt;/li>
+&lt;/ul>
+&lt;h2 id="docker-compose-安装" class="heading-element">&lt;span>Docker Compose 安装&lt;/span>
+ &lt;a href="#docker-compose-%e5%ae%89%e8%a3%85" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 当前最新的Docker是1.6.2，Compose为1.2.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">curl -s https://get.docker.io/ubuntu/ &lt;span class="p">|&lt;/span> sudo sh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt-get update
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt-get install lxc-docker
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 参考http://docs.docker.com/compose/install/#install-compose&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-&lt;span class="sb">`&lt;/span>uname -s&lt;span class="sb">`&lt;/span>-&lt;span class="sb">`&lt;/span>uname -m&lt;span class="sb">`&lt;/span> &amp;gt; /usr/local/bin/docker-compose
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">chmod +x /usr/local/bin/docker-compose
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### 上面这个方法真的慢出翔，可以通过Python pip安装。&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">apt-get install python-pip python-dev
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pip install -U docker-compose&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这样compose就安装好了，查看一下compose的版本信息：&lt;/p></description></item><item><title>如何搭建Docker Registry本地私有仓库</title><link>https://w23ta0.github.io/posts/20150828-docker%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/</link><pubDate>Fri, 28 Aug 2015 14:59:00 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150828-docker%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/docker-registry/">Docker Registry</category><description>&lt;p>通常情况下我们可以使用&lt;a href="https://hub.docker.com/"target="_blank" rel="external nofollow noopener noreferrer">Docker Hub&lt;/a>作为docker image的仓库，但是有些场景下，我们希望能够有本地的仓库。比如：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>代码中含有保密的信息，比如环境的账号，密码等等；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>代码本身作为公司的资产，不能对外公开，否则有法律风险。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>在创建本地仓库之前，请确保已经在目的机器上安装了Docker。这里我们使用docker容器运行registry镜像的方式，来创建registry。&lt;/p></description></item><item><title>Docker的save和export命令的区别</title><link>https://w23ta0.github.io/posts/20150825-docker%E7%9A%84save%E5%92%8Cexport%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8C%BA%E5%88%AB/</link><pubDate>Tue, 25 Aug 2015 11:56:00 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150825-docker%E7%9A%84save%E5%92%8Cexport%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8C%BA%E5%88%AB/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/docker/">Docker</category><description>&lt;p>我最近在玩Docker，一种应用程序容器和Linux的虚拟技术。它太酷了，创建Docker镜像和容器只需要几分钟。所有的工作都是开箱即用的。&lt;/p>
+&lt;p>在结束我一天的工作之前，我希望能保存下我的工作。但我在Docker的save和export命令之间，我凌乱了。我不知道它们之间有什么区别。所以，我上StackOverflow问了一个问题，接着得到mbarthelemy很棒的回复。&lt;/p></description></item><item><title>LoadRunner 11 安装及破解</title><link>https://w23ta0.github.io/posts/20150820-loadrunner-11-%E5%AE%89%E8%A3%85%E5%8F%8A%E7%A0%B4%E8%A7%A3/</link><pubDate>Thu, 20 Aug 2015 13:14:53 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150820-loadrunner-11-%E5%AE%89%E8%A3%85%E5%8F%8A%E7%A0%B4%E8%A7%A3/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><description>&lt;h2 id="前提条件" class="heading-element">&lt;span>前提条件&lt;/span>
+ &lt;a href="#%e5%89%8d%e6%8f%90%e6%9d%a1%e4%bb%b6" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>内存：2G，硬盘空闲空间10G，安装完成后实际只占不到2G
+支持winXP SP3;32位与64位win7浏览器支持IE6-8,IE9,firefox3
+若以前安装过LoadRunner,则将其卸载。&lt;/p></description></item><item><title>Docker简介概述</title><link>https://w23ta0.github.io/posts/20150813-docker%E7%AE%80%E4%BB%8B%E6%A6%82%E8%BF%B0/</link><pubDate>Thu, 13 Aug 2015 15:40:28 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150813-docker%E7%AE%80%E4%BB%8B%E6%A6%82%E8%BF%B0/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/docker/">Docker</category><description>&lt;h2 id="docker-简介" class="heading-element">&lt;span>Docker 简介&lt;/span>
+ &lt;a href="#docker-%e7%ae%80%e4%bb%8b" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>&lt;strong>Docker&lt;/strong> 最初是 &lt;code>dotCloud&lt;/code> 公司创始人 &lt;a href="https://github.com/shykes"target="_blank" rel="external nofollow noopener noreferrer">Solomon Hykes&lt;/a> 在法国期间发起的一个公司内部项目，它是基于 &lt;code>dotCloud&lt;/code> 公司多年云服务技术的一次革新，并于 &lt;a href="https://en.wikipedia.org/wiki/Docker_"target="_blank" rel="external nofollow noopener noreferrer">2013 年 3 月以 Apache 2.0 授权协议开源&lt;/a>，主要项目代码在 &lt;a href="https://github.com/moby/moby"target="_blank" rel="external nofollow noopener noreferrer">GitHub&lt;/a> 上进行维护。&lt;code>Docker&lt;/code> 项目后来还加入了 Linux 基金会，并成立推动 &lt;a href="https://opencontainers.org/"target="_blank" rel="external nofollow noopener noreferrer">开放容器联盟（OCI）&lt;/a>。&lt;/p></description></item><item><title>Apache访问日志分析</title><link>https://w23ta0.github.io/posts/20150812-apache%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</link><pubDate>Wed, 12 Aug 2015 17:03:37 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150812-apache%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><category domain="https://w23ta0.github.io/categories/apache/">Apache</category><description>&lt;p>当前WEB服务器中联接次数最多的ip地址&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ netstat -ntu &lt;span class="p">|&lt;/span>awk &lt;span class="s1">&amp;#39;{print $5}&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span>sort &lt;span class="p">|&lt;/span> uniq -c&lt;span class="p">|&lt;/span> sort -nr&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看日志中访问次数最多的前10个IP&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ cat access.log &lt;span class="p">|&lt;/span>cut -d &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span> -f &lt;span class="m">1&lt;/span> &lt;span class="p">|&lt;/span>sort &lt;span class="p">|&lt;/span>uniq -c &lt;span class="p">|&lt;/span> sort -nr &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $0 }&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> head -n &lt;span class="m">10&lt;/span> &lt;span class="p">|&lt;/span>less&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看日志中出现100次以上的IP&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ cat access.log &lt;span class="p">|&lt;/span>cut -d &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span> -f &lt;span class="m">1&lt;/span> &lt;span class="p">|&lt;/span>sort &lt;span class="p">|&lt;/span>uniq -c &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{if ($1 &amp;gt; 100) print $0}&amp;#39;&lt;/span>｜sort -nr &lt;span class="p">|&lt;/span>less&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看最近访问量最高的文件&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ cat access.log &lt;span class="p">|&lt;/span>tail -10000&lt;span class="p">|&lt;/span>awk &lt;span class="s1">&amp;#39;{print $7}&amp;#39;&lt;/span>&lt;span class="p">|&lt;/span>sort&lt;span class="p">|&lt;/span>uniq -c&lt;span class="p">|&lt;/span>sort -nr&lt;span class="p">|&lt;/span>less&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看日志中访问超过100次的页面&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ cat access.log &lt;span class="p">|&lt;/span> cut -d &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span> -f &lt;span class="m">7&lt;/span> &lt;span class="p">|&lt;/span> sort &lt;span class="p">|&lt;/span>uniq -c &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{if ($1 &amp;gt; 100) print $0}&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> less&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>统计某url，一天的访问次数&lt;/p></description></item><item><title>Nginx重定向&amp;静动资源分离</title><link>https://w23ta0.github.io/posts/20150624-nginx%E9%87%8D%E5%AE%9A%E5%90%91%E9%9D%99%E5%8A%A8%E8%B5%84%E6%BA%90%E5%88%86%E7%A6%BB/</link><pubDate>Wed, 24 Jun 2015 13:05:51 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150624-nginx%E9%87%8D%E5%AE%9A%E5%90%91%E9%9D%99%E5%8A%A8%E8%B5%84%E6%BA%90%E5%88%86%E7%A6%BB/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><category domain="https://w23ta0.github.io/categories/nginx/">Nginx</category><description>&lt;h2 id="域名重写" class="heading-element">&lt;span>域名重写&lt;/span>
+ &lt;a href="#%e5%9f%9f%e5%90%8d%e9%87%8d%e5%86%99" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>我们可以在同一个server中绑定域名www.example.com和example.com两个域名：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="line">&lt;span class="cl">&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">example.com&lt;/span> &lt;span class="s">www.example.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>但是这样对我们的SEO非常不利，我们需要使用301（rewrite）将一个域名重定向到另一个，比如将example重定向到www.example.com。这里要依赖于正则表达式的分组（使用$1来引用分组）。&lt;/p></description></item><item><title>Linux上如何查看某个进程的线程</title><link>https://w23ta0.github.io/posts/20150619-linux%E4%B8%8A%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E6%9F%90%E4%B8%AA%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BA%BF%E7%A8%8B/</link><pubDate>Fri, 19 Jun 2015 12:41:07 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150619-linux%E4%B8%8A%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E6%9F%90%E4%B8%AA%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BA%BF%E7%A8%8B/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;blockquote>
+&lt;p>问题： 我的程序在其内部创建并执行了多个线程，我怎样才能在该程序创建线程后监控其中单个线程？我想要看到带有它们名称的单个线程详细情况（如，CPU/内存使用率）。&lt;/p>&lt;/blockquote>
+&lt;p>线程是现代操作系统上进行并行执行的一个流行的编程方面的抽象概念。当一个程序内有多个线程被叉分出用以执行多个流时，这些线程就会在它们之间共享特定的资源（如，内存地址空间、打开的文件），以使叉分开销最小化，并避免大量高成本的IPC（进程间通信）通道。这些功能让线程在并发执行时成为一个高效的机制。&lt;/p></description></item><item><title>如何成为一个通晓多种编程语言的程序员</title><link>https://w23ta0.github.io/posts/20150619-%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E9%80%9A%E6%99%93%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98/</link><pubDate>Fri, 19 Jun 2015 12:21:18 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150619-%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E9%80%9A%E6%99%93%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><description>&lt;p>学习一门新的语言是一种冒险。我总是热衷于尝试新的东西——学习新的语法，了解不同的模式，乃至彻底改变思维方式。不幸的是，许多开发人员对此不以为然，甚至可能是深恶痛绝的——学习新语言，就得走出舒适区，花时间花精力来学习新的理念和方法。&lt;/p>
+&lt;p>这段日子，我每天都要用大约5种不同的语言来写不同的项目！
+&lt;img loading="lazy" src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/1524445676784sve657ec.png?imageslim" alt="paste image" srcset="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/1524445676784sve657ec.png?imageslim&amp;amp;size=small, https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/1524445676784sve657ec.png?imageslim&amp;amp;size=medium 1.5x, https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/1524445676784sve657ec.png?imageslim&amp;amp;size=large 2x" data-title="paste image" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/p></description></item><item><title>Nginx中的upstream轮询机制介绍</title><link>https://w23ta0.github.io/posts/20150614-nginx%E4%B8%AD%E7%9A%84upstream%E8%BD%AE%E8%AF%A2%E6%9C%BA%E5%88%B6%E4%BB%8B%E7%BB%8D/</link><pubDate>Sun, 14 Jun 2015 13:03:23 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150614-nginx%E4%B8%AD%E7%9A%84upstream%E8%BD%AE%E8%AF%A2%E6%9C%BA%E5%88%B6%E4%BB%8B%E7%BB%8D/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><category domain="https://w23ta0.github.io/categories/nginx/">Nginx</category><description>&lt;p>Nginx中upstream有以下几种方式：&lt;/p>
+&lt;ol>
+&lt;li>轮询(weight=1)&lt;/li>
+&lt;/ol>
+&lt;p>默认选项，当weight不指定时，各服务器weight相同，
+每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="line">&lt;span class="cl">&lt;span class="k">upstream&lt;/span> &lt;span class="s">bakend&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server&lt;/span> &lt;span class="mi">192&lt;/span>&lt;span class="s">.168.1.10&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server&lt;/span> &lt;span class="mi">192&lt;/span>&lt;span class="s">.168.1.11&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>weight&lt;/li>
+&lt;/ol>
+&lt;p>指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。
+如果后端服务器down掉，能自动剔除。
+比如下面配置，则1.11服务器的访问量为1.10服务器的两倍。&lt;/p></description></item><item><title>Python任务调度模块 – APScheduler</title><link>https://w23ta0.github.io/posts/20150611-python%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E6%A8%A1%E5%9D%97-apscheduler/</link><pubDate>Thu, 11 Jun 2015 12:32:28 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150611-python%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E6%A8%A1%E5%9D%97-apscheduler/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><category domain="https://w23ta0.github.io/categories/python/">Python</category><description>&lt;p>APScheduler是一个Python定时任务框架，使用起来十分方便。提供了基于日期、固定时间间隔以及crontab类型的任务，并且可以持久化任务、并以daemon方式运行应用。目前最新版本为3.0.x。&lt;/p>
+&lt;p>在APScheduler中有四个组件：&lt;/p>
+&lt;ol>
+&lt;li>**触发器(trigger)**包含调度逻辑，每一个作业有它自己的触发器，用于决定接下来哪一个作业会运行。除了他们自己初始配置意外，触发器完全是无状态的。&lt;/li>
+&lt;li>**作业存储(job store)**存储被调度的作业，默认的作业存储是简单地把作业保存在内存中，其他的作业存储是将作业保存在数据库中。一个作业的数据讲在保存在持久化作业存储时被序列化，并在加载时被反序列化。调度器不能分享同一个作业存储。&lt;/li>
+&lt;li>**执行器(executor)**处理作业的运行，他们通常通过在作业中提交制定的可调用对象到一个线程或者进城池来进行。当作业完成时，执行器将会通知调度器。&lt;/li>
+&lt;li>**调度器(scheduler)**是其他的组成部分。你通常在应用只有一个调度器，应用的开发者通常不会直接处理作业存储、调度器和触发器，相反，调度器提供了处理这些的合适的接口。配置作业存储和执行器可以在调度器中完成，例如添加、修改和移除作业。&lt;/li>
+&lt;/ol>
+&lt;p>你需要选择合适的调度器，这取决于你的应用环境和你使用APScheduler的目的。通常最常用的两个：&lt;/p></description></item><item><title>架设Ubuntu apt-cacher服务</title><link>https://w23ta0.github.io/posts/20150518-%E6%9E%B6%E8%AE%BEubuntu-apt-cacher%E6%9C%8D%E5%8A%A1/</link><pubDate>Mon, 18 May 2015 16:47:33 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150518-%E6%9E%B6%E8%AE%BEubuntu-apt-cacher%E6%9C%8D%E5%8A%A1/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>源服务器名称可能不太准确，意思是创建内网自己的私服，这样只要有Ubuntu通过该私服下载安装过软件，私服都会缓存，下一个Ubuntu的请求就直接从缓存中获取。
+最近Ubuntu源服务器太慢了，北京的网络也够烂的。逼不得已！&lt;/p>
+&lt;p>首先安装apt-cacher&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">apt-get install apt-cacher&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>装的过程中选择Daemon方式。 装完后，/etc/default/apt-cacher 文件内容应该如下：&lt;/p></description></item><item><title>cx_Freeze打包Python应用程序</title><link>https://w23ta0.github.io/posts/20150517-cx_freeze%E6%89%93%E5%8C%85python%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</link><pubDate>Sun, 17 May 2015 13:02:16 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150517-cx_freeze%E6%89%93%E5%8C%85python%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><category domain="https://w23ta0.github.io/categories/python/">Python</category><description>&lt;p>cx_Freeze是一个打包Python应用的工具，通过cx_Freeze，可以制作Windows平台、MacOS平台、以及Linux平台的二进制可执行程序，使得Python应用能够在没有安装Python环境的机器上运行。&lt;/p>
+&lt;h2 id="cx_freeze的安装" class="heading-element">&lt;span>cx_Freeze的安装&lt;/span>
+ &lt;a href="#cx_freeze%e7%9a%84%e5%ae%89%e8%a3%85" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>同很多Python的第三方库类似，cx_Freeze也可以通过如下命令安装：&lt;/p></description></item><item><title>如何知道 OpenStack Nova 的安装版本号？</title><link>https://w23ta0.github.io/posts/20150515-%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93-openstack-nova-%E7%9A%84%E5%AE%89%E8%A3%85%E7%89%88%E6%9C%AC%E5%8F%B7/</link><pubDate>Fri, 15 May 2015 17:53:00 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150515-%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93-openstack-nova-%E7%9A%84%E5%AE%89%E8%A3%85%E7%89%88%E6%9C%AC%E5%8F%B7/</guid><category domain="https://w23ta0.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化</category><category domain="https://w23ta0.github.io/categories/openstack/">OpenStack</category><description>&lt;p>安装完 OpenStack Nova 以后过段时间就很容易忘记自己装的是哪个版本，OpenStack 开发进度很快，遇到问题到 mailing list 寻求帮助的时候最好带上 Nova 的版本号。如何知道自己安装的是哪个版本的 OpenStack Nova 呢？
+旧版本的 OpenStack Nova 提供了 version 的接口，不过只是针对开发人员，命令行工具没有面向系统管理员的接口，所以只能通过 python 调取 nava API 来获得version 信息：&lt;/p></description></item><item><title>Kali Linux的更新及清理</title><link>https://w23ta0.github.io/posts/20150424-kali-linux%E7%9A%84%E6%9B%B4%E6%96%B0%E5%8F%8A%E6%B8%85%E7%90%86/</link><pubDate>Fri, 24 Apr 2015 16:59:00 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150424-kali-linux%E7%9A%84%E6%9B%B4%E6%96%B0%E5%8F%8A%E6%B8%85%E7%90%86/</guid><category domain="https://w23ta0.github.io/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</category><category domain="https://w23ta0.github.io/categories/kali-linux/">Kali Linux</category><description>&lt;h2 id="推荐的更新源" class="heading-element">&lt;span>推荐的更新源&lt;/span>
+ &lt;a href="#%e6%8e%a8%e8%8d%90%e7%9a%84%e6%9b%b4%e6%96%b0%e6%ba%90" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>在安装完Kali后，需要对软件及系统进行更新，选择更新源是是十分重要的，虽然网上存在各种更新源，但是如果是一个新手的话，建议只选择官方的更新源，可以避免学习过程中遇到一些不必要的麻烦，而且目前官方源更新下载的速度也是很快的。
+官方源： &lt;code>deb http://http.kali.org/kali kali-rolling main non-free contrib&lt;/code>
+中科大源： &lt;code>deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib&lt;/code>&lt;/p></description></item><item><title>syntax error near unexpected token 的问题</title><link>https://w23ta0.github.io/posts/20130414-syntax-error-near-unexpected-token-%E7%9A%84%E9%97%AE%E9%A2%98/</link><pubDate>Tue, 14 Apr 2015 15:08:54 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20130414-syntax-error-near-unexpected-token-%E7%9A%84%E9%97%AE%E9%A2%98/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><category domain="https://w23ta0.github.io/categories/shell/">Shell</category><description>&lt;p>如果你在windows里写的shell脚本放到linux系统里运行就可以会提示如下错误&lt;code>syntax error near unexpected token &lt;/code> 这是因为两个平台下面的换行符不一样导致的。所以需要转换下格式，&lt;code>Notepad++&lt;/code>就有这个功能。&lt;/p>
+&lt;ol>
+&lt;li>首先打开Notepad++,让脚本显示所有符号，发现是CR LF
+&lt;img loading="lazy" src="http://storage.live.com/items/9A8B8BF501A38A36!1489?filename=%e6%89%80%e6%9c%89%e7%9a%84%e6%8d%a2%e8%a1%8c%e9%83%bd%e6%98%afwindows%e7%9a%84CRLF.jpg" alt="图片描述" srcset="http://storage.live.com/items/9A8B8BF501A38A36!1489?filename=%e6%89%80%e6%9c%89%e7%9a%84%e6%8d%a2%e8%a1%8c%e9%83%bd%e6%98%afwindows%e7%9a%84CRLF.jpg&amp;amp;size=small, http://storage.live.com/items/9A8B8BF501A38A36!1489?filename=%e6%89%80%e6%9c%89%e7%9a%84%e6%8d%a2%e8%a1%8c%e9%83%bd%e6%98%afwindows%e7%9a%84CRLF.jpg&amp;amp;size=medium 1.5x, http://storage.live.com/items/9A8B8BF501A38A36!1489?filename=%e6%89%80%e6%9c%89%e7%9a%84%e6%8d%a2%e8%a1%8c%e9%83%bd%e6%98%afwindows%e7%9a%84CRLF.jpg&amp;amp;size=large 2x" data-title="图片描述" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/li>
+&lt;li>我们需要将windows的格式转为linux格式，做如下操作即可。
+编辑-&amp;gt;档案格式转换-&amp;gt;转换为UNIX格式
+&lt;img loading="lazy" src="http://storage.live.com/items/9A8B8BF501A38A36!1490?filename=cpp%20%e8%bd%ac%e6%8d%a2%e4%b8%baUnix%e6%a0%bc%e5%bc%8f.jpg" alt="图片描述" srcset="http://storage.live.com/items/9A8B8BF501A38A36!1490?filename=cpp%20%e8%bd%ac%e6%8d%a2%e4%b8%baUnix%e6%a0%bc%e5%bc%8f.jpg&amp;amp;size=small, http://storage.live.com/items/9A8B8BF501A38A36!1490?filename=cpp%20%e8%bd%ac%e6%8d%a2%e4%b8%baUnix%e6%a0%bc%e5%bc%8f.jpg&amp;amp;size=medium 1.5x, http://storage.live.com/items/9A8B8BF501A38A36!1490?filename=cpp%20%e8%bd%ac%e6%8d%a2%e4%b8%baUnix%e6%a0%bc%e5%bc%8f.jpg&amp;amp;size=large 2x" data-title="图片描述" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/li>
+&lt;li>转换之后，发现回车换行符就变了。再放入linux就不会报错了。
+&lt;img loading="lazy" src="http://storage.live.com/items/9A8B8BF501A38A36!1491?filename=%e6%89%80%e6%9c%89%e7%9a%84%e9%83%bd%e6%98%aflinux%e7%9a%84LF%e4%ba%86.jpg" alt="图片描述" srcset="http://storage.live.com/items/9A8B8BF501A38A36!1491?filename=%e6%89%80%e6%9c%89%e7%9a%84%e9%83%bd%e6%98%aflinux%e7%9a%84LF%e4%ba%86.jpg&amp;amp;size=small, http://storage.live.com/items/9A8B8BF501A38A36!1491?filename=%e6%89%80%e6%9c%89%e7%9a%84%e9%83%bd%e6%98%aflinux%e7%9a%84LF%e4%ba%86.jpg&amp;amp;size=medium 1.5x, http://storage.live.com/items/9A8B8BF501A38A36!1491?filename=%e6%89%80%e6%9c%89%e7%9a%84%e9%83%bd%e6%98%aflinux%e7%9a%84LF%e4%ba%86.jpg&amp;amp;size=large 2x" data-title="图片描述" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/li>
+&lt;/ol></description></item><item><title>用命令行工具 speedtest-cli 来测试你的网速</title><link>https://w23ta0.github.io/posts/20150319-%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7-speedtest-cli-%E6%9D%A5%E6%B5%8B%E8%AF%95%E4%BD%A0%E7%9A%84%E7%BD%91%E9%80%9F/</link><pubDate>Thu, 19 Mar 2015 12:47:08 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150319-%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7-speedtest-cli-%E6%9D%A5%E6%B5%8B%E8%AF%95%E4%BD%A0%E7%9A%84%E7%BD%91%E9%80%9F/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>我们经常需要到检查家里与办公室之间的网络是否连通，那么我们要怎么做呢？打开网站Speedtest.net然后开始测试。网站是通过加载浏览器中的JavaScript脚本然后选择最佳的服务器测速然后用Flash产生图形化的结果。&lt;/p>
+&lt;p>那么远程服务器呢？要知道大多数远程服务器是没有浏览器可以打开web页面的。用浏览器打开网页测速的瓶颈就在此，你不能按计划的对服务器进行定期的常规测试。这时需要到一个名为Speedtest-cli的软件来打破这个瓶颈，它能让你通过命令行来测试互联网连接的速度。&lt;/p></description></item><item><title>Python 格式化字符串 (%操作符)</title><link>https://w23ta0.github.io/posts/20150131-python-%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2-%E6%93%8D%E4%BD%9C%E7%AC%A6/</link><pubDate>Sat, 31 Jan 2015 15:13:47 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150131-python-%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2-%E6%93%8D%E4%BD%9C%E7%AC%A6/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><category domain="https://w23ta0.github.io/categories/python/">Python</category><description>&lt;p>在许多编程语言中都包含有格式化字符串的功能，比如C和Fortran语言中的格式化输入输出。Python中内置有对字符串进行格式化的操作%。&lt;/p>
+&lt;h2 id="模板" class="heading-element">&lt;span>模板&lt;/span>
+ &lt;a href="#%e6%a8%a1%e6%9d%bf" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>格式化字符串时，Python使用一个字符串作为模板
+。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。Python用一个tuple将多个值传递给模板，每个值对应一个格式符。&lt;/p></description></item><item><title>解决Linux下取消挂载提示:device is busy</title><link>https://w23ta0.github.io/posts/20150131-%E8%A7%A3%E5%86%B3linux%E4%B8%8B%E5%8F%96%E6%B6%88%E6%8C%82%E8%BD%BD%E6%8F%90%E7%A4%BAdevice-is-busy/</link><pubDate>Sat, 31 Jan 2015 14:49:44 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150131-%E8%A7%A3%E5%86%B3linux%E4%B8%8B%E5%8F%96%E6%B6%88%E6%8C%82%E8%BD%BD%E6%8F%90%E7%A4%BAdevice-is-busy/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>在我们进行远程文件操作的时候，我们经常会出现文件服务出现卸载掉哦情况。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">umount /mnt/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">umount: /mnt/: device is busy.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">(In some cases useful info about processes that use
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">the device is found by lsof(8) or fuser(1))&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>解决方法:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>查找使用这个文件的进程和命令，具体的操作代码&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[root@localhost ~]# lsof |grep /mnt/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">lsof: WARNING: can&amp;#39;t stat() cifs file system /mnt/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Output information may be incomplete.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">bash 18841 root cwd unknown /mnt/TDDOWNLOAD/软件 (stat: No such device)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>然后执行ps命令可以查找执行此进程的命令&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[root@localhost ~]# ps -ef|grep 18841
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">root 18841 18839 0 Nov29 pts/2 00:00:00 /bin/bash -l
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">root 29496 25604 0 16:26 pts/0 00:00:00 grep 18841&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>强行结束无关进程&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[root@localhost ~]# kill -9 18841&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="4">
+&lt;li>然后卸载相关挂载&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[root@localhost ~]# umount /mnt/net1&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="5">
+&lt;li>然后可以再通过mount命令进行查看。&lt;/li>
+&lt;/ol></description></item><item><title>运行yum报错Error: Cannot retrieve metalink for repository: epel</title><link>https://w23ta0.github.io/posts/20150127-%E8%BF%90%E8%A1%8Cyum%E6%8A%A5%E9%94%99error-cannot-retrieve-metalink-for-repository-epel/</link><pubDate>Tue, 27 Jan 2015 14:52:08 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20150127-%E8%BF%90%E8%A1%8Cyum%E6%8A%A5%E9%94%99error-cannot-retrieve-metalink-for-repository-epel/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>今天给Centos通过rpm -Uvh装了个epel的扩展后，执行yum list就开始报错：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">Error: Cannot retrieve metalink &lt;span class="k">for&lt;/span> repository: epel. Please verify its path and try again&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>在网上查了查，解决办法是编辑&lt;code>/etc/yum.repos.d/epel.repo&lt;/code>，把基础的恢复，镜像的地址注释掉&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#baseurl&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mirrorlist&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>改成&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">baseurl
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#mirrorlist&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>注意：&lt;/strong>
+安装epel时区分&lt;code>i386 \ x86_64&lt;/code>，对应安装软件包，别忘了检查操作系统内核版本,如果装错包了也会报错！&lt;/p></description></item><item><title>解决Office 2010安装错误:1402</title><link>https://w23ta0.github.io/posts/20130114-%E8%A7%A3%E5%86%B3office-2010%E5%AE%89%E8%A3%85%E9%94%99%E8%AF%AF1402/</link><pubDate>Wed, 14 Jan 2015 14:32:08 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20130114-%E8%A7%A3%E5%86%B3office-2010%E5%AE%89%E8%A3%85%E9%94%99%E8%AF%AF1402/</guid><category domain="https://w23ta0.github.io/categories/windows/">Windows</category><category domain="https://w23ta0.github.io/categories/office/">Office</category><description>&lt;p>&lt;img loading="lazy" src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/19779461_0800.png" alt="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/19779461_0800.png" srcset="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/19779461_0800.png?size=small, https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/19779461_0800.png?size=medium 1.5x, https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/19779461_0800.png?size=large 2x" data-title="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/19779461_0800.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/p>
+&lt;p>先卸载原有office，再安装office2010.还不行使用下面方法是一下：&lt;/p>
+&lt;ol>
+&lt;li>使用组合键 Win+R 打开“运行”对话框，输入 regedit 并回车（可能需要管理员权限）&lt;/li>
+&lt;li>找到这个键值&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>右击“UserData” 选择“权限(P)…”&lt;/li>
+&lt;li>点击“高级(V)”按钮&lt;/li>
+&lt;li>选定“Administrators……”，勾选“替换子容器和对象的所有者(R)”，点击“应用(A)”，将“当前所有者(C)：”更改为“Administrators……”&lt;/li>
+&lt;li>“权限项目(T)：”选定“Administrators……”，勾选“使用可从此对象继承的权限替换所有子对象权限(P)”，点击“确定”按钮&lt;/li>
+&lt;/ol></description></item><item><title>Ansible安装及使用</title><link>https://w23ta0.github.io/posts/20141122-ansible%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link><pubDate>Sat, 22 Nov 2014 15:28:29 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20141122-ansible%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid><category domain="https://w23ta0.github.io/categories/devops/">DevOps</category><category domain="https://w23ta0.github.io/categories/ansible/">Ansible</category><description>&lt;h2 id="前言" class="heading-element">&lt;span>前言&lt;/span>
+ &lt;a href="#%e5%89%8d%e8%a8%80" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>AnsibleWorks成立于2012年，由自动化工具Cobbler及Func的开发者Michael DeHaan创建。其Ansible平台是一个开源的配置及计算机管理平台。可实现多节点的软件部署，执行特定任务并进行配置管理。&lt;/p></description></item><item><title>XAMPP 和 VMWare 的端口443冲突的解决</title><link>https://w23ta0.github.io/posts/20131114-xampp-%E5%92%8C-vmware-%E7%9A%84%E7%AB%AF%E5%8F%A3443%E5%86%B2%E7%AA%81%E7%9A%84%E8%A7%A3%E5%86%B3/</link><pubDate>Fri, 14 Nov 2014 13:34:43 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20131114-xampp-%E5%92%8C-vmware-%E7%9A%84%E7%AB%AF%E5%8F%A3443%E5%86%B2%E7%AA%81%E7%9A%84%E8%A7%A3%E5%86%B3/</guid><category domain="https://w23ta0.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化</category><category domain="https://w23ta0.github.io/categories/vmware/">VMWare</category><description>&lt;p>在电脑里装了VMware后，再要装xampp，十有八九就会出现这个问题：&lt;/p>
+&lt;pre>&lt;code>10:21:18 [Apache] Problem detected!
+10:21:18 [Apache] Port 443 in use by &amp;quot;&amp;quot;d:\Program Files (x86)\VM\vmware-hostd.exe&amp;quot; -u &amp;quot;C:\ProgramData\VMware\hostd\config.xml&amp;quot;&amp;quot; with PID 2764!
+10:21:18 [Apache] Apache WILL NOT start without the configured ports free!
+10:21:18 [Apache] You need to uninstall/disable/reconfigure the blocking application
+10:21:18 [Apache] or reconfigure Apache and the Control Panel to listen on a different port
+&lt;/code>&lt;/pre>
+&lt;p>这个问题是处在VMware上，VMware将443端口占用了，而apache也需要443端口。所以，想要开启apache的服务，必须要将VMware端口改变。&lt;/p></description></item><item><title>Linux LVM简明教程</title><link>https://w23ta0.github.io/posts/20140618-linux-lvm%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/</link><pubDate>Wed, 18 Jun 2014 14:30:29 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20140618-linux-lvm%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><category domain="https://w23ta0.github.io/categories/lvm/">LVM</category><description>&lt;p>逻辑卷管理LVM是一个多才多艺的硬盘系统工具。无论在Linux或者其他类似的系统，都是非常的好用。传统分区使用固定大小分区，重新调整大小十分麻烦。但是，LVM可以创建和管理“逻辑”卷，而不是直接使用物理硬盘。可以让管理员弹性的管理逻辑卷的扩大缩小，操作简单，而不损坏已存储的数据。可以随意将新的硬盘添加到LVM，以直接扩展已经存在的逻辑卷。LVM并不需要重启就可以让内核知道分区的存在。&lt;/p></description></item><item><title>Linux发行版与区别</title><link>https://w23ta0.github.io/posts/20140427-linux%E5%8F%91%E8%A1%8C%E7%89%88%E4%B8%8E%E5%8C%BA%E5%88%AB/</link><pubDate>Sun, 27 Apr 2014 14:52:08 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20140427-linux%E5%8F%91%E8%A1%8C%E7%89%88%E4%B8%8E%E5%8C%BA%E5%88%AB/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>Linux是一种&lt;a href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E5%8F%8A%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81%E8%BD%AF%E4%BB%B6"target="_blank" rel="external nofollow noopener noreferrer">自由和开放源代码&lt;/a>的&lt;a href="https://zh.wikipedia.org/wiki/%E7%B1%BBUnix%E7%B3%BB%E7%BB%9F"target="_blank" rel="external nofollow noopener noreferrer">类UNIX&lt;/a>&lt;a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1"target="_blank" rel="external nofollow noopener noreferrer">操作系统&lt;/a>.该操作系统的&lt;a href="https://zh.wikipedia.org/wiki/%E5%86%85%E6%A0%B8"target="_blank" rel="external nofollow noopener noreferrer">内核&lt;/a>由&lt;a href="https://zh.wikipedia.org/wiki/%E6%9E%97%E7%BA%B3%E6%96%AF%C2%B7%E6%89%98%E7%93%A6%E5%85%B9"target="_blank" rel="external nofollow noopener noreferrer">林纳斯·托瓦兹&lt;/a>在1991年10月5日首次发布。在加上&lt;a href="https://zh.wikipedia.org/wiki/%E4%BD%BF%E7%94%A8%E8%80%85%E7%A9%BA%E9%96%93"target="_blank" rel="external nofollow noopener noreferrer">用户空间&lt;/a>的&lt;a href="https://zh.wikipedia.org/wiki/%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F"target="_blank" rel="external nofollow noopener noreferrer">应用程序&lt;/a>之后，成为Linux操作系统。Linux也是&lt;a href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6"target="_blank" rel="external nofollow noopener noreferrer">自由软件&lt;/a>和&lt;a href="https://zh.wikipedia.org/wiki/%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81%E8%BD%AF%E4%BB%B6"target="_blank" rel="external nofollow noopener noreferrer">开放源代码软件&lt;/a>发展中最著名的例子。只要遵循&lt;a href="https://zh.wikipedia.org/wiki/GNU%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81"target="_blank" rel="external nofollow noopener noreferrer">GNU通用公共许可证&lt;/a>，任何个人和机构都可以自由地使用Linux的所有底层&lt;a href="https://zh.wikipedia.org/wiki/%E6%BA%90%E4%BB%A3%E7%A0%81"target="_blank" rel="external nofollow noopener noreferrer">源代码&lt;/a>，也可以自由地修改和再发布。大多数Linux系统还包括像提供&lt;a href="https://zh.wikipedia.org/wiki/GUI"target="_blank" rel="external nofollow noopener noreferrer">GUI&lt;/a>的&lt;a href="https://zh.wikipedia.org/wiki/X_Window"target="_blank" rel="external nofollow noopener noreferrer">X Window&lt;/a>之类的程序。除了一部分专家之外，大多数人都是直接使用&lt;a href="https://zh.wikipedia.org/wiki/Linux%E7%99%BC%E8%A1%8C%E7%89%88"target="_blank" rel="external nofollow noopener noreferrer">Linux发行版&lt;/a>，而不是自己选择每一样组件或自行设置。&lt;/p></description></item><item><title>Linux基础：进程管理</title><link>https://w23ta0.github.io/posts/20140425-linux%E5%9F%BA%E7%A1%80%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</link><pubDate>Fri, 25 Apr 2014 20:11:45 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20140425-linux%E5%9F%BA%E7%A1%80%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>进程是操作系统上非常重要的概念，所有系统上面跑的数据都会以进程的类型存在。在 Linux 系统当中：触发任何一个事件时，系统都会将它定义成为一个进程，并且给予这个进程一个 ID，称为 PID，同时根据触发这个进程的用户，给予这个 PID 一组有效的权限设置。&lt;/p>
+&lt;h2 id="进程是什么样的" class="heading-element">&lt;span>进程是什么样的&lt;/span>
+ &lt;a href="#%e8%bf%9b%e7%a8%8b%e6%98%af%e4%bb%80%e4%b9%88%e6%a0%b7%e7%9a%84" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>程序运行起来后，我们看不到也摸不着。因此 Linux 为我们提供了一系列方便的命名来查看正在运行的进程。首先是 ps 命令，比如 &lt;code>ps -l&lt;/code>命令能查看当前 bash 下的相关进程全部信息。如下：&lt;/p></description></item><item><title>Linux基础：文件管理</title><link>https://w23ta0.github.io/posts/20140420-linux%E5%9F%BA%E7%A1%80%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/</link><pubDate>Sun, 20 Apr 2014 20:00:44 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20140420-linux%E5%9F%BA%E7%A1%80%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>在 Linux 下，所有的文件与目录都是由根目录（/）开始的。然后再一个一个分支下来，形成一棵繁杂的树。因此我们也称这种目录配置方式为“目录树”。那目录树与文件系统有什么关系，目录树是怎么实现的呢？&lt;/p>
+&lt;h2 id="目录" class="heading-element">&lt;span>目录&lt;/span>
+ &lt;a href="#%e7%9b%ae%e5%bd%95" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>在 Linux 系统中，目录也是一种文件。我们可以使用 &lt;code>$ls -li&lt;/code>来查看一个目录的属性。&lt;/p></description></item><item><title>Linux基础：文件系统</title><link>https://w23ta0.github.io/posts/20140416-linux%E5%9F%BA%E7%A1%80%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</link><pubDate>Wed, 16 Apr 2014 19:52:37 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20140416-linux%E5%9F%BA%E7%A1%80%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>我们知道不同的操作系统所使用的文件系统是不一样的。举例来说，Windows 98 以前所使用的是文件系统是 FAT，Windows 2000 以后的版本有所谓的 NTFS 文件系统。至于 Linux 的正规文件系统则为 Ext2（Linux second extended file system，Ext2fs）。之后又出现了改进版的 Ext3 和 Ext4 ，总体上变化不大。&lt;/p>
+&lt;h2 id="文件系统的对比" class="heading-element">&lt;span>文件系统的对比&lt;/span>
+ &lt;a href="#%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e7%9a%84%e5%af%b9%e6%af%94" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>我们经常听说 Windows 需要磁盘碎片整理，而 Linux 却不需要。这是为什么呢？&lt;/p></description></item><item><title>Linux基础：权限与文件</title><link>https://w23ta0.github.io/posts/20140405-linux%E5%9F%BA%E7%A1%80%E6%9D%83%E9%99%90%E4%B8%8E%E6%96%87%E4%BB%B6/</link><pubDate>Sat, 05 Apr 2014 19:45:28 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20140405-linux%E5%9F%BA%E7%A1%80%E6%9D%83%E9%99%90%E4%B8%8E%E6%96%87%E4%BB%B6/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;h2 id="用户与用户组" class="heading-element">&lt;span>用户与用户组&lt;/span>
+ &lt;a href="#%e7%94%a8%e6%88%b7%e4%b8%8e%e7%94%a8%e6%88%b7%e7%bb%84" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>Linux 是一个多用户、多任务的系统，常常有多人同时使用一台机工作，为了保护每个人的隐私权，“文件所有者”的角色就显得相当重要了。&lt;/p></description></item><item><title>Linux基础：启动流程</title><link>https://w23ta0.github.io/posts/20140305-linux%E5%9F%BA%E7%A1%80%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</link><pubDate>Wed, 05 Mar 2014 18:15:01 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20140305-linux%E5%9F%BA%E7%A1%80%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>计算机的启动是一个非常复杂的过程，从打开电源到桌面的显示，需要经过一系列不可或缺的过程，了解这些过程有助于我们更好地理解操作系统，也有助于我们修复系统可能出现的问题。&lt;/p>
+&lt;h2 id="启动流程一览" class="heading-element">&lt;span>启动流程一览&lt;/span>
+ &lt;a href="#%e5%90%af%e5%8a%a8%e6%b5%81%e7%a8%8b%e4%b8%80%e8%a7%88" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>我们先给出 Linux 启动流程的总览图，然后再每一个模块展开说明。
+&lt;img loading="lazy" src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/81b78497jw1eic3rqn72tj20hf06774l.jpg" alt="图片描述" srcset="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/81b78497jw1eic3rqn72tj20hf06774l.jpg?size=small, https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/81b78497jw1eic3rqn72tj20hf06774l.jpg?size=medium 1.5x, https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/81b78497jw1eic3rqn72tj20hf06774l.jpg?size=large 2x" data-title="图片描述" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/p></description></item><item><title>定制CentOS 6.4自动化安装ISO镜像光盘</title><link>https://w23ta0.github.io/posts/20130323-%E5%AE%9A%E5%88%B6centos-6.4%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%89%E8%A3%85iso%E9%95%9C%E5%83%8F%E5%85%89%E7%9B%98/</link><pubDate>Sat, 23 Mar 2013 14:22:07 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20130323-%E5%AE%9A%E5%88%B6centos-6.4%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%89%E8%A3%85iso%E9%95%9C%E5%83%8F%E5%85%89%E7%9B%98/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>和朋友今天正好聊到CentOS的自动化安装光盘制作问题，就顺便把自己之前的测试过程发出来。希望能够帮到大家。
+直接发下自己之前做的时候的工作记录了，因为是工作中使用，添加了一些所需的软件包之类的东西，其实您也完全可以自由发挥，直接装完系统，一个优化好的LNMP等等众多软件都已经安装好了的系统也是完全可能的，想想网上的那些一键安装的ISO&amp;hellip;
+所以大家加油哦！后期我也会完善本篇文章的具体注释的。&lt;/p></description></item><item><title>Linux Shell date命令的用法</title><link>https://w23ta0.github.io/posts/20130311-linux-shell-date%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/</link><pubDate>Mon, 11 Mar 2013 18:13:00 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20130311-linux-shell-date%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><category domain="https://w23ta0.github.io/categories/shell/">Shell</category><description>&lt;p>在linux shell编程中，经常用到日期的加减运算，以前都是自己通过expr函数计算，很麻烦。
+其实date命令本身提供了日期的加减运算，非常方便。&lt;/p>
+&lt;p>例如：得到昨天的时间&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”-1 day”&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>date的用法:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">date &lt;span class="o">[&lt;/span>OPTION&lt;span class="o">]&lt;/span>… &lt;span class="o">[&lt;/span>+FORMAT&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date &lt;span class="o">[&lt;/span>-u&lt;span class="p">|&lt;/span>–utc&lt;span class="p">|&lt;/span>–universal&lt;span class="o">]&lt;/span> &lt;span class="o">[&lt;/span>MMDDhhmm&lt;span class="o">[[&lt;/span>CC&lt;span class="o">]&lt;/span>YY&lt;span class="o">][&lt;/span>.ss&lt;span class="o">]]&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>date 可以用来显示或设定系统的日期与时间。&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>在显示方面，使用者可以设定欲显示的格式，格式设定为一个加号后接数个标记，其中可用的标记列表如下:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">%% : 显示一个 %（百分号）字符。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%n : 下一行
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%t : 跳格
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%H : 小时&lt;span class="o">(&lt;/span>00..23&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%I : 小时&lt;span class="o">(&lt;/span>01..12&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%k : 小时&lt;span class="o">(&lt;/span>0..23&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%l : 小时&lt;span class="o">(&lt;/span>1..12&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%M : 分钟&lt;span class="o">(&lt;/span>00..59&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%p : 显示本地 AM 或 PM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%r : 直接显示时间 &lt;span class="o">(&lt;/span>&lt;span class="m">12&lt;/span> 小时制，格式为 hh:mm:ss &lt;span class="o">[&lt;/span>AP&lt;span class="o">]&lt;/span>M&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%s : 从 &lt;span class="m">1970&lt;/span> 年 &lt;span class="m">1&lt;/span> 月 &lt;span class="m">1&lt;/span> 日 00:00:00 UTC 到目前为止的秒数
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%S : 秒&lt;span class="o">(&lt;/span>00..61&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%T : 直接显示时间 &lt;span class="o">(&lt;/span>&lt;span class="m">24&lt;/span> 小时制&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%X : 相当于 %H:%M:%S
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%Z : 显示时区 %a : 星期几 &lt;span class="o">(&lt;/span>Sun..Sat&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%A : 星期几 &lt;span class="o">(&lt;/span>Sunday..Saturday&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%b : 月份 &lt;span class="o">(&lt;/span>Jan..Dec&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%B : 月份 &lt;span class="o">(&lt;/span>January..December&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%c : 直接显示日期与时间
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%d : 日 &lt;span class="o">(&lt;/span>01..31&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%D : 直接显示日期 &lt;span class="o">(&lt;/span>mm/dd/yy&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%h : 同 %b
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%j : 一年中的第几天 &lt;span class="o">(&lt;/span>001..366&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%m : 月份 &lt;span class="o">(&lt;/span>01..12&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%U : 一年中的第几周 &lt;span class="o">(&lt;/span>00..53&lt;span class="o">)&lt;/span> &lt;span class="o">(&lt;/span>以 Sunday 为一周的第一天的情形&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%w : 一周中的第几天 &lt;span class="o">(&lt;/span>0..6&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%W : 一年中的第几周 &lt;span class="o">(&lt;/span>00..53&lt;span class="o">)&lt;/span> &lt;span class="o">(&lt;/span>以 Monday 为一周的第一天的情形&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%x : 直接显示日期 &lt;span class="o">(&lt;/span>mm/dd/yy&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%y : 年份的最后两位数字 &lt;span class="o">(&lt;/span>00.99&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%Y : 完整年份 &lt;span class="o">(&lt;/span>0000..9999&lt;span class="o">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>在设定时间方面&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">date -s //设置当前时间，只有root权限才能设置，其他只能查看。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date -s &lt;span class="m">20080523&lt;/span> //设置成20080523，这样会把具体时间设置成空00:00:00
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date -s 01:01:01 //设置具体时间，不会对日期做更改
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date -s “01:01:01 2008-05-23″ //这样可以设置全部时间
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date -s “01:01:01 20080523″ //这样可以设置全部时间
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date -s “2008-05-23 01:01:01″ //这样可以设置全部时间
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date -s “20080523 01:01:01″ //这样可以设置全部时间&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>加减&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">date +%Y%m%d //显示前天年月日
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”+1 day” //显示前一天的日期
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”-1 day” //显示后一天的日期
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”-1 month” //显示上一月的日期
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”+1 month” //显示下一月的日期
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”-1 year” //显示前一年的日期
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date +%Y%m%d –date&lt;span class="o">=&lt;/span>”+1 year” //显示下一年的日期&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>正则表达式学习</title><link>https://w23ta0.github.io/posts/20130305-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0/</link><pubDate>Tue, 05 Mar 2013 16:16:19 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20130305-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><category domain="https://w23ta0.github.io/categories/regex/">Regex</category><description>&lt;p>最近在看鸟哥 Linux，看到正则表达式这块，以前看到这些恐怖的字符总是觉得恶心，今天就咬牙系统的学习了下正则表达式。然后有了这篇笔记。主要总结正则表达式的一些关键知识点。&lt;/p>
+&lt;ul>
+&lt;li>字面值：&lt;code>a b c d 1 2 3 4&lt;/code> 等等。&lt;/li>
+&lt;li>字符类：&lt;code>. [abc] [a-z] \d \w \s&lt;/code>
+- &lt;code>. &lt;/code>表示“任何字符”
+- &lt;code>[abc] &lt;/code>括号表示“找到集合里任意一个字符”。
+- &lt;code>\d&lt;/code> 表示“一个数字”，等同于[0-9]
+- &lt;code>\w &lt;/code>表示“一个单词字符”，等同于[0-9A-Za-z_]
+- &lt;code>\s &lt;/code>表示“一个空格，tab，回车或一个换行符”
+- 否定字符类：&lt;code>[^abc] \D \W \S&lt;/code>&lt;/li>
+&lt;li>乘法器：&lt;code>{4} {3,16} {1,} ? * +&lt;/code>
+&lt;ul>
+&lt;li>&lt;code>{3,16}&lt;/code> 表示找到重复 3 到 16 个前一个正则字符&lt;/li>
+&lt;li>&lt;code>?&lt;/code> 表示“没有或一个”&lt;/li>
+&lt;li>&lt;code>*&lt;/code> 表示“没有或多个”&lt;/li>
+&lt;li>&lt;code>+&lt;/code> 表示“一个或多个”&lt;/li>
+&lt;li>乘法器是贪婪的除非你在之后使用 ? , 即优先找到最长的&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>分支和组合：&lt;code> (Septem|Octo|Novem|Decem)ber&lt;/code>
+&lt;ul>
+&lt;li>管道符号 &lt;code>| &lt;/code>表示“或”&lt;/li>
+&lt;li>圆括号表示组合 ，比如 在一周中找到一天，使用&lt;code> (Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day&lt;/code>。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>词、行和文本边界：
+&lt;ul>
+&lt;li>&lt;code>\b &lt;/code>表示词边界&lt;/li>
+&lt;li>&lt;code>^&lt;/code> 表示行开始&lt;/li>
+&lt;li>&lt;code>$&lt;/code> 表示行结束&lt;/li>
+&lt;li>&lt;code>^$&lt;/code> 表示的就是空白行了&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>反向捕获组：&lt;code>\1 \2 \3&lt;/code> 等等。捕获组从左到右进行编号，只要计算左圆括号。（在替换表达式和匹配表达式中同时生效）
+&lt;ul>
+&lt;li>比如有一段字符，我们需要前面的横杠去掉，尾巴的数字去掉， 英文句号换成中文顿号&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">-1.文章标题1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-2.文章标题2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-3.文章标题3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-4.文章标题4
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-5.文章标题5&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>则可以使用正则表达式 &lt;code>-(\d{1,})\.(.*)\d&lt;/code> 来匹配。然后使用 \1、\2 来替换。&lt;/p></description></item><item><title>实时查看linux网卡流量</title><link>https://w23ta0.github.io/posts/20130126-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8Blinux%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</link><pubDate>Sat, 26 Jan 2013 10:18:00 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20130126-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8Blinux%E7%BD%91%E5%8D%A1%E6%B5%81%E9%87%8F/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>将下列脚本保存为可执行脚本文件，比如叫traff.sh。☺️&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>&lt;span class="k">while&lt;/span> &lt;span class="o">[&lt;/span> &lt;span class="s2">&amp;#34;1&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">eth&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">RXpre&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>cat /proc/net/dev &lt;span class="p">|&lt;/span> grep &lt;span class="nv">$eth&lt;/span> &lt;span class="p">|&lt;/span> tr : &lt;span class="s2">&amp;#34; &amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $2}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">TXpre&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>cat /proc/net/dev &lt;span class="p">|&lt;/span> grep &lt;span class="nv">$eth&lt;/span> &lt;span class="p">|&lt;/span> tr : &lt;span class="s2">&amp;#34; &amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $10}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sleep &lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">RXnext&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>cat /proc/net/dev &lt;span class="p">|&lt;/span> grep &lt;span class="nv">$eth&lt;/span> &lt;span class="p">|&lt;/span> tr : &lt;span class="s2">&amp;#34; &amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $2}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">TXnext&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>cat /proc/net/dev &lt;span class="p">|&lt;/span> grep &lt;span class="nv">$eth&lt;/span> &lt;span class="p">|&lt;/span> tr : &lt;span class="s2">&amp;#34; &amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $10}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">clear
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> -e &lt;span class="s2">&amp;#34;\t RX `date +%k:%M:%S` TX&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">RX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$((&lt;/span>&lt;span class="nv">$RXnext&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">$RXpre&lt;/span>&lt;span class="k">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">TX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$((&lt;/span>&lt;span class="nv">$TXnext&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">$TXpre&lt;/span>&lt;span class="k">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="o">[[&lt;/span> &lt;span class="nv">$RX&lt;/span> -lt &lt;span class="m">1024&lt;/span> &lt;span class="o">]]&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="k">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">RX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">RX&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">B/s&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">elif&lt;/span> &lt;span class="o">[[&lt;/span> &lt;span class="nv">$RX&lt;/span> -gt &lt;span class="m">1048576&lt;/span> &lt;span class="o">]]&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="k">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">RX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">echo&lt;/span> &lt;span class="nv">$RX&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $1/1048576 &amp;#34;MB/s&amp;#34;}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">RX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">echo&lt;/span> &lt;span class="nv">$RX&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $1/1024 &amp;#34;KB/s&amp;#34;}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="o">[[&lt;/span> &lt;span class="nv">$TX&lt;/span> -lt &lt;span class="m">1024&lt;/span> &lt;span class="o">]]&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="k">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">TX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">TX&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">B/s&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">elif&lt;/span> &lt;span class="o">[[&lt;/span> &lt;span class="nv">$TX&lt;/span> -gt &lt;span class="m">1048576&lt;/span> &lt;span class="o">]]&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="k">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">TX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">echo&lt;/span> &lt;span class="nv">$TX&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $1/1048576 &amp;#34;MB/s&amp;#34;}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">TX&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">echo&lt;/span> &lt;span class="nv">$TX&lt;/span> &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $1/1024 &amp;#34;KB/s&amp;#34;}&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> -e &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$eth&lt;/span>&lt;span class="s2"> \t &lt;/span>&lt;span class="nv">$RX&lt;/span>&lt;span class="s2"> &lt;/span>&lt;span class="nv">$TX&lt;/span>&lt;span class="s2"> &amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">done&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol>
+&lt;li>本脚本可自定义欲查看接口，精确到小数，并可根据流量大小灵活显示单位。&lt;/li>
+&lt;li>此脚本的采集间隔为1秒。&lt;/li>
+&lt;li>此脚本不需要额外再安装软件，可在急用情况下应付一下，比如临时想看一下是否有流量通过，大概为多少等。&lt;/li>
+&lt;li>一些流量查看软件由于计算的精确度不同，所以与此脚本显示的数值不可能一致，此脚本的显示结果与du meter对比过，相差很小。还有就是传输工具本身显示的传输速度并不准确。&lt;/li>
+&lt;/ol>
+&lt;p>用法为：&lt;/p></description></item><item><title>history命令显示时间记录</title><link>https://w23ta0.github.io/posts/20130126-history%E5%91%BD%E4%BB%A4%E6%98%BE%E7%A4%BA%E6%97%B6%E9%97%B4%E8%AE%B0%E5%BD%95/</link><pubDate>Sat, 26 Jan 2013 09:31:45 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20130126-history%E5%91%BD%E4%BB%A4%E6%98%BE%E7%A4%BA%E6%97%B6%E9%97%B4%E8%AE%B0%E5%BD%95/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>查了半天系统环境变量&lt;code>HISTTIMEFORMAT&lt;/code>丝毫不见踪迹 原来在&lt;code>bash man&lt;/code>中才有收录&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#man bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> HISTTIMEFORMAT
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> If this variable is &lt;span class="nb">set&lt;/span> and not null, its value is used as a format string &lt;span class="k">for&lt;/span> strftime&lt;span class="o">(&lt;/span>3&lt;span class="o">)&lt;/span> to print the &lt;span class="nb">time&lt;/span> stamp associated with each &lt;span class="nb">history&lt;/span> entry displayed by the &lt;span class="nb">history&lt;/span> builtin. If this variable is set, &lt;span class="nb">time&lt;/span> stamps are written to the &lt;span class="nb">history&lt;/span> file so they may be preserved across shell sessions.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">如果这个变量被设置，且不为空,使用它的值作为格式字符串strftime（3）打印时间戳与历史命令内建显示的每个条目相关联的历史.如果这个变量被设置，时间戳会被写入历史文件，这样的话他们可能会保留在shell会话。&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看HISTTIMEFORMAT具体参数&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#man strftime&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>取了两条记录&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">%F Equivalent to %Y-%m-%d &lt;span class="o">(&lt;/span>the ISO &lt;span class="m">8601&lt;/span> date format&lt;span class="o">)&lt;/span>. &lt;span class="o">(&lt;/span>C99&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">%T The &lt;span class="nb">time&lt;/span> in 24-hour notation &lt;span class="o">(&lt;/span>%H:%M:%S&lt;span class="o">)&lt;/span>. &lt;span class="o">(&lt;/span>SU&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>root@jerome-1 conf&lt;span class="o">]&lt;/span>&lt;span class="c1"># HISTTIMEFORMAT=&amp;#34;%F %T&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>常用到的一些显示方式&lt;/p></description></item><item><title>使用MSSQL远程重启服务器的方法</title><link>https://w23ta0.github.io/posts/20121211-%E4%BD%BF%E7%94%A8mssql%E8%BF%9C%E7%A8%8B%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%96%B9%E6%B3%95/</link><pubDate>Tue, 11 Dec 2012 13:56:58 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20121211-%E4%BD%BF%E7%94%A8mssql%E8%BF%9C%E7%A8%8B%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%96%B9%E6%B3%95/</guid><category domain="https://w23ta0.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</category><category domain="https://w23ta0.github.io/categories/sqlserver/">SQLServer</category><description>&lt;p>单位托管有服务器,或者经常在家里休息时单位服务器出现问题时,相信用远程桌面或&lt;code>pcanywhere&lt;/code>的朋友遇到过莫名其妙断线而不能再连接的情况。这时,如果服务器如果安装有SQL server,则可用如下的方法重启服务器解决。&lt;/p>
+&lt;p>本地用SQL server连接上服务器后,在SQL查询工具里执行如下命令:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">xp_cmdshell &amp;#39;shutdown -r -t 80&amp;#39; 用SQL在80秒后重新启动电脑
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">shutdown -a 取消重新启动
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">shutdown.exe -a 取消关机
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">shutdown.exe -d [p]:xx:yy 列出系统关闭的原因代码。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">shutdown.exe -f 强行关闭应用程序。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">shutdown.exe -m \计算机名　控制远程计算机。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">shutdown.exe -i 显示图形用户界面，但必须是Shutdown的第一个参数。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">shutdown.exe -l 注销当前用户。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">shutdown.exe -r 关机并重启。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">shutdown.exe -t 时间 设置关机倒计时。默认值是 30 秒。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">shutdown.exe -c &amp;#34;消息内容&amp;#34; 输入关机对话框中的消息内容(不能超127个字符)。&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>远程关闭/重启pcanywhere&lt;/p></description></item><item><title>常用数据库驱动和JDBC URL</title><link>https://w23ta0.github.io/posts/20121017-%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E9%A9%B1%E5%8A%A8%E5%92%8Cjdbc-url/</link><pubDate>Wed, 17 Oct 2012 16:59:53 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20121017-%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E9%A9%B1%E5%8A%A8%E5%92%8Cjdbc-url/</guid><category domain="https://w23ta0.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</category><category domain="https://w23ta0.github.io/categories/jdbc/">JDBC</category><description>&lt;h2 id="microsoft-sql-server" class="heading-element">&lt;span>Microsoft SQL Server&lt;/span>
+ &lt;a href="#microsoft-sql-server" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>Microsoft SQL Server JDBC Driver （一般用来连接 SQLServer 2000）
+驱动程序包名:&lt;code>msbase.jar mssqlserver.jar msutil.jar&lt;/code>
+驱动程序类名:&lt;code>com.microsoft.jdbc.sqlserver.SQLServerDriver&lt;/code>
+JDBC URL: &lt;code>jdbc:microsoft:sqlserver://&amp;lt;server_name&amp;gt;:&amp;lt;port&amp;gt;&lt;/code>
+默认端口1433，如果服务器使用默认端口则port可以省略&lt;/p></description></item><item><title>linux expect自动登录ssh,ftp</title><link>https://w23ta0.github.io/posts/20121010-linux-expect%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95sshftp/</link><pubDate>Wed, 10 Oct 2012 10:03:51 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20121010-linux-expect%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95sshftp/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>expect是一种能够按照脚本内容里面设定的方式与交互式程序进行”会话”的程序。根据脚本内容，Expect可以知道程序会提示或反馈什么内容以及 什么是正确的应答。它是一种可以提供”分支和嵌套结构”来引导程序流程的解释型脚本语言。&lt;/p>
+&lt;p>shell功能很强大,但是不能实现有交互功能的多机器之前的操作,例如ssh和ftp.而expect可以帮助我们来实现.&lt;/p></description></item><item><title>核心文件initrd.img、vmlinux 和vmlinuz</title><link>https://w23ta0.github.io/posts/20120916-%E6%A0%B8%E5%BF%83%E6%96%87%E4%BB%B6initrd.imgvmlinux-%E5%92%8Cvmlinuz/</link><pubDate>Sun, 16 Sep 2012 10:23:37 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20120916-%E6%A0%B8%E5%BF%83%E6%96%87%E4%BB%B6initrd.imgvmlinux-%E5%92%8Cvmlinuz/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>initrd.img是一个小的映象，包含一个最小的linux系统。通常的步骤是先启动内核，然后内核挂载initrd.img，并执行里面的脚本来进一步挂载各种各样的模块，然后发现真正的root分区，挂载并执行/sbin/init…&lt;/p>
+&lt;p>initrd.img当然是可选的了，如果没有initrd.img,内核就试图直接挂载root分区。&lt;/p></description></item><item><title>SSH 使用技巧一则:创建快捷方式</title><link>https://w23ta0.github.io/posts/20120915-ssh-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%80%E5%88%99%E5%88%9B%E5%BB%BA%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</link><pubDate>Sat, 15 Sep 2012 11:28:07 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20120915-ssh-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%80%E5%88%99%E5%88%9B%E5%BB%BA%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>在管理服务器时，我通常选择使用 SSH 方式。以下是一则 SSH 使用技巧，希望对你有用。&lt;/p>
+&lt;h2 id="创建快捷方式" class="heading-element">&lt;span>创建快捷方式&lt;/span>
+ &lt;a href="#%e5%88%9b%e5%bb%ba%e5%bf%ab%e6%8d%b7%e6%96%b9%e5%bc%8f" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>当你在执行 ssh 命令登录服务器时，有没有被需要输入命令后面的一长串参数感到厌烦呢？比如，名为 &lt;a href="mailto:serveradmin@domain.com"target="_blank" rel="external nofollow noopener noreferrer">serveradmin@domain.com&lt;/a> 的用户要登录到 example.com 主机上，需执行：&lt;/p></description></item><item><title>.htaccess实现网页Gzip压缩</title><link>https://w23ta0.github.io/posts/20120824-.htaccess%E5%AE%9E%E7%8E%B0%E7%BD%91%E9%A1%B5gzip%E5%8E%8B%E7%BC%A9/</link><pubDate>Fri, 24 Aug 2012 09:41:47 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20120824-.htaccess%E5%AE%9E%E7%8E%B0%E7%BD%91%E9%A1%B5gzip%E5%8E%8B%E7%BC%A9/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><category domain="https://w23ta0.github.io/categories/nginx/">Nginx</category><description>&lt;p>最近抽出了一点时间，研究了使用.htaccess 开启网页gzip压缩的问题。
+大家都知道网页打开速度与dns，服务器，页面代码，网站结构，统统都相关。
+网页压缩的问题。因为本人的大部分网站都是PHP的，所以，基本需要.htaccess来解决。&lt;/p>
+&lt;p>在.htaccess文件中请加入以下代码即可：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="nx">IfModule&lt;/span> &lt;span class="nx">mod_deflate&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="nx">c&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresActive&lt;/span> &lt;span class="nx">On&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresDefault&lt;/span> &lt;span class="nx">A600&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">image&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">icon&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">javascript&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">css&lt;/span> &lt;span class="nx">A604800&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">image&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">gif&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">image&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">png&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">image&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">jpeg&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">plain&lt;/span> &lt;span class="nx">A86400&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">shockwave&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">flash&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">video&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">flv&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">pdf&lt;/span> &lt;span class="nx">A2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">ExpiresByType&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">html&lt;/span> &lt;span class="nx">A600&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Insert filters
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nx">AddOutputFilter&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">html&lt;/span> &lt;span class="nx">xml&lt;/span> &lt;span class="nx">php&lt;/span> &lt;span class="nx">js&lt;/span> &lt;span class="nx">css&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">plain&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">html&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">xml&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">css&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">xml&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">xhtml&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="nx">xml&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">rss&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="nx">xml&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">javascript&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">javascript&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">httpd&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">httpd&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">fastphp&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">AddOutputFilterByType&lt;/span> &lt;span class="nx">DEFLATE&lt;/span> &lt;span class="nx">image&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">svg&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="nx">xml&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Drop problematic browsers
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nx">BrowserMatch&lt;/span> &lt;span class="o">^&lt;/span>&lt;span class="nx">Mozilla&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">4&lt;/span> &lt;span class="nx">gzip&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">only&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">html&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">BrowserMatch&lt;/span> &lt;span class="o">^&lt;/span>&lt;span class="nx">Mozilla&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mf">4.0&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">678&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="nx">no&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">gzip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">BrowserMatch&lt;/span> &lt;span class="o">!&lt;/span>&lt;span class="nx">no&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">gzip&lt;/span> &lt;span class="o">!&lt;/span>&lt;span class="nx">gzip&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">only&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">text&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">html&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Make sure proxies don&amp;#39;t deliver the wrong conten
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nx">Header&lt;/span> &lt;span class="nx">append&lt;/span> &lt;span class="nx">Vary&lt;/span> &lt;span class="nx">User&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">Agent&lt;/span> &lt;span class="nx">env&lt;/span>&lt;span class="o">=!&lt;/span>&lt;span class="nx">dont&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">vary&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;/&lt;/span>&lt;span class="nx">IfModule&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如果没有这个文件，可以自己新建。然后上传到空间就可以了。
+这时候，你可以使用站长工具测试一下。
+推荐chinaz.com站长工具。&lt;/p></description></item><item><title>让Linux主机开启.htaccess支持</title><link>https://w23ta0.github.io/posts/20120820-%E8%AE%A9linux%E4%B8%BB%E6%9C%BA%E5%BC%80%E5%90%AF.htaccess%E6%94%AF%E6%8C%81/</link><pubDate>Mon, 20 Aug 2012 09:41:47 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20120820-%E8%AE%A9linux%E4%B8%BB%E6%9C%BA%E5%BC%80%E5%90%AF.htaccess%E6%94%AF%E6%8C%81/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><category domain="https://w23ta0.github.io/categories/apache/">Apache</category><description>&lt;p>国内的很多Linux型主机默认是不开启.htaccess的，从而导致不支持伪静态。而国外的虚拟主机基本上都是支持此服务的，我曾经问过国内的主机提供商为何不开启.htaccess服务，他们的回答很可笑，说是减轻服务器的负担，呵，这真是符合了中国的国情，真让你不知以何种语言反击之。&lt;/p>
+&lt;p>这里给一些菜鸟扫扫盲，很多站长都单纯的以为.htaccess就是伪静态，把.htaccess当成伪静态的代名词，以为.htaccess就起到.htaccess的作用，其实它的作用比你想象的大得多，除了伪静态，还有我们熟知的404啊、301跳转啊等，都可以通过.htaccess来实现，下面来给大家介绍一下如何在Linux型主机下开启.htaccess的支持，前提你有这个权限，一般这个针对的是服务器或者VPS，虚拟主机基本上是没门，除非你要求提供商帮你开启。另一种情况是有些童鞋在本地搭建PHP+MySQL+Apache的时候用得着此方法，本地的一键安装包有xampp 和phpnow等，我个人推荐使用phpnow，简单易用，完全傻瓜式。如果你使用phpnow搭建的话你就不用往下看了，因为默认是开启的。&lt;/p></description></item><item><title>Linux initrd.img 解压分析</title><link>https://w23ta0.github.io/posts/20120816-linux-initrd.img-%E8%A7%A3%E5%8E%8B%E5%88%86%E6%9E%90/</link><pubDate>Thu, 16 Aug 2012 11:58:16 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20120816-linux-initrd.img-%E8%A7%A3%E5%8E%8B%E5%88%86%E6%9E%90/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>vmlinuz 是一个为内核映像， vmlinuz里面有gzip的一段代码。&lt;/p>
+&lt;p>initrd.img 是作为避免在vmlinuz里编译所有的驱动模块，所以使用了一个中间层的技术&lt;/p>
+&lt;p>initrd有两种格式，一种是较早的2.4.x中的&lt;code>image-initrd&lt;/code>格式，里面以&lt;code>/linuxrc&lt;/code>为主导。另一种是&lt;code>cpio-initrd&lt;/code>&lt;/p>
+&lt;p>看了网上的资料，想学着看看 initrd里是什么个样子&lt;/p></description></item><item><title>Win7笔记本电脑启用虚拟Wifi共享上网</title><link>https://w23ta0.github.io/posts/20120710-win7%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91%E5%90%AF%E7%94%A8%E8%99%9A%E6%8B%9Fwifi%E5%85%B1%E4%BA%AB%E4%B8%8A%E7%BD%91/</link><pubDate>Tue, 10 Jul 2012 09:49:04 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20120710-win7%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91%E5%90%AF%E7%94%A8%E8%99%9A%E6%8B%9Fwifi%E5%85%B1%E4%BA%AB%E4%B8%8A%E7%BD%91/</guid><category domain="https://w23ta0.github.io/categories/windows/">Windows</category><description>&lt;p>今天看了一个帖子，win7系统通过笔记本的无线网卡，启用虚拟Wifi功能共享上网，自己尝试了一下，感觉很好用，至少没有无线路由的自己，手机可以上wifi了，更新软件玩微信等等，都方便多了，好了，废话不多说，先介绍下吧。&lt;/p>
+&lt;h2 id="启动承载网络" class="heading-element">&lt;span>启动承载网络&lt;/span>
+ &lt;a href="#%e5%90%af%e5%8a%a8%e6%89%bf%e8%bd%bd%e7%bd%91%e7%bb%9c" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>查看笔记本网卡是否支持”启动承载网络”的功能，使用管理员运行cmd命令，&lt;/p></description></item><item><title>Mysql常用命令行大全</title><link>https://w23ta0.github.io/posts/20120630-mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8/</link><pubDate>Sat, 30 Jun 2012 13:01:25 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20120630-mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8/</guid><category domain="https://w23ta0.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</category><category domain="https://w23ta0.github.io/categories/mysql/">Mysql</category><description>&lt;h2 id="mysql服务的启动和停止" class="heading-element">&lt;span>Mysql服务的启动和停止&lt;/span>
+ &lt;a href="#mysql%e6%9c%8d%e5%8a%a1%e7%9a%84%e5%90%af%e5%8a%a8%e5%92%8c%e5%81%9c%e6%ad%a2" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">service mysql start
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">service mysql stop&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="登陆mysql" class="heading-element">&lt;span>登陆Mysql&lt;/span>
+ &lt;a href="#%e7%99%bb%e9%99%86mysql" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>语法如下： mysql -u用户名 -p用户密码
+键入命令&lt;/p></description></item><item><title>让Centos支持打包、解压RAR文件包</title><link>https://w23ta0.github.io/posts/20120611-%E8%AE%A9centos%E6%94%AF%E6%8C%81%E6%89%93%E5%8C%85%E8%A7%A3%E5%8E%8Brar%E6%96%87%E4%BB%B6%E5%8C%85/</link><pubDate>Mon, 11 Jun 2012 11:51:46 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20120611-%E8%AE%A9centos%E6%94%AF%E6%8C%81%E6%89%93%E5%8C%85%E8%A7%A3%E5%8E%8Brar%E6%96%87%E4%BB%B6%E5%8C%85/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>有些朋友购买了vps后由于他是从原来的win主机搬迁过来，备份打包的数据是rar格式的，那在CentOS下怎么解压呢？&lt;/p>
+&lt;p>Google一下，找到解决办法：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">wget http://www.rarsoft.com/rar/rarlinux-3.9.3.tar.gz
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tar -xvf rarlinux-3.9.3.tar.gz
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> rar
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">make&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>看见下面这些信息就是安装成功了&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">mkdir -p /wp-content/local/bin
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mkdir -p /wp-content/local/lib
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp rar unrar /wp-content/local/bin
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp rarfiles.lst /etc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp default.sfx /wp-content/local/lib&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>但有的时候在运行命令rar时,出现下面这个问题:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">rar: /lib/i686/nosegneg/libc.so.6: version &lt;span class="sb">`&lt;/span>GLIBC_2.7′ not found &lt;span class="o">(&lt;/span>required by rar&lt;span class="o">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>解决办法：&lt;/p></description></item><item><title>Dell R410 debian 64位网卡驱动</title><link>https://w23ta0.github.io/posts/20120610-dell-r410-debian-64%E4%BD%8D%E7%BD%91%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link><pubDate>Sun, 10 Jun 2012 11:40:00 +0000</pubDate><author>tom920wt@hotmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/20120610-dell-r410-debian-64%E4%BD%8D%E7%BD%91%E5%8D%A1%E9%A9%B1%E5%8A%A8/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>公司买的Dell R410的机器，装的Debian的系统，安装过程中会提示找不到网络设备驱，去Dell 官方查看R410网卡驱动没有找到Debian版本的（Redhat的倒是有），上网查资料得知Debian从5开始就不支持Broadcom的网卡驱动（偶装的就是5,，悲催啊）。去broadcom下载源码包netxtreme2-5.0.17.tar.gz。
+下载地址：http://www.broadcom.com/support/ethernet_nic/downloaddrivers.php&lt;/p></description></item></channel></rss>
