@@ -20,6 +20,6 @@ Head over to the [issues](https://github.com/hugo-fixit/FixIt/issues) or [discus
 
 ---
 
-> Author: [Lruihao](https://github.com/Lruihao)  
+> 作者: [w23ta0](https://github.com/w23ta0)  
 > URL: https://w23ta0.github.io/posts/hello-world/  
 
