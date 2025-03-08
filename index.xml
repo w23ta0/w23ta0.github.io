@@ -1,4 +1,372 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>w23ta0's blog</title><link>https://w23ta0.github.io/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Fri, 07 Mar 2025 17:24:50 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>在KVM虚拟机中安装Android-x86模拟器</title><link>https://w23ta0.github.io/posts/2022/05/%E5%9C%A8kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85android-x86%E6%A8%A1%E6%8B%9F%E5%99%A8/</link><pubDate>Tue, 10 May 2022 16:02:55 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/2022/05/%E5%9C%A8kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85android-x86%E6%A8%A1%E6%8B%9F%E5%99%A8/</guid><category domain="https://w23ta0.github.io/categories/android/">Android</category><description>&lt;h2 id="准备android-x86的iso镜像" class="heading-element">&lt;span>准备Android-x86的iso镜像&lt;/span>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>w23ta0's blog</title><link>https://w23ta0.github.io/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sat, 08 Mar 2025 00:43:30 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>多模态与混合模型：AI 未来的重要方向</title><link>https://w23ta0.github.io/posts/2025/03/%E5%A4%9A%E6%A8%A1%E6%80%81%E4%B8%8E%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8Bai-%E6%9C%AA%E6%9D%A5%E7%9A%84%E9%87%8D%E8%A6%81%E6%96%B9%E5%90%91/</link><pubDate>Sat, 08 Mar 2025 08:41:55 +0800</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/2025/03/%E5%A4%9A%E6%A8%A1%E6%80%81%E4%B8%8E%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8Bai-%E6%9C%AA%E6%9D%A5%E7%9A%84%E9%87%8D%E8%A6%81%E6%96%B9%E5%90%91/</guid><category domain="https://w23ta0.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</category><category domain="https://w23ta0.github.io/categories/%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B/">多模态模型</category><description>&lt;h2 id="引言" class="heading-element">&lt;span>引言&lt;/span>
+ &lt;a href="#%e5%bc%95%e8%a8%80" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>随着人工智能（AI）技术的不断发展，传统的大语言模型（LLM）虽然在文本处理方面取得了突破性进展，但面对图像、视频、音频等多模态数据时，单一模态的 AI 仍然存在局限性。为此，&lt;strong>多模态（Multimodal）模型&lt;/strong> 和 &lt;strong>混合模型（Hybrid Models）&lt;/strong> 应运而生，它们能够同时处理多种数据形式，实现更丰富的智能交互。&lt;/p>
+&lt;p>本篇文章将介绍 &lt;strong>多模态与混合模型的概念、技术原理、主流模型以及实际应用场景&lt;/strong>，并探讨未来的发展趋势。&lt;/p>
+&lt;hr>
+&lt;h2 id="什么是多模态与混合模型" class="heading-element">&lt;span>什么是多模态与混合模型？&lt;/span>
+ &lt;a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%a4%9a%e6%a8%a1%e6%80%81%e4%b8%8e%e6%b7%b7%e5%90%88%e6%a8%a1%e5%9e%8b" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>多模态模型是一类能够同时处理&lt;strong>文本、图像、音频、视频&lt;/strong>等不同类型数据的人工智能系统。例如，GPT-4V 可以理解图像中的内容并回答相关问题，而 Whisper 则可以将音频转换为文本。&lt;/p>
+&lt;p>混合模型则是指结合不同架构（如 Transformer、CNN、RNN）或不同数据类型的 AI 模型，增强跨领域学习能力。例如，OpenAI 的 &lt;strong>DALL·E&lt;/strong> 结合了文本生成和图像生成能力，使得用户可以通过文本指令生成高质量图像。&lt;/p>
+&lt;hr>
+&lt;h2 id="主要技术原理" class="heading-element">&lt;span>主要技术原理&lt;/span>
+ &lt;a href="#%e4%b8%bb%e8%a6%81%e6%8a%80%e6%9c%af%e5%8e%9f%e7%90%86" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>多模态 AI 的核心在于 &lt;strong>跨模态数据表示与融合&lt;/strong>，主要采用以下几种技术：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>联合表示学习（Joint Representation Learning）&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>直接将不同模态的数据映射到相同的特征空间，例如 CLIP 通过共享的嵌入空间学习文本和图像之间的关系。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>对齐（Alignment）&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>通过训练模型来建立不同模态之间的联系，例如 GPT-4V 能够理解图像中的对象并生成相应的文本描述。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>生成（Generation）&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>让 AI 能够基于输入模态生成新内容，如 DALL·E 能够根据文本描述生成图像。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>转换（Transformation）&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>允许不同模态之间进行转换，例如 Whisper 可将语音转换为文本，而 Text-to-Speech（TTS）可以将文本转换为语音。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="主要应用场景" class="heading-element">&lt;span>主要应用场景&lt;/span>
+ &lt;a href="#%e4%b8%bb%e8%a6%81%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;h2 id="1-视觉与文本结合" class="heading-element">&lt;span>&lt;strong>1. 视觉与文本结合&lt;/strong>&lt;/span>
+ &lt;a href="#1-%e8%a7%86%e8%a7%89%e4%b8%8e%e6%96%87%e6%9c%ac%e7%bb%93%e5%90%88" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;h3 id="-ai-视觉理解" class="heading-element">&lt;span>&lt;strong>📷 AI 视觉理解&lt;/strong>&lt;/span>
+ &lt;a href="#-ai-%e8%a7%86%e8%a7%89%e7%90%86%e8%a7%a3" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>多模态 AI 在计算机视觉领域的应用主要包括：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>智能问答&lt;/strong>（如 GPT-4V、Qwen-VL）：用户上传图片，AI 识别并提供解释。&lt;/li>
+&lt;li>&lt;strong>医学影像分析&lt;/strong>（如 Med-PaLM）：辅助医生进行医学影像诊断，如 X 光、CT 扫描分析。&lt;/li>
+&lt;li>&lt;strong>自动字幕生成&lt;/strong>（如 Whisper + GPT）：在短视频或会议记录中，自动为视频添加字幕。&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-音频与文本结合" class="heading-element">&lt;span>&lt;strong>2. 音频与文本结合&lt;/strong>&lt;/span>
+ &lt;a href="#2-%e9%9f%b3%e9%a2%91%e4%b8%8e%e6%96%87%e6%9c%ac%e7%bb%93%e5%90%88" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;h3 id="-语音识别与生成" class="heading-element">&lt;span>&lt;strong>🎙️ 语音识别与生成&lt;/strong>&lt;/span>
+ &lt;a href="#-%e8%af%ad%e9%9f%b3%e8%af%86%e5%88%ab%e4%b8%8e%e7%94%9f%e6%88%90" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>语音转文本（ASR）&lt;/strong>：如 OpenAI Whisper、讯飞星火，支持多语言语音转录。&lt;/li>
+&lt;li>&lt;strong>文本转语音（TTS）&lt;/strong>：如 VALL-E、科大讯飞的 AI 语音合成，实现自然的 AI 朗读。&lt;/li>
+&lt;li>&lt;strong>语音助手&lt;/strong>：如 Siri、Google Assistant 以及国产的 &lt;strong>小米小爱同学、百度小度、华为小艺&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;h2 id="3-文本图像音频视频的融合" class="heading-element">&lt;span>&lt;strong>3. 文本、图像、音频、视频的融合&lt;/strong>&lt;/span>
+ &lt;a href="#3-%e6%96%87%e6%9c%ac%e5%9b%be%e5%83%8f%e9%9f%b3%e9%a2%91%e8%a7%86%e9%a2%91%e7%9a%84%e8%9e%8d%e5%90%88" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;h3 id="-多模态内容创作" class="heading-element">&lt;span>&lt;strong>📹 多模态内容创作&lt;/strong>&lt;/span>
+ &lt;a href="#-%e5%a4%9a%e6%a8%a1%e6%80%81%e5%86%85%e5%ae%b9%e5%88%9b%e4%bd%9c" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>多模态 AI 可以用于生成完整的内容，例如：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>文本生成视频（Text-to-Video）&lt;/strong>：如 Runway Gen-2、Pika Labs，可根据文本描述生成动画或视频。&lt;/li>
+&lt;li>&lt;strong>AI 讲解员&lt;/strong>：结合 AI 语音和 3D 建模技术，可生成虚拟人物进行讲解，如百度的 &lt;strong>数字人 AI&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;h2 id="4-工业与自动化" class="heading-element">&lt;span>&lt;strong>4. 工业与自动化&lt;/strong>&lt;/span>
+ &lt;a href="#4-%e5%b7%a5%e4%b8%9a%e4%b8%8e%e8%87%aa%e5%8a%a8%e5%8c%96" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;h3 id="-机器人与自动驾驶" class="heading-element">&lt;span>&lt;strong>🤖 机器人与自动驾驶&lt;/strong>&lt;/span>
+ &lt;a href="#-%e6%9c%ba%e5%99%a8%e4%ba%ba%e4%b8%8e%e8%87%aa%e5%8a%a8%e9%a9%be%e9%a9%b6" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>自动驾驶&lt;/strong>：Tesla FSD、Waymo 依赖多模态 AI 进行道路感知和决策。&lt;/li>
+&lt;li>&lt;strong>智能监控&lt;/strong>：如 Hikvision（海康威视）结合 AI 进行视频分析，识别异常行为。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="主流多模态模型对比" class="heading-element">&lt;span>主流多模态模型对比&lt;/span>
+ &lt;a href="#%e4%b8%bb%e6%b5%81%e5%a4%9a%e6%a8%a1%e6%80%81%e6%a8%a1%e5%9e%8b%e5%af%b9%e6%af%94" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;strong>模型名称&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>开发公司&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>模态类型&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>主要功能&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>应用场景&lt;/strong>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>GPT-4V&lt;/td>
+ &lt;td>OpenAI&lt;/td>
+ &lt;td>文本 + 图像&lt;/td>
+ &lt;td>图像理解、视觉问答&lt;/td>
+ &lt;td>AI 助手、图像描述&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CLIP&lt;/td>
+ &lt;td>OpenAI&lt;/td>
+ &lt;td>文本 + 图像&lt;/td>
+ &lt;td>视觉语义搜索&lt;/td>
+ &lt;td>搜索、内容检索&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Whisper&lt;/td>
+ &lt;td>OpenAI&lt;/td>
+ &lt;td>语音 + 文本&lt;/td>
+ &lt;td>语音识别&lt;/td>
+ &lt;td>自动字幕、语音助手&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DALL·E&lt;/td>
+ &lt;td>OpenAI&lt;/td>
+ &lt;td>文本 + 图像&lt;/td>
+ &lt;td>生成图像&lt;/td>
+ &lt;td>创意设计、AI 艺术&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Gemini 1.5&lt;/td>
+ &lt;td>Google&lt;/td>
+ &lt;td>文本 + 图像 + 视频&lt;/td>
+ &lt;td>跨模态交互&lt;/td>
+ &lt;td>AI 助手、数据分析&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Qwen-VL&lt;/td>
+ &lt;td>阿里巴巴&lt;/td>
+ &lt;td>文本 + 图像&lt;/td>
+ &lt;td>视觉问答&lt;/td>
+ &lt;td>AI 搜索、智能客服&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ERNIE-ViLG&lt;/td>
+ &lt;td>百度&lt;/td>
+ &lt;td>文本 + 图像&lt;/td>
+ &lt;td>AI 绘画&lt;/td>
+ &lt;td>视觉创意、广告&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Pika Labs&lt;/td>
+ &lt;td>独立开发&lt;/td>
+ &lt;td>文本 + 视频&lt;/td>
+ &lt;td>文字生成视频&lt;/td>
+ &lt;td>短视频制作&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Tesla FSD&lt;/td>
+ &lt;td>Tesla&lt;/td>
+ &lt;td>图像 + 传感器数据&lt;/td>
+ &lt;td>自动驾驶&lt;/td>
+ &lt;td>智能交通&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="未来展望" class="heading-element">&lt;span>未来展望&lt;/span>
+ &lt;a href="#%e6%9c%aa%e6%9d%a5%e5%b1%95%e6%9c%9b" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>随着多模态 AI 技术的进步，未来的趋势包括：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>更强的跨模态理解能力&lt;/strong>：未来 AI 能够更深层次理解文本、图像、视频和语音之间的关系。&lt;/li>
+&lt;li>&lt;strong>增强个性化生成&lt;/strong>：基于用户数据的个性化 AI 生成将成为主流，如定制化 AI 数字人。&lt;/li>
+&lt;li>&lt;strong>更高效的计算模型&lt;/strong>：降低计算成本，使得手机、IoT 设备也能运行强大的多模态 AI。&lt;/li>
+&lt;li>&lt;strong>开源与生态发展&lt;/strong>：更多国产开源多模态模型，如 DeepSeek-VL、GLM-MultiModality 逐步发展。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="结论" class="heading-element">&lt;span>结论&lt;/span>
+ &lt;a href="#%e7%bb%93%e8%ae%ba" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>多模态与混合模型代表了 AI 发展的新方向，它们不仅突破了单一模态的限制，还让 AI 能够像人类一样理解和处理不同类型的信息。随着技术的不断进步，未来多模态 AI 预计将在&lt;strong>智能交互、内容创作、自动驾驶、医疗健康等领域&lt;/strong>发挥越来越重要的作用。&lt;/p></description></item><item><title>关于大语言模型（LLM）的介绍：模型类别、使用场景与主流模型对比分析</title><link>https://w23ta0.github.io/posts/2025/03/%E5%85%B3%E4%BA%8E%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8Bllm%E7%9A%84%E4%BB%8B%E7%BB%8D%E6%A8%A1%E5%9E%8B%E7%B1%BB%E5%88%AB%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E4%B8%BB%E6%B5%81%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/</link><pubDate>Sat, 08 Mar 2025 07:32:53 +0800</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/2025/03/%E5%85%B3%E4%BA%8E%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8Bllm%E7%9A%84%E4%BB%8B%E7%BB%8D%E6%A8%A1%E5%9E%8B%E7%B1%BB%E5%88%AB%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E4%B8%BB%E6%B5%81%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/</guid><category domain="https://w23ta0.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</category><category domain="https://w23ta0.github.io/categories/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/">大语言模型</category><description>&lt;h2 id="引言" class="heading-element">&lt;span>引言&lt;/span>
+ &lt;a href="#%e5%bc%95%e8%a8%80" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>近年来，随着计算能力的提升和大规模数据的积累，大语言模型（Large Language Models，LLM）已经成为人工智能发展的核心驱动力之一。这些模型在自然语言理解、文本生成、知识问答、多模态处理等领域展现出卓越性能，并在全球范围内推动了智能化应用的落地。特别是在中国，众多科技公司和研究机构也在积极布局大语言模型，推出了一系列具有竞争力的国产 LLM。本文将从模型类别、使用场景和主流模型对比的角度，分析 LLM 的现状与未来发展趋势。&lt;/p>
+&lt;hr>
+&lt;h2 id="模型类别" class="heading-element">&lt;span>模型类别&lt;/span>
+ &lt;a href="#%e6%a8%a1%e5%9e%8b%e7%b1%bb%e5%88%ab" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>根据模型架构与训练策略，当前的大语言模型主要分为以下几类：&lt;/p>
+&lt;h2 id="1-自回归模型autoregressive-models" class="heading-element">&lt;span>1. &lt;strong>自回归模型（Autoregressive Models）&lt;/strong>&lt;/span>
+ &lt;a href="#1-%e8%87%aa%e5%9b%9e%e5%bd%92%e6%a8%a1%e5%9e%8bautoregressive-models" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>&lt;strong>代表模型&lt;/strong>：GPT-4、GLM（智谱）、DeepSeek（深度求索）&lt;/p>
+&lt;p>这类模型通过自回归方式逐步生成文本，适用于对话、内容生成等任务。GPT-4 是当前全球最知名的自回归模型，而中国的 &lt;strong>智谱 GLM&lt;/strong> 和 &lt;strong>DeepSeek&lt;/strong> 也采用类似的生成策略，在中文理解和生成方面进行了优化。&lt;/p>
+&lt;h2 id="2-自编码器模型autoencoder-models" class="heading-element">&lt;span>2. &lt;strong>自编码器模型（Autoencoder Models）&lt;/strong>&lt;/span>
+ &lt;a href="#2-%e8%87%aa%e7%bc%96%e7%a0%81%e5%99%a8%e6%a8%a1%e5%9e%8bautoencoder-models" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>&lt;strong>代表模型&lt;/strong>：BERT、ERNIE（文心）&lt;/p>
+&lt;p>自编码器模型采用遮蔽语言建模（MLM）技术，主要用于自然语言理解（NLU）任务。&lt;strong>百度的文心 ERNIE&lt;/strong> 在 BERT 结构的基础上进行了优化，增强了中文语义理解能力，广泛应用于搜索、问答和信息抽取任务。&lt;/p>
+&lt;h2 id="3-编码器-解码器模型encoder-decoder-models" class="heading-element">&lt;span>3. &lt;strong>编码器-解码器模型（Encoder-Decoder Models）&lt;/strong>&lt;/span>
+ &lt;a href="#3-%e7%bc%96%e7%a0%81%e5%99%a8-%e8%a7%a3%e7%a0%81%e5%99%a8%e6%a8%a1%e5%9e%8bencoder-decoder-models" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>&lt;strong>代表模型&lt;/strong>：T5、BART、mT5&lt;/p>
+&lt;p>这类模型结合了编码器和解码器架构，既能理解输入文本，又能生成新的文本，适用于机器翻译、摘要生成等任务。华为推出的 &lt;strong>PanGu（盘古）&lt;/strong> 系列，也采用类似架构，并在中文文本处理上进行了优化。&lt;/p>
+&lt;h2 id="4-多模态与混合模型" class="heading-element">&lt;span>4. &lt;strong>多模态与混合模型&lt;/strong>&lt;/span>
+ &lt;a href="#4-%e5%a4%9a%e6%a8%a1%e6%80%81%e4%b8%8e%e6%b7%b7%e5%90%88%e6%a8%a1%e5%9e%8b" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>&lt;strong>代表模型&lt;/strong>：CLIP、GPT-4V、Qwen-VL（通义千问）&lt;/p>
+&lt;p>多模态模型可以同时处理文本、图像、音频等多种数据形式。&lt;strong>阿里的通义千问 Qwen-VL&lt;/strong> 和 &lt;strong>百度的 ERNIE-ViLG&lt;/strong> 便是中国在多模态 AI 领域的重要探索。&lt;/p>
+&lt;hr>
+&lt;h2 id="使用场景" class="heading-element">&lt;span>使用场景&lt;/span>
+ &lt;a href="#%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>LLM 在多个行业展现出广泛的应用价值，主要包括：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>智能客服与对话系统&lt;/strong>（如 AI 助手、企业智能客服）&lt;br>
+代表案例：ChatGPT、通义千问、讯飞星火&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>内容生成与创意写作&lt;/strong>（如新闻报道、小说创作、广告文案）&lt;br>
+代表案例：GPT-4、文心一言、DeepSeek&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>知识问答与信息检索&lt;/strong>（如智能搜索、企业知识库、法律助手）&lt;br>
+代表案例：智谱 AI（GLM）、百度 ERNIE&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>机器翻译与多语言支持&lt;/strong>（如跨境电商、全球化业务）&lt;br>
+代表案例：百度翻译、阿里 iDST、华为 PanGu&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>数据分析与报告生成&lt;/strong>（如商业智能、自动化报表）&lt;br>
+代表案例：讯飞星火、昆仑 AI&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="主流大语言模型对比分析" class="heading-element">&lt;span>主流大语言模型对比分析&lt;/span>
+ &lt;a href="#%e4%b8%bb%e6%b5%81%e5%a4%a7%e8%af%ad%e8%a8%80%e6%a8%a1%e5%9e%8b%e5%af%b9%e6%af%94%e5%88%86%e6%9e%90" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;strong>模型&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>开发公司/机构&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>架构&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>主要特点&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>应用场景&lt;/strong>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>GPT-4&lt;/td>
+ &lt;td>OpenAI&lt;/td>
+ &lt;td>自回归&lt;/td>
+ &lt;td>强大的生成能力，支持多语言&lt;/td>
+ &lt;td>对话、创意写作、代码生成&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Gemini（Gemini 1.5）&lt;/td>
+ &lt;td>Google DeepMind&lt;/td>
+ &lt;td>多模态&lt;/td>
+ &lt;td>结合文本、图片、视频理解&lt;/td>
+ &lt;td>搜索、翻译、多模态交互&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Claude 2&lt;/td>
+ &lt;td>Anthropic&lt;/td>
+ &lt;td>自回归&lt;/td>
+ &lt;td>强调安全性和可控性&lt;/td>
+ &lt;td>专业问答、法律咨询&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>LLaMA 3&lt;/td>
+ &lt;td>Meta&lt;/td>
+ &lt;td>自回归&lt;/td>
+ &lt;td>开源，适合研究和企业定制&lt;/td>
+ &lt;td>自然语言理解、聊天机器人&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>文心一言（ERNIE）&lt;/td>
+ &lt;td>百度&lt;/td>
+ &lt;td>自编码器&lt;/td>
+ &lt;td>中文优化，知识增强，支持多模态&lt;/td>
+ &lt;td>搜索、知识问答、内容生成&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>通义千问（Qwen）&lt;/td>
+ &lt;td>阿里巴巴&lt;/td>
+ &lt;td>自回归&lt;/td>
+ &lt;td>中文优化，支持多模态&lt;/td>
+ &lt;td>AI 助手、创意写作&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>讯飞星火&lt;/td>
+ &lt;td>科大讯飞&lt;/td>
+ &lt;td>编码器-解码器&lt;/td>
+ &lt;td>语音和文本结合，支持多语言&lt;/td>
+ &lt;td>语音助手、教育行业&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>GLM&lt;/td>
+ &lt;td>智谱 AI&lt;/td>
+ &lt;td>自回归&lt;/td>
+ &lt;td>开源，兼具生成和理解能力&lt;/td>
+ &lt;td>自然语言处理、企业应用&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>盘古（PanGu）&lt;/td>
+ &lt;td>华为&lt;/td>
+ &lt;td>编码器-解码器&lt;/td>
+ &lt;td>侧重工业与商业应用&lt;/td>
+ &lt;td>企业 AI、政府应用&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DeepSeek&lt;/td>
+ &lt;td>深度求索&lt;/td>
+ &lt;td>自回归&lt;/td>
+ &lt;td>强调开源生态，支持大规模数据&lt;/td>
+ &lt;td>搜索、内容生成、翻译&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="未来展望" class="heading-element">&lt;span>未来展望&lt;/span>
+ &lt;a href="#%e6%9c%aa%e6%9d%a5%e5%b1%95%e6%9c%9b" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>面对日益复杂的应用需求，未来的大语言模型将朝以下方向发展：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>高效与低资源消耗&lt;/strong>：优化推理效率，降低计算成本，以适应企业和移动端应用。&lt;/li>
+&lt;li>&lt;strong>多模态融合&lt;/strong>：结合文本、语音、图像，实现更智能的交互体验。&lt;/li>
+&lt;li>&lt;strong>可控性与安全性&lt;/strong>：加强对生成内容的可控性，减少虚假信息，提升可靠性。&lt;/li>
+&lt;li>&lt;strong>开源与国产化&lt;/strong>：中国 AI 产业将持续发展自主可控的 LLM，并推动开源生态。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="结论" class="heading-element">&lt;span>结论&lt;/span>
+ &lt;a href="#%e7%bb%93%e8%ae%ba" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>大语言模型正加速人工智能技术的发展，在全球范围内推动智能应用落地。中国的 AI 产业也在快速崛起，百度、阿里、华为、科大讯飞等公司纷纷推出自主研发的 LLM，在中文处理、多模态 AI 及企业级应用上展现出独特优势。未来，随着技术的不断进步和应用场景的拓展，LLM 将成为各行各业数字化转型的核心驱动力。&lt;/p></description></item><item><title>在KVM虚拟机中安装Android-x86模拟器</title><link>https://w23ta0.github.io/posts/2022/05/%E5%9C%A8kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85android-x86%E6%A8%A1%E6%8B%9F%E5%99%A8/</link><pubDate>Tue, 10 May 2022 16:02:55 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/2022/05/%E5%9C%A8kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85android-x86%E6%A8%A1%E6%8B%9F%E5%99%A8/</guid><category domain="https://w23ta0.github.io/categories/android/">Android</category><description>&lt;h2 id="准备android-x86的iso镜像" class="heading-element">&lt;span>准备Android-x86的iso镜像&lt;/span>
  &lt;a href="#%e5%87%86%e5%a4%87android-x86%e7%9a%84iso%e9%95%9c%e5%83%8f" class="heading-mark">
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
  &lt;/a>
@@ -2339,426 +2707,4 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo /etc/init.d/docker restart&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;div class="note warning">&lt;p>需要访问私有registry的节点都需要执行此操作。&lt;/p>&lt;/div>
-参考：&lt;https://stackoverflow.com/questions/38695515/can-not-pull-push-images-after-update-docker-to-1-12></description></item><item><title>Kerberos安装和管理</title><link>https://w23ta0.github.io/posts/2017/09/kerberos%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%A1%E7%90%86/</link><pubDate>Mon, 25 Sep 2017 17:31:54 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/2017/09/kerberos%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%A1%E7%90%86/</guid><category domain="https://w23ta0.github.io/categories/%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/">身份认证</category><category domain="https://w23ta0.github.io/categories/kerberos/">Kerberos</category><description>&lt;p>Kerberos 服务(&lt;a href="http://web.mit.edu/kerberos/"target="_blank" rel="external nofollow noopener noreferrer">kerberos官网&lt;/a>)是一种通过网络提供安全验证处理的客户机/服务器体系结构。通过验证，可保证网络事务的发送者和接收者的身份真实。该服务还可以检验来回传递的数据的有效性（完整性），并在传输过程中对数据进行加密（保密性）。使用 Kerberos 服务，可以安全登录到其他计算机、执行命令、交换数据以及传输文件。此外，该服务还提供授权服务，这样，管理员便可限制对服务和计算机的访问。而且，作为 Kerberos 用户，您还可以控制其他用户对您帐户的访问。&lt;/p>
-&lt;h2 id="kerberos原理" class="heading-element">&lt;span>Kerberos原理&lt;/span>
- &lt;a href="#kerberos%e5%8e%9f%e7%90%86" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>Kerberos 服务是单点登录系统，这意味着您对于每个会话只需向服务进行一次自我验证，即可自动保护该会话过程中所有后续事务的安全。服务对您进行验证后，即无需在每次使用基于 Kerberos 的服务时进行验证。因此，无需在每次使用这些服务时都在网络上发送口令（增强了安全性）。MIT写了一段故事型的对话，比较生动得表述了Kerberos协议的工作原理：
-Athena和欧里庇得斯关于地狱之门守护者的对话。简而言之，kerbores V5的工作原理如下：
-Kerbores中有三种角色：
-&lt;code>KDC&lt;/code>：负责分发密钥的密钥分配中心
-&lt;code>Client&lt;/code>：需要使用kerbores服务的客户端
-&lt;code>Service&lt;/code>：提供具体服务的服务端
-其中，Client需要和KDC和Service都进行通信。协议授权流程分两个部分：&lt;/p>
-&lt;h3 id="获取原始票据" class="heading-element">&lt;span>获取原始票据&lt;/span>
- &lt;a href="#%e8%8e%b7%e5%8f%96%e5%8e%9f%e5%a7%8b%e7%a5%a8%e6%8d%ae" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>首先，Client向KDC发送自己的身份信息，KDC从授予票据服务(Ticket Granting Service)得到可用的票据(ticket-granting ticket)，并用协议开始前KDC与Client之间的密钥将票据加密回复给client，client收到KDC回复的加密票据后利用与client先前协议的密钥将票据解密，从而获得票据，此步骤主要是允许client进行Kerberos的验证，是进行访问服务的先决条件。&lt;/p>
-&lt;h3 id="获取服务票据以及访问服务" class="heading-element">&lt;span>获取服务票据以及访问服务&lt;/span>
- &lt;a href="#%e8%8e%b7%e5%8f%96%e6%9c%8d%e5%8a%a1%e7%a5%a8%e6%8d%ae%e4%bb%a5%e5%8f%8a%e8%ae%bf%e9%97%ae%e6%9c%8d%e5%8a%a1" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>client利用之前获得的票据向KDC请求服务票据，从而通过服务的身份验证。获取服务票据以及访问服务总共有如下四步：&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>client将之前获得的票据和要请求的服务信息发送给KDC，KDC中的授予票据服务将client和service之间生成一个会话密钥(Session Key)用于服务器与client的身份验证。然后KDC将这个会话密钥和用户名，用户地址(IP)，服务名，有效期，时间戳一起包装成一个票据(这张票据用于service对client的身份验证)通过client转发给service。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>为了让票据对client保密，所以KDC用协议开始之前KDC与服务端之间的密钥将票据加密后再发给client，同时为了让client与service之间共享那个会话密钥，KDC用client与它之间的密钥将会话密钥加密返回给client&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>为了完成票据的传递，client将刚才收到的票据转发到service，由于client不知道KDC与service的密钥，所以它无法修改票据的信息，同时client将收到的会话密钥解压出来，然后将自己的用户名，用户地址(IP)打包成验证包用会话密钥加密也发给service&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Service收到票据后利用它与KDC之间的密钥将票据中的信息解密出来，从而获得会话密钥和用户名，用户地址(IP)，服务名，有效期。然后再用会话密钥将验证包解密从而获得用户名，用户地址(IP)将其与之前票据中解密出来的用户名，用户地址(IP)做比较从而验证client的身份，如果service有返回结果，将其返回给client&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;h2 id="安装kerberos" class="heading-element">&lt;span>安装Kerberos&lt;/span>
- &lt;a href="#%e5%ae%89%e8%a3%85kerberos" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;h3 id="安装package" class="heading-element">&lt;span>安装package&lt;/span>
- &lt;a href="#%e5%ae%89%e8%a3%85package" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>在CentOS中可以使用yum来安装&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">yum install -y krb5-libs krb5-server krb5-client&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>或者使用源代码构建:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">wget http://web.mit.edu/kerberos/dist/krb5/1.12/krb5-1.12.2-signed.tar
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tar xvf krb5-1.12.2-signed.tar &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> tar xvzf krb5-1.12.2.tar.gz
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> krb5-1.12.2/src
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./configure
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">yum install -y byacc
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">make -j &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> make install&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="配置dns" class="heading-element">&lt;span>配置DNS&lt;/span>
- &lt;a href="#%e9%85%8d%e7%bd%aedns" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>使用dnsmasq配置一个简单的本地DNS，保证需要解析的主机名在/etc/hosts中。&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">yum install -y dnsmasq
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">vim /etc/dnsmasq.conf
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">domain&lt;/span>&lt;span class="o">=&lt;/span>expmale.com
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">local&lt;/span>&lt;span class="o">=&lt;/span>/expmale.com/
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">expand-hosts
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">no-resolv
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cache-size&lt;span class="o">=&lt;/span>&lt;span class="m">500&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">log-queries
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">service dnsmasq start
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Starting dnsmasq: &lt;span class="o">[&lt;/span> OK &lt;span class="o">]&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>设置客户端DNS Server
-修改网卡配置文件或/etc/resolv.conf
-DNS1=192.168.1.221
-检查域名解析&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">nslookup kerberos.expmale.com
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Server:		192.168.1.221
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Address:	192.168.1.221#53
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Name:	kerberos.expmale.com
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Address: 192.168.1.221&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>这样DNS已经OK。&lt;/p>
-&lt;h3 id="配置etckrb5conf使其指定到正确的realm中" class="heading-element">&lt;span>配置/etc/krb5.conf,使其指定到正确的realm中&lt;/span>
- &lt;a href="#%e9%85%8d%e7%bd%aeetckrb5conf%e4%bd%bf%e5%85%b6%e6%8c%87%e5%ae%9a%e5%88%b0%e6%ad%a3%e7%a1%ae%e7%9a%84realm%e4%b8%ad" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
-&lt;/span>&lt;span class="lnt">19
-&lt;/span>&lt;span class="lnt">20
-&lt;/span>&lt;span class="lnt">21
-&lt;/span>&lt;span class="lnt">22
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>logging&lt;span class="o">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">default&lt;/span> &lt;span class="o">=&lt;/span> FILE:/var/log/krb5libs.log
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">kdc&lt;/span> &lt;span class="o">=&lt;/span> FILE:/var/log/krb5kdc.log
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">admin_server&lt;/span> &lt;span class="o">=&lt;/span> FILE:/var/log/kadmind.log
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>libdefaults&lt;span class="o">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">default_realm&lt;/span> &lt;span class="o">=&lt;/span> EXPMALE.COM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">dns_lookup_realm&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">false&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">dns_lookup_kdc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">false&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">ticket_lifetime&lt;/span> &lt;span class="o">=&lt;/span> 24h
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">renew_lifetime&lt;/span> &lt;span class="o">=&lt;/span> 7d
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">forwardable&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>realms&lt;span class="o">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> EXPMALE.COM &lt;span class="o">=&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">kdc&lt;/span> &lt;span class="o">=&lt;/span> kerberos.expmale.com
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">admin_server&lt;/span> &lt;span class="o">=&lt;/span> kerberos.expmale.com
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>domain_realm&lt;span class="o">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .expmale.com &lt;span class="o">=&lt;/span> EXPMALE.COM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> expmale.com &lt;span class="o">=&lt;/span> EXPMALE.COM&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="创建kdc配置文件" class="heading-element">&lt;span>创建KDC配置文件&lt;/span>
- &lt;a href="#%e5%88%9b%e5%bb%bakdc%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">vim /var/kerberos/krb5kdc/kdc.conf
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>kdcdefaults&lt;span class="o">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">kdc_ports&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">88&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">kdc_tcp_ports&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">88&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>realms&lt;span class="o">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> EXPMALE.COM &lt;span class="o">=&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">#master_key_type = aes256-cts&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">acl_file&lt;/span> &lt;span class="o">=&lt;/span> /var/kerberos/krb5kdc/kadm5.acl
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">dict_file&lt;/span> &lt;span class="o">=&lt;/span> /usr/share/dict/words
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">admin_keytab&lt;/span> &lt;span class="o">=&lt;/span> /var/kerberos/krb5kdc/kadm5.keytab
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">supported_enctypes&lt;/span> &lt;span class="o">=&lt;/span> aes256-cts:normal aes128-cts:normal des3-hmac-sha1:normal arcfour-hmac:normal des-hmac-sha1:normal des-cbc-md5:normal des-cbc-crc:normal
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="配置acl文件" class="heading-element">&lt;span>配置acl文件&lt;/span>
- &lt;a href="#%e9%85%8d%e7%bd%aeacl%e6%96%87%e4%bb%b6" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">vim /var/kerberos/krb5kdc/kadm5.acl 
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">*/admin@EXPMALE.COM *&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="使用kdb5_util创建kdc数据库" class="heading-element">&lt;span>使用kdb5_util创建kdc数据库&lt;/span>
- &lt;a href="#%e4%bd%bf%e7%94%a8kdb5_util%e5%88%9b%e5%bb%bakdc%e6%95%b0%e6%8d%ae%e5%ba%93" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">kdb5_util create -r EXPMALE.COM -s
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Loading random data
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Initializing database &lt;span class="s1">&amp;#39;/usr/local/var/krb5kdc/principal&amp;#39;&lt;/span> &lt;span class="k">for&lt;/span> realm &lt;span class="s1">&amp;#39;EXPMALE.COM&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">master key name &lt;span class="s1">&amp;#39;K/M@EXPMALE.COM&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">You will be prompted &lt;span class="k">for&lt;/span> the database Master Password.
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">It is important that you NOT FORGET this password.
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Enter KDC database master key: 
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Re-enter KDC database master key to verify: &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;div class="note warning">&lt;p>出现 Loading random data 的时候另开个终端执行点消耗CPU的命令如 cat /dev/sda > /dev/urandom 可以加快随机数采集。&lt;/p>&lt;/div>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">kadmin.local 
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Authenticating as principal root/admin@EXPMALE.COM with password.&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>首先有介绍一个术语（参考&lt;a href="http://wgzhao.com/2005/12/02/kerberos-authentication-configuration/"target="_blank" rel="external nofollow noopener noreferrer">kerberos 认证配置&lt;/a>）：&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>Principal&lt;/strong>：在 Kerberos 中，Principal 是参加认证的基本实体。一般来说有两种，一种用来表示 Kerberos 数据库中的用户，另一种用来代表某一特定主机，也就是说 Principal是用来表示客户端和服务端身份的实体, Principal 的格式采用 ASN.1 标准,即 Abstract Syntax Notation One，来准确定义)，Principal 是由三个部分组成：名字（name），实例（instance），REALM（域）。比如一个标准的 Kerberos 的用户是：name/instance@REALM 。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Name&lt;/strong>：第一部分。在代表客户方的情况，它是一个用户名；在代表主机的情况，它是写成 host。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Instance&lt;/strong>：第二部分。对 name 的进一步描述，例如 name 所在的主机名或 name 的类型等,可省略。它与第一部分之间用‘ / ’分隔，但是作为主机的描述时写成 host/Instance。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Realm&lt;/strong>：第三部分。是 Kerberos 在管理上的划分，在 KDC 中所负责的一个域数据库称作为 Realm。这个数据库中存放有该网络范围内的所有 Principal 和它们的密钥，数据库的内容被 Kerberos 的认证服务器 AS 和票据授权服务器 TGS 所使用。Realm 通常是永远是大写的字符,并且在大多数 Kerberos 系统的配置中，一般 Realm 和该网络环境的 DNS 域是一致的。与第二部分之间用‘@’分隔，缺省为本地的 Realm。&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>添加新的管理员用户，kadmin和kadmin.local是KDC的管理接口。&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
-&lt;/span>&lt;span class="lnt">19
-&lt;/span>&lt;span class="lnt">20
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 添加新的管理员用户&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">kadmin.local: addprinc single/admin
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">WARNING: no policy specified &lt;span class="k">for&lt;/span> single/admin@EXPMALE.COM&lt;span class="p">;&lt;/span> defaulting to no policy
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Enter password &lt;span class="k">for&lt;/span> principal &lt;span class="s2">&amp;#34;single/admin@EXPMALE.COM&amp;#34;&lt;/span>: 
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Re-enter password &lt;span class="k">for&lt;/span> principal &lt;span class="s2">&amp;#34;single/admin@EXPMALE.COM&amp;#34;&lt;/span>: 
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Principal &lt;span class="s2">&amp;#34;single/admin@EXPMALE.COM&amp;#34;&lt;/span> created.
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 列出所有的principle&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">kadmin.local: listprincs
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">K/M@EXPMALE.COM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">single/admin@EXPMALE.COM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">kadmin/admin@EXPMALE.COM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">kadmin/cdh_manager@EXPMALE.COM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">kadmin/changepw@EXPMALE.COM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">krbtgt/EXPMALE.COM@EXPMALE.COM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看principle：&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">getprinc single/admin@EXPMALE.COM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 删除principle：&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">delprinc single/admin@EXPMALE.COM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 修改principle密码：&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cpw -pw password test1/admin@EXPMALE.COM&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="启动服务" class="heading-element">&lt;span>启动服务&lt;/span>
- &lt;a href="#%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">service krb5kdc restart
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Starting Kerberos &lt;span class="m">5&lt;/span> KDC: &lt;span class="o">[&lt;/span> OK &lt;span class="o">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">service kadmin restart
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Starting Kerberos &lt;span class="m">5&lt;/span> Admin Server: &lt;span class="o">[&lt;/span> OK &lt;span class="o">]&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="验证principle" class="heading-element">&lt;span>验证principle&lt;/span>
- &lt;a href="#%e9%aa%8c%e8%af%81principle" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>在其他主机上需要有相同的krb5.conf配置。&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#登录验证&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">kinit test1/hadoop01@EXPMALE.COM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Password &lt;span class="k">for&lt;/span> test1/hadoop01@EXPMALE.COM: 
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#查看凭证&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">klist
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Ticket cache: FILE:/tmp/krb5cc_0
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Default principal: test1/hadoop01@EXPMALE.COM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Valid starting Expires Service principalna jiu
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">/08/14 11:58:00 09/09/14 11:58:00 krbtgt/EXPMALE.COM@EXPMALE.COM
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	renew &lt;span class="k">until&lt;/span> 09/08/14 11:58:00
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#注销凭证&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">kdestory&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>解决LDAP出现ldap_bind: Invalid credentials (49)错误</title><link>https://w23ta0.github.io/posts/2017/03/%E8%A7%A3%E5%86%B3ldap%E5%87%BA%E7%8E%B0ldap_bind-invalid-credentials-49%E9%94%99%E8%AF%AF/</link><pubDate>Tue, 14 Mar 2017 14:43:23 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/2017/03/%E8%A7%A3%E5%86%B3ldap%E5%87%BA%E7%8E%B0ldap_bind-invalid-credentials-49%E9%94%99%E8%AF%AF/</guid><category domain="https://w23ta0.github.io/categories/%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/">身份认证</category><category domain="https://w23ta0.github.io/categories/ldap/">LDAP</category><description>&lt;p>LDAP最经常遇到的就是ldap_bind: Invalid credentials (49)错误，本文阐述了错误原因及解决办法：
-比如在某LDAP客户端，使用rootdn(管理员)权限为某用户修改密码时&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ ldappasswd -H ldap://172.16.0.21 -x -D &lt;span class="s2">&amp;#34;cn=admin,ou=People,dc=expmale,dc=com&amp;#34;&lt;/span> -W -S &lt;span class="s2">&amp;#34;uid=zhang3,ou=People,dc=expmale,dc=com&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">New password: 
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Re-enter new password: 
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Enter LDAP Password: 
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ldap_bind: Invalid credentials &lt;span class="o">(&lt;/span>49&lt;span class="o">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>&lt;strong>错误原因1：管理员DN或者用户DN错误&lt;/strong>&lt;/p>
-&lt;p>管理员DN是在&lt;code>/etc/openldap/slapd.conf&lt;/code>中指定的rootdn，其格式
-应该是”cn=admin,dc=expmale,dc=com”
-而不是”cn=admin,ou=People,dc=expmale,dc=com”
-而普通用户的DN才应该是”uid=zhang3,ou=People,dc=expmale,dc=com”。
-也可以执行如下命令查看该用户的DN是否存在&lt;/p>
-&lt;p>查询用户列表,不需要密码&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ ldapsearch -H ldap://172.16.0.21 -x -b &lt;span class="s2">&amp;#34;ou=People,dc=expmale,dc=com&amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> grep dn&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>&lt;strong>错误原因2：管理员密码错误&lt;/strong>&lt;/p>
-&lt;p>这个需要自行判断，如需要修改rootdn的密码，在&lt;code>/etc/openldap/slapd.conf&lt;/code>中改掉roodn的rootpw项，然后执行如下操作&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ rm -fr /etc/openldap/slapd.d/*
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ slaptest -f /etc/openldap/slapd.conf -F /etc/openldap/slapd.d
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#测试配置文件语法是否有错误，如果提示testing succeeded则可以进入下一步&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ chown -R ldap:ldap /etc/openldap/slapd.d/
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ /etc/init.d/slapd restart&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>提示：删除&lt;code>/etc/openldap/slapd.d/&lt;/code>目录下的内容，并不会导致ldap数据库的丢失，实际上，ldap数据库存储位置（通常位于&lt;code>/var/lib/ldap&lt;/code>目录下）由主配置文件里的directory项指定。&lt;/p></description></item></channel></rss>
+参考：&lt;https://stackoverflow.com/questions/38695515/can-not-pull-push-images-after-update-docker-to-1-12></description></item></channel></rss>
