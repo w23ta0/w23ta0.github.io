@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenStack - Category - w23ta0's blog</title><link>https://w23ta0.github.io/categories/openstack/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sat, 15 Mar 2025 01:50:03 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/categories/openstack/index.xml" rel="self" type="application/rss+xml"/><item><title>创建OpenStack兼容的qcow2格式镜像</title><link>https://w23ta0.github.io/posts/2020/10/%E5%88%9B%E5%BB%BAopenstack%E5%85%BC%E5%AE%B9%E7%9A%84qcow2%E6%A0%BC%E5%BC%8F%E9%95%9C%E5%83%8F/</link><pubDate>Mon, 26 Oct 2020 16:19:01 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/2020/10/%E5%88%9B%E5%BB%BAopenstack%E5%85%BC%E5%AE%B9%E7%9A%84qcow2%E6%A0%BC%E5%BC%8F%E9%95%9C%E5%83%8F/</guid><category domain="https://w23ta0.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化</category><category domain="https://w23ta0.github.io/categories/openstack/">OpenStack</category><description>&lt;h2 id="前置条件" class="heading-element">&lt;span>前置条件&lt;/span>
+ &lt;a href="#%e5%89%8d%e7%bd%ae%e6%9d%a1%e4%bb%b6" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>准备一台主机。用于运行KVM虚拟机和制作镜像&lt;/p></description></item><item><title>openstackclient命令执行报错</title><link>https://w23ta0.github.io/posts/2018/12/openstackclient%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%8A%A5%E9%94%99/</link><pubDate>Fri, 14 Dec 2018 16:19:01 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/2018/12/openstackclient%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%8A%A5%E9%94%99/</guid><category domain="https://w23ta0.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化</category><category domain="https://w23ta0.github.io/categories/openstack/">OpenStack</category><description>&lt;p>在执行时init-runonce 时，报错误如下:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">Traceback &lt;span class="o">(&lt;/span>most recent call last&lt;span class="o">)&lt;/span>:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/bin/openstack&amp;#34;&lt;/span>, line 7, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from openstackclient.shell import main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/openstackclient/shell.py&amp;#34;&lt;/span>, line 23, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from osc_lib import shell
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/osc_lib/shell.py&amp;#34;&lt;/span>, line 33, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from osc_lib.cli import client_config as cloud_config
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/osc_lib/cli/client_config.py&amp;#34;&lt;/span>, line 18, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from openstack.config import exceptions as sdk_exceptions
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/openstack/__init__.py&amp;#34;&lt;/span>, line 17, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> import openstack.connection
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/openstack/connection.py&amp;#34;&lt;/span>, line 166, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from openstack.cloud import openstackcloud as _cloud
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/openstack/cloud/openstackcloud.py&amp;#34;&lt;/span>, line 35, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> import dogpile.cache
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/dogpile/cache/__init__.py&amp;#34;&lt;/span>, line 1, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from .region import CacheRegion, register_backend, make_region &lt;span class="c1"># noqa&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/dogpile/cache/region.py&amp;#34;&lt;/span>, line 15, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from decorator import decorate
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ImportError: cannot import name decorate&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>按照官方教程操作，openstack已经是搭建成功。&lt;/p></description></item><item><title>如何知道 OpenStack Nova 的安装版本号？</title><link>https://w23ta0.github.io/posts/2015/05/%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93-openstack-nova-%E7%9A%84%E5%AE%89%E8%A3%85%E7%89%88%E6%9C%AC%E5%8F%B7/</link><pubDate>Fri, 15 May 2015 17:53:00 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/2015/05/%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93-openstack-nova-%E7%9A%84%E5%AE%89%E8%A3%85%E7%89%88%E6%9C%AC%E5%8F%B7/</guid><category domain="https://w23ta0.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化</category><category domain="https://w23ta0.github.io/categories/openstack/">OpenStack</category><description>&lt;p>安装完 OpenStack Nova 以后过段时间就很容易忘记自己装的是哪个版本，OpenStack 开发进度很快，遇到问题到 mailing list 寻求帮助的时候最好带上 Nova 的版本号。如何知道自己安装的是哪个版本的 OpenStack Nova 呢？
+旧版本的 OpenStack Nova 提供了 version 的接口，不过只是针对开发人员，命令行工具没有面向系统管理员的接口，所以只能通过 python 调取 nava API 来获得version 信息：&lt;/p></description></item></channel></rss>
