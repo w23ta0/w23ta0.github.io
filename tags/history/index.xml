@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>History - Tag - w23ta0's blog</title><link>https://w23ta0.github.io/tags/history/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sat, 29 Mar 2025 01:53:25 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/tags/history/index.xml" rel="self" type="application/rss+xml"/><item><title>history命令显示时间记录</title><link>https://w23ta0.github.io/posts/f26d5bcc/</link><pubDate>Sat, 26 Jan 2013 09:31:45 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/f26d5bcc/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>查了半天系统环境变量&lt;code>HISTTIMEFORMAT&lt;/code>丝毫不见踪迹 原来在&lt;code>bash man&lt;/code>中才有收录&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#man bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> HISTTIMEFORMAT
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> If this variable is &lt;span class="nb">set&lt;/span> and not null, its value is used as a format string &lt;span class="k">for&lt;/span> strftime&lt;span class="o">(&lt;/span>3&lt;span class="o">)&lt;/span> to print the &lt;span class="nb">time&lt;/span> stamp associated with each &lt;span class="nb">history&lt;/span> entry displayed by the &lt;span class="nb">history&lt;/span> builtin. If this variable is set, &lt;span class="nb">time&lt;/span> stamps are written to the &lt;span class="nb">history&lt;/span> file so they may be preserved across shell sessions.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">如果这个变量被设置，且不为空,使用它的值作为格式字符串strftime（3）打印时间戳与历史命令内建显示的每个条目相关联的历史.如果这个变量被设置，时间戳会被写入历史文件，这样的话他们可能会保留在shell会话。&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看HISTTIMEFORMAT具体参数&lt;/p></description></item></channel></rss>
