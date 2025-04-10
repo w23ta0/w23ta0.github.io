@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Office - Tag - w23ta0's blog</title><link>https://w23ta0.github.io/tags/office/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.145.0 &amp; FixIt v0.3.16</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Thu, 10 Apr 2025 01:56:00 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/tags/office/index.xml" rel="self" type="application/rss+xml"/><item><title>解决Office 2010安装错误:1402</title><link>https://w23ta0.github.io/posts/d14dfb/</link><pubDate>Wed, 14 Jan 2015 14:32:08 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/d14dfb/</guid><category domain="https://w23ta0.github.io/categories/windows/">Windows</category><category domain="https://w23ta0.github.io/categories/office/">Office</category><description>&lt;p>&lt;img loading="lazy" src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/19779461_0800.png" alt="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/19779461_0800.png" srcset="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/19779461_0800.png?size=small, https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/19779461_0800.png?size=medium 1.5x, https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/19779461_0800.png?size=large 2x" data-title="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/19779461_0800.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/p>
+&lt;p>先卸载原有office，再安装office2010.还不行使用下面方法是一下：&lt;/p>
+&lt;ol>
+&lt;li>使用组合键 Win+R 打开“运行”对话框，输入 regedit 并回车（可能需要管理员权限）&lt;/li>
+&lt;li>找到这个键值&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>右击“UserData” 选择“权限(P)…”&lt;/li>
+&lt;li>点击“高级(V)”按钮&lt;/li>
+&lt;li>选定“Administrators……”，勾选“替换子容器和对象的所有者(R)”，点击“应用(A)”，将“当前所有者(C)：”更改为“Administrators……”&lt;/li>
+&lt;li>“权限项目(T)：”选定“Administrators……”，勾选“使用可从此对象继承的权限替换所有子对象权限(P)”，点击“确定”按钮&lt;/li>
+&lt;/ol></description></item></channel></rss>
