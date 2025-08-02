@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Umount - Tag - w23ta0's blog</title><link>https://w23ta0.github.io/tags/umount/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.148.2 &amp; FixIt v0.3.20</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sat, 02 Aug 2025 02:09:09 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/tags/umount/index.xml" rel="self" type="application/rss+xml"/><item><title>解决Linux下取消挂载提示:device is busy</title><link>https://w23ta0.github.io/posts/d4af459a/</link><pubDate>Sat, 31 Jan 2015 14:49:44 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/d4af459a/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p>在我们进行远程文件操作的时候，我们经常会出现文件服务出现卸载掉哦情况。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">umount /mnt/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">umount: /mnt/: device is busy.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">(In some cases useful info about processes that use
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">the device is found by lsof(8) or fuser(1))&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>解决方法:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>查找使用这个文件的进程和命令，具体的操作代码&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[root@localhost ~]# lsof |grep /mnt/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">lsof: WARNING: can&amp;#39;t stat() cifs file system /mnt/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Output information may be incomplete.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">bash 18841 root cwd unknown /mnt/TDDOWNLOAD/软件 (stat: No such device)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>然后执行ps命令可以查找执行此进程的命令&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[root@localhost ~]# ps -ef|grep 18841
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">root 18841 18839 0 Nov29 pts/2 00:00:00 /bin/bash -l
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">root 29496 25604 0 16:26 pts/0 00:00:00 grep 18841&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>强行结束无关进程&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[root@localhost ~]# kill -9 18841&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="4">
+&lt;li>然后卸载相关挂载&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[root@localhost ~]# umount /mnt/net1&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="5">
+&lt;li>然后可以再通过mount命令进行查看。&lt;/li>
+&lt;/ol></description></item></channel></rss>
