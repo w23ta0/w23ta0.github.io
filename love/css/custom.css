@@ -1,0 +1,455 @@
+/*-------------------------------------------------------------------------------------------*/
+/* Variables */
+/*-------------------------------------------------------------------------------------------*/
+:root {
+    /* Colors */
+    --primary-color: #008f7f;
+    --primary-light: #1ABC9C;
+    --white: #fff;
+    --black: #000;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-shadow: rgba(31, 38, 135, 0.37);
+    --text-color: #777;
+    
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+    --spacing-xl: 50px;
+    
+    /* Transitions */
+    --transition-normal: 0.3s ease;
+    
+    /* Z-index layers */
+    --z-background: 1;
+    --z-gradient: 2;
+    --z-content: 3;
+    --z-canvas: 9999;
+    --z-overlay: 10000;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/* Base Styles */
+/*-------------------------------------------------------------------------------------------*/
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--black);
+    color: var(--text-color);
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-image: url('https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/love/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    font-family: 'PT Sans', sans-serif;
+}
+
+/* Links */
+a {
+    color: var(--white);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    position: relative;
+    cursor: pointer;
+}
+
+a:visited {
+    color: var(--white);
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: var(--primary-light);
+    text-decoration: none;
+}
+
+/* 悬停下划线效果 */
+a:not(.music-toggle):after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary-light);
+    transition: width var(--transition-normal);
+}
+
+a:not(.music-toggle):hover:after {
+    width: 100%;
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+}
+
+button:not(.music-toggle) {
+    transition: all var(--transition-normal);
+}
+
+button:not(.music-toggle):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/* Layout & Header */
+/*-------------------------------------------------------------------------------------------*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+#masthead {
+    background: var(--white);
+}
+
+.top {
+    padding: 20px 0px;
+}
+
+.site-branding h1 {
+    font-weight: bold;
+}
+
+.logo {
+    margin-top: 20px;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/* Main Content Area */
+/*-------------------------------------------------------------------------------------------*/
+/* Subheader */
+.subhead {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.subhead::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: var(--z-background);
+}
+
+.subinner {
+    position: relative;
+    z-index: var(--z-content);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-xl) 0;
+}
+
+/* Wedding Names */
+.wednames {
+    font-size: 60px;
+    text-align: center;
+    color: var(--white);
+    font-family: 'Cherry swash';
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 2px #111;
+}
+
+.wednames span {
+    font-size: 24px;
+    font-family: 'PT Sans';
+    display: block;
+}
+
+/* Bride & Groom */
+.bridecol, .groomcol {
+    height: 200px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.bridepic, .groompic {
+    height: 160px;
+    width: 160px;
+    border-radius: 80px;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.bridepic {
+    float: left;
+}
+
+.groompic {
+    float: right;
+}
+
+.brideinfo {
+    float: left;
+    margin-top: 50px;
+}
+
+.groominfo {
+    float: right;
+    margin-top: 50px;
+    text-align: right;
+}
+
+.brideinfo h3, .groominfo h3 {
+    font-family: 'Cherry swash';
+    font-size: 26px;
+}
+
+/* Heart Icon Animation */
+.cplus {
+    width: 80px;
+    height: 80px;
+    border-radius: 30px;
+    color: #f20e0e;
+    font-size: 80px;
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    margin-top: -40px;
+    z-index: 100;
+}
+
+/* Timer */
+h2.timehead {
+    font-size: 36px;
+    margin: 50px 0px 30px 0px;
+    font-family: 'Cherry swash';
+
+}
+
+#elapseClock .digit {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+#elapseClock .digit h3 {
+    margin: 15px 0px 0px 0px;
+    padding: 0px;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+/* Music Control */
+.music-toggle {
+    position: fixed;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    z-index: var(--z-overlay);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.music-toggle.playing {
+    animation: rotate 3s linear infinite;
+}
+
+.music-toggle i {
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+/* Background */
+.backstretch {
+    display: none;
+}
+
+canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-canvas);
+    pointer-events: none;
+}
+
+/* Click Effect */
+.love-text {
+    position: fixed;
+    pointer-events: none;
+    font-size: 1.5rem;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%);
+    animation: textFloat 1.5s ease-out;
+    z-index: var(--z-overlay);
+    font-weight: bold;
+    animation: textFloat 1.5s ease-out;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/* Animations */
+/*-------------------------------------------------------------------------------------------*/
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes textFloat {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -100%) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -150%) scale(1);
+    }
+}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/* Media Queries */
+/*-------------------------------------------------------------------------------------------*/
+@media (max-width: 768px) {
+    .wednames {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    
+    .wednames span {
+        font-size: 18px;
+    }
+    
+    #elapseClock {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .bridecol, .groomcol {
+        height: auto;
+        padding: 10px;
+        margin: 10px auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .bridepic, .groompic {
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+        margin: 10px;
+        flex-shrink: 0;
+    }
+    
+    .brideinfo, .groominfo {
+        margin: 0 10px;
+        float: none;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .groomcol {
+        flex-direction: row-reverse;
+    }
+    
+    .groominfo {
+        text-align: right;
+    }
+    
+    .brideinfo h3, .groominfo h3 {
+        font-size: 20px;
+        margin: 0 0 5px 0;
+    }
+
+    .brideinfo p, .groominfo p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .music-toggle {
+        width: 32px;
+        height: 32px;
+        top: var(--spacing-sm);
+        right: var(--spacing-sm);
+    }
+
+    .music-toggle i {
+        font-size: 16px;
+    }
+
+    h2.timehead {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .cplus {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-toggle {
+        width: 28px;
+        height: 28px;
+    }
+
+    .music-toggle i {
+        font-size: 14px;
+    }
+
+    h2.timehead {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+}
+
+/* 移除冗余样式 */
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif; /* 统一字体 */
+}
+
+/* 合并相似的样式 */
+.love-text {
+    position: absolute;
+    font-size: 20px;
+    animation: fadeOut 2s forwards; /* 统一动画 */
+}

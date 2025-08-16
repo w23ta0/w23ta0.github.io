@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Openstackclient - Tag - w23ta0's blog</title><link>https://w23ta0.github.io/tags/openstackclient/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.148.2 &amp; FixIt v0.3.20</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sat, 16 Aug 2025 02:00:56 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/tags/openstackclient/index.xml" rel="self" type="application/rss+xml"/><item><title>openstackclient命令执行报错</title><link>https://w23ta0.github.io/posts/2cae80fc/</link><pubDate>Fri, 14 Dec 2018 16:19:01 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/2cae80fc/</guid><category domain="https://w23ta0.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化</category><category domain="https://w23ta0.github.io/categories/openstack/">OpenStack</category><description>&lt;p>在执行时init-runonce 时，报错误如下:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">Traceback &lt;span class="o">(&lt;/span>most recent call last&lt;span class="o">)&lt;/span>:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/bin/openstack&amp;#34;&lt;/span>, line 7, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from openstackclient.shell import main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/openstackclient/shell.py&amp;#34;&lt;/span>, line 23, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from osc_lib import shell
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/osc_lib/shell.py&amp;#34;&lt;/span>, line 33, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from osc_lib.cli import client_config as cloud_config
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/osc_lib/cli/client_config.py&amp;#34;&lt;/span>, line 18, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from openstack.config import exceptions as sdk_exceptions
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/openstack/__init__.py&amp;#34;&lt;/span>, line 17, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> import openstack.connection
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/openstack/connection.py&amp;#34;&lt;/span>, line 166, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from openstack.cloud import openstackcloud as _cloud
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/openstack/cloud/openstackcloud.py&amp;#34;&lt;/span>, line 35, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> import dogpile.cache
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/dogpile/cache/__init__.py&amp;#34;&lt;/span>, line 1, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from .region import CacheRegion, register_backend, make_region &lt;span class="c1"># noqa&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> File &lt;span class="s2">&amp;#34;/usr/lib/python2.7/site-packages/dogpile/cache/region.py&amp;#34;&lt;/span>, line 15, in &amp;lt;module&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from decorator import decorate
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ImportError: cannot import name decorate&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>按照官方教程操作，openstack已经是搭建成功。&lt;/p></description></item></channel></rss>
