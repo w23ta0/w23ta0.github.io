@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Our Love Story | w23ta0's blog</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" id="theme-css" href="css/theme.css" type="text/css" media="all">
+    <link rel="stylesheet" id="custom-css" href="css/custom.css" type="text/css" media="all">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/functions_dev.js"></script>
+    <script type="text/javascript" src="js/garden_dev.js"></script>
+    <audio id="bgMusic" loop>
+        <source src="https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/Jason%20Derulo%20-%20Marry%20Me%20%5BUMD%5D.mp3" type="audio/mp3">
+    </audio>
+    <button id="musicToggle" class="music-toggle">
+        <i class="glyphicon glyphicon-music"></i>
+    </button>
+    <!-- 添加canvas背景 -->
+    <canvas id="canvas"></canvas>
+    <style>
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.8);
+            }
+        }
+
+        .love-text {
+            position: fixed;
+            font-size: 1.2em;
+            user-select: none;
+            z-index: 9999;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="home page page-id-19 page-template page-template-homepage page-template-homepage-php group-blog">
+    <div id="page" class="hfeed site">
+        <div id="content" class="site-content">
+            <div style="position:relative;z-index:0;background:none repeat scroll 0 0 transparent" class="subhead">
+                <div class="subinner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 wednames">Our Love Story <span><a href="http://w23ta0.github.io">w23ta0's blog</a></span></div>
+                            <div class="col-md-6">
+                                <div class="bridecol">
+                                    <div class="bridepic"><img src="images/bridecup-180x180.png" alt="bride"></div>
+                                    <div class="brideinfo">
+                                        <h3>Geng Ling</h3>
+                                        <p>相遇 是件美好的事🌸</p>
+                                    </div>
+                                    <div class="cplus glyphicon glyphicon-heart"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="groomcol">
+                                    <div class="groompic"><img src="images/groomcup-180x180.png" alt="groom"></div>
+                                    <div class="groominfo">
+                                        <h3>Wu Tao</h3>
+                                        <p>一生很短，只够爱你一人</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h2 class="timehead">We have been together</h2>
+                                <div id="ctimer">
+                                    <div id="elapseClock"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+var msg, offsetX = $("#loveHeart").width() / 2,
+    offsetY = $("#loveHeart").height() / 2 - 55,
+    displayMode = 1,
+    together = new Date(2013, 0, 12), // 初始化起始日期
+    updateTime = function() {
+        var now = new Date(); // 获取当前时间
+
+        // 计算年份差（注意要考虑月份和天数）
+        var years = now.getFullYear() - together.getFullYear();
+        if (now.getMonth() < together.getMonth() ||
+            (now.getMonth() === together.getMonth() && now.getDate() < together.getDate())) {
+            years--; // 如果当前日期未到达起始日期的周年，则年份差减1
+        }
+
+        // 计算月份差
+        var months = now.getMonth() - together.getMonth();
+        if (now.getDate() < together.getDate()) { // 如果当前日期还没到达目标日期
+            months--;
+        }
+
+        if (months < 0) {
+            months += 12; // 如果月份差小于0，表示跨年，需要加12
+        }
+
+        // 计算天数差
+        var days = now.getDate() - together.getDate();
+        if (days < 0) {
+            var prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += prevMonth.getDate(); // 获取上一个月的天数
+        }
+
+        // 计算小时、分钟、秒数差
+        var hours = now.getHours() - together.getHours();
+        var minutes = now.getMinutes() - together.getMinutes();
+        var seconds = now.getSeconds() - together.getSeconds();
+
+        // 处理时间差，避免出现负值
+        if (seconds < 0) {
+            minutes--;
+            seconds += 60;
+        }
+        if (minutes < 0) {
+            hours--;
+            minutes += 60;
+        }
+        if (hours < 0) {
+            days--;
+            hours += 24;
+        }
+
+        // 格式化输出
+        document.getElementById('elapseClock').innerHTML = `
+            <span class="digit">
+                <h3>${years}</h3> years
+            </span>
+            <span class="digit">
+                <h3>${months}</h3> months
+            </span>
+            <span class="digit">
+                <h3>${days}</h3> days
+            </span>
+            <span class="digit">
+                <h3>${hours.toString().padStart(2, '0')}</h3> hours
+            </span>
+            <span class="digit">
+                <h3>${minutes.toString().padStart(2, '0')}</h3> minutes
+            </span>
+            <span class="digit">
+                <h3>${seconds.toString().padStart(2, '0')}</h3> seconds
+            </span>
+        `;
+    };
+
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', function() {
+        const music = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        
+        // 监听各种用户交互事件来启动音乐
+        function initAutoPlay() {
+            music.play().then(() => {
+                musicToggle.classList.add('playing');
+                // 播放成功后移除所有事件监听
+                removeEvents();
+            }).catch(() => {
+                // 如果自动播放失败，不显示旋转动画
+                musicToggle.classList.remove('playing');
+            });
+        }
+
+        // 移除事件监听器
+        function removeEvents() {
+            ['click', 'touchstart', 'scroll', 'mousemove'].forEach(event => {
+                document.removeEventListener(event, initAutoPlay);
+            });
+        }
+
+        // 添加事件监听
+        ['click', 'touchstart', 'scroll', 'mousemove'].forEach(event => {
+            document.addEventListener(event, initAutoPlay, { once: true });
+        });
+        
+        // 音乐控制按钮点击事件
+        musicToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // 阻止事件冒泡
+            if (music.paused) {
+                music.play().then(() => {
+                    musicToggle.classList.add('playing');
+                });
+            } else {
+                music.pause();
+                musicToggle.classList.remove('playing');
+            }
+        });
+
+        // 尝试自动播放
+        initAutoPlay();
+
+        // 背景动画
+        var canvas = document.getElementById('canvas'),
+            ctx = canvas.getContext('2d'),
+            width = window.innerWidth,
+            height = window.innerHeight,
+            particles = [];
+
+        canvas.width = width;
+        canvas.height = height;
+
+        function Particle(x, y) {
+            this.x = x;
+            this.y = y;
+            this.size = Math.random() * 3 + 1;
+            this.speedX = Math.random() * 2 - 1;
+            this.speedY = Math.random() * 2 - 1;
+            this.opacity = Math.random() * 0.5 + 0.2;
+        }
+
+        Particle.prototype.move = function() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            
+            if (this.x > width) this.x = 0;
+            if (this.x < 0) this.x = width;
+            if (this.y > height) this.y = 0;
+            if (this.y < 0) this.y = height;
+        }
+
+        Particle.prototype.draw = function() {
+            ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // 创建粒子
+        function createParticles() {
+            for (var i = 0; i < 100; i++) {
+                particles.push(new Particle(
+                    Math.random() * width,
+                    Math.random() * height
+                ));
+            }
+        }
+
+        // 动画循环
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            particles.forEach(function(particle) {
+                particle.move();
+                particle.draw();
+            });
+            
+            requestAnimationFrame(animate);
+        }
+
+        // 窗口大小改变时重置画布
+        window.addEventListener('resize', function() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        });
+
+        // 初始化背景动画
+        createParticles();
+        animate();
+    });
+
+    // 页面加载时执行一次时间差计算
+    updateTime();
+
+    // 每500毫秒更新一次
+    setInterval(updateTime, 500);
+
+    // 定义暧昧文字数组
+    const loveTexts = [
+        "心动", 
+        "想你",
+        "好喜欢",
+        "温柔",
+        "甜甜的",
+        "暖暖的",
+        "心跳",
+        "星星",
+        "月光",
+        "晚风",
+        "微笑",
+        "遇见你",
+        "喜欢你",
+        "在一起",
+        "偷看你",
+        "小确幸",
+        "心动了",
+        "有感觉",
+        "默契",
+        "缘分",
+        "一眼万年",
+        "悸动",
+        "心念",
+        "情愫",
+        "暧昧",
+        "心事",
+        "情话",
+        "浪漫",
+        "心动瞬间",
+        "小幸福",
+        "心花怒放",
+        "心动信号",
+        "爱意",
+        "温度",
+        "心动加速",
+        "心动预警",
+        "心动讯号",
+        "心动时刻",
+        "心动感应"
+    ];
+
+    // 生成随机颜色
+    function getRandomColor() {
+        const colors = [
+            '#FF69B4', // 粉红
+            '#FF1493', // 深粉红
+            '#FF69B4', // 热粉红
+            '#FFC0CB', // 浅粉红
+            '#FFB6C1', // 亮粉红
+            '#FF0000', // 红色
+            '#FF4500', // 橙红色
+            '#FFA500', // 橙色
+            '#FFD700', // 金色
+            '#FF8C00'  // 深橙色
+        ];
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    // 点击效果
+    document.addEventListener('click', function(e) {
+        // 创建文字元素
+        const text = document.createElement('div');
+        text.className = 'love-text';
+        text.textContent = loveTexts[Math.floor(Math.random() * loveTexts.length)];
+        text.style.left = e.pageX + 'px';
+        text.style.top = e.pageY + 'px';
+        text.style.color = getRandomColor();
+        text.style.position = 'fixed';
+        text.style.pointerEvents = 'none';
+        
+        // 添加内联样式确保动画效果
+        text.style.animation = 'fadeOut 1.5s forwards';
+        text.style.opacity = '1';
+        text.style.transition = 'all 1.5s';
+        
+        document.body.appendChild(text);
+        
+        // 确保元素被移除
+        setTimeout(() => {
+            if (text && text.parentNode) {
+                text.parentNode.removeChild(text);
+            }
+        }, 1500);
+    });
+</script>
