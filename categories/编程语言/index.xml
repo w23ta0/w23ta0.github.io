@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>编程语言 - Category - w23ta0's blog</title><link>https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.154.2 &amp; FixIt v0.3.20</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sun, 04 Jan 2026 02:27:45 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml"/><item><title>如何在CentOS7上安装SonaeQube7.9</title><link>https://w23ta0.github.io/posts/6aa4d5ee/</link><pubDate>Mon, 27 Apr 2020 16:19:01 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/6aa4d5ee/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><category domain="https://w23ta0.github.io/categories/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/">代码质量</category><description>&lt;h2 class="heading-element" id="环境准备"&gt;&lt;span&gt;环境准备&lt;/span&gt;
+ &lt;a href="#%e7%8e%af%e5%a2%83%e5%87%86%e5%a4%87" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;SonarQube：sonarqube-7.9.3&lt;/li&gt;
+&lt;li&gt;数据库：PostgreSQL 10.10&lt;/li&gt;
+&lt;li&gt;操作系统：CentOS 7.6&lt;/li&gt;
+&lt;li&gt;JDK版本：java-11-openjdk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sonarqube从7.8起，不再支持mysql&lt;/p&gt;</description></item><item><title>Centos6下安装MySQL-python时出现“error: command 'gcc' failed with exit status 1”</title><link>https://w23ta0.github.io/posts/73cebd2e/</link><pubDate>Wed, 18 Nov 2015 15:45:22 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/73cebd2e/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><category domain="https://w23ta0.github.io/categories/python/">Python</category><description>&lt;h2 class="heading-element" id="问题描述"&gt;&lt;span&gt;问题描述&lt;/span&gt;
+ &lt;a href="#%e9%97%ae%e9%a2%98%e6%8f%8f%e8%bf%b0" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;在MySQL-python-1.2.5源码包根目录下执行安装命令：&lt;/p&gt;</description></item><item><title>如何成为一个通晓多种编程语言的程序员</title><link>https://w23ta0.github.io/posts/fdca3c9c/</link><pubDate>Fri, 19 Jun 2015 12:21:18 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/fdca3c9c/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><description>&lt;p&gt;学习一门新的语言是一种冒险。我总是热衷于尝试新的东西——学习新的语法，了解不同的模式，乃至彻底改变思维方式。不幸的是，许多开发人员对此不以为然，甚至可能是深恶痛绝的——学习新语言，就得走出舒适区，花时间花精力来学习新的理念和方法。&lt;/p&gt;</description></item><item><title>Python任务调度模块 – APScheduler</title><link>https://w23ta0.github.io/posts/961db27e/</link><pubDate>Thu, 11 Jun 2015 12:32:28 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/961db27e/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><category domain="https://w23ta0.github.io/categories/python/">Python</category><description>&lt;p&gt;APScheduler是一个Python定时任务框架，使用起来十分方便。提供了基于日期、固定时间间隔以及crontab类型的任务，并且可以持久化任务、并以daemon方式运行应用。目前最新版本为3.0.x。&lt;/p&gt;</description></item><item><title>cx_Freeze打包Python应用程序</title><link>https://w23ta0.github.io/posts/550b75c7/</link><pubDate>Sun, 17 May 2015 13:02:16 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/550b75c7/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><category domain="https://w23ta0.github.io/categories/python/">Python</category><description>&lt;p&gt;cx_Freeze是一个打包Python应用的工具，通过cx_Freeze，可以制作Windows平台、MacOS平台、以及Linux平台的二进制可执行程序，使得Python应用能够在没有安装Python环境的机器上运行。&lt;/p&gt;</description></item><item><title>Python 格式化字符串 (%操作符)</title><link>https://w23ta0.github.io/posts/7ebc6f83/</link><pubDate>Sat, 31 Jan 2015 15:13:47 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/7ebc6f83/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><category domain="https://w23ta0.github.io/categories/python/">Python</category><description>&lt;p&gt;在许多编程语言中都包含有格式化字符串的功能，比如C和Fortran语言中的格式化输入输出。Python中内置有对字符串进行格式化的操作%。&lt;/p&gt;
+&lt;h2 class="heading-element" id="模板"&gt;&lt;span&gt;模板&lt;/span&gt;
+ &lt;a href="#%e6%a8%a1%e6%9d%bf" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;格式化字符串时，Python使用一个字符串作为模板
+。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。Python用一个tuple将多个值传递给模板，每个值对应一个格式符。&lt;/p&gt;</description></item><item><title>正则表达式学习</title><link>https://w23ta0.github.io/posts/469df0ac/</link><pubDate>Tue, 05 Mar 2013 16:16:19 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/469df0ac/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><category domain="https://w23ta0.github.io/categories/regex/">Regex</category><description>&lt;p&gt;最近在看鸟哥 Linux，看到正则表达式这块，以前看到这些恐怖的字符总是觉得恶心，今天就咬牙系统的学习了下正则表达式。然后有了这篇笔记。主要总结正则表达式的一些关键知识点。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;字面值：&lt;code&gt;a b c d 1 2 3 4&lt;/code&gt; 等等。&lt;/li&gt;
+&lt;li&gt;字符类：&lt;code&gt;. [abc] [a-z] \d \w \s&lt;/code&gt;
+- &lt;code&gt;. &lt;/code&gt;表示“任何字符”
+- &lt;code&gt;[abc] &lt;/code&gt;括号表示“找到集合里任意一个字符”。
+- &lt;code&gt;\d&lt;/code&gt; 表示“一个数字”，等同于[0-9]
+- &lt;code&gt;\w &lt;/code&gt;表示“一个单词字符”，等同于[0-9A-Za-z_]
+- &lt;code&gt;\s &lt;/code&gt;表示“一个空格，tab，回车或一个换行符”
+- 否定字符类：&lt;code&gt;[^abc] \D \W \S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;乘法器：&lt;code&gt;{4} {3,16} {1,} ? * +&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{3,16}&lt;/code&gt; 表示找到重复 3 到 16 个前一个正则字符&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;?&lt;/code&gt; 表示“没有或一个”&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*&lt;/code&gt; 表示“没有或多个”&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;+&lt;/code&gt; 表示“一个或多个”&lt;/li&gt;
+&lt;li&gt;乘法器是贪婪的除非你在之后使用 ? , 即优先找到最长的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;分支和组合：&lt;code&gt; (Septem|Octo|Novem|Decem)ber&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;管道符号 &lt;code&gt;| &lt;/code&gt;表示“或”&lt;/li&gt;
+&lt;li&gt;圆括号表示组合 ，比如 在一周中找到一天，使用&lt;code&gt; (Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;词、行和文本边界：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\b &lt;/code&gt;表示词边界&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;^&lt;/code&gt; 表示行开始&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$&lt;/code&gt; 表示行结束&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;^$&lt;/code&gt; 表示的就是空白行了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;反向捕获组：&lt;code&gt;\1 \2 \3&lt;/code&gt; 等等。捕获组从左到右进行编号，只要计算左圆括号。（在替换表达式和匹配表达式中同时生效）
+&lt;ul&gt;
+&lt;li&gt;比如有一段字符，我们需要前面的横杠去掉，尾巴的数字去掉， 英文句号换成中文顿号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;-1.文章标题1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;-2.文章标题2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;-3.文章标题3
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;-4.文章标题4
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;-5.文章标题5&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;则可以使用正则表达式 &lt;code&gt;-(\d{1,})\.(.*)\d&lt;/code&gt; 来匹配。然后使用 \1、\2 来替换。&lt;/p&gt;</description></item></channel></rss>

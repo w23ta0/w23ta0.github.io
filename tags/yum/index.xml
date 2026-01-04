@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Yum - Tag - w23ta0's blog</title><link>https://w23ta0.github.io/tags/yum/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.154.2 &amp; FixIt v0.3.20</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sun, 04 Jan 2026 02:27:45 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/tags/yum/index.xml" rel="self" type="application/rss+xml"/><item><title>运行yum报错Error: Cannot retrieve metalink for repository: epel</title><link>https://w23ta0.github.io/posts/d3fa1f95/</link><pubDate>Tue, 27 Jan 2015 14:52:08 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/d3fa1f95/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p&gt;今天给Centos通过rpm -Uvh装了个epel的扩展后，执行yum list就开始报错：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Error: Cannot retrieve metalink &lt;span class="k"&gt;for&lt;/span&gt; repository: epel. Please verify its path and try again&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在网上查了查，解决办法是编辑&lt;code&gt;/etc/yum.repos.d/epel.repo&lt;/code&gt;，把基础的恢复，镜像的地址注释掉&lt;/p&gt;</description></item></channel></rss>

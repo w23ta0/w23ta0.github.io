@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Regex - Category - w23ta0's blog</title><link>https://w23ta0.github.io/categories/regex/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.154.2 &amp; FixIt v0.3.20</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sun, 04 Jan 2026 02:27:45 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/categories/regex/index.xml" rel="self" type="application/rss+xml"/><item><title>正则表达式学习</title><link>https://w23ta0.github.io/posts/469df0ac/</link><pubDate>Tue, 05 Mar 2013 16:16:19 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/469df0ac/</guid><category domain="https://w23ta0.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</category><category domain="https://w23ta0.github.io/categories/regex/">Regex</category><description>&lt;p&gt;最近在看鸟哥 Linux，看到正则表达式这块，以前看到这些恐怖的字符总是觉得恶心，今天就咬牙系统的学习了下正则表达式。然后有了这篇笔记。主要总结正则表达式的一些关键知识点。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;字面值：&lt;code&gt;a b c d 1 2 3 4&lt;/code&gt; 等等。&lt;/li&gt;
+&lt;li&gt;字符类：&lt;code&gt;. [abc] [a-z] \d \w \s&lt;/code&gt;
+- &lt;code&gt;. &lt;/code&gt;表示“任何字符”
+- &lt;code&gt;[abc] &lt;/code&gt;括号表示“找到集合里任意一个字符”。
+- &lt;code&gt;\d&lt;/code&gt; 表示“一个数字”，等同于[0-9]
+- &lt;code&gt;\w &lt;/code&gt;表示“一个单词字符”，等同于[0-9A-Za-z_]
+- &lt;code&gt;\s &lt;/code&gt;表示“一个空格，tab，回车或一个换行符”
+- 否定字符类：&lt;code&gt;[^abc] \D \W \S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;乘法器：&lt;code&gt;{4} {3,16} {1,} ? * +&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{3,16}&lt;/code&gt; 表示找到重复 3 到 16 个前一个正则字符&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;?&lt;/code&gt; 表示“没有或一个”&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*&lt;/code&gt; 表示“没有或多个”&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;+&lt;/code&gt; 表示“一个或多个”&lt;/li&gt;
+&lt;li&gt;乘法器是贪婪的除非你在之后使用 ? , 即优先找到最长的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;分支和组合：&lt;code&gt; (Septem|Octo|Novem|Decem)ber&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;管道符号 &lt;code&gt;| &lt;/code&gt;表示“或”&lt;/li&gt;
+&lt;li&gt;圆括号表示组合 ，比如 在一周中找到一天，使用&lt;code&gt; (Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;词、行和文本边界：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\b &lt;/code&gt;表示词边界&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;^&lt;/code&gt; 表示行开始&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$&lt;/code&gt; 表示行结束&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;^$&lt;/code&gt; 表示的就是空白行了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;反向捕获组：&lt;code&gt;\1 \2 \3&lt;/code&gt; 等等。捕获组从左到右进行编号，只要计算左圆括号。（在替换表达式和匹配表达式中同时生效）
+&lt;ul&gt;
+&lt;li&gt;比如有一段字符，我们需要前面的横杠去掉，尾巴的数字去掉， 英文句号换成中文顿号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;-1.文章标题1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;-2.文章标题2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;-3.文章标题3
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;-4.文章标题4
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;-5.文章标题5&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;则可以使用正则表达式 &lt;code&gt;-(\d{1,})\.(.*)\d&lt;/code&gt; 来匹配。然后使用 \1、\2 来替换。&lt;/p&gt;</description></item></channel></rss>

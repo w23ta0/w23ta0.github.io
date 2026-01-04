@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>History - Tag - w23ta0's blog</title><link>https://w23ta0.github.io/tags/history/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.154.2 &amp; FixIt v0.3.20</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sun, 04 Jan 2026 02:27:45 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/tags/history/index.xml" rel="self" type="application/rss+xml"/><item><title>history命令显示时间记录</title><link>https://w23ta0.github.io/posts/f26d5bcc/</link><pubDate>Sat, 26 Jan 2013 09:31:45 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/f26d5bcc/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><description>&lt;p&gt;查了半天系统环境变量&lt;code&gt;HISTTIMEFORMAT&lt;/code&gt;丝毫不见踪迹 原来在&lt;code&gt;bash man&lt;/code&gt;中才有收录&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#man bash&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; HISTTIMEFORMAT
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; If this variable is &lt;span class="nb"&gt;set&lt;/span&gt; and not null, its value is used as a format string &lt;span class="k"&gt;for&lt;/span&gt; strftime&lt;span class="o"&gt;(&lt;/span&gt;3&lt;span class="o"&gt;)&lt;/span&gt; to print the &lt;span class="nb"&gt;time&lt;/span&gt; stamp associated with each &lt;span class="nb"&gt;history&lt;/span&gt; entry displayed by the &lt;span class="nb"&gt;history&lt;/span&gt; builtin. If this variable is set, &lt;span class="nb"&gt;time&lt;/span&gt; stamps are written to the &lt;span class="nb"&gt;history&lt;/span&gt; file so they may be preserved across shell sessions.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;如果这个变量被设置，且不为空,使用它的值作为格式字符串strftime（3）打印时间戳与历史命令内建显示的每个条目相关联的历史.如果这个变量被设置，时间戳会被写入历史文件，这样的话他们可能会保留在shell会话。&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查看HISTTIMEFORMAT具体参数&lt;/p&gt;</description></item></channel></rss>

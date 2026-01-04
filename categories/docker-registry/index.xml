@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker Registry - Category - w23ta0's blog</title><link>https://w23ta0.github.io/categories/docker-registry/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.154.2 &amp; FixIt v0.3.20</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sun, 04 Jan 2026 02:27:45 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/categories/docker-registry/index.xml" rel="self" type="application/rss+xml"/><item><title>如何搭建Docker Registry本地私有仓库</title><link>https://w23ta0.github.io/posts/49dab0f1/</link><pubDate>Fri, 28 Aug 2015 14:59:00 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/49dab0f1/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/docker-registry/">Docker Registry</category><description>&lt;p&gt;通常情况下我们可以使用&lt;a href="https://hub.docker.com/"target="_blank" rel="external nofollow noopener noreferrer"&gt;Docker Hub&lt;/a&gt;作为docker image的仓库，但是有些场景下，我们希望能够有本地的仓库。比如：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;代码中含有保密的信息，比如环境的账号，密码等等；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;代码本身作为公司的资产，不能对外公开，否则有法律风险。&lt;/p&gt;</description></item></channel></rss>

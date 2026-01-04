@@ -1,0 +1,192 @@
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=2"><meta name=robots content="noodp"><title>Linux Expect自动登录ssh,ftp - w23ta0's blog</title><meta name=author content="w23ta0"><meta name=description content="expect是一种能够按照脚本内容里面设定的方式与交互式程序进行”会话”的程序。根据脚本内容，Expect可以知道程序会提示或反馈什么内容以及 什么是正确的应答。它是一种可以提供”分支和嵌套结构”来引导程序流程的解释型脚本语言。
+"><meta name=keywords content='expect,ssh,ftp'><meta itemprop=name content="linux expect自动登录ssh,ftp"><meta itemprop=description content="expect是一种能够按照脚本内容里面设定的方式与交互式程序进行”会话”的程序。根据脚本内容，Expect可以知道程序会提示或反馈什么内容以及 什么是正确的应答。它是一种可以提供”分支和嵌套结构”来引导程序流程的解释型脚本语言。"><meta itemprop=datePublished content="2012-10-10T10:03:51+00:00"><meta itemprop=dateModified content="2026-01-04T02:27:45+00:00"><meta itemprop=wordCount content="920"><meta itemprop=keywords content="Expect,Ssh,Ftp"><meta property="og:url" content="https://w23ta0.github.io/posts/fc7dce9e/"><meta property="og:site_name" content="w23ta0's blog"><meta property="og:title" content="linux expect自动登录ssh,ftp"><meta property="og:description" content="expect是一种能够按照脚本内容里面设定的方式与交互式程序进行”会话”的程序。根据脚本内容，Expect可以知道程序会提示或反馈什么内容以及 什么是正确的应答。它是一种可以提供”分支和嵌套结构”来引导程序流程的解释型脚本语言。"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2012-10-10T10:03:51+00:00"><meta property="article:modified_time" content="2026-01-04T02:27:45+00:00"><meta property="article:tag" content="Expect"><meta property="article:tag" content="Ssh"><meta property="article:tag" content="Ftp"><meta name=twitter:card content="summary"><meta name=twitter:title content="linux expect自动登录ssh,ftp"><meta name=twitter:description content="expect是一种能够按照脚本内容里面设定的方式与交互式程序进行”会话”的程序。根据脚本内容，Expect可以知道程序会提示或反馈什么内容以及 什么是正确的应答。它是一种可以提供”分支和嵌套结构”来引导程序流程的解释型脚本语言。"><meta name=application-name content="w23ta0's blog"><meta name=apple-mobile-web-app-title content="w23ta0's blog"><meta name=theme-color data-light=#f8f8f8 data-dark=#252627 content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel=icon href=images/happy.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=canonical type=text/html href=https://w23ta0.github.io/posts/fc7dce9e/ title="linux expect自动登录ssh,ftp - w23ta0's blog"><link rel=prev type=text/html href=https://w23ta0.github.io/posts/9390f1b0/ title="核心文件initrd.img、vmlinux 和vmlinuz"><link rel=next type=text/html href=https://w23ta0.github.io/posts/c65535ee/ title="常用数据库驱动和JDBC URL"><link rel=alternate type=text/markdown href=https://w23ta0.github.io/posts/fc7dce9e/index.md title="linux expect自动登录ssh,ftp - w23ta0's blog"><link rel=stylesheet href=/css/style.min.css><link rel=preload href=/lib/fontawesome-free/all.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload href=/lib/animate/animate.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><meta name=google-site-verification content="mfpXQWYjakmUHCSG3MJxk8SDfQ2oLcOgJ3a0YQ9kycw"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"linux expect自动登录ssh,ftp","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/w23ta0.github.io\/posts\/fc7dce9e\/"},"genre":"posts","keywords":"expect, ssh, ftp","wordcount":920,"url":"https:\/\/w23ta0.github.io\/posts\/fc7dce9e\/","datePublished":"2012-10-10T10:03:51+00:00","dateModified":"2026-01-04T02:27:45+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"w23ta0"},"description":""}</script><script src=/js/head/color-scheme.min.js></script></head><body data-header-desktop=sticky data-header-mobile=auto><div class=wrapper data-page-style=normal><header class="desktop animate__faster" id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="w23ta0's blog"><img class=logo src=/images/happy.png alt="w23ta0's blog" height=32 width=32><span class=header-title-text>w23ta0's blog</span></a><span class=header-subtitle></span></div><nav><ul class=menu><li class=menu-item><a class=menu-link href=/archives/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> Archives</a></li><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden=true></i> Categories</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> Tags</a></li><li class=menu-item><a class=menu-link href=/index.xml><i class="fa-solid fa-rss fa-fw fa-sm" aria-hidden=true></i> RSS</a></li><li class=menu-item><a class=menu-link href=/about/><i class="fa-solid fa-quote-left fa-fw fa-sm" aria-hidden=true></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents ..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fa-solid fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fa-solid fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></li><li class="menu-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></li></ul></nav></div></header><header class="mobile animate__faster" id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="w23ta0's blog"><img class=logo src=/images/happy.png alt="w23ta0's blog" height=26 width=26><span class=header-title-text>w23ta0's blog</span></a><span class=header-subtitle></span></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><nav><ul class=menu id=menu-mobile><li class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents ..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fa-solid fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fa-solid fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></li><li class=menu-item><a class=menu-link href=/archives/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> Archives</a></li><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden=true></i> Categories</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> Tags</a></li><li class=menu-item><a class=menu-link href=/index.xml><i class="fa-solid fa-rss fa-fw fa-sm" aria-hidden=true></i> RSS</a></li><li class=menu-item><a class=menu-link href=/about/><i class="fa-solid fa-quote-left fa-fw fa-sm" aria-hidden=true></i> About</a></li><li class="menu-item menu-system"><span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></span></li></ul></nav></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=container><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label=Collections></aside><article class="page single"><div class=header><h1 class="single-title animate__animated animate__flipInX"><span>Linux Expect自动登录ssh,ftp</span></h1></div><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://github.com/w23ta0 title=Author target=_blank rel="external nofollow noopener noreferrer author" class=author><img class=avatar src='https://www.gravatar.com/avatar/c8ec6802a4a65963e20a021760ec27f0?s=32&d=' alt=w23ta0 height=16 width=16>&nbsp;w23ta0</a></span><span class=post-included-in>&nbsp;included in <a href=/categories/linux/unix/ class=post-category title="Category - Linux/Unix"><i class="fa-regular fa-folder fa-fw" aria-hidden=true></i> Linux/Unix</a></span></div><div class=post-meta-line><span title="published on 2012-10-10 10:03:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden=true></i><time datetime=2012-10-10>2012-10-10</time></span>&nbsp;<span title="Updated on 2026-01-04 02:27:45"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden=true></i><time datetime=2026-01-04>2026-01-04</time></span>&nbsp;<span title="920 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden=true></i>About 1000 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden=true></i>2 minutes</span>&nbsp;<span id=busuanzi_container_page_pv class="busuanzi_visitors comment-visitors" data-flag-title="Linux Expect自动登录ssh,ftp"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden=true></i><span id=busuanzi_value_page_pv>-</span>&nbsp;views
+</span>&nbsp;</div></div><div class="details toc" id=toc-static data-kept=false><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fa-solid fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#安装expect>安装expect</a></li><li><a href=#实例>实例</a></li></ul></nav></div></div><div class=content id=content><p>expect是一种能够按照脚本内容里面设定的方式与交互式程序进行”会话”的程序。根据脚本内容，Expect可以知道程序会提示或反馈什么内容以及 什么是正确的应答。它是一种可以提供”分支和嵌套结构”来引导程序流程的解释型脚本语言。</p><p>shell功能很强大,但是不能实现有交互功能的多机器之前的操作,例如ssh和ftp.而expect可以帮助我们来实现.</p><h2 class=heading-element id=安装expect><span>安装expect</span>
+<a href=#%e5%ae%89%e8%a3%85expect class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><pre><code>yum install expect
+</code></pre><p>其实expect根bash形势上差不多的.</p><h2 class=heading-element id=实例><span>实例</span>
+<a href=#%e5%ae%9e%e4%be%8b class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/wp-content/bin/expect -f
+</span></span></span><span class=line><span class=cl><span class=nb>set</span> ip <span class=o>[</span>lindex <span class=nv>$argv</span> <span class=m>0</span> <span class=o>]</span>      //接收第一个参数,并设置IP
+</span></span><span class=line><span class=cl><span class=nb>set</span> password <span class=o>[</span>lindex <span class=nv>$argv</span> <span class=m>1</span> <span class=o>]</span>    //接收第二个参数,并设置密码
+</span></span><span class=line><span class=cl><span class=nb>set</span> timeout <span class=m>10</span>                    //设置超时时间
+</span></span><span class=line><span class=cl>spawn ssh root@<span class=nv>$ip</span>        //发送ssh请滶
+</span></span><span class=line><span class=cl>expect <span class=o>{</span>                  //返回信息匹配
+</span></span><span class=line><span class=cl><span class=s2>&#34; *yes/no &#34;</span> <span class=o>{</span> send <span class=s2>&#34; yes\r &#34;</span><span class=p>;</span> exp_continue<span class=o>}</span>   //第一次ssh连接会提示yes/no,继续
+</span></span><span class=line><span class=cl><span class=s2>&#34; *password: &#34;</span> <span class=o>{</span> send <span class=s2>&#34; </span><span class=nv>$password</span><span class=s2>\r &#34;</span> <span class=o>}</span>       //出现密码提示,发送密码
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>interact           //交互模式,用户会停留在远程服务器上面.</span></span></code></pre></td></tr></table></div></div><p>运行结果如下:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>root@ubuntu:/home/w23ta0# ./test.exp 192.168.1.130 admin
+</span></span><span class=line><span class=cl>spawn ssh root@192.168.1.130
+</span></span><span class=line><span class=cl>Last login: Fri Sep  <span class=m>7</span> 10:47:43 <span class=m>2012</span> from 192.168.1.142
+</span></span><span class=line><span class=cl><span class=o>[</span>root@linux ~<span class=o>]</span><span class=c1>#</span></span></span></code></pre></td></tr></table></div></div><p>这个例子有统一的接口,根据IP和密码可以连接到不同的机器.
+如果你嫌输入IP和密码麻烦,看下面的例子</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/wp-content/bin/expect -f
+</span></span></span><span class=line><span class=cl> <span class=nb>set</span>  ip 192.168.1.130
+</span></span><span class=line><span class=cl> <span class=nb>set</span>  password admin
+</span></span><span class=line><span class=cl> <span class=nb>set</span>  timeout <span class=m>10</span>
+</span></span><span class=line><span class=cl> spawn ssh root@<span class=nv>$ip</span>
+</span></span><span class=line><span class=cl> expect <span class=o>{</span>
+</span></span><span class=line><span class=cl> <span class=s2>&#34; *yes/no &#34;</span> <span class=o>{</span> send <span class=s2>&#34; yes\r &#34;</span><span class=p>;</span> exp_continue<span class=o>}</span>
+</span></span><span class=line><span class=cl> <span class=s2>&#34; *password: &#34;</span> <span class=o>{</span> send <span class=s2>&#34; </span><span class=nv>$password</span><span class=s2>\r &#34;</span> <span class=o>}</span>
+</span></span><span class=line><span class=cl> <span class=o>}</span>
+</span></span><span class=line><span class=cl> interact</span></span></code></pre></td></tr></table></div></div><p>运行结果如下:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>root@ubuntu:/home/w23ta0# ./web.exp
+</span></span><span class=line><span class=cl>spawn ssh root@192.168.1.130
+</span></span><span class=line><span class=cl>Last login: Fri Sep  <span class=m>7</span> 12:59:02 <span class=m>2012</span> from 192.168.1.142
+</span></span><span class=line><span class=cl><span class=o>[</span>root@linux ~<span class=o>]</span><span class=c1>#</span></span></span></code></pre></td></tr></table></div></div><p><strong>ssh远程登录到服务器,并且执行命令,执行完后并退出</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/wp-content/bin/expect -f
+</span></span></span><span class=line><span class=cl> <span class=nb>set</span>  ip 192.168.1.130
+</span></span><span class=line><span class=cl> <span class=nb>set</span>  password admin
+</span></span><span class=line><span class=cl> <span class=nb>set</span>  timeout <span class=m>10</span>
+</span></span><span class=line><span class=cl> spawn ssh root@<span class=nv>$ip</span>
+</span></span><span class=line><span class=cl> expect <span class=o>{</span>
+</span></span><span class=line><span class=cl> <span class=s2>&#34; *yes/no &#34;</span> <span class=o>{</span> send <span class=s2>&#34; yes\r &#34;</span><span class=p>;</span> exp_continue<span class=o>}</span>
+</span></span><span class=line><span class=cl> <span class=s2>&#34; *password: &#34;</span> <span class=o>{</span> send <span class=s2>&#34; </span><span class=nv>$password</span><span class=s2>\r &#34;</span> <span class=o>}</span>
+</span></span><span class=line><span class=cl> <span class=o>}</span>
+</span></span><span class=line><span class=cl> expect <span class=s2>&#34; #* &#34;</span>
+</span></span><span class=line><span class=cl> send <span class=s2>&#34; pwd\r &#34;</span>
+</span></span><span class=line><span class=cl> send  <span class=s2>&#34; exit\r &#34;</span>
+</span></span><span class=line><span class=cl> expect eof</span></span></code></pre></td></tr></table></div></div><p>运行结果如下:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>root@ubuntu:/home/w23ta0# ./test3.exp
+</span></span><span class=line><span class=cl>spawn ssh root@192.168.1.130
+</span></span><span class=line><span class=cl>root@192.168.1.130<span class=err>&#39;</span>s password:
+</span></span><span class=line><span class=cl>Last login: Fri Sep  <span class=m>7</span> 14:05:07 <span class=m>2012</span> from 116.246.27.90
+</span></span><span class=line><span class=cl><span class=o>[</span>root@localhost ~<span class=o>]</span><span class=c1># pwd</span>
+</span></span><span class=line><span class=cl>/root
+</span></span><span class=line><span class=cl><span class=o>[</span>root@localhost ~<span class=o>]</span><span class=c1># exit</span>
+</span></span><span class=line><span class=cl><span class=nb>logout</span>
+</span></span><span class=line><span class=cl>Connection to 192.168.1.130 closed.</span></span></code></pre></td></tr></table></div></div><p><strong>远程登录到ftp,并且下载文件</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/wp-content/bin/expect -f
+</span></span></span><span class=line><span class=cl> <span class=nb>set</span>  ip <span class=o>[</span>lindex <span class=nv>$argv</span> <span class=m>0</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl> <span class=nb>set</span>  dir <span class=o>[</span>lindex <span class=nv>$argv</span> <span class=m>1</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl> <span class=nb>set</span>  file <span class=o>[</span>lindex <span class=nv>$argv</span> <span class=m>2</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl> <span class=nb>set</span>  timeout <span class=m>10</span>
+</span></span><span class=line><span class=cl> spawn ftp <span class=nv>$ip</span>
+</span></span><span class=line><span class=cl> expect <span class=s2>&#34; Name* &#34;</span>
+</span></span><span class=line><span class=cl> send <span class=s2>&#34; zwh\r &#34;</span>
+</span></span><span class=line><span class=cl> expect <span class=s2>&#34; Password:* &#34;</span>
+</span></span><span class=line><span class=cl> send <span class=s2>&#34; zwh\r &#34;</span>
+</span></span><span class=line><span class=cl> expect <span class=s2>&#34; ftp&gt;* &#34;</span>
+</span></span><span class=line><span class=cl> send <span class=s2>&#34; lcd </span><span class=nv>$dir</span><span class=s2>\r &#34;</span>
+</span></span><span class=line><span class=cl> expect <span class=o>{</span>
+</span></span><span class=line><span class=cl> <span class=s2>&#34; *file &#34;</span>  <span class=o>{</span> send_user <span class=s2>&#34; local </span><span class=nv>$_dir</span><span class=s2> No such file or directory &#34;</span><span class=p>;</span>send <span class=s2>&#34; quit\r &#34;</span> <span class=o>}</span>
+</span></span><span class=line><span class=cl> <span class=s2>&#34; *now* &#34;</span>  <span class=o>{</span> send <span class=s2>&#34; get </span><span class=nv>$dir</span><span class=s2>/</span><span class=nv>$file</span><span class=s2> </span><span class=nv>$dir</span><span class=s2>/</span><span class=nv>$file</span><span class=s2>\r &#34;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl> <span class=o>}</span>
+</span></span><span class=line><span class=cl> expect <span class=o>{</span>
+</span></span><span class=line><span class=cl> <span class=s2>&#34; *Failed &#34;</span> <span class=o>{</span> send_user <span class=s2>&#34; remote </span><span class=nv>$file</span><span class=s2> No such file &#34;</span><span class=p>;</span>send <span class=s2>&#34; quit\r &#34;</span> <span class=o>}</span>
+</span></span><span class=line><span class=cl> <span class=s2>&#34; *OK &#34;</span>     <span class=o>{</span> send_user <span class=s2>&#34; </span><span class=nv>$file</span><span class=s2> has been download\r &#34;</span><span class=p>;</span>send <span class=s2>&#34; quit\r &#34;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl> <span class=o>}</span>
+</span></span><span class=line><span class=cl> expect eof</span></span></code></pre></td></tr></table></div></div><p>运行结果如下:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl> root@ubuntu:/home/w23ta0# ./test2.exp 192.168.1.130 /var/www/www aaa.html
+</span></span><span class=line><span class=cl>spawn ftp 192.168.1.130
+</span></span><span class=line><span class=cl>Connected to 192.168.1.130.
+</span></span><span class=line><span class=cl><span class=m>220</span> <span class=o>(</span>vsFTPd 2.0.5<span class=o>)</span>
+</span></span><span class=line><span class=cl>Name <span class=o>(</span>192.168.1.130:root<span class=o>)</span>: zwh
+</span></span><span class=line><span class=cl><span class=m>331</span> Please specify the password.
+</span></span><span class=line><span class=cl>Password:
+</span></span><span class=line><span class=cl><span class=m>230</span> Login successful.
+</span></span><span class=line><span class=cl>Remote system <span class=nb>type</span>  is  UNIX.
+</span></span><span class=line><span class=cl>Using binary mode to transfer files.
+</span></span><span class=line><span class=cl>ftp&gt; lcd /var/www/www
+</span></span><span class=line><span class=cl>Local directory now /var/www/www
+</span></span><span class=line><span class=cl>ftp&gt;  get  /var/www/www/aaa.html /var/www/www/aaa.html
+</span></span><span class=line><span class=cl>local: /var/www/www/aaa.html remote: /var/www/www/aaa.html
+</span></span><span class=line><span class=cl><span class=m>200</span> PORT <span class=nb>command</span> successful. Consider  using  PASV.
+</span></span><span class=line><span class=cl><span class=m>150</span> Opening BINARY mode data connection  <span class=k>for</span>  /var/www/www/aaa.html <span class=o>(</span><span class=m>66</span> bytes<span class=o>)</span>.
+</span></span><span class=line><span class=cl><span class=m>226</span> File send OK.
+</span></span><span class=line><span class=cl><span class=m>66</span> bytes received  in  0.00 secs <span class=o>(</span>515.6 kB/s<span class=o>)</span>
+</span></span><span class=line><span class=cl>quit aaa.html has been download
+</span></span><span class=line><span class=cl><span class=m>221</span> Goodbye.</span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span title="Updated on 2026-01-04 02:27:45">Updated on 2026-01-04&nbsp;</span></div><div class=post-info-license><span><a rel="license external nofollow noopener noreferrer" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>CC BY-NC-SA 4.0</a></span></div></div><div class=post-info-line><div class=post-info-md><span><a href=/posts/fc7dce9e/index.md title="Read Markdown" class=link-to-markdown>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on X" data-sharer=twitter data-url=https://w23ta0.github.io/posts/fc7dce9e/ data-title="Linux Expect自动登录ssh,ftp" data-hashtags=expect,ssh,ftp><i class="fa-brands fa-x-twitter fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://w23ta0.github.io/posts/fc7dce9e/ data-hashtag=expect><i class="fa-brands fa-facebook-square fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://w23ta0.github.io/posts/fc7dce9e/ data-title="Linux Expect自动登录ssh,ftp"><i class="fa-brands fa-weibo fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fa-solid fa-tags fa-fw me-1" aria-hidden=true></i><a href=/tags/expect/ class=post-tag title="Tags - Expect">Expect</a><a href=/tags/ssh/ class=post-tag title="Tags - Ssh">Ssh</a><a href=/tags/ftp/ class=post-tag title="Tags - Ftp">Ftp</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/posts/9390f1b0/ class=post-nav-item rel=prev title="核心文件initrd.img、vmlinux 和vmlinuz"><i class="fa-solid fa-angle-left fa-fw" aria-hidden=true></i>核心文件initrd.img、vmlinux 和vmlinuz</a><a href=/posts/c65535ee/ class=post-nav-item rel=next title="常用数据库驱动和JDBC URL">常用数据库驱动和JDBC URL<i class="fa-solid fa-angle-right fa-fw" aria-hidden=true></i></a></div></div><div id=comments><div id=giscus class=comment><script src=https://giscus.app/client.js data-repo=w23ta0/w23ta0.github.io data-repo-id=R_kgDOOErTJA data-category=Announcements data-category-id=DIC_kwDOOErTJM4CnrNF data-mapping=pathname data-strict=0 data-theme=preferred_color_scheme data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-lang=zh-CN data-loading=lazy crossorigin=anonymous async defer></script></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://giscus.app/ rel="external nofollow noopener noreferrer">giscus</a>.</noscript></div></article><aside class=toc id=toc-auto aria-label=Contents><h2 class=toc-title>Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden=true></i></h2><div class=toc-content id=toc-content-auto></div></aside></main><footer class=footer><div class=footer-container><div class="footer-line powered">Powered by <a href=https://gohugo.io/ target=_blank rel="external nofollow noopener noreferrer" title="Hugo 0.154.2"><img class=hugo-icon src=/images/hugo.min.svg alt="Hugo logo"> Hugo</a> | Theme - <a href=https://github.com/hugo-fixit/FixIt target=_blank rel=external title="FixIt v0.3.20"><img class=fixit-icon src=/images/fixit.min.svg alt="FixIt logo"> FixIt</a></div><div class="footer-line copyright" itemscope itemtype=http://schema.org/CreativeWork><i class="fa-regular fa-copyright fa-fw" aria-hidden=true></i>
+<span itemprop=copyrightYear>2012 - 2026</span><span class=author itemprop=copyrightHolder>
+<a href=https://github.com/w23ta0 target=_blank rel="external nofollow noopener noreferrer">w23ta0</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>CC BY-NC-SA 4.0</a></span></div><div class="footer-line visitor"><span id=busuanzi_container_site_uv title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden=true></i><span id=busuanzi_value_site_uv><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden=true></i></span></span><span id=busuanzi_container_site_pv class=footer-divider title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden=true></i><span id=busuanzi_value_site_pv><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden=true></i></span></span></div></div></footer></div><div class=widgets><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role=button aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden=true></i><span class=variant-numeric>0%</span></div><div class="fixed-button view-comments d-none" role=button aria-label="View Comments"><i class="fa-solid fa-comment fa-fw" aria-hidden=true></i></div></div><div id=mask></div><div class=reading-progress-bar style=left:0;top:0></div><noscript><div class=noscript-warning>This website works best with JavaScript enabled.</div></noscript></div><link rel=preload href=/lib/katex/katex.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/katex/katex.min.css></noscript><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script src=/js/flyfish.min.js defer></script><script src=/lib/autocomplete/autocomplete.min.js defer></script><script src=/lib/fuse/fuse.min.js defer></script><script src=/lib/sharer/sharer.min.js async defer></script><script src=/lib/katex/katex.min.js defer></script><script src=/lib/katex/auto-render.min.js defer></script><script src=/lib/katex/copy-tex.min.js defer></script><script src=/lib/katex/mhchem.min.js defer></script><script src=/lib/cookieconsent/cookieconsent.min.js defer></script><script src=https://vercount.one/js async defer></script><script>window.config={code:{copyTitle:"Copy to clipboard",editLockTitle:"Lock editable code block",editUnLockTitle:"Unlock editable code block",editable:!0,maxShownLines:10},comment:{enable:!0,expired:!1,giscus:{darkTheme:"dark",lightTheme:"light",origin:"https://giscus.app"}},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/search.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"No results found",snippetLength:30,threshold:.3,type:"fuse",useExtendedSearch:!1},version:"v0.3.20"}</script><script src=/js/theme.min.js defer></script><script src=/js/custom.min.js defer></script></body></html>

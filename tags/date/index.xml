@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Date - Tag - w23ta0's blog</title><link>https://w23ta0.github.io/tags/date/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.154.2 &amp; FixIt v0.3.20</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sun, 04 Jan 2026 02:27:45 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/tags/date/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux Shell date命令的用法</title><link>https://w23ta0.github.io/posts/9cd3e9e8/</link><pubDate>Mon, 11 Mar 2013 18:13:00 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/9cd3e9e8/</guid><category domain="https://w23ta0.github.io/categories/linux/unix/">Linux/Unix</category><category domain="https://w23ta0.github.io/categories/shell/">Shell</category><description>&lt;p&gt;在linux shell编程中，经常用到日期的加减运算，以前都是自己通过expr函数计算，很麻烦。
+其实date命令本身提供了日期的加减运算，非常方便。&lt;/p&gt;
+&lt;p&gt;例如：得到昨天的时间&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;date +%Y%m%d –date&lt;span class="o"&gt;=&lt;/span&gt;”-1 day”&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;date的用法:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

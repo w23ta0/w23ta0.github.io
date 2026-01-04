@@ -1,0 +1,351 @@
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=2"><meta name=robots content="noodp"><title>定制CentOS 6.4自动化安装ISO镜像光盘 - w23ta0's blog</title><meta name=author content="w23ta0"><meta name=description content="和朋友今天正好聊到CentOS的自动化安装光盘制作问题，就顺便把自己之前的测试过程发出来。希望能够帮到大家。 直接发下自己之前做的时候的工作记录了，因为是工作中使用，添加了一些所需的软件包之类的东西，其实您也完全可以自由发挥，直接装完系统，一个优化好的LNMP等等众多软件都已经安装好了的系统也是完全可能的，想想网上的那些一键安装的ISO&mldr; 所以大家加油哦！后期我也会完善本篇文章的具体注释的。
+"><meta name=keywords content='linux,iso,centos'><meta itemprop=name content="定制CentOS 6.4自动化安装ISO镜像光盘"><meta itemprop=description content="和朋友今天正好聊到CentOS的自动化安装光盘制作问题，就顺便把自己之前的测试过程发出来。希望能够帮到大家。 直接发下自己之前做的时候的工作记录了，因为是工作中使用，添加了一些所需的软件包之类的东西，其实您也完全可以自由发挥，直接装完系统，一个优化好的LNMP等等众多软件都已经安装好了的系统也是完全可能的，想想网上的那些一键安装的ISO… 所以大家加油哦！后期我也会完善本篇文章的具体注释的。"><meta itemprop=datePublished content="2013-03-23T14:22:07+00:00"><meta itemprop=dateModified content="2026-01-04T02:27:45+00:00"><meta itemprop=wordCount content="1684"><meta itemprop=keywords content="Linux,Iso,Centos"><meta property="og:url" content="https://w23ta0.github.io/posts/ef3dfd58/"><meta property="og:site_name" content="w23ta0's blog"><meta property="og:title" content="定制CentOS 6.4自动化安装ISO镜像光盘"><meta property="og:description" content="和朋友今天正好聊到CentOS的自动化安装光盘制作问题，就顺便把自己之前的测试过程发出来。希望能够帮到大家。 直接发下自己之前做的时候的工作记录了，因为是工作中使用，添加了一些所需的软件包之类的东西，其实您也完全可以自由发挥，直接装完系统，一个优化好的LNMP等等众多软件都已经安装好了的系统也是完全可能的，想想网上的那些一键安装的ISO… 所以大家加油哦！后期我也会完善本篇文章的具体注释的。"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2013-03-23T14:22:07+00:00"><meta property="article:modified_time" content="2026-01-04T02:27:45+00:00"><meta property="article:tag" content="Linux"><meta property="article:tag" content="Iso"><meta property="article:tag" content="Centos"><meta name=twitter:card content="summary"><meta name=twitter:title content="定制CentOS 6.4自动化安装ISO镜像光盘"><meta name=twitter:description content="和朋友今天正好聊到CentOS的自动化安装光盘制作问题，就顺便把自己之前的测试过程发出来。希望能够帮到大家。 直接发下自己之前做的时候的工作记录了，因为是工作中使用，添加了一些所需的软件包之类的东西，其实您也完全可以自由发挥，直接装完系统，一个优化好的LNMP等等众多软件都已经安装好了的系统也是完全可能的，想想网上的那些一键安装的ISO… 所以大家加油哦！后期我也会完善本篇文章的具体注释的。"><meta name=application-name content="w23ta0's blog"><meta name=apple-mobile-web-app-title content="w23ta0's blog"><meta name=theme-color data-light=#f8f8f8 data-dark=#252627 content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel=icon href=images/happy.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=canonical type=text/html href=https://w23ta0.github.io/posts/ef3dfd58/ title="定制CentOS 6.4自动化安装ISO镜像光盘 - w23ta0's blog"><link rel=prev type=text/html href=https://w23ta0.github.io/posts/9cd3e9e8/ title="Linux Shell date命令的用法"><link rel=next type=text/html href=https://w23ta0.github.io/posts/e3f5fe56/ title=Linux基础：启动流程><link rel=alternate type=text/markdown href=https://w23ta0.github.io/posts/ef3dfd58/index.md title="定制CentOS 6.4自动化安装ISO镜像光盘 - w23ta0's blog"><link rel=stylesheet href=/css/style.min.css><link rel=preload href=/lib/fontawesome-free/all.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload href=/lib/animate/animate.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><meta name=google-site-verification content="mfpXQWYjakmUHCSG3MJxk8SDfQ2oLcOgJ3a0YQ9kycw"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"定制CentOS 6.4自动化安装ISO镜像光盘","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/w23ta0.github.io\/posts\/ef3dfd58\/"},"genre":"posts","keywords":"linux, iso, centos","wordcount":1684,"url":"https:\/\/w23ta0.github.io\/posts\/ef3dfd58\/","datePublished":"2013-03-23T14:22:07+00:00","dateModified":"2026-01-04T02:27:45+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"w23ta0"},"description":""}</script><script src=/js/head/color-scheme.min.js></script></head><body data-header-desktop=sticky data-header-mobile=auto><div class=wrapper data-page-style=normal><header class="desktop animate__faster" id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="w23ta0's blog"><img class=logo src=/images/happy.png alt="w23ta0's blog" height=32 width=32><span class=header-title-text>w23ta0's blog</span></a><span class=header-subtitle></span></div><nav><ul class=menu><li class=menu-item><a class=menu-link href=/archives/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> Archives</a></li><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden=true></i> Categories</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> Tags</a></li><li class=menu-item><a class=menu-link href=/index.xml><i class="fa-solid fa-rss fa-fw fa-sm" aria-hidden=true></i> RSS</a></li><li class=menu-item><a class=menu-link href=/about/><i class="fa-solid fa-quote-left fa-fw fa-sm" aria-hidden=true></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents ..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fa-solid fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fa-solid fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></li><li class="menu-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></li></ul></nav></div></header><header class="mobile animate__faster" id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="w23ta0's blog"><img class=logo src=/images/happy.png alt="w23ta0's blog" height=26 width=26><span class=header-title-text>w23ta0's blog</span></a><span class=header-subtitle></span></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><nav><ul class=menu id=menu-mobile><li class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents ..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fa-solid fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fa-solid fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></li><li class=menu-item><a class=menu-link href=/archives/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> Archives</a></li><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden=true></i> Categories</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> Tags</a></li><li class=menu-item><a class=menu-link href=/index.xml><i class="fa-solid fa-rss fa-fw fa-sm" aria-hidden=true></i> RSS</a></li><li class=menu-item><a class=menu-link href=/about/><i class="fa-solid fa-quote-left fa-fw fa-sm" aria-hidden=true></i> About</a></li><li class="menu-item menu-system"><span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></span></li></ul></nav></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=container><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label=Collections></aside><article class="page single"><div class=header><h1 class="single-title animate__animated animate__flipInX"><span>定制CentOS 6.4自动化安装ISO镜像光盘</span></h1></div><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://github.com/w23ta0 title=Author target=_blank rel="external nofollow noopener noreferrer author" class=author><img class=avatar src='https://www.gravatar.com/avatar/c8ec6802a4a65963e20a021760ec27f0?s=32&d=' alt=w23ta0 height=16 width=16>&nbsp;w23ta0</a></span><span class=post-included-in>&nbsp;included in <a href=/categories/linux/unix/ class=post-category title="Category - Linux/Unix"><i class="fa-regular fa-folder fa-fw" aria-hidden=true></i> Linux/Unix</a></span></div><div class=post-meta-line><span title="published on 2013-03-23 14:22:07"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden=true></i><time datetime=2013-03-23>2013-03-23</time></span>&nbsp;<span title="Updated on 2026-01-04 02:27:45"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden=true></i><time datetime=2026-01-04>2026-01-04</time></span>&nbsp;<span title="1684 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden=true></i>About 1700 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden=true></i>4 minutes</span>&nbsp;<span id=busuanzi_container_page_pv class="busuanzi_visitors comment-visitors" data-flag-title="定制CentOS 6.4自动化安装ISO镜像光盘"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden=true></i><span id=busuanzi_value_page_pv>-</span>&nbsp;views
+</span>&nbsp;</div></div><div class="details toc" id=toc-static data-kept=false><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fa-solid fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#定制步骤>定制步骤</a></li><li><a href=#光盘结构介绍>光盘结构介绍</a></li><li><a href=#安装完成后的iso>安装完成后的ISO</a></li><li><a href=#操作过程记录>操作过程记录</a></li></ul></nav></div></div><div class=content id=content><p>和朋友今天正好聊到CentOS的自动化安装光盘制作问题，就顺便把自己之前的测试过程发出来。希望能够帮到大家。
+直接发下自己之前做的时候的工作记录了，因为是工作中使用，添加了一些所需的软件包之类的东西，其实您也完全可以自由发挥，直接装完系统，一个优化好的LNMP等等众多软件都已经安装好了的系统也是完全可能的，想想网上的那些一键安装的ISO&mldr;
+所以大家加油哦！后期我也会完善本篇文章的具体注释的。</p><h2 class=heading-element id=定制步骤><span>定制步骤</span>
+<a href=#%e5%ae%9a%e5%88%b6%e6%ad%a5%e9%aa%a4 class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><ol><li>安装一个干净的操作系统.包括基本的系统和所需要的工具等.
+比如:对于http,mysql等软件,建议使用编译的方式安装, 然后打包放进去,可以减少许多依赖包的麻烦.</li><li>安装系统后,收集系统已安装的软件包,使用脚本统一转存到一个目录中.</li><li>在安装光盘复制images镜像,从光盘启动centos安装所需的文件等.</li><li>定义自己的kickstart安装脚本.</li><li>按照之前转存的软件(rpm)包, 重新生成光盘的report信息.</li><li>打包生成ISO文件，及MD5效验码.</li></ol><h2 class=heading-element id=光盘结构介绍><span>光盘结构介绍</span>
+<a href=#%e5%85%89%e7%9b%98%e7%bb%93%e6%9e%84%e4%bb%8b%e7%bb%8d class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><ul><li>isolinux目录存放光盘启动时的安装界面信息</li><li>images目录包括了必要的启动映像文件</li><li>CentOS目录存放安装软件包及信息</li><li>.discinfo文件是安装价质的识别信息
+安装时默认第一项是text自动安装，也可以选择第二项进行手动安装&mldr;
+<img loading=lazy src=https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/1524472511451ubebntlq.png?imageslim alt="paste image"></li></ul><h2 class=heading-element id=安装完成后的iso><span>安装完成后的ISO</span>
+<a href=#%e5%ae%89%e8%a3%85%e5%ae%8c%e6%88%90%e5%90%8e%e7%9a%84iso class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><p>IP地址：172.16.0.110
+root密码：passw0rd</p><h2 class=heading-element id=操作过程记录><span>操作过程记录</span>
+<a href=#%e6%93%8d%e4%bd%9c%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95 class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><p>一、挂载光盘，使用脚本拷贝相关软件包到/ISO/Packages目录下</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>[</span>root@CentOS ~<span class=o>]</span><span class=c1># mkdir /mnt/cdrom</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ~<span class=o>]</span><span class=c1># mount  /dev/cdrom  /mnt/cdrom</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS~<span class=o>]</span><span class=c1># /usr/bin/rsync -a --exclude=Packages/ --exclude=repodata/ /mnt/cdrom/  /ISO/</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ~<span class=o>]</span><span class=c1># mkdir -p /ISO/{Packages,repodata}</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ~<span class=o>]</span><span class=c1># vi copy.sh</span>
+</span></span><span class=line><span class=cl><span class=c1>#!/bin/bash</span>
+</span></span><span class=line><span class=cl><span class=nb>cd</span> /root
+</span></span><span class=line><span class=cl>awk <span class=s1>&#39;/Installing/{print $2}&#39;</span> install.log <span class=p>|</span> sed <span class=s1>&#39;s/^*://g&#39;</span> &gt;package.txt
+</span></span><span class=line><span class=cl><span class=nv>DVD</span><span class=o>=</span><span class=s1>&#39;/mnt/cdrom/Packages&#39;</span>
+</span></span><span class=line><span class=cl><span class=nv>PACKDIR</span><span class=o>=</span><span class=s1>&#39;/root/package.txt&#39;</span>
+</span></span><span class=line><span class=cl><span class=nv>NEW_DVD</span><span class=o>=</span><span class=s1>&#39;/ISO/Packages&#39;</span>
+</span></span><span class=line><span class=cl><span class=k>while</span> <span class=nb>read</span> LINE
+</span></span><span class=line><span class=cl><span class=k>do</span>
+</span></span><span class=line><span class=cl>cp <span class=si>${</span><span class=nv>DVD</span><span class=si>}</span>/<span class=si>${</span><span class=nv>LINE</span><span class=si>}</span>*.rpm <span class=si>${</span><span class=nv>NEW_DVD</span><span class=si>}</span> <span class=o>||</span> <span class=nb>echo</span> <span class=s2>&#34;</span><span class=nv>$LINE</span><span class=s2> don&#39;t cp.......&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>done</span> &lt; package.txt
+</span></span><span class=line><span class=cl>rm -f package.txt
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ~<span class=o>]</span><span class=c1># chmod +x copy.sh</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ~<span class=o>]</span><span class=c1># ./copy.sh</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ~<span class=o>]</span><span class=c1># ll /ISO/Packages/ |wc -l</span>
+</span></span><span class=line><span class=cl><span class=m>285</span></span></span></code></pre></td></tr></table></div></div><p>二、定制kickstart安装脚本ks.cfg</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>[</span>root@CentOS ~<span class=o>]</span><span class=c1># cd /ISO</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ISO<span class=o>]</span><span class=c1># cp ~/anaconda-ks.cfg isolinux/ks.cfg</span></span></span></code></pre></td></tr></table></div></div><p>ks.cfg文件内容如下</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Kickstart file automatically generated by anaconda.</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#version=DEVEL</span>
+</span></span><span class=line><span class=cl>install
+</span></span><span class=line><span class=cl>text
+</span></span><span class=line><span class=cl>cdrom
+</span></span><span class=line><span class=cl>lang en_US.UTF-8
+</span></span><span class=line><span class=cl>keyboard us
+</span></span><span class=line><span class=cl>network --onboot no --device eth0 --bootproto dhcp --noipv6
+</span></span><span class=line><span class=cl>rootpw  --iscrypted <span class=nv>$6$x8</span>.IJeCQkCgkVmt7<span class=nv>$1</span>xpLAdczrfqxYlvkVwMAus6nLPFk6sl45X6CuTsmpFlAko6/NEFyuJXvMgZujfAu5V9T04hZ1P5ZMlR0TZtdK0
+</span></span><span class=line><span class=cl>firewall --service<span class=o>=</span>ssh
+</span></span><span class=line><span class=cl>authconfig --enableshadow --passalgo<span class=o>=</span>sha512
+</span></span><span class=line><span class=cl>selinux --enforcing
+</span></span><span class=line><span class=cl>timezone --utc Asia/Shanghai
+</span></span><span class=line><span class=cl>bootloader --location<span class=o>=</span>mbr --driveorder<span class=o>=</span>sda --append<span class=o>=</span><span class=s2>&#34;crashkernel=auto rhgb quiet&#34;</span>
+</span></span><span class=line><span class=cl><span class=c1># The following is the partition information you requested</span>
+</span></span><span class=line><span class=cl><span class=c1># Note that any partitions you deleted are not expressed</span>
+</span></span><span class=line><span class=cl><span class=c1># here so unless you clear all partitions first, this is</span>
+</span></span><span class=line><span class=cl><span class=c1># not guaranteed to work</span>
+</span></span><span class=line><span class=cl><span class=c1>#clearpart --linux --drives=sda</span>
+</span></span><span class=line><span class=cl><span class=c1>#volgroup VolGroup --pesize=4096 pv.008002</span>
+</span></span><span class=line><span class=cl><span class=c1>#logvol / --fstype=ext4 --name=lv_root --vgname=VolGroup --grow --size=1024 --maxsize=51200</span>
+</span></span><span class=line><span class=cl><span class=c1>#logvol swap --name=lv_swap --vgname=VolGroup --grow --size=4000 --maxsize=4000</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#part /boot --fstype=ext4 --size=500</span>
+</span></span><span class=line><span class=cl><span class=c1>#part pv.008002 --grow --size=1</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>clearpart --all
+</span></span><span class=line><span class=cl>zerombr
+</span></span><span class=line><span class=cl>part /boot--fstype<span class=o>=</span>ext4 --size<span class=o>=</span><span class=m>200</span>
+</span></span><span class=line><span class=cl>part swap --size<span class=o>=</span><span class=m>2048</span>
+</span></span><span class=line><span class=cl>part / --fstype<span class=o>=</span>ext4 --size<span class=o>=</span><span class=m>20000</span>
+</span></span><span class=line><span class=cl>part /data --fstype<span class=o>=</span>ext4  --grow  --size<span class=o>=</span><span class=m>200</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>repo --name<span class=o>=</span><span class=s2>&#34;CentOS&#34;</span>  --baseurl<span class=o>=</span>file:///mnt/source --cost<span class=o>=</span><span class=m>100</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>%packages
+</span></span><span class=line><span class=cl>@base
+</span></span><span class=line><span class=cl>@console-internet
+</span></span><span class=line><span class=cl>@core
+</span></span><span class=line><span class=cl>@debugging
+</span></span><span class=line><span class=cl>@directory-client
+</span></span><span class=line><span class=cl>@hardware-monitoring
+</span></span><span class=line><span class=cl>@java-platform
+</span></span><span class=line><span class=cl>@large-systems
+</span></span><span class=line><span class=cl>@network-file-system-client
+</span></span><span class=line><span class=cl>@performance
+</span></span><span class=line><span class=cl>@perl-runtime
+</span></span><span class=line><span class=cl>@server-platform
+</span></span><span class=line><span class=cl>@server-policy
+</span></span><span class=line><span class=cl>pax
+</span></span><span class=line><span class=cl>oddjob
+</span></span><span class=line><span class=cl>sgpio
+</span></span><span class=line><span class=cl>device-mapper-persistent-data
+</span></span><span class=line><span class=cl>samba-winbind
+</span></span><span class=line><span class=cl>certmonger
+</span></span><span class=line><span class=cl>pam_krb5
+</span></span><span class=line><span class=cl>krb5-workstation
+</span></span><span class=line><span class=cl>perl-DBD-SQLite
+</span></span><span class=line><span class=cl>%end</span></span></code></pre></td></tr></table></div></div><p>三、修改/ISO/isolinux/isolinux.cfg文件，默认isolinux.cfg的权限为444，只能读，无法修改</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>[</span>root@CentOS ISO<span class=o>]</span><span class=c1># chmod 644 isolinux/isolinux.cfg</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ISO<span class=o>]</span><span class=c1># vi isolinux/isolinux.cfg</span></span></span></code></pre></td></tr></table></div></div><p>isolinux.cfg文件内容如下</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>default vesamenu.c32
+</span></span><span class=line><span class=cl><span class=c1>#prompt 1</span>
+</span></span><span class=line><span class=cl>timeout <span class=m>100</span>    <span class=c1>###10秒钟</span>
+</span></span><span class=line><span class=cl>display boot.msg
+</span></span><span class=line><span class=cl>menu background splash.jpg
+</span></span><span class=line><span class=cl>menu title Welcome to use CentOS 6.4!
+</span></span><span class=line><span class=cl>menu color border <span class=m>0</span> <span class=c1>#ffffffff #00000000</span>
+</span></span><span class=line><span class=cl>menu color sel <span class=m>7</span> <span class=c1>#ffffffff #ff000000</span>
+</span></span><span class=line><span class=cl>menu color title <span class=m>0</span> <span class=c1>#ffffffff #00000000</span>
+</span></span><span class=line><span class=cl>menu color tabmsg <span class=m>0</span> <span class=c1>#ffffffff #00000000</span>
+</span></span><span class=line><span class=cl>menu color unsel <span class=m>0</span> <span class=c1>#ffffffff #00000000</span>
+</span></span><span class=line><span class=cl>menu color hotsel <span class=m>0</span> <span class=c1>#ff000000 #ffffffff</span>
+</span></span><span class=line><span class=cl>menu color hotkey <span class=m>7</span> <span class=c1>#ffffffff #ff000000</span>
+</span></span><span class=line><span class=cl>menu color scrollbar <span class=m>0</span> <span class=c1>#ffffffff #00000000</span>
+</span></span><span class=line><span class=cl>label linux
+</span></span><span class=line><span class=cl>  menu label ^Auto Install Xlogin Linux System
+</span></span><span class=line><span class=cl>  menu default
+</span></span><span class=line><span class=cl>  kernel vmlinuz
+</span></span><span class=line><span class=cl>  append <span class=nv>ks</span><span class=o>=</span>cdrom:/isolinux/ks.cfg <span class=nv>initrd</span><span class=o>=</span>initrd.img   <span class=c1>###ks文件路径</span>
+</span></span><span class=line><span class=cl>label vesa
+</span></span><span class=line><span class=cl>  menu label Install system with ^basic video driver
+</span></span><span class=line><span class=cl>  kernel vmlinuz
+</span></span><span class=line><span class=cl>  append <span class=nv>initrd</span><span class=o>=</span>initrd.img <span class=nv>xdriver</span><span class=o>=</span>vesa nomodeset
+</span></span><span class=line><span class=cl>label rescue
+</span></span><span class=line><span class=cl>  menu label ^Rescue installed system
+</span></span><span class=line><span class=cl>  kernel vmlinuz
+</span></span><span class=line><span class=cl>  append <span class=nv>initrd</span><span class=o>=</span>initrd.img rescue
+</span></span><span class=line><span class=cl>label <span class=nb>local</span>
+</span></span><span class=line><span class=cl>  menu label Boot from ^local drive
+</span></span><span class=line><span class=cl>  localboot 0xffff
+</span></span><span class=line><span class=cl>label memtest86
+</span></span><span class=line><span class=cl>  menu label ^Memory <span class=nb>test</span>
+</span></span><span class=line><span class=cl>  kernel memtest
+</span></span><span class=line><span class=cl>  append -</span></span></code></pre></td></tr></table></div></div><p>四、安装制作系统镜像所需要的工具，执行createrepo创建软件仓库</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>[</span>root@CentOS ISO<span class=o>]</span><span class=c1># yum -y install anaconda repodata createrepo mkisofs rsync</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ISO<span class=o>]</span><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ISO<span class=o>]</span><span class=c1># declare -x discinfo=$(head -1 .discinfo)</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ISO<span class=o>]</span><span class=c1># echo $discinfo</span>
+</span></span><span class=line><span class=cl>1341569670.539525
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ISO<span class=o>]</span><span class=c1># cp /mnt/cdrom/repodata/*-c6-x86_64-comps.xml repodata/c6-x86_64-comps.xml</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ISO<span class=o>]</span><span class=c1># createrepo -u &#34;media://$discinfo&#34; -g repodata/c6-x86_64-comps.xml ./</span>
+</span></span><span class=line><span class=cl>Spawning worker <span class=m>0</span> with <span class=m>607</span> pkgs
+</span></span><span class=line><span class=cl>Workers Finished
+</span></span><span class=line><span class=cl>Gathering worker results
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Saving Primary metadata
+</span></span><span class=line><span class=cl>Saving file lists metadata
+</span></span><span class=line><span class=cl>Saving other metadata
+</span></span><span class=line><span class=cl>Generating sqlite DBs
+</span></span><span class=line><span class=cl>Sqlite DBs complete</span></span></code></pre></td></tr></table></div></div><p>五、使用mkisofs命令生成ISO文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>[</span>root@CentOS /<span class=o>]</span><span class=c1># mkisofs -o CentOS-6.4_64.iso -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -R -J -v -T /ISO</span>
+</span></span><span class=line><span class=cl>I: -input-charset not specified, using utf-8 <span class=o>(</span>detected in locale settings<span class=o>)</span>
+</span></span><span class=line><span class=cl>genisoimage 1.1.9 <span class=o>(</span>Linux<span class=o>)</span>
+</span></span><span class=line><span class=cl>Scanning /ISO/
+</span></span><span class=line><span class=cl>Scanning /ISO/EFI
+</span></span><span class=line><span class=cl>Scanning /ISO/EFI/BOOT
+</span></span><span class=line><span class=cl>Excluded: /ISO/EFI/BOOT/TRANS.TBL
+</span></span><span class=line><span class=cl>Excluded: /ISO/EFI/TRANS.TBL
+</span></span><span class=line><span class=cl>Scanning /ISO/repodata
+</span></span><span class=line><span class=cl>Scanning /ISO/images
+</span></span><span class=line><span class=cl>Excluded: /ISO/images/TRANS.TBL
+</span></span><span class=line><span class=cl>Scanning /ISO/isolinux
+</span></span><span class=line><span class=cl>Excluded: /ISO/isolinux/TRANS.TBL
+</span></span><span class=line><span class=cl>Excluded by match: /ISO/isolinux/boot.cat
+</span></span><span class=line><span class=cl>………………………………………….
+</span></span><span class=line><span class=cl>98.05% <span class=k>done</span>, estimate finish Tue Jul <span class=m>17</span> 02:43:01 <span class=m>2012</span>
+</span></span><span class=line><span class=cl>Total translation table size: <span class=m>81205</span>
+</span></span><span class=line><span class=cl>Total rockridge attributes bytes: <span class=m>35197</span>
+</span></span><span class=line><span class=cl>Total directory bytes: <span class=m>59644</span>
+</span></span><span class=line><span class=cl>Path table size<span class=o>(</span>bytes<span class=o>)</span>: <span class=m>96</span>
+</span></span><span class=line><span class=cl>Done with: The File<span class=o>(</span>s<span class=o>)</span>                             Block<span class=o>(</span>s<span class=o>)</span>    <span class=m>203755</span>
+</span></span><span class=line><span class=cl>Writing:   Ending Padblock                         Start Block <span class=m>203836</span>
+</span></span><span class=line><span class=cl>Done with: Ending Padblock                         Block<span class=o>(</span>s<span class=o>)</span>    <span class=m>150</span>
+</span></span><span class=line><span class=cl>Max brk space used <span class=m>65000</span>
+</span></span><span class=line><span class=cl><span class=m>203986</span> extents written <span class=o>(</span><span class=m>398</span> MB<span class=o>)</span></span></span></code></pre></td></tr></table></div></div><p>六、生成ISO文件MD5值</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>[</span>root@CentOS ISO<span class=o>]</span><span class=c1># /usr/bin/implantisomd5 /ISO/CentOS-6.4_64.iso</span>
+</span></span><span class=line><span class=cl>Inserting md5sum into iso image...
+</span></span><span class=line><span class=cl><span class=nv>md5</span> <span class=o>=</span> 1355f3a08334162777e6ad867c448d2e
+</span></span><span class=line><span class=cl>Inserting fragment md5sums into iso image...
+</span></span><span class=line><span class=cl><span class=nv>fragmd5</span> <span class=o>=</span> a832435cd7aeb593363287aa551476c9dd21be459aada4c29e9f3475da1e
+</span></span><span class=line><span class=cl><span class=nv>frags</span> <span class=o>=</span> <span class=m>20</span>
+</span></span><span class=line><span class=cl>Setting supported flag to <span class=m>0</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@CentOS ISO<span class=o>]</span><span class=c1>#</span></span></span></code></pre></td></tr></table></div></div><p>以上是整个ISO的制作所有的操作过程，看起来绝对够简单吧！希望这篇文章能够帮到你哦！
+最后找个例如winscp之类的工具将ISO文件传输到本机，就可以刻盘安装了&mldr;</p><p><img loading=lazy src=https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/1524472448674caat4ocr.png?imageslim alt="paste image"></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span title="Updated on 2026-01-04 02:27:45">Updated on 2026-01-04&nbsp;</span></div><div class=post-info-license><span><a rel="license external nofollow noopener noreferrer" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>CC BY-NC-SA 4.0</a></span></div></div><div class=post-info-line><div class=post-info-md><span><a href=/posts/ef3dfd58/index.md title="Read Markdown" class=link-to-markdown>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on X" data-sharer=twitter data-url=https://w23ta0.github.io/posts/ef3dfd58/ data-title="定制CentOS 6.4自动化安装ISO镜像光盘" data-hashtags=linux,iso,centos><i class="fa-brands fa-x-twitter fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://w23ta0.github.io/posts/ef3dfd58/ data-hashtag=linux><i class="fa-brands fa-facebook-square fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://w23ta0.github.io/posts/ef3dfd58/ data-title="定制CentOS 6.4自动化安装ISO镜像光盘"><i class="fa-brands fa-weibo fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fa-solid fa-tags fa-fw me-1" aria-hidden=true></i><a href=/tags/linux/ class=post-tag title="Tags - Linux">Linux</a><a href=/tags/iso/ class=post-tag title="Tags - Iso">Iso</a><a href=/tags/centos/ class=post-tag title="Tags - Centos">Centos</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/posts/9cd3e9e8/ class=post-nav-item rel=prev title="Linux Shell Date命令的用法"><i class="fa-solid fa-angle-left fa-fw" aria-hidden=true></i>Linux Shell Date命令的用法</a><a href=/posts/e3f5fe56/ class=post-nav-item rel=next title=Linux基础：启动流程>Linux基础：启动流程<i class="fa-solid fa-angle-right fa-fw" aria-hidden=true></i></a></div></div><div id=comments><div id=giscus class=comment><script src=https://giscus.app/client.js data-repo=w23ta0/w23ta0.github.io data-repo-id=R_kgDOOErTJA data-category=Announcements data-category-id=DIC_kwDOOErTJM4CnrNF data-mapping=pathname data-strict=0 data-theme=preferred_color_scheme data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-lang=zh-CN data-loading=lazy crossorigin=anonymous async defer></script></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://giscus.app/ rel="external nofollow noopener noreferrer">giscus</a>.</noscript></div></article><aside class=toc id=toc-auto aria-label=Contents><h2 class=toc-title>Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden=true></i></h2><div class=toc-content id=toc-content-auto></div></aside></main><footer class=footer><div class=footer-container><div class="footer-line powered">Powered by <a href=https://gohugo.io/ target=_blank rel="external nofollow noopener noreferrer" title="Hugo 0.154.2"><img class=hugo-icon src=/images/hugo.min.svg alt="Hugo logo"> Hugo</a> | Theme - <a href=https://github.com/hugo-fixit/FixIt target=_blank rel=external title="FixIt v0.3.20"><img class=fixit-icon src=/images/fixit.min.svg alt="FixIt logo"> FixIt</a></div><div class="footer-line copyright" itemscope itemtype=http://schema.org/CreativeWork><i class="fa-regular fa-copyright fa-fw" aria-hidden=true></i>
+<span itemprop=copyrightYear>2012 - 2026</span><span class=author itemprop=copyrightHolder>
+<a href=https://github.com/w23ta0 target=_blank rel="external nofollow noopener noreferrer">w23ta0</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>CC BY-NC-SA 4.0</a></span></div><div class="footer-line visitor"><span id=busuanzi_container_site_uv title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden=true></i><span id=busuanzi_value_site_uv><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden=true></i></span></span><span id=busuanzi_container_site_pv class=footer-divider title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden=true></i><span id=busuanzi_value_site_pv><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden=true></i></span></span></div></div></footer></div><div class=widgets><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role=button aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden=true></i><span class=variant-numeric>0%</span></div><div class="fixed-button view-comments d-none" role=button aria-label="View Comments"><i class="fa-solid fa-comment fa-fw" aria-hidden=true></i></div></div><div id=mask></div><div class=reading-progress-bar style=left:0;top:0></div><noscript><div class=noscript-warning>This website works best with JavaScript enabled.</div></noscript></div><link rel=preload href=/lib/katex/katex.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/katex/katex.min.css></noscript><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script src=/js/flyfish.min.js defer></script><script src=/lib/autocomplete/autocomplete.min.js defer></script><script src=/lib/fuse/fuse.min.js defer></script><script src=/lib/sharer/sharer.min.js async defer></script><script src=/lib/katex/katex.min.js defer></script><script src=/lib/katex/auto-render.min.js defer></script><script src=/lib/katex/copy-tex.min.js defer></script><script src=/lib/katex/mhchem.min.js defer></script><script src=/lib/cookieconsent/cookieconsent.min.js defer></script><script src=https://vercount.one/js async defer></script><script>window.config={code:{copyTitle:"Copy to clipboard",editLockTitle:"Lock editable code block",editUnLockTitle:"Unlock editable code block",editable:!0,maxShownLines:10},comment:{enable:!0,expired:!1,giscus:{darkTheme:"dark",lightTheme:"light",origin:"https://giscus.app"}},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/search.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"No results found",snippetLength:30,threshold:.3,type:"fuse",useExtendedSearch:!1},version:"v0.3.20"}</script><script src=/js/theme.min.js defer></script><script src=/js/custom.min.js defer></script></body></html>

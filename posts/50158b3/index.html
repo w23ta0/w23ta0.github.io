@@ -1,0 +1,345 @@
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=2"><meta name=robots content="noodp"><title>Linux LVM简明教程 - w23ta0's blog</title><meta name=author content="w23ta0"><meta name=description content="逻辑卷管理LVM是一个多才多艺的硬盘系统工具。无论在Linux或者其他类似的系统，都是非常的好用。传统分区使用固定大小分区，重新调整大小十分麻烦。但是，LVM可以创建和管理“逻辑”卷，而不是直接使用物理硬盘。可以让管理员弹性的管理逻辑卷的扩大缩小，操作简单，而不损坏已存储的数据。可以随意将新的硬盘添加到LVM，以直接扩展已经存在的逻辑卷。LVM并不需要重启就可以让内核知道分区的存在。
+"><meta name=keywords content='LVM,分区,磁盘'><meta itemprop=name content="Linux LVM简明教程"><meta itemprop=description content="逻辑卷管理LVM是一个多才多艺的硬盘系统工具。无论在Linux或者其他类似的系统，都是非常的好用。传统分区使用固定大小分区，重新调整大小十分麻烦。但是，LVM可以创建和管理“逻辑”卷，而不是直接使用物理硬盘。可以让管理员弹性的管理逻辑卷的扩大缩小，操作简单，而不损坏已存储的数据。可以随意将新的硬盘添加到LVM，以直接扩展已经存在的逻辑卷。LVM并不需要重启就可以让内核知道分区的存在。"><meta itemprop=datePublished content="2014-06-18T14:30:29+00:00"><meta itemprop=dateModified content="2026-01-04T02:27:45+00:00"><meta itemprop=wordCount content="2934"><meta itemprop=keywords content="LVM,分区,磁盘"><meta property="og:url" content="https://w23ta0.github.io/posts/50158b3/"><meta property="og:site_name" content="w23ta0's blog"><meta property="og:title" content="Linux LVM简明教程"><meta property="og:description" content="逻辑卷管理LVM是一个多才多艺的硬盘系统工具。无论在Linux或者其他类似的系统，都是非常的好用。传统分区使用固定大小分区，重新调整大小十分麻烦。但是，LVM可以创建和管理“逻辑”卷，而不是直接使用物理硬盘。可以让管理员弹性的管理逻辑卷的扩大缩小，操作简单，而不损坏已存储的数据。可以随意将新的硬盘添加到LVM，以直接扩展已经存在的逻辑卷。LVM并不需要重启就可以让内核知道分区的存在。"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2014-06-18T14:30:29+00:00"><meta property="article:modified_time" content="2026-01-04T02:27:45+00:00"><meta property="article:tag" content="LVM"><meta property="article:tag" content="分区"><meta property="article:tag" content="磁盘"><meta name=twitter:card content="summary"><meta name=twitter:title content="Linux LVM简明教程"><meta name=twitter:description content="逻辑卷管理LVM是一个多才多艺的硬盘系统工具。无论在Linux或者其他类似的系统，都是非常的好用。传统分区使用固定大小分区，重新调整大小十分麻烦。但是，LVM可以创建和管理“逻辑”卷，而不是直接使用物理硬盘。可以让管理员弹性的管理逻辑卷的扩大缩小，操作简单，而不损坏已存储的数据。可以随意将新的硬盘添加到LVM，以直接扩展已经存在的逻辑卷。LVM并不需要重启就可以让内核知道分区的存在。"><meta name=application-name content="w23ta0's blog"><meta name=apple-mobile-web-app-title content="w23ta0's blog"><meta name=theme-color data-light=#f8f8f8 data-dark=#252627 content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel=icon href=images/happy.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=canonical type=text/html href=https://w23ta0.github.io/posts/50158b3/ title="Linux LVM简明教程 - w23ta0's blog"><link rel=prev type=text/html href=https://w23ta0.github.io/posts/735e3e61/ title=Linux发行版与区别><link rel=next type=text/html href=https://w23ta0.github.io/posts/3123c592/ title="XAMPP 和 VMWare 的端口443冲突的解决"><link rel=alternate type=text/markdown href=https://w23ta0.github.io/posts/50158b3/index.md title="Linux LVM简明教程 - w23ta0's blog"><link rel=stylesheet href=/css/style.min.css><link rel=preload href=/lib/fontawesome-free/all.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload href=/lib/animate/animate.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><meta name=google-site-verification content="mfpXQWYjakmUHCSG3MJxk8SDfQ2oLcOgJ3a0YQ9kycw"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Linux LVM简明教程","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/w23ta0.github.io\/posts\/50158b3\/"},"genre":"posts","keywords":"LVM, 分区, 磁盘","wordcount":2934,"url":"https:\/\/w23ta0.github.io\/posts\/50158b3\/","datePublished":"2014-06-18T14:30:29+00:00","dateModified":"2026-01-04T02:27:45+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"w23ta0"},"description":""}</script><script src=/js/head/color-scheme.min.js></script></head><body data-header-desktop=sticky data-header-mobile=auto><div class=wrapper data-page-style=normal><header class="desktop animate__faster" id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="w23ta0's blog"><img class=logo src=/images/happy.png alt="w23ta0's blog" height=32 width=32><span class=header-title-text>w23ta0's blog</span></a><span class=header-subtitle></span></div><nav><ul class=menu><li class=menu-item><a class=menu-link href=/archives/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> Archives</a></li><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden=true></i> Categories</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> Tags</a></li><li class=menu-item><a class=menu-link href=/index.xml><i class="fa-solid fa-rss fa-fw fa-sm" aria-hidden=true></i> RSS</a></li><li class=menu-item><a class=menu-link href=/about/><i class="fa-solid fa-quote-left fa-fw fa-sm" aria-hidden=true></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents ..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fa-solid fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fa-solid fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></li><li class="menu-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></li></ul></nav></div></header><header class="mobile animate__faster" id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="w23ta0's blog"><img class=logo src=/images/happy.png alt="w23ta0's blog" height=26 width=26><span class=header-title-text>w23ta0's blog</span></a><span class=header-subtitle></span></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><nav><ul class=menu id=menu-mobile><li class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents ..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fa-solid fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fa-solid fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></li><li class=menu-item><a class=menu-link href=/archives/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> Archives</a></li><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden=true></i> Categories</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> Tags</a></li><li class=menu-item><a class=menu-link href=/index.xml><i class="fa-solid fa-rss fa-fw fa-sm" aria-hidden=true></i> RSS</a></li><li class=menu-item><a class=menu-link href=/about/><i class="fa-solid fa-quote-left fa-fw fa-sm" aria-hidden=true></i> About</a></li><li class="menu-item menu-system"><span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></span></li></ul></nav></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=container><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label=Collections></aside><article class="page single"><div class=header><h1 class="single-title animate__animated animate__flipInX"><span>Linux LVM简明教程</span></h1></div><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://github.com/w23ta0 title=Author target=_blank rel="external nofollow noopener noreferrer author" class=author><img class=avatar src='https://www.gravatar.com/avatar/c8ec6802a4a65963e20a021760ec27f0?s=32&d=' alt=w23ta0 height=16 width=16>&nbsp;w23ta0</a></span><span class=post-included-in>&nbsp;included in <a href=/categories/linux/unix/ class=post-category title="Category - Linux/Unix"><i class="fa-regular fa-folder fa-fw" aria-hidden=true></i> Linux/Unix</a>&ensp;<a href=/categories/lvm/ class=post-category title="Category - LVM"><i class="fa-regular fa-folder fa-fw" aria-hidden=true></i> LVM</a></span></div><div class=post-meta-line><span title="published on 2014-06-18 14:30:29"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden=true></i><time datetime=2014-06-18>2014-06-18</time></span>&nbsp;<span title="Updated on 2026-01-04 02:27:45"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden=true></i><time datetime=2026-01-04>2026-01-04</time></span>&nbsp;<span title="2934 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden=true></i>About 3000 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden=true></i>6 minutes</span>&nbsp;<span id=busuanzi_container_page_pv class="busuanzi_visitors comment-visitors" data-flag-title="Linux LVM简明教程"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden=true></i><span id=busuanzi_value_page_pv>-</span>&nbsp;views
+</span>&nbsp;</div></div><div class="details toc" id=toc-static data-kept=false><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fa-solid fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#lvm测试说明>LVM测试说明</a></li><li><a href=#准备磁盘分区>准备磁盘分区</a></li><li><a href=#准备物理卷pv>准备物理卷(PV)</a></li><li><a href=#准备卷组vg>准备卷组(VG)</a></li><li><a href=#创建逻辑卷lv>创建逻辑卷(LV)</a></li><li><a href=#扩展一个lvm卷>扩展一个LVM卷</a></li><li><a href=#缩减一个lvm卷>缩减一个LVM卷</a></li><li><a href=#扩展一个卷组>扩展一个卷组</a></li></ul></nav></div></div><div class=content id=content><p>逻辑卷管理LVM是一个多才多艺的硬盘系统工具。无论在Linux或者其他类似的系统，都是非常的好用。传统分区使用固定大小分区，重新调整大小十分麻烦。但是，LVM可以创建和管理“逻辑”卷，而不是直接使用物理硬盘。可以让管理员弹性的管理逻辑卷的扩大缩小，操作简单，而不损坏已存储的数据。可以随意将新的硬盘添加到LVM，以直接扩展已经存在的逻辑卷。LVM并不需要重启就可以让内核知道分区的存在。</p><p>LVM使用分层结构，如下图所示。
+<img loading=lazy src=https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200612165529.png alt=https://w23ta0-blog.oss-cn-hongkong.aliyuncs.com/blog/20200612165529.png>
+图中顶部，首先是实际的物理磁盘及其划分的分区和其上的物理卷（PV）。一个或多个物理卷可以用来创建卷组（VG）。然后基于卷组可以创建逻辑卷（LV)。只要在卷组中有可用空间，就可以随心所欲的创建逻辑卷。文件系统就是在逻辑卷上创建的，然后可以在操作系统挂载和访问。</p><h2 class=heading-element id=lvm测试说明><span>LVM测试说明</span>
+<a href=#lvm%e6%b5%8b%e8%af%95%e8%af%b4%e6%98%8e class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><p>本文将介绍怎么在linux中创建和管理LVM卷。我们将会分成两个部分。第一个部分，我们首先要在一个硬盘上创建多个逻辑卷，然后将它们挂载在/lvm-mount目录。然后我们将要对创建好的卷调整大小。而第二部分，我们将会从另外一块硬盘增加额外的卷到LVM中。</p><h2 class=heading-element id=准备磁盘分区><span>准备磁盘分区</span>
+<a href=#%e5%87%86%e5%a4%87%e7%a3%81%e7%9b%98%e5%88%86%e5%8c%ba class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><p>通过使用fdisk，创建磁盘分区。我们需要创建3个1G分区，注意，并不要求分区的大小一致。同样，分区需要使用‘8e’类型来使他们可用于LVM。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># fdisk /dev/sdb</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Command <span class=o>(</span>m <span class=k>for</span> <span class=nb>help</span><span class=o>)</span>: n <span class=c1>## 新建</span>
+</span></span><span class=line><span class=cl>Command action
+</span></span><span class=line><span class=cl>   e   extended
+</span></span><span class=line><span class=cl>   p   primary partition <span class=o>(</span>1-4<span class=o>)</span>
+</span></span><span class=line><span class=cl>p <span class=c1>## 主分区</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Partition number <span class=o>(</span>1-4<span class=o>)</span>: <span class=m>1</span> <span class=c1>## 分区号</span>
+</span></span><span class=line><span class=cl>First cylinder <span class=o>(</span>1-1044, default 1<span class=o>)</span>:  <span class=c1>## 回车用默认的1</span>
+</span></span><span class=line><span class=cl>Last cylinder, +cylinders or +size<span class=o>{</span>K,M,G<span class=o>}</span> <span class=o>(</span>1-1044, default 1044<span class=o>)</span>: +1G <span class=c1>## 大小</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Command <span class=o>(</span>m <span class=k>for</span> <span class=nb>help</span><span class=o>)</span>: t <span class=c1>## 改变类型</span>
+</span></span><span class=line><span class=cl>Selected partition <span class=m>1</span>
+</span></span><span class=line><span class=cl>Hex code <span class=o>(</span><span class=nb>type</span> L to list codes<span class=o>)</span>: 8e <span class=c1>## LVM 的分区代码</span>
+</span></span><span class=line><span class=cl>Changed system <span class=nb>type</span> of partition <span class=m>1</span> to 8e <span class=o>(</span>Linux LVM<span class=o>)</span></span></span></code></pre></td></tr></table></div></div><p>重复上面的操作来创建其他两个分区。分区创建完成后，我们应该有类似如下的输出：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># fdisk -l</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>  Device Boot      Start         End      Blocks   Id  System
+</span></span><span class=line><span class=cl>/dev/sdb1               <span class=m>1</span>         <span class=m>132</span>     1060258+  8e  Linux LVM
+</span></span><span class=line><span class=cl>/dev/sdb2             <span class=m>133</span>         <span class=m>264</span>     <span class=m>1060290</span>   8e  Linux LVM
+</span></span><span class=line><span class=cl>/dev/sdb3             <span class=m>265</span>         <span class=m>396</span>     <span class=m>1060290</span>   8e  Linux LVM</span></span></code></pre></td></tr></table></div></div><h2 class=heading-element id=准备物理卷pv><span>准备物理卷(PV)</span>
+<a href=#%e5%87%86%e5%a4%87%e7%89%a9%e7%90%86%e5%8d%b7pv class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><p>刚创建的分区是用来储存物理卷的。LVM可以使用不同大小的物理卷。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># pvcreate /dev/sdb1</span>
+</span></span><span class=line><span class=cl><span class=c1># pvcreate /dev/sdb2</span>
+</span></span><span class=line><span class=cl><span class=c1># pvcreate /dev/sdb3</span></span></span></code></pre></td></tr></table></div></div><p>使用下列命令检查物理卷的创建情况。下面截取部分输出。"/dev/sdb2"是一个新的"1.01 GiB"物理卷。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># pvdisplay</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>  --- NEW Physical volume ---
+</span></span><span class=line><span class=cl>  PV Name               /dev/sdb2
+</span></span><span class=line><span class=cl>  VG Name
+</span></span><span class=line><span class=cl>  PV Size               1.01 GiB
+</span></span><span class=line><span class=cl>  Allocatable           NO
+</span></span><span class=line><span class=cl>  PE Size               <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Total PE              <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Free PE               <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Allocated PE          <span class=m>0</span>
+</span></span><span class=line><span class=cl>  PV UUID               jszvzz-ENA2-g5Pd-irhV-T9wi-ZfA3-0xo092</span></span></code></pre></td></tr></table></div></div><p>使用下列命令可以删除物理卷。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># pvremove /dev/sdb1</span></span></span></code></pre></td></tr></table></div></div><h2 class=heading-element id=准备卷组vg><span>准备卷组(VG)</span>
+<a href=#%e5%87%86%e5%a4%87%e5%8d%b7%e7%bb%84vg class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><p>下列命令用来创建名为&rsquo;volume-group1&rsquo;的卷组，使用/dev/sdb1, /dev/sdb2 和 /dev/sdb3创建。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># vgcreate volume-group1 /dev/sdb1 /dev/sdb2 /dev/sdb3</span></span></span></code></pre></td></tr></table></div></div><p>使用下列命令可以来验证卷组。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># vgdisplay</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>  --- Volume group ---
+</span></span><span class=line><span class=cl>  VG Name               volume-group1
+</span></span><span class=line><span class=cl>  System ID
+</span></span><span class=line><span class=cl>  Format                lvm2
+</span></span><span class=line><span class=cl>  Metadata Areas        <span class=m>3</span>
+</span></span><span class=line><span class=cl>  Metadata Sequence No  <span class=m>1</span>
+</span></span><span class=line><span class=cl>  VG Access             read/write
+</span></span><span class=line><span class=cl>  VG Status             resizable
+</span></span><span class=line><span class=cl>  MAX LV                <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Cur LV                <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Open LV               <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Max PV                <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Cur PV                <span class=m>3</span>
+</span></span><span class=line><span class=cl>  Act PV                <span class=m>3</span>
+</span></span><span class=line><span class=cl>  VG Size               3.02 GiB
+</span></span><span class=line><span class=cl>  PE Size               4.00 MiB
+</span></span><span class=line><span class=cl>  Total PE              <span class=m>774</span>
+</span></span><span class=line><span class=cl>  Alloc PE / Size       <span class=m>0</span> / <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Free  PE / Size       <span class=m>774</span> / 3.02 GiB
+</span></span><span class=line><span class=cl>  VG UUID               bwd2pS-fkAz-lGVZ-qc7C-TaKv-fFUC-IzGNBK</span></span></code></pre></td></tr></table></div></div><p>从输出中，我们可以看见卷组的使用量/总量。物理卷给卷组提供空间。只要在这个卷组中还有可用空间，我们就可以随意创建逻辑卷。</p><p>使用下列命令删除卷组。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># vgremove volume-group1</span></span></span></code></pre></td></tr></table></div></div><h2 class=heading-element id=创建逻辑卷lv><span>创建逻辑卷(LV)</span>
+<a href=#%e5%88%9b%e5%bb%ba%e9%80%bb%e8%be%91%e5%8d%b7lv class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><p>下列命令创建一个名为'1v1&rsquo;、大小为100MB的逻辑卷。我们使用小分区减少执行时间。这个逻辑卷使用之前创建的卷组的空间。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># lvcreate -L 100M -n lv1 volume-group1</span></span></span></code></pre></td></tr></table></div></div><p>逻辑卷可使用lvdisplay命令查看。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># lvdisplay</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>  --- Logical volume ---
+</span></span><span class=line><span class=cl>  LV Name                /dev/volume-group1/lv1
+</span></span><span class=line><span class=cl>  VG Name                volume-group1
+</span></span><span class=line><span class=cl>  LV UUID                YNQ1aa-QVt1-hEj6-ArJX-I1Q4-y1h1-OFEtlW
+</span></span><span class=line><span class=cl>  LV Write Access        read/write
+</span></span><span class=line><span class=cl>  LV Status              available
+</span></span><span class=line><span class=cl>  <span class=c1># open                 0</span>
+</span></span><span class=line><span class=cl>  LV Size                100.00 MiB
+</span></span><span class=line><span class=cl>  Current LE             <span class=m>25</span>
+</span></span><span class=line><span class=cl>  Segments               <span class=m>1</span>
+</span></span><span class=line><span class=cl>  Allocation             inherit
+</span></span><span class=line><span class=cl>  Read ahead sectors     auto
+</span></span><span class=line><span class=cl>  - currently <span class=nb>set</span> to     <span class=m>256</span>
+</span></span><span class=line><span class=cl>  Block device           253:2</span></span></code></pre></td></tr></table></div></div><p>现在逻辑卷已经准备好了，我们可以格式化和挂载逻辑卷，就像其它ext2/3/4分区一样！</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># mkfs.ext4 /dev/volume-group1/lv1</span>
+</span></span><span class=line><span class=cl><span class=c1># mkdir /lvm-mount</span>
+</span></span><span class=line><span class=cl><span class=c1># mount /dev/volume-group1/lv1 /lvm-mount/</span></span></span></code></pre></td></tr></table></div></div><p>一旦逻辑卷挂载，我们就可以到挂载点 /lvm-mount/ 上读写了。要创建和挂载其它的逻辑卷，我们重复这个过程。</p><p>最后，使用lvremove我们可以删除逻辑卷。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># umount /lvm-mount/</span>
+</span></span><span class=line><span class=cl><span class=c1># lvremove /dev/volume-group1/lv1</span></span></span></code></pre></td></tr></table></div></div><h2 class=heading-element id=扩展一个lvm卷><span>扩展一个LVM卷</span>
+<a href=#%e6%89%a9%e5%b1%95%e4%b8%80%e4%b8%aalvm%e5%8d%b7 class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><p>调整逻辑卷大小的功能是LVM最有用的功能。这个部分会讨论我们怎么样扩展一个存在的逻辑卷。下面，我们将会扩展先前创建的逻辑卷‘lv1’扩大到200MB。</p><p>注意，调整逻辑卷大小之后，也需要对文件系统调整大小进行匹配。这个额外的步骤各不相同，取决于创建文件系统的类型。在本文中，我们使用&rsquo;lv1&rsquo;创建了ext4类型的文件系统，所以这里的操作是针对ext4文件系统的。（ext2/3文件系统也类同）。命令的执行顺序是很重要的。</p><p>首先，我们卸载掉lv1卷</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># umount /lvm-mount/</span></span></span></code></pre></td></tr></table></div></div><p>然后，设置卷的大小为200M</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># lvresize -L 200M /dev/volume-group1/lv1</span></span></span></code></pre></td></tr></table></div></div><p>接下来，检查磁盘错误</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># e2fsck -f /dev/volume-group1/lv1</span></span></span></code></pre></td></tr></table></div></div><p>运行以下命令扩展文件系统以后，ext4信息就更新了。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># resize2fs /dev/volume-group1/lv1</span></span></span></code></pre></td></tr></table></div></div><p>现在，这个逻辑卷应该已经扩展到200MB了。我们检查LV的状态来验证。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># lvdisplay</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>  --- Logical volume ---
+</span></span><span class=line><span class=cl>  LV Name                /dev/volume-group1/lv1
+</span></span><span class=line><span class=cl>  VG Name                volume-group1
+</span></span><span class=line><span class=cl>  LV UUID                9RtmMY-0RIZ-Dq40-ySjU-vmrj-f1es-7rXBwa
+</span></span><span class=line><span class=cl>  LV Write Access        read/write
+</span></span><span class=line><span class=cl>  LV Status              available
+</span></span><span class=line><span class=cl>  <span class=c1># open                 0</span>
+</span></span><span class=line><span class=cl>  LV Size                200.00 MiB
+</span></span><span class=line><span class=cl>  Current LE             <span class=m>50</span>
+</span></span><span class=line><span class=cl>  Segments               <span class=m>1</span>
+</span></span><span class=line><span class=cl>  Allocation             inherit
+</span></span><span class=line><span class=cl>  Read ahead sectors     auto
+</span></span><span class=line><span class=cl>  - currently <span class=nb>set</span> to     <span class=m>256</span>
+</span></span><span class=line><span class=cl>  Block device           253:2</span></span></code></pre></td></tr></table></div></div><p>现在，这个逻辑卷可以再次挂载，同样这个方法也可用于其他分区。</p><h2 class=heading-element id=缩减一个lvm卷><span>缩减一个LVM卷</span>
+<a href=#%e7%bc%a9%e5%87%8f%e4%b8%80%e4%b8%aalvm%e5%8d%b7 class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><p>这章节介绍缩减LVM卷大小的方法。命令的顺序同样重要。并且，下列命令对ext2/3/4文件系统同样有效。</p><p>注意减少逻辑卷的大小值若小于储存的数据大小，存储在后面的数据会丢失。</p><p>首先，卸载掉卷。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># umount /dev/volume-group1/lv1</span></span></span></code></pre></td></tr></table></div></div><p>然后，检测磁盘错误。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># e2fsck -f /dev/volume-group1/lv1</span></span></span></code></pre></td></tr></table></div></div><p>接下来缩小文件系统，更新ext4信息。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># resize2fs /dev/volume-group1/lv1 100M</span></span></span></code></pre></td></tr></table></div></div><p>完成以后，减少逻辑卷大小</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># lvresize -L 100M /dev/volume-group1/lv1</span></span></span></code></pre></td></tr></table></div></div><blockquote><p>WARNING: Reducing active logical volume to 100.00 MiB THIS MAY DESTROY YOUR DATA (filesystem etc.) Do you really want to reduce lv1? [y/n]: y Reducing logical volume lv1 to 100.00 MiB Logical volume lv1 successfully resized</p></blockquote><p>最后，验证调整后的逻辑卷大小。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># lvdisplay</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>--- Logical volume ---
+</span></span><span class=line><span class=cl>  LV Name                /dev/volume-group1/lv1
+</span></span><span class=line><span class=cl>  VG Name                volume-group1
+</span></span><span class=line><span class=cl>  LV UUID                9RtmMY-0RIZ-Dq40-ySjU-vmrj-f1es-7rXBwa
+</span></span><span class=line><span class=cl>  LV Write Access        read/write
+</span></span><span class=line><span class=cl>  LV Status              available
+</span></span><span class=line><span class=cl>  <span class=c1># open                 0</span>
+</span></span><span class=line><span class=cl>  LV Size                100.00 MiB
+</span></span><span class=line><span class=cl>  Current LE             <span class=m>25</span>
+</span></span><span class=line><span class=cl>  Segments               <span class=m>1</span>
+</span></span><span class=line><span class=cl>  Allocation             inherit
+</span></span><span class=line><span class=cl>  Read ahead sectors     auto
+</span></span><span class=line><span class=cl>  - currently <span class=nb>set</span> to     <span class=m>256</span>
+</span></span><span class=line><span class=cl>  Block device           253:2</span></span></code></pre></td></tr></table></div></div><h2 class=heading-element id=扩展一个卷组><span>扩展一个卷组</span>
+<a href=#%e6%89%a9%e5%b1%95%e4%b8%80%e4%b8%aa%e5%8d%b7%e7%bb%84 class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><p>本节将讨论扩展卷组的方法，将一个物理卷添加到卷组。让我们假设我们的卷组&rsquo;volume-group1&rsquo;已经满了，需要扩大。手上的硬盘（sdb）已经没有其他空闲分区，我们添加了另外一个硬盘（sdc）。我们将看到如何把sdc的分区添加到卷组以扩展。</p><p>检测现在卷组状态</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># vgdisplay volume-group1</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl> --- Volume group ---
+</span></span><span class=line><span class=cl>  VG Name               volume-group1
+</span></span><span class=line><span class=cl>  System ID
+</span></span><span class=line><span class=cl>  Format                lvm2
+</span></span><span class=line><span class=cl>  Metadata Areas        <span class=m>3</span>
+</span></span><span class=line><span class=cl>  Metadata Sequence No  <span class=m>8</span>
+</span></span><span class=line><span class=cl>  VG Access             read/write
+</span></span><span class=line><span class=cl>  VG Status             resizable
+</span></span><span class=line><span class=cl>  MAX LV                <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Cur LV                <span class=m>1</span>
+</span></span><span class=line><span class=cl>  Open LV               <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Max PV                <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Cur PV                <span class=m>3</span>
+</span></span><span class=line><span class=cl>  Act PV                <span class=m>3</span>
+</span></span><span class=line><span class=cl>  VG Size               3.02 GiB
+</span></span><span class=line><span class=cl>  PE Size               4.00 MiB
+</span></span><span class=line><span class=cl>  Total PE              <span class=m>774</span>
+</span></span><span class=line><span class=cl>  Alloc PE / Size       <span class=m>25</span> / 100.00 MiB
+</span></span><span class=line><span class=cl>  Free  PE / Size       <span class=m>749</span> / 2.93 GiB
+</span></span><span class=line><span class=cl>  VG UUID               bwd2pS-fkAz-lGVZ-qc7C-TaKv-fFUC-IzGNBK</span></span></code></pre></td></tr></table></div></div><p>首先，我们创建一个2GB分区sdc1，类型为LVM（8e），如教程前所述。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># fdisk /dev/sdc</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Command <span class=o>(</span>m <span class=k>for</span> <span class=nb>help</span><span class=o>)</span>: n
+</span></span><span class=line><span class=cl>Command action
+</span></span><span class=line><span class=cl>   e   extended
+</span></span><span class=line><span class=cl>   p   primary partition <span class=o>(</span>1-4<span class=o>)</span>
+</span></span><span class=line><span class=cl>p
+</span></span><span class=line><span class=cl>Partition number <span class=o>(</span>1-4<span class=o>)</span>: <span class=m>1</span>
+</span></span><span class=line><span class=cl>First cylinder <span class=o>(</span>1-1044, default 1<span class=o>)</span>:
+</span></span><span class=line><span class=cl>Using default value <span class=m>1</span>
+</span></span><span class=line><span class=cl>Last cylinder, +cylinders or +size<span class=o>{</span>K,M,G<span class=o>}</span> <span class=o>(</span>1-1044, default 1044<span class=o>)</span>: +2G
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Command <span class=o>(</span>m <span class=k>for</span> <span class=nb>help</span><span class=o>)</span>: t
+</span></span><span class=line><span class=cl>Selected partition <span class=m>1</span>
+</span></span><span class=line><span class=cl>Hex code <span class=o>(</span><span class=nb>type</span> L to list codes<span class=o>)</span>: 8e
+</span></span><span class=line><span class=cl>Changed system <span class=nb>type</span> of partition <span class=m>1</span> to 8e <span class=o>(</span>Linux LVM<span class=o>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Command <span class=o>(</span>m <span class=k>for</span> <span class=nb>help</span><span class=o>)</span>: w
+</span></span><span class=line><span class=cl>The partition table has been altered!</span></span></code></pre></td></tr></table></div></div><p>然后，我们创建一个物理卷 /dev/sdc1</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># pvcreate /dev/sdc1</span></span></span></code></pre></td></tr></table></div></div><p>现在，物理卷已经准备好了，我们可以简单地将它增加到已存在的卷组&rsquo;volume-group1&rsquo;上。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># vgextend volume-group1 /dev/sdc1</span></span></span></code></pre></td></tr></table></div></div><p>使用vgdisplay来验证（可以看到卷组大小已经增大）。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># vgdisplay</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>  --- Volume group ---
+</span></span><span class=line><span class=cl>  VG Name               volume-group1
+</span></span><span class=line><span class=cl>  System ID
+</span></span><span class=line><span class=cl>  Format                lvm2
+</span></span><span class=line><span class=cl>  Metadata Areas        <span class=m>4</span>
+</span></span><span class=line><span class=cl>  Metadata Sequence No  <span class=m>9</span>
+</span></span><span class=line><span class=cl>  VG Access             read/write
+</span></span><span class=line><span class=cl>  VG Status             resizable
+</span></span><span class=line><span class=cl>  MAX LV                <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Cur LV                <span class=m>1</span>
+</span></span><span class=line><span class=cl>  Open LV               <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Max PV                <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Cur PV                <span class=m>4</span>
+</span></span><span class=line><span class=cl>  Act PV                <span class=m>4</span>
+</span></span><span class=line><span class=cl>  VG Size               5.03 GiB
+</span></span><span class=line><span class=cl>  PE Size               4.00 MiB
+</span></span><span class=line><span class=cl>  Total PE              <span class=m>1287</span>
+</span></span><span class=line><span class=cl>  Alloc PE / Size       <span class=m>25</span> / 100.00 MiB
+</span></span><span class=line><span class=cl>  Free  PE / Size       <span class=m>1262</span> / 4.93 GiB
+</span></span><span class=line><span class=cl>  VG UUID               bwd2pS-fkAz-lGVZ-qc7C-TaKv-fFUC-IzGNBK</span></span></code></pre></td></tr></table></div></div><p>注意，尽管我们使用一个单独的磁盘做示范，其实只要是‘8e’类型的磁盘分区都可以用来扩展卷组。</p><p>总结一下，LVM是一个非常给力的工具，用来创建和管理可变大小的分区。本文中，我们已经介绍了动态分区如何在LVM中创建和使用。我们也介绍了扩展/缩小逻辑卷和卷组的方法，和如何增加一个新的磁盘到LVM。</p><p>希望对你有帮助。</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span title="Updated on 2026-01-04 02:27:45">Updated on 2026-01-04&nbsp;</span></div><div class=post-info-license><span><a rel="license external nofollow noopener noreferrer" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>CC BY-NC-SA 4.0</a></span></div></div><div class=post-info-line><div class=post-info-md><span><a href=/posts/50158b3/index.md title="Read Markdown" class=link-to-markdown>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on X" data-sharer=twitter data-url=https://w23ta0.github.io/posts/50158b3/ data-title="Linux LVM简明教程" data-hashtags=LVM,分区,磁盘><i class="fa-brands fa-x-twitter fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://w23ta0.github.io/posts/50158b3/ data-hashtag=LVM><i class="fa-brands fa-facebook-square fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://w23ta0.github.io/posts/50158b3/ data-title="Linux LVM简明教程"><i class="fa-brands fa-weibo fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fa-solid fa-tags fa-fw me-1" aria-hidden=true></i><a href=/tags/lvm/ class=post-tag title="Tags - LVM">LVM</a><a href=/tags/%E5%88%86%E5%8C%BA/ class=post-tag title="Tags - 分区">分区</a><a href=/tags/%E7%A3%81%E7%9B%98/ class=post-tag title="Tags - 磁盘">磁盘</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/posts/735e3e61/ class=post-nav-item rel=prev title=Linux发行版与区别><i class="fa-solid fa-angle-left fa-fw" aria-hidden=true></i>Linux发行版与区别</a><a href=/posts/3123c592/ class=post-nav-item rel=next title="XAMPP 和 VMWare 的端口443冲突的解决">XAMPP 和 VMWare 的端口443冲突的解决<i class="fa-solid fa-angle-right fa-fw" aria-hidden=true></i></a></div></div><div id=comments><div id=giscus class=comment><script src=https://giscus.app/client.js data-repo=w23ta0/w23ta0.github.io data-repo-id=R_kgDOOErTJA data-category=Announcements data-category-id=DIC_kwDOOErTJM4CnrNF data-mapping=pathname data-strict=0 data-theme=preferred_color_scheme data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-lang=zh-CN data-loading=lazy crossorigin=anonymous async defer></script></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://giscus.app/ rel="external nofollow noopener noreferrer">giscus</a>.</noscript></div></article><aside class=toc id=toc-auto aria-label=Contents><h2 class=toc-title>Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden=true></i></h2><div class=toc-content id=toc-content-auto></div></aside></main><footer class=footer><div class=footer-container><div class="footer-line powered">Powered by <a href=https://gohugo.io/ target=_blank rel="external nofollow noopener noreferrer" title="Hugo 0.154.2"><img class=hugo-icon src=/images/hugo.min.svg alt="Hugo logo"> Hugo</a> | Theme - <a href=https://github.com/hugo-fixit/FixIt target=_blank rel=external title="FixIt v0.3.20"><img class=fixit-icon src=/images/fixit.min.svg alt="FixIt logo"> FixIt</a></div><div class="footer-line copyright" itemscope itemtype=http://schema.org/CreativeWork><i class="fa-regular fa-copyright fa-fw" aria-hidden=true></i>
+<span itemprop=copyrightYear>2012 - 2026</span><span class=author itemprop=copyrightHolder>
+<a href=https://github.com/w23ta0 target=_blank rel="external nofollow noopener noreferrer">w23ta0</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>CC BY-NC-SA 4.0</a></span></div><div class="footer-line visitor"><span id=busuanzi_container_site_uv title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden=true></i><span id=busuanzi_value_site_uv><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden=true></i></span></span><span id=busuanzi_container_site_pv class=footer-divider title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden=true></i><span id=busuanzi_value_site_pv><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden=true></i></span></span></div></div></footer></div><div class=widgets><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role=button aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden=true></i><span class=variant-numeric>0%</span></div><div class="fixed-button view-comments d-none" role=button aria-label="View Comments"><i class="fa-solid fa-comment fa-fw" aria-hidden=true></i></div></div><div id=mask></div><div class=reading-progress-bar style=left:0;top:0></div><noscript><div class=noscript-warning>This website works best with JavaScript enabled.</div></noscript></div><link rel=preload href=/lib/katex/katex.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/katex/katex.min.css></noscript><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script src=/js/flyfish.min.js defer></script><script src=/lib/autocomplete/autocomplete.min.js defer></script><script src=/lib/fuse/fuse.min.js defer></script><script src=/lib/sharer/sharer.min.js async defer></script><script src=/lib/katex/katex.min.js defer></script><script src=/lib/katex/auto-render.min.js defer></script><script src=/lib/katex/copy-tex.min.js defer></script><script src=/lib/katex/mhchem.min.js defer></script><script src=/lib/cookieconsent/cookieconsent.min.js defer></script><script src=https://vercount.one/js async defer></script><script>window.config={code:{copyTitle:"Copy to clipboard",editLockTitle:"Lock editable code block",editUnLockTitle:"Unlock editable code block",editable:!0,maxShownLines:10},comment:{enable:!0,expired:!1,giscus:{darkTheme:"dark",lightTheme:"light",origin:"https://giscus.app"}},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/search.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"No results found",snippetLength:30,threshold:.3,type:"fuse",useExtendedSearch:!1},version:"v0.3.20"}</script><script src=/js/theme.min.js defer></script><script src=/js/custom.min.js defer></script></body></html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Error - Tag - w23ta0's blog</title><link>https://w23ta0.github.io/tags/error/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.154.2 &amp; FixIt v0.3.20</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sun, 04 Jan 2026 02:27:45 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/tags/error/index.xml" rel="self" type="application/rss+xml"/><item><title>解决LDAP出现ldap_bind: Invalid credentials (49)错误</title><link>https://w23ta0.github.io/posts/1ad460a4/</link><pubDate>Tue, 14 Mar 2017 14:43:23 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/1ad460a4/</guid><category domain="https://w23ta0.github.io/categories/%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/">身份认证</category><category domain="https://w23ta0.github.io/categories/ldap/">LDAP</category><description>&lt;p&gt;LDAP最经常遇到的就是ldap_bind: Invalid credentials (49)错误，本文阐述了错误原因及解决办法：
+比如在某LDAP客户端，使用rootdn(管理员)权限为某用户修改密码时&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ ldappasswd -H ldap://172.16.0.21 -x -D &lt;span class="s2"&gt;&amp;#34;cn=admin,ou=People,dc=expmale,dc=com&amp;#34;&lt;/span&gt; -W -S &lt;span class="s2"&gt;&amp;#34;uid=zhang3,ou=People,dc=expmale,dc=com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;New password: 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Re-enter new password: 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Enter LDAP Password: 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ldap_bind: Invalid credentials &lt;span class="o"&gt;(&lt;/span&gt;49&lt;span class="o"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;错误原因1：管理员DN或者用户DN错误&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

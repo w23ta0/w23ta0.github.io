@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache - Category - w23ta0's blog</title><link>https://w23ta0.github.io/categories/apache/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.154.2 &amp; FixIt v0.3.20</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sun, 04 Jan 2026 02:27:45 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/categories/apache/index.xml" rel="self" type="application/rss+xml"/><item><title>Apache访问日志分析</title><link>https://w23ta0.github.io/posts/e3d0f43e/</link><pubDate>Wed, 12 Aug 2015 17:03:37 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/e3d0f43e/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><category domain="https://w23ta0.github.io/categories/apache/">Apache</category><description>&lt;p&gt;当前WEB服务器中联接次数最多的ip地址&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ netstat -ntu &lt;span class="p"&gt;|&lt;/span&gt;awk &lt;span class="s1"&gt;&amp;#39;{print $5}&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c&lt;span class="p"&gt;|&lt;/span&gt; sort -nr&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查看日志中访问次数最多的前10个IP&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ cat access.log &lt;span class="p"&gt;|&lt;/span&gt;cut -d &lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt; -f &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt;uniq -c &lt;span class="p"&gt;|&lt;/span&gt; sort -nr &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{print $0 }&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; head -n &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt;less&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查看日志中出现100次以上的IP&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ cat access.log &lt;span class="p"&gt;|&lt;/span&gt;cut -d &lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt; -f &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt;uniq -c &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{if ($1 &amp;gt; 100) print $0}&amp;#39;&lt;/span&gt;｜sort -nr &lt;span class="p"&gt;|&lt;/span&gt;less&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查看最近访问量最高的文件&lt;/p&gt;</description></item><item><title>让Linux主机开启.htaccess支持</title><link>https://w23ta0.github.io/posts/28e6d681/</link><pubDate>Mon, 20 Aug 2012 09:41:47 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/28e6d681/</guid><category domain="https://w23ta0.github.io/categories/web%E7%9B%B8%E5%85%B3/">Web相关</category><category domain="https://w23ta0.github.io/categories/apache/">Apache</category><description>&lt;p&gt;国内的很多Linux型主机默认是不开启.htaccess的，从而导致不支持伪静态。而国外的虚拟主机基本上都是支持此服务的，我曾经问过国内的主机提供商为何不开启.htaccess服务，他们的回答很可笑，说是减轻服务器的负担，呵，这真是符合了中国的国情，真让你不知以何种语言反击之。&lt;/p&gt;</description></item></channel></rss>

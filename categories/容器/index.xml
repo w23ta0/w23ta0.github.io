@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>容器 - Category - w23ta0's blog</title><link>https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/</link><description>This is my new Hugo FixIt site</description><generator>Hugo 0.154.2 &amp; FixIt v0.3.20</generator><language>en</language><managingEditor>wt8566958@gmail.com (w23ta0)</managingEditor><webMaster>wt8566958@gmail.com (w23ta0)</webMaster><lastBuildDate>Sun, 04 Jan 2026 02:27:45 +0000</lastBuildDate><atom:link href="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/index.xml" rel="self" type="application/rss+xml"/><item><title>如何在CentOS7上安装Kubernetes (k8s) 1.8</title><link>https://w23ta0.github.io/posts/e481e229/</link><pubDate>Sat, 30 May 2020 16:19:01 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/e481e229/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/kubernetes/">Kubernetes</category><description>&lt;h2 class="heading-element" id="环境准备"&gt;&lt;span&gt;环境准备&lt;/span&gt;
+ &lt;a href="#%e7%8e%af%e5%a2%83%e5%87%86%e5%a4%87" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;IP地址&lt;/th&gt;
+ &lt;th&gt;系统&lt;/th&gt;
+ &lt;th&gt;主机名&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;172.16.0.245&lt;/td&gt;
+ &lt;td&gt;CentOS7.6&lt;/td&gt;
+ &lt;td&gt;k8s-master&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;172.16.0.246&lt;/td&gt;
+ &lt;td&gt;CentOS7.6&lt;/td&gt;
+ &lt;td&gt;k8s-node1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;172.16.0.247&lt;/td&gt;
+ &lt;td&gt;CentOS7.6&lt;/td&gt;
+ &lt;td&gt;k8s-node2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 class="heading-element" id="在主节点上执行以下步骤"&gt;&lt;span&gt;在主节点上执行以下步骤&lt;/span&gt;
+ &lt;a href="#%e5%9c%a8%e4%b8%bb%e8%8a%82%e7%82%b9%e4%b8%8a%e6%89%a7%e8%a1%8c%e4%bb%a5%e4%b8%8b%e6%ad%a5%e9%aa%a4" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;h3 class="heading-element" id="停用selinux和防火墙服务"&gt;&lt;span&gt;停用SELinux和防火墙服务&lt;/span&gt;
+ &lt;a href="#%e5%81%9c%e7%94%a8selinux%e5%92%8c%e9%98%b2%e7%81%ab%e5%a2%99%e6%9c%8d%e5%8a%a1" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;使用以下命令登录到您的kubernetes主节点并设置主机名并禁用selinux&lt;/p&gt;</description></item><item><title>Docker私有仓库pull镜像报错：server gave HTTP response to HTTPS client</title><link>https://w23ta0.github.io/posts/3bf7d2bc/</link><pubDate>Fri, 29 Dec 2017 15:14:52 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/3bf7d2bc/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/docker/">Docker</category><description>&lt;p&gt;执行docker pull过程中报错：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Error response from daemon: 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Get https://xxx.xxx.xxx.xxx:5000/v2/ : 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http: server gave HTTP response to HTTPS client&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote class="question"&gt;这是由于Registry为了安全性考虑，默认是需要https证书支持的。&lt;/blockquote&gt;
+解决方法：
+&lt;p&gt;在/etc/docker/daemon.json文件中新增一行&amp;quot;insecure-registries&amp;quot;:[&amp;ldquo;xxx.xxx.xxx:5000&amp;rdquo;]，没有则新建此文件。&lt;/p&gt;</description></item><item><title>如何删除docker images/containers</title><link>https://w23ta0.github.io/posts/eb62b0d0/</link><pubDate>Tue, 08 Sep 2015 18:36:00 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/eb62b0d0/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/docker/">Docker</category><description>&lt;p&gt;docker images往往不知不觉就占满了硬盘空间，为了清理冗余的image，可采用以下方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;进入root权限&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo su&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start="2"&gt;
+&lt;li&gt;停止所有的container，这样才能够删除其中的images：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker stop &lt;span class="k"&gt;$(&lt;/span&gt;docker ps -a -q&lt;span class="k"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果想要删除所有container的话再加一个指令：&lt;/p&gt;</description></item><item><title>Docker Compose简化复杂应用的利器</title><link>https://w23ta0.github.io/posts/5bdb99b1/</link><pubDate>Sun, 30 Aug 2015 15:59:00 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/5bdb99b1/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/docker-compose/">Docker-Compose</category><description>&lt;p&gt;Docker Compose是用于定义和运行复杂Docker应用的工具。你可以在一个文件中定义一个多容器的应用，然后使用一条命令来启动你的应用，然后所有相关的操作都会被自动完成。&lt;/p&gt;
+&lt;p&gt;Docker Compose具有管理应用程序整个生命周期的命令：&lt;/p&gt;</description></item><item><title>如何搭建Docker Registry本地私有仓库</title><link>https://w23ta0.github.io/posts/49dab0f1/</link><pubDate>Fri, 28 Aug 2015 14:59:00 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/49dab0f1/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/docker-registry/">Docker Registry</category><description>&lt;p&gt;通常情况下我们可以使用&lt;a href="https://hub.docker.com/"target="_blank" rel="external nofollow noopener noreferrer"&gt;Docker Hub&lt;/a&gt;作为docker image的仓库，但是有些场景下，我们希望能够有本地的仓库。比如：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;代码中含有保密的信息，比如环境的账号，密码等等；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;代码本身作为公司的资产，不能对外公开，否则有法律风险。&lt;/p&gt;</description></item><item><title>Docker的save和export命令的区别</title><link>https://w23ta0.github.io/posts/d3163da/</link><pubDate>Tue, 25 Aug 2015 11:56:00 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/d3163da/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/docker/">Docker</category><description>&lt;p&gt;我最近在玩Docker，一种应用程序容器和Linux的虚拟技术。它太酷了，创建Docker镜像和容器只需要几分钟。所有的工作都是开箱即用的。&lt;/p&gt;
+&lt;p&gt;在结束我一天的工作之前，我希望能保存下我的工作。但我在Docker的save和export命令之间，我凌乱了。我不知道它们之间有什么区别。所以，我上StackOverflow问了一个问题，接着得到mbarthelemy很棒的回复。&lt;/p&gt;</description></item><item><title>Docker简介概述</title><link>https://w23ta0.github.io/posts/557f44df/</link><pubDate>Thu, 13 Aug 2015 15:40:28 +0000</pubDate><author>wt8566958@gmail.com (w23ta0)</author><guid>https://w23ta0.github.io/posts/557f44df/</guid><category domain="https://w23ta0.github.io/categories/%E5%AE%B9%E5%99%A8/">容器</category><category domain="https://w23ta0.github.io/categories/docker/">Docker</category><description>&lt;h2 class="heading-element" id="docker-简介"&gt;&lt;span&gt;Docker 简介&lt;/span&gt;
+ &lt;a href="#docker-%e7%ae%80%e4%bb%8b" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Docker&lt;/strong&gt; 最初是 &lt;code&gt;dotCloud&lt;/code&gt; 公司创始人 &lt;a href="https://github.com/shykes"target="_blank" rel="external nofollow noopener noreferrer"&gt;Solomon Hykes&lt;/a&gt; 在法国期间发起的一个公司内部项目，它是基于 &lt;code&gt;dotCloud&lt;/code&gt; 公司多年云服务技术的一次革新，并于 &lt;a href="https://en.wikipedia.org/wiki/Docker_"target="_blank" rel="external nofollow noopener noreferrer"&gt;2013 年 3 月以 Apache 2.0 授权协议开源&lt;/a&gt;，主要项目代码在 &lt;a href="https://github.com/moby/moby"target="_blank" rel="external nofollow noopener noreferrer"&gt;GitHub&lt;/a&gt; 上进行维护。&lt;code&gt;Docker&lt;/code&gt; 项目后来还加入了 Linux 基金会，并成立推动 &lt;a href="https://opencontainers.org/"target="_blank" rel="external nofollow noopener noreferrer"&gt;开放容器联盟（OCI）&lt;/a&gt;。&lt;/p&gt;</description></item></channel></rss>
